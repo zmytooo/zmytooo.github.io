@@ -15,114 +15,114 @@ tags:
 	</head>
 	<style type="text/css">
 	ul{
-    margin: 0;
-    list-style: none;
+        margin: 0;
+        list-style: none;
 	}
 	.huan1{
-    width: 600px;
-    height: 600px;
-    border-radius: 20%;
-    background: #d0f6e5;
-    padding: 50px;
-    box-sizing: border-box;
-    margin: 100px auto;
+        width: 600px;
+        height: 600px;
+        border-radius: 20%;
+        background: #d0f6e5;
+        padding: 50px;
+        box-sizing: border-box;
+        margin: 100px auto;
 	}
 	.huan2{
-    width: 500px;
-    height: 500px;
-    border-radius: 50%;
-    box-sizing: border-box;
-    padding: 30px;
-    background:  -webkit-linear-gradient(#62bd97,#fff);
+        width: 500px;
+        height: 500px;
+        border-radius: 50%;
+        box-sizing: border-box;
+        padding: 30px;
+        background:  -webkit-linear-gradient(#62bd97,#fff);
 	}
 	.huan3{
-    width: 440px;
-    height: 440px;
-    border-radius: 50%;
-    position: relative;
-    box-sizing: border-box;
-    background: -webkit-radial-gradient(#51d1c4 5%,#2a7770 95%);
-    padding: 150px; 
+        width: 440px;
+        height: 440px;
+        border-radius: 50%;
+        position: relative;
+        box-sizing: border-box;
+        background: -webkit-radial-gradient(#51d1c4 5%,#2a7770 95%);
+        padding: 150px; 
 	}
 	.huan4{
-    width: 140px;
-    height: 140px;
-    border-radius: 50%;
-    box-sizing: border-box;
-    background: -webkit-linear-gradient(#f0fbf9,#94eedf);
-    padding: 40px;
+        width: 140px;
+        height: 140px;
+        border-radius: 50%;
+        box-sizing: border-box;
+        background: -webkit-linear-gradient(#f0fbf9,#94eedf);
+        padding: 40px;
 	}
 	.kedu{
-    width: 440px;
-    height: 20px;
-    position: absolute;
-    top: 210px;
-    left: 0px;
-    transform-origin: 220px 10px;
+        width: 440px;
+        height: 20px;
+        position: absolute;
+        top: 210px;
+        left: 0px;
+        transform-origin: 220px 10px;
 	}
 	.kedu:nth-child(1){
-    transform: rotate(90deg);
+        transform: rotate(90deg);
 	}
 	.kedu:nth-child(2){
-    transform: rotate(60deg);
+        transform: rotate(60deg);
 	}
 	.kedu:nth-child(3){
-    transform: rotate(30deg);
+        transform: rotate(30deg);
 	}
 	.kedu:nth-child(4){
-    transform: rotate(0deg);
+        transform: rotate(0deg);
 	}
 	.kedu:nth-child(5){
-    transform: rotate(-30deg);
+        transform: rotate(-30deg);
 	}
 	.kedu:nth-child(6){
-    transform: rotate(-60deg);
+        transform: rotate(-60deg);
 	}
 	.right{
     float: right;
-    margin-top: -40px;
+        margin-top: -40px;
 	}
 	p{
-    width: 20px;
-    height: 20px;
-    line-height: 20px;
-    margin-top: 0;
-    font-size: 20px;
-    padding: 0 10px;
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+        margin-top: 0;
+        font-size: 20px;
+        padding: 0 10px;
 	}
 	.huan5{
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    position: relative;
-    background: -webkit-linear-gradient(#fff 20%,#a5ded4);
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        position: relative;
+        background: -webkit-linear-gradient(#fff 20%,#a5ded4);
 	}
 	.hours{
-    width: 20px;
-    height: 100px;
-    background: #055248; 
-    position: absolute;
-    left: 20px;
-    top: -60px;
-    transform-origin: 10px 90px;
+        width: 20px;
+        height: 100px;
+        background: #055248; 
+        position: absolute;
+        left: 20px;
+        top: -60px;
+        transform-origin: 10px 90px;
 	}
 	.minutes{
-    width: 14px;
-    height: 130px;
-    position: absolute;
-    top: -90px;
-    left: 23px;
-    background: #044f46;
-    transform-origin: 7px 120px;
+        width: 14px;
+        height: 130px;
+        position: absolute;
+        top: -90px;
+        left: 23px;
+        background: #044f46;
+        transform-origin: 7px 120px;
 	}
 	.seconds{
-    width: 10px;
-    height: 180px;
-    position: absolute;
-    left: 25px;
-    top: -140px;
-    background: #fe6f6f;
-    transform-origin: 5px 170px;
+        width: 10px;
+        height: 180px;
+        position: absolute;
+        left: 25px;
+        top: -140px;
+        background: #fe6f6f;
+        transform-origin: 5px 170px;
 	}
 
 	</style>

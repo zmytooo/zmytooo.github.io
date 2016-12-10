@@ -1,0 +1,162 @@
+*{
+	margin: 0;
+	padding:0;
+	text-decoration: none;
+	list-style: none; 
+}
+body{
+	min-width: 1225px;
+}
+header{
+	width: 970px;
+	height: 90px;
+	margin: 0 auto;
+	position: relative;
+}
+header a img{
+	position: absolute;
+	top: 26px;
+}
+.faxian{
+	position: absolute;
+	top: 30px;left: 114px;
+}
+header ul{
+	float: right;
+}
+header ul li{
+	float: left;
+	position: relative;
+	top: 38px;
+}
+header ul li:nth-child(2){
+	margin-left: 50px;
+}
+header ul li:nth-child(3){
+	margin-left: 41px;
+}
+header ul a{
+	font-size: 14px;
+	color: #666666;
+}
+header ul a:hover{color: #29b572}
+section{
+	width: 100%;
+	height: 600px;
+	background: url(../img/login_bg.jpg);
+}
+p{
+	font-size: 14px;
+	color: #838080;
+	position: absolute;
+	top: 711px;left: 351px;
+}
+.box{
+	width: 320px;
+	height: 400px;
+	box-sizing: border-box;
+	padding:0 30px;
+	background: #eef5ec;
+	position: absolute;
+	right: 0px;top: 166px;
+}
+.sign{
+	width: 160px;
+	height: 51px;
+	box-sizing: border-box;
+	background: #fff;
+	text-align: center;
+	line-height: 51px;
+	font-size: 16px;
+	position: absolute;
+	top: 0px;
+}
+.in{
+	left: 0px;
+	color: #29b572;
+	border-bottom: 2px solid #29b572;
+}
+.up{
+	right: 0px;
+	color: #616161;
+	border-bottom: 1px solid #cfcfcf;
+}
+.up:hover{
+	color: #29b572;
+	border-bottom: 2px solid #29b572;
+}
+form{
+	width: 260px;
+	position: absolute;
+	top: 87px;
+}
+.inp1,.inp2{
+	width: 260px;
+	height: 40px;
+	box-sizing: border-box;
+	font-size: 14px;
+	outline: none;
+	color: #b4b4b4;
+}
+.inp2{margin-top: 10px;}
+.short{
+	width: 160px;
+	height: 40px;
+	color: #b4b4b4;
+	outline: none;
+	box-sizing: border-box;
+	font-size: 14px;
+	margin-top: 10px;
+}
+.yanz{
+	width: 92px;
+	height: 40px;
+	box-sizing: border-box;
+	outline: none;
+	color: #fff;
+	border: 1px solid #cccccc;
+	background: #68b71a;
+	margin-left: 4px;
+	position: relative;
+	top: 14px;
+}
+#jizhu{
+	margin-top: 19px;
+}
+label{
+	font-size: 12px;
+	color: #848585;
+}
+.password{
+	font-size: 12px;
+	color: #848585;
+	margin-left: 147px;
+}
+.password:hover{color: #29b572;}
+.btn{
+	width: 260px;
+	height: 40px;
+	background: #29b572;
+	font-size: 14px;
+	color: #fff;
+	border:none;
+	outline: none;
+	margin-top: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

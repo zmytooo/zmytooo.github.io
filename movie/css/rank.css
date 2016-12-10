@@ -1,0 +1,126 @@
+/*头部重置*/
+.search a{
+	background: #ea1738;
+}
+.search [type=text]{
+	border: 1px solid #ea1738;
+}
+.search [type=submit]{
+	background: #ea1738;
+}
+.nav ul li a:hover{
+	color: #ea1738;
+}
+.nav ul li a div{
+	background: #ea1738;
+}
+/*主体部分*/
+.rank{
+	width: 1240px;
+	margin: 20px auto;
+}
+.rankleft{
+	width: 120px;
+	height: 350px;
+	text-align: center;
+	font-size: 28px;
+	color: #fff;
+	line-height: 35px;
+	box-sizing: border-box;
+	padding-top: 123px;
+}
+.filmrank .rankleft {
+	background: #ec658e;
+}
+.tvrank .rankleft {
+	background: #aa6dbd;
+}
+.varietyrank .rankleft {
+	background: #03c3d0;
+}
+.comicrank .rankleft {
+	background: #a4df53;
+}
+.tvrank,.varietyrank,.comicrank{
+	margin-top: 30px;
+}
+.rank ul{
+	margin-left: 130px;
+	margin-top: -360px;
+}
+.rank ul li{
+	float: left;
+	width: 250px;
+	height: 350px;
+	float: left;
+	margin-left: 10px;
+	margin-top: 10px;
+	position: relative;
+}
+.rank ul li:nth-child(1),
+.rank ul li:nth-child(2){
+	width: 510px;
+}
+.rank ul li a img:nth-child(1){
+	width: 100%;
+	height: 100%;
+}
+.rank ul li a img:nth-child(2){
+	position: absolute;
+	top: -2px;left: 6px;
+}
+.rank ul li div{
+	height: 50px;
+	width: 100%;
+	position: absolute;
+	top: 300px;
+	color: #fff;
+	padding-left: 6px;
+	padding-top: 4px;
+	box-sizing: border-box;	
+	background: rgba(0,0,0,0.5);
+}
+.rank ul li div p{
+	font-size: 16px;
+}
+.rank ul li div small{
+	line-height: 25px;
+	display: block;
+	width: 95%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

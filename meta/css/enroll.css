@@ -1,0 +1,270 @@
+.enroll{
+	width: 599px;
+	height: 692px;
+	border: 1px solid #c2c2c2;
+	z-index: 10;
+	position: absolute;
+	top: 120px;left:50%;
+	margin-left: -300px;
+	background: #ffffff;
+	text-align: center;
+	font-size: 19px;
+}
+.enroll .span1,.enroll2 .span1,.enroll3 .span1{
+	font-size: 38px;
+	position: absolute;
+	top: 10px;right: 20px;	
+}
+.enroll .span2{
+	font-size: 38px;
+	position: relative;
+	top: 120px;
+	color: #666666;
+}
+.enroll p{
+	margin-top: 162px;
+	line-height: 25px;
+	color: #a3a3a3;
+}
+.enroll label{
+	position: absolute;
+	top: 373px;left: 40px;
+}
+.enroll #post{
+	height: 37px;
+	width: 517px;
+	border: 2px solid #e3e3e3;
+	position: absolute;
+	top: 398px;left: 40px;
+}
+.enroll .create{
+	width: 519px;
+	height:47px;
+	border: 1px solid #d1c2cb;
+	background: #c4a9b8;
+	color: #fff;
+	font-size: 20px;
+	position: absolute;
+	top: 458px;left: 40px;
+	line-height: 47px;
+}
+.enroll .sina{
+	height: 46px;
+	width: 522px;
+	background: #f1ead8;
+	position: absolute;
+	font-size: 20px;
+	line-height: 46px;
+	top: 528px;left: 40px;
+	color: #393732;
+}
+.enroll .sina img,.enroll3 .sina img{
+	position: absolute;
+	top: 8px;left: 25px;
+}
+.enroll .qq{
+	width: 517px;
+	height: 44px;
+	border: 2px solid #e4e4e4;
+	font-size: 20px;
+	background: #fff;
+	position: absolute;
+	line-height: 44px;
+	top: 593px;left: 40px;
+	color: #393732;
+}
+.enroll .qq img,.enroll3 .qq img{
+	position: absolute;
+	top: 4px;left: 26px;
+}
+.enrollone .ever{
+	height: 55px;
+	width: 600px;
+	background: #000000;
+	text-align: center;
+	line-height: 55px;
+	z-index: 10;
+	position: absolute;
+	top: 829px;left:50%;
+	margin-left: -300px;
+	color: #fff;
+	text-decoration: underline;
+}
+.enrollone{
+	width: 100vw;
+	height: 100vh;
+	background: rgba(0,0,0,0.7);
+	position: fixed;
+	top: 0;left: 0;
+	display: none;
+}
+.enrolltwo{
+	width: 100vw;
+	height: 100vh;
+	background: rgba(0,0,0,0.7);
+	position: fixed;
+	top: 0;left: 0;
+	display: none;
+}
+.enroll2{
+	width: 596px;
+	height: 582px;
+	border: 1px solid #c2c2c2;
+	z-index: 10;
+	position: absolute;
+	top: 214px;left: 50%;
+	margin-left: -299px;
+	background: #fff;
+}
+.enroll2 .span2{
+	font-size: 34px;
+	position: absolute;
+	top: 38px;left: 196px;
+}
+.enroll2 input{
+	width: 517px;
+	height: 38px;
+	border: 2px solid #e3e3e3;
+	position: absolute;
+	left: 38px;
+}
+.enroll2 #name{
+	top: 208px;
+}
+.enroll2 #password{
+	top: 304px;
+}
+.enroll2 #call{
+	top: 401px;
+}
+.enroll2 label{
+	position: absolute;
+	left: 38px;
+	color: #666666;
+}
+.enroll2 .lb1{
+	top: 178px;
+}
+.enroll2 .lb2{
+	top: 275px;
+}
+.enroll2 .lb3{
+	top: 372px;
+}
+.enroll2 div{
+	width: 517px;
+	height: 48px;
+	line-height: 48px;
+	text-align: center;
+	color: #fff;
+	position: absolute;
+	left: 38px;top: 489px;
+	border: 2px solid #e3dfe1;
+	background: -webkit-linear-gradient(left,  #85737d 381px, #c4a9b8 136px);
+}
+.enrollthree{
+	width: 100vw;
+	height: 100vh;
+	background: rgba(0,0,0,0.7);
+	position: fixed;
+	top: 0;left: 0;
+	display: none;
+}
+.enrollthree .wei{
+	height: 55px;
+	width: 600px;
+	background: #000000;
+	text-align: center;
+	line-height: 55px;
+	z-index: 10;
+	position: absolute;
+	top: 829px;left:50%;
+	margin-left: -300px;
+	color: #fff;
+	text-decoration: underline;
+}
+.enroll3{
+	width: 599px;
+	height: 692px;
+	border: 1px solid #c2c2c2;
+	z-index: 10;
+	position: absolute;
+	top: 120px;left: 50%;
+	margin-left: -300px;
+	background: #fff;
+}
+.enroll3 .span2{
+	position: absolute;
+	top: 45px;left: 237px;
+	color: #666666;
+}
+.enroll3 .logo{
+	position: absolute;
+	top: 130px;left: 213px;
+}
+.enroll3 .sina{
+	width: 522px;
+	height: 46px;
+	background: #f1ead8;
+	position: absolute;
+	top: 229px;left: 40px;
+	text-align: center;
+	line-height: 46px;
+	color: #393732;
+}
+.enroll3 .qq{
+	width: 517px;
+	height: 44px;
+	border: 2px solid #e4e4e4;
+	font-size: 20px;
+	background: #fff;
+	position: absolute;
+	line-height: 44px;
+	text-align: center;
+	top: 294px;left: 40px;
+	color: #393732;
+}
+.enroll3 .span3{
+	color: #868686;
+	position: absolute;
+	top: 383px;left: 273px;
+}
+.enroll3 label{
+	color: #666666;
+	position: absolute;
+	left: 40px;
+}
+.enroll3 .lb1{
+	top: 419px;
+}
+.enroll3 .lb2{
+	top: 510px;	
+}
+.enroll3 input{
+	width: 517px;
+	height: 38px;
+	border: 2px solid #e3e3e3;
+	position: absolute;
+	left: 40px;
+}
+.enroll3 #youx{
+	top: 444px;
+}
+.enroll3 #password{
+	top: 535px;
+}
+.enroll3 button{
+	width: 519px;
+	height: 47px;
+	border: 1px solid #d1c2cb;
+	background: #c4a9b8;
+	position: absolute;
+	left: 40px;top: 591px;
+	color: #fff;
+	font-size: 20px;
+}
+.enroll3 .forget{
+	color: #a3a3a3;
+	position: absolute;
+	top: 665px;left: 220px;
+}

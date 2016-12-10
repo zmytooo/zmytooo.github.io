@@ -7,17 +7,17 @@ tags:
 闭包是指有权访问另一个函数作用域中的变量的函数。如下例：
 
 	function createComparisonFunction(propertyName){
-    return function(object1,object2){
-        var value1 = object1[propertyName];
-        var value2 = object2[propertyName];
-        if(value1<value2){
-            return -1;
-        }else if(value1>value1){
-            return 1;
-        }else{
-            return 0;
+        return function(object1,object2){
+            var value1 = object1[propertyName];
+            var value2 = object2[propertyName];
+            if(value1<value2){
+                return -1;
+            }else if(value1>value1){
+                return 1;
+            }else{
+                return 0;
+            }
         }
-    }
 	}
 	
 上面var value1 = object1[propertypeName],var value2 = propertyName,两行代码访问了外部函数中的变量propertyName。即使这个内部函数被返回了，而且是在其他地方被调用了 ，但他仍然可以访问变量propertyName。之所以还能访问这个变量，是因为内部函数的作用域链中包含createComparisonFunction（）的作用域。搞清其中细节，必须从理解函数第一次被调用的时候会发生什么入手。
@@ -25,13 +25,13 @@ tags:
 当函数第一次被调用时，会创建一个执行环境及相应的作用域链,并且把作用域链赋值给一个特殊的内部属性（即scope）。然后，使用this，arguments和其他命名参数的值来初始化函数的活动对象。但在作用域链中，外部函数的活动对象始终处于第二位，而外部函数的外部函数处于第三位，……直至作为作用域链终点的群居执行环境。
 
 	function compare(value1,value2){
-    if(value1<value2){
-        return -1;
-    }else if(value1<value2){
-        return 1; 
-    }else{
-        return 0;
-    }
+        if(value1<value2){
+            return -1;
+        }else if(value1<value2){
+            return 1; 
+        }else{
+            return 0;
+        }
 	}
 	var result = compare(5,10);
 	

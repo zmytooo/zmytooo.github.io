@@ -1,0 +1,157 @@
+/*公共样式*/
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+}
+img{
+	border: none;
+}
+.fl{
+	float: left;
+}
+.fr{
+	float: right;
+}
+.clear{zoom:1;}
+.clear:after{
+	display: block;
+	content: '.';
+	clear:both;
+    height: 0;
+    visibility:hidden;
+}
+body{
+	min-width: 1240px;
+	font: 12px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+/*头部*/
+.head{
+	width: 1240px;
+	height: 80px;
+	margin: 0 auto;
+}
+header .logo{
+	display: block;
+	width: 120px;
+	height: 120px;
+	background: url(../img/logo.png) no-repeat 0 0;
+	background-size: 100% 100%;
+}
+.search{
+	margin-top: 20px;
+	margin-left: 200px;
+	position: relative;
+}
+.search a{
+	width: 64px;
+	height: 40px;
+	position: absolute;
+	background: #ff9333;
+	color: #fff;
+	font-size: 14px;
+	text-align: center;
+	line-height: 40px;
+}
+.search [type=text]{
+	box-sizing: border-box;
+	height: 40px;
+	width: 318px;
+	outline: none;
+	border: 1px solid #ff9333;
+	color: #cbced3;
+	font-size: 16px;
+	position: absolute;
+	top: 0px;left: 64px;
+	padding-left: 35px;
+}
+.search img{
+	position: absolute;
+	top: 12px;left: 75px;
+}
+.search [type=submit]{
+	height: 40px;
+	width: 80px;
+	border: none;
+	background: #ff9333;
+	color: #fff;
+	font-size: 14px;
+	position: absolute;
+	left: 382px;top: 0px;
+}
+nav{
+	height: 40px;
+	background: #262626;
+}
+.nav{
+	width: 1240px;
+	height: 40px;
+	margin: 0 auto;
+	z-index: 2;
+}
+.nav ul{
+	margin-left: 150px;
+}
+.nav ul li{
+	float: left;
+	margin-left: 60px;
+}
+.nav ul li a{
+	display: block;
+	height: 40px;
+	line-height: 40px;
+	width: 100px;
+	text-align: center;
+	font-size: 16px;
+	color: #fff;
+	position: relative;
+}
+.nav ul li a img{
+	margin-right: 2px;
+	position: relative;
+	top: 2px;
+}
+.nav ul li a div{
+	height: 3px;
+	background: #ff9233;
+	margin-top: -3px;
+	display: none;
+}
+.nav ul li a:hover{
+	color: #ff9231;
+}
+.nav ul li a:hover div{
+	display: block;
+}
+
+/*尾部*/
+footer{
+	height: 99px;
+	background: #f2f2f2; 
+	text-align: center;
+	line-height: 99px;
+	color:#6e7479;
+	font-size: 16px;
+	border-top:1px solid #b7b7b7;
+	margin-top: 50px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

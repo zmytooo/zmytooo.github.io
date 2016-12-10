@@ -1,0 +1,106 @@
+doctype
+html
+	head
+		meta(charset="utf-8")
+		title 彩信教育简介
+		link(rel="styleSheet",href="../css/command.css")
+		style.
+			section{
+				width:1225px;
+				height:465px;
+				margin:30px auto;
+				position:relative;
+			}
+			aside{
+				width:171px;
+				height:336px;
+				background:#fff;
+				position:absolute;
+			}
+			aside ul li{
+				width:171px;
+				height:48px;
+				box-sizing:border-box;
+				padding-left:22px;
+				line-height:48px;
+				font-size:14px;
+				color:#333333;
+				position:relative;
+			}
+			aside ul li a{
+				display:block;
+				width:171px;
+				height:48px;
+				box-sizing:border-box;
+				padding-left:22px;
+				line-height:48px;
+				font-size:14px;
+				color:#333333;
+				position:absolute;
+				top:0px;left:0px;
+			}
+			.cate{
+				padding-left:20px;
+				border-left:2px solid #29b572;
+				background:#fafafa;
+			}
+			.educate{
+				width:1040px;
+				height:465px;
+				box-sizing:border-box;
+				padding:0 36px;
+				background:#fff;
+				position:absolute;
+				left:185px;top:0px;
+			}
+			.dib{
+				width:968px;
+				height:1px;
+				background:#e8e8e8;
+				position:absolute;
+				top:94px;
+			}
+			.educate h2{
+				font-size:26px;
+				color:#333333;
+				position:absolute;
+				top:48px;
+			}
+			.educate .caixin{
+				position:absolute;
+				top:127px;left:355px;
+			}
+			.educate p{
+				text-indent:2em;
+				text-align:left;
+				line-height:30px;
+				font-size:16px;
+				color:#333333;
+				position:absolute;
+				top:240px;
+			}
+	body
+		include header.jade
+		section
+			aside
+				ul
+					li
+						span 目录
+					li
+						a(href="caixin.html").cate 才信教育简介
+					li
+						a(href="contact.html") 联系我们
+					li
+						a(href="join.html") 加入我们
+					li
+						a(href="question.html") 常见问题
+					li
+						a(href="#") 版权声明
+					li
+						a(href="#") 服务条款
+			div.educate
+				h2 才信教育简介
+				div.dib
+				img(src="../img/caixin.png").caixin
+				p 北京才信教育有限公司是一家拥有全国领先教育资源整合理念和实践技术的高科技企业，总部设在北京。才信环教育生态旗下核心产<br>品包含精英吧、口袋精英以及“精英+”管理系统，完成从招生、教学、就业教育产业链布局。才信环教育生态以互联网+教育O2O模<br>式，创新中国教育产业的发展模式，致力于延长中国教育机构经营周期，做大中国教学质量体系和人才评估、企业服务、衍生品等环教育<br>市场。
+		include footer.jade

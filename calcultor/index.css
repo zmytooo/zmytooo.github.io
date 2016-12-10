@@ -1,0 +1,11 @@
+*{
+	outline: none;
+	border: none;
+}
+table{
+	width: 360px;
+	height: 350px;
+	border: 1px;
+	background-color: #bbff77;
+	margin: 100px auto;
+}

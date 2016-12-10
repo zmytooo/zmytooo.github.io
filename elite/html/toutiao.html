@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>互联网头条</title>
+    <link rel="styleSheet" href="../css/command.css">
+    <style>
+      body{
+      	background:#fff;
+      }	
+      section{
+      	margin:0 auto;
+      	position:relative;			
+      }
+      .hlw{
+      	width:615px;
+      	height:425px;
+      	position:absolute;
+      	top:100px;
+      }
+      .dibu{
+      	position:relative;
+      	top:20px;
+      	text-align:center;
+      }
+      .dibu span{
+      	font-size:12px;
+      	color:#808383;
+      }
+      .dibu a{
+      	font-size:12px;
+      	color:#808383;
+      }
+      .dibu a:hover{
+      	color:#29b572;
+      }
+      @media screen and (min-width:1225px){
+      	.bg{
+      		width:100%;	
+      	}
+      	.hlw{
+      		left:50%;
+      		margin-left:-307.5px;
+      	}
+      }
+      @media screen and (max-width:1225px) and (min-width:1023px){
+      	.hlw{left:284px;}
+      }
+      @media screen and (max-width:1023px){
+      	.hlw{left:184px;}
+      	section{
+      		width:100%;
+      	}
+      	.dibu{
+      		display:inline;
+      		position:absolute;
+      		left:378px;top:640px;
+      	}
+      }			
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="head"><a href="main.html"><img src="../img/log.png"></a><img src="../img/faxian.png" class="faxian"><a href="#" class="weizhi">北京</a>
+        <ul>
+          <li><a href="index.html" class="active">首页</a></li>
+          <li><a href="course.html">点播课程</a></li>
+          <li><a href="toutiao.html">互联网头条</a></li>
+          <li><a href="quiz.html">+提问</a></li>
+        </ul>
+        <div><a href="signin.html">登陆</a><span>|</span><a href="signup.html">注册</a></div>
+      </div>
+    </header>
+    <section><img src="../img/headlines_bg.jpg" style="height:625px;" class="bg"><img src="../img/hlw.png" class="hlw">
+      <div class="dibu"><span>才信教育©2015-2017|</span><a href="#">京ICP备16013954号</a></div>
+    </section>
+  </body>
+</html>

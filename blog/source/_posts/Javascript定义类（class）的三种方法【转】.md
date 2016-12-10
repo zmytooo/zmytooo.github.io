@@ -125,12 +125,12 @@ Javascript语言不支持”类”，但是可以用一些变通的方法，模�
 在createNew()方法中，只要不是定义在cat对象上的方法和属性，都是私有的。
 
 	var Cat = {
-    createNew: function(){
-    var cat = {};
-    var sound = "喵喵喵";
-    cat.makeSound = function(){ alert(sound); };
-    return cat;
-    }
+        createNew: function(){
+            var cat = {};
+            var sound = "喵喵喵";
+            cat.makeSound = function(){ alert(sound); };
+            return cat;
+        }
 	};
 上例的内部变量sound，外部无法读取，只有通过cat的公有方法makeSound()来读取。
 
@@ -140,13 +140,13 @@ Javascript语言不支持”类”，但是可以用一些变通的方法，模�
 有时候，我们需要所有实例对象，能够读写同一项内部数据。这个时候，只要把这个内部数据，封装在类对象的里面、createNew()方法的外面即可。
 
 	var Cat = {
-    sound : "喵喵喵",
-    createNew: function(){
-    var cat = {};
-    cat.makeSound = function(){ alert(Cat.sound); };
-    cat.changeSound = function(x){ Cat.sound = x; };
-    return cat;
-    }
+        sound : "喵喵喵",
+        createNew: function(){
+            var cat = {};
+            cat.makeSound = function(){ alert(Cat.sound); };
+            cat.changeSound = function(x){ Cat.sound = x; };
+            return cat;
+        }
 	};
 然后，生成两个实例对象：
 

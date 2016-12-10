@@ -1,0 +1,439 @@
+section{
+	width: 1225px;
+	height: 2011px;
+	margin: 0 auto;
+	position: relative;
+}
+.sign{
+	width: 1225px;
+	height: 346px;
+	position: absolute;
+	top: 30px;
+}
+.signle{
+	width: 977px;
+	height: 347px;
+	position: absolute;
+}
+.signle a img{
+	transition: 2.5s;
+	position: absolute;
+	opacity: 0;
+}
+.signle a img.banner{
+	opacity: 1;
+}
+.signle ol{
+	position: absolute;
+	top: 315px;right: 32px;
+}
+.signle ol li{
+	width: 14px;
+	height: 14px;
+	border-radius: 50%;
+	background: #c8ccd4;
+	float: left;
+	margin-left: 14px;
+}
+.signle ol .active{background: #29b572;}
+.signri{
+	width: 248px;height: 346px;
+	background: #fff;
+	position: absolute;
+	top: 0px;right: 0px;
+}
+.userpic{
+	position: absolute;
+	top: 23px;left: 20px;
+}
+.signri p{
+	font-size: 14px;
+	color: #666666;
+	line-height: 19px;
+	position: absolute;
+	top: 23px;left: 97px;
+}
+.signri .p1{
+	font-size: 14px;
+	color: #666666;
+	line-height: 19px;
+	position: absolute;
+	top: 23px;left: 97px;
+}
+.signri .p2{
+	font-size: 14px;
+	color: #666666;
+	line-height: 19px;
+	position: absolute;
+	top: 46px;left: 97px;
+}
+.signri .user{
+	font-size: 14px;
+	color: #666666;
+	line-height: 19px;
+	position: absolute;
+	top: 23px;left: 126px;
+}
+.asign{
+	width: 60px;height: 22px;
+	border-radius: 1px;
+	text-align: center;
+	line-height: 22px;
+	font-size: 14px;
+	position: absolute;
+	top: 75px;
+}
+.in{
+	left: 96px;
+	color: #fff;
+	background: #29b572;
+}
+.in:hover{
+	background: #029850;
+}
+.up{
+	left: 167px;
+	color: #29b572;
+	background: #fff;
+}
+.up:hover{
+	color: #fff;
+	background: #29b572;
+}
+.bian{
+	width: 208px;height: 1px;
+	background: #e8e8e8;
+	position: absolute;
+	left: 20px;
+}
+.b1{top: 112px;}
+.b2{top: 304px;}
+.signri span{
+	font-size: 14px;
+	color: #333333;
+	position: absolute;
+	top: 127px;left: 20px;
+}
+.know{
+	font-size: 12px;
+	color: #666666;
+	position: absolute;
+	top: 129px;right: 20px;
+}
+.know:hover{
+	color: #29b572;
+}
+.signri ol{
+	position: absolute;
+	top: 318px;left: 46px;
+}
+.signri ol li{float: left;}
+.signri ol li:nth-child(2){margin-left: 41px;}
+.signri ol li:nth-child(3){margin-left: 32px;}
+.signri ol li a{
+	font-size: 14px;
+	color: #666666;
+	text-decoration: underline;
+}
+.signri ol li a:hover{color: #29b572;}
+.signri ul{
+	width: 169px;
+	height: 122px;
+	position: absolute;
+	top: 167px;left: 40px;
+}
+.signri ul li{
+	width: 65px;
+	position: absolute;
+}
+.signri ul li:nth-child(1){
+	top: 0px;left: 0px;
+}
+.signri ul li:nth-child(2){
+	top: 3px;left: 104px;
+}
+.signri ul li:nth-child(3){
+	top: 73px;left: 0px;	
+}
+.signri ul li:nth-child(4){
+	top: 71px;left: 103px;	
+}
+.signri ul img{
+	position: absolute;
+	top: 0px;
+}
+.signri ul li:nth-child(1) img{
+	left: 19px;
+}
+.signri ul li:nth-child(2) img{
+	left: 16px;
+}
+.signri ul li:nth-child(3) img{
+	left: 17px;
+}
+.signri ul li:nth-child(4) img{
+	left: 14px;
+}
+.signri ul p{
+	font-size: 12px;
+	color: #808080;
+	position: absolute;
+	left: 0px; 
+	margin-top: 11px;
+}
+.signri ul li:nth-child(1) p,.signri ul li:nth-child(4) p{
+	margin-top: 13px;
+}
+.signri ul a:hover .noshow{
+	display: block;
+}
+.signri ul a:hover p{
+	color: #29b572;
+}
+
+.noshow{display: none;}
+.jieshao{
+	width: 1225px;
+	height: 136px;
+	background: #fff;
+	position: absolute;
+	top: 397px;
+}
+.jieshao li{
+	float: left;
+	width: 245px;
+	height: 136px;
+	position: relative;
+}
+.jieshao li img{
+	position: absolute;
+	top: 35px;left: 20px;
+}
+.jieshao li span{
+	font-size: 14px;
+	color: #666666;
+	position: absolute;
+	top: 33px;left: 92px;
+}
+.jieshao li p{
+	font-size: 12px;
+	color: #999999;
+	line-height: 18px;
+	position: absolute;
+	left: 92px;top: 55px;
+}
+.jieshao li div{
+	width: 1px;
+	height: 60px;
+	background: #e8e8e8;
+	position: absolute;
+	top: 38px;right: 0px;
+}
+.course{
+	width: 1225px;
+	height: 227px;
+	position: absolute;
+	top: 574px;
+}
+.course span{
+	font-size: 24px;
+	color: #333333;
+}
+.course ul{
+	width: 1225px;
+	height: 184px;
+	background: #fff;
+	position: absolute;
+	top: 43px;
+}
+.course ul li{
+	float: left;
+	position: relative;
+	margin-top: 20px;
+	margin-left: 15px;
+}
+.course ul li:nth-child(1){
+	margin-left: 20px;
+}
+.mask{
+	width: 225px;
+	height: 144px;
+	text-align: center;
+	line-height: 144px;
+	color: #fff;
+	font-size: 12px;
+	background: rgba(0,0,0,0.5);
+	position: absolute;
+	top: 0px;left: 0px;
+	display: none;
+}
+.show{
+	width: 225px;
+	height: 144px;
+	text-align: center;
+	line-height: 144px;
+	color: #fff;
+	font-size: 12px;
+	background: rgba(0,0,0,0.5);
+	position: absolute;
+	top: 0px;left: 0px;
+	display: block;
+}
+.way{
+	width: 1225px;
+	height: 398px;
+	position: absolute;
+	top: 840px;
+}
+.way h2{
+	font-size: 24px;
+	color: #333333;
+}
+.way ul{
+	width: 1225px;
+	height: 355px;
+	background: #fff;
+	position: absolute;
+	top: 43px;
+}
+.way ul li{
+	width: 25%;
+	height: 355px;
+	text-align: center;
+	float: left;
+	position: relative;
+}
+.way ul li img{
+	position: absolute;
+	top: 40px;left: 79px;
+}
+.way ul li span{
+	font-size: 16px;
+	color: #333333;
+	position: relative;
+	top: 228px;
+}
+.way ul li p{
+	font-size: 13px;
+	color: #a1a1a1;
+	line-height: 20px;
+	position: relative;
+	text-align: left;
+	top: 241px;left: 35px;
+}
+.user{
+	position: absolute;
+	top: 1277px;
+}
+.user h2{
+	font-size: 24px;
+	color: #333333;
+}
+.user h2 span{color: #ea9b65}
+.user h3{
+	font-size: 22px;
+	color: #666666;
+	position: absolute;
+	top: 1px;left: 420px;
+}
+.user ul{
+	width: 1225px;
+	height: 410px;
+	background: #fff;
+	position: absolute;
+	top: 42px;
+}
+.user ul li{
+	width: 200px;
+	height: 365px;
+	border-bottom: 2px solid #94dab8;
+	float: left;
+	margin-left: 47px;
+	position: relative;
+	text-align: center;
+}
+.user ul li:nth-child(1){margin-left: 17px;}
+.user ul li div{
+	width: 1px;
+	height: 365px;
+	background:-webkit-linear-gradient(#fff,#f3f3f3);
+}
+.user ul li .le{position: absolute;left: 0px;}
+.user ul li .ri{position: absolute;right: 0px;}
+
+.user ul li img{
+	position: relative;
+	top: 40px;
+}
+.user ul li p{
+	font-size: 14px;
+	color: #333333;
+	line-height: 24px;
+	position: relative;
+	top: 70px;
+}
+.user ul li h4{
+	font-size: 14px;
+	color: #333333;
+	position: relative;
+	top: 98px;
+}
+.user ul li strong{
+	font-size: 24px;
+	color: #333333;
+	position: relative;
+	top: 112px;
+}
+
+.jigou{
+	width: 1225px;
+	height: 193px;
+	position: absolute;
+	top: 1768px;
+}
+.jigou h2{
+	font-size: 24px;
+	color: #333333;
+}
+.jigou ul{
+	width: 1225px;
+	height: 150px;
+	background: #fff;
+	position: absolute;
+	top: 43px;
+	overflow: hidden;
+}
+.jigou ul li{
+	float: left;
+	margin-left: 15px;
+	margin-top: 50px;
+}
+.jigou ul li:nth-child(1){margin-left: 34px;}
+.jigou .click{
+	font-size: 15px;
+	color: #dedede;
+	font-family: Simsun;
+	position: absolute;
+	top: 112px;
+}
+.prev{left: 8px;}
+.next{right: 9px;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

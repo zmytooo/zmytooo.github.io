@@ -1,0 +1,178 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+	text-decoration: none;
+}
+body{
+	background: #f5f5f5;
+	min-width: 1225px;
+}
+
+/*header部分*/
+header{
+	width: 100%;
+	height: 90px;
+	background: #fff;
+}
+.head{
+	width: 1225px;
+	height: 90px;
+	margin: 0 auto;
+	position: relative;
+}
+.head a img{
+	position: absolute;
+	top: 26px;
+}
+.faxian{
+	position: absolute;
+	top: 30px;left: 114px;
+}
+.weizhi{
+	width: 62px;height: 26px;
+	border: 1px solid #e0e0e0;
+	border-radius: 1px;
+	color: #333333;
+	font-size: 14px;
+	text-align: center;
+	line-height: 26px;
+	position: absolute;
+	top: 31px;left: 234px;
+}
+.head ul{
+	position: absolute;
+	top: 37px;left: 305px;
+}
+.head ul li{float: left;}
+.head ul li a{
+	font-size: 16px;
+	color: #333333;
+	margin-left: 45px;
+}
+.head ul li a:hover{
+	color: #4ab776;
+}
+.head ul li .active{color: #4ab776;}
+.head div{
+	float: right;
+	position: relative;
+	top: 38px;
+}
+.head div a{
+	font-size: 14px;
+	color: #333333;
+}
+.head div span{
+	font-size: 13px;
+	color: #cccccc;
+	margin: 0 8px;
+}
+.head div a:hover{
+	color: #4ab776;
+}
+
+/*footer部分*/
+footer{
+	width: 100%;
+	height: 370px;
+	background: #fff;
+	position: relative;
+}
+.foot{
+	width: 1225px;
+	height: 370px;
+	margin:0 auto;
+	position: relative; 
+}
+.footop{
+	width: 1225px;
+	height: 60px;
+	border-bottom: 1px solid #e8e8e8;
+	line-height: 60px;
+	position: absolute;
+}
+.footop span{
+	font-size: 24px;
+	color: #333333;
+}
+.footop ul{
+	position: absolute;
+	top:0px;left: 84px;
+}
+.footop ul li{float: left;}
+.footop ul a{
+	font-size: 14px;
+	color: #676b75;
+	margin-left: 41px;
+}
+.more{
+	float: right;
+	font-size: 14px;
+	color: #676767;
+}
+.ul1,.ul2,.ul3,.ul4,.ul5{
+	position: absolute;
+	top: 94px;
+	color: #333333;
+	font-size: 14px;
+}
+.ul1 a,.ul2 a,.ul3 a,.ul4 a,.ul5 a{
+	font-size: 13px;
+	color: #676767;
+}
+.ul2{left: 173px;}
+.ul3{left: 347px;}
+.ul4{left: 522px;}
+.ul5{left: 695px;}
+.ul1 a,.ul3 a{
+	position: relative;
+	top: 30px;
+}
+ul ol{
+	margin-top: 30px;
+}
+ul ol li{
+	margin-top: 13px;
+}
+.app{
+	width: 126px;height: 175px;
+	float: right;
+	position: relative;
+	top: 94px;
+	font-size: 14px;
+	color: #333333;
+}
+.app img{
+	position: absolute;
+	top: 36px;left: 0px;
+}
+.app small{
+	font-size: 12px;
+	color: #676767;
+	position: absolute;
+	bottom: 0px;left: 23px;
+}
+.foot p{
+	font-size: 14px;
+	color: #808080;
+	position: absolute;
+	bottom: 34px;left: 478px;
+}
+.foot a:hover{
+	color: #333333;
+	text-decoration: none;
+}
+.xian{
+	width: 100%;
+	height: 1px;
+	background: #e8e8e8;
+	position: absolute;
+	top: 299px;
+}
+
+
+
+
+
+

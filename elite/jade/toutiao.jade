@@ -1,0 +1,79 @@
+doctype
+html
+	head
+		meta(charset="utf-8")
+		title 互联网头条
+		link(rel="styleSheet",href="../css/command.css")
+		style.
+			body{
+				background:#fff;
+			}	
+			section{
+				margin:0 auto;
+				position:relative;			
+			}
+			.hlw{
+				width:615px;
+				height:425px;
+				position:absolute;
+				top:100px;
+			}
+			.dibu{
+				position:relative;
+				top:20px;
+				text-align:center;
+			}
+			.dibu span{
+				font-size:12px;
+				color:#808383;
+			}
+			.dibu a{
+				font-size:12px;
+				color:#808383;
+			}
+			.dibu a:hover{
+				color:#29b572;
+			}
+			@media screen and (min-width:1225px){
+				.bg{
+					width:100%;	
+				}
+				.hlw{
+					left:50%;
+					margin-left:-307.5px;
+				}
+			}
+			@media screen and (max-width:1225px) and (min-width:1023px){
+				.hlw{left:284px;}
+			}
+			@media screen and (max-width:1023px){
+				.hlw{left:184px;}
+				section{
+					width:100%;
+				}
+				.dibu{
+					display:inline;
+					position:absolute;
+					left:378px;top:640px;
+				}
+			}			
+	body
+		include header.jade
+		section
+			img(src="../img/headlines_bg.jpg",style="height:625px;").bg
+			img(src="../img/hlw.png").hlw
+			div.dibu
+				span 才信教育©2015-2017|
+				a(href="#") 京ICP备16013954号
+
+
+
+
+
+
+
+
+
+
+
+

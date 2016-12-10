@@ -1,0 +1,162 @@
+.buytop{
+	width: 1328px;
+	height: 576px;
+	margin: 72px auto;
+	position: relative;
+}
+.buytop .smallpic{
+	width: 591px;
+	height: 576px;
+	position: absolute;
+}
+.buytop .smallpic img{
+	width: 100%;
+	height: 100%;
+}
+.buytop .smallpic span{
+	width: 200px;
+	height: 200px;
+	background: blue;
+	opacity: 0.3;
+	position: absolute;
+	top: 0px;left: 0px;
+	cursor: move;
+}
+.buytop .smallpic span{
+	display: none;
+}
+.buytop .smallpic #show{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0px;left: 0px;
+	z-index: 10;
+}
+.buytop .bigpic{
+	width: 590px;
+	height: 575px;
+	border: 1px solid #000;
+	position: absolute;
+	left: 732px;
+	overflow: hidden;
+	z-index: 5;
+}
+.buytop .bigpic img{
+	width: 200%;
+	height: 200%;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+.buytop .bigpic{
+	display: none;
+}
+.buytop ul{
+	position: absolute;
+	top: -19px;left: 610px;
+}
+.buytop ul li{
+	width: 102px;
+	height: 102px;
+	margin-top: 19px;
+	overflow: hidden;
+	box-sizing: border-box;
+}
+.buytop ul li img{
+	width: 100%;
+	height: 100%;
+}
+.buytop ul li.have{
+	border: 3px solid lightblue;
+}
+.buytop .juz{
+	text-align: center;
+	position: absolute;
+	top: -5px;left: 831px;
+}
+.buytop p{
+	font-size: 50px;
+	color: #575656;
+	line-height: 65px;
+	letter-spacing: 15px;
+}
+.buytop i{
+	font-size: 16px;
+	text-decoration: underline;
+	color: #858585;
+	letter-spacing: 2px;
+}
+.style{
+	width: 268px;
+	height: 251px;
+	position: absolute;
+	top:251px;left: 928px;
+	text-align: center;
+	color: #ababab; 
+}
+.kuang{
+	width: 268px;
+	height: 80px;
+	box-sizing: border-box;
+	border:2px solid #d5d6d6;
+	position: absolute;
+	top: 30px;
+}
+.kuang div{
+	width: 49px;
+	height: 49px;
+	box-sizing: border-box;
+	border: 2px solid #4b4b4b;
+	position: absolute;
+	top: 14px;left: 14px;
+}
+.kuang div img{
+	position: absolute;
+	top: 2px;left: 2px;
+}
+.kuang p{
+	font-size: 16px;
+	position: absolute;
+	left: 81px;top: 15px;
+	text-align: left;
+	line-height: 21px;
+}
+.car{
+	width: 266px;
+	height: 68px;
+	background: #9d6f89;
+	text-align: center;
+	line-height: 68px;
+	color: #ffffff;
+	font-size: 16px;
+	position: absolute;
+	top: 143px;left: 0px;
+	border: none;
+}
+.style .free{
+	position: absolute;
+	bottom: 0px;left: 103px;
+}
+.buycen{
+	width: 1328px;
+	height: 309px;
+	margin: 86px auto;
+	position: relative;
+	border-bottom: 2px solid #efefef;
+}
+.buyboo{
+	width: 1328px;
+	margin: 0 auto;
+	text-align: center;
+	font-size: 16px;
+	color: #393649;
+	position: relative;
+	top: -61px;
+}
+.buyboo .pic1{
+	position: relative;
+	top: 20px;
+}
+
+
+

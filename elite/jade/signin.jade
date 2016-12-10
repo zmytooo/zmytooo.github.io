@@ -1,0 +1,36 @@
+doctype
+html
+	head
+		meta(charset="utf-8")
+		title 登陆
+		link(rel="styleSheet",href="../css/signin.css")
+	body
+		header
+			a(href="index.html")
+				img(src="../img/log.png")
+			img(src="../img/faxian.png").faxian
+			ul
+				li
+					a(href="course.html") 课程
+				li
+					a(href="toutiao.html") 互联网头条
+				li
+					a(href="quiz.html") + 提问
+			p 才信教育©2015-2017| 京ICP备16013954号
+			div.box
+				a(href="#").sign.in 登陆
+				a(href="signup.html").sign.up 注册
+				form
+					input(type="text",placeholder="请输入手机号").inp1
+					input(type="password",placeholder="请输入密码").inp2
+					input(type="text",placeholder="验证码").short
+					input(type="button",value="").yanz
+					input(type="checkbox",checked)#jizhu
+					label(for="jizhu") 记住我
+					a(href="#").password 忘记密码？
+					input(type="button",value="登陆").btn
+		section
+		script(type="text/javascript",src="../js/ajax.js")
+		script(type="text/javascript",src="../js/signin.js")
+
+

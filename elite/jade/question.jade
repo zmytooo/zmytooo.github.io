@@ -1,0 +1,99 @@
+doctype
+html
+	head
+		meta(charset="utf-8")
+		title 联系我们
+		link(rel="styleSheet",href="../css/command.css")
+		style.
+			section{
+				width:1225px;
+				height:1967px;
+				margin:30px auto;
+				position:relative;
+			}
+			aside{
+				width:171px;
+				height:336px;
+				background:#fff;
+				position:absolute;
+			}
+			aside ul li{
+				width:171px;
+				height:48px;
+				box-sizing:border-box;
+				padding-left:22px;
+				line-height:48px;
+				font-size:14px;
+				color:#333333;
+				position:relative;
+			}
+			aside ul li a{
+				display:block;
+				width:171px;
+				height:48px;
+				box-sizing:border-box;
+				padding-left:22px;
+				line-height:48px;
+				font-size:14px;
+				color:#333333;
+				position:absolute;
+				top:0px;left:0px;
+			}
+			.cate{
+				padding-left:20px;
+				border-left:2px solid #29b572;
+				background:#fafafa;
+			}
+			.question{
+				width:1040px;
+				height:1967px;
+				box-sizing:border-box;
+				padding:0 36px;
+				background:#fff;
+				position:absolute;
+				left:185px;top:0px;
+			}
+			.dib{
+				width:968px;
+				height:1px;
+				background:#e8e8e8;
+				position:absolute;
+				top:94px;
+			}
+			.question h2{
+				font-size:26px;
+				color:#333333;
+				position:absolute;
+				top:48px;
+			}
+			.question p{
+				font-size:16px;
+				color:#333333;
+				line-height:55px;
+				position:absolute;
+				left:67px;top:115px;
+			}
+	body
+		include header.jade
+		section
+			aside
+				ul
+					li
+						span 目录
+					li
+						a(href="caixin.html") 才信教育简介
+					li
+						a(href="contact.html") 联系我们
+					li
+						a(href="join.html") 加入我们
+					li
+						a(href="question.html").cate 常见问题
+					li
+						a(href="#") 版权声明
+					li
+						a(href="#") 服务条款
+			div.question
+				h2 常见问题
+				div.dib
+				p 新手指引<br>注册登陆→选择课程→完成课后考试→获得分数→进入下一课程（循环至完成全部课程）→结业考试→获得总分<br>登陆注册相关<br>注册新用户 → 输入手机号和验证码 → 提交信息 → 注册成功！<br>1、注册之后，手机号可以修改吗？<br>目前暂不支持手机号修改。<br>2、密码忘记了，该怎么办？<br>可点击忘记密码，提交相关信息，进行密码修改。<br>以下内容正在更新，敬请期待<br>会员相关<br>选择某一课程 → 点击学习 → 查看学习曲线 → 了解学习水平<br>1、如何查看自己的学习曲线？<br>注册登录后，选择自己想学习的课程，开始学习<br>进入学习进度后，即可在个人中心内查看自己的学习进度曲线<br>2、可不可以跳课学习？<br>精品课程不支持跳课，每一课均需完成并提交课后考试，方可进入下一课程学习<br>已经学习过的课程，可以反复观看视频<br>3、作业是否必须提交？<br>不是必须，但是会影响分数加成，建议认真完成作业并提交，点赞越多，获得的分数越高。<br>4、我是在校学生，需要填写学生信息吗？<br>是的。我们建议你完善信息，针对在校学生我们将会有更优惠的活动。<br>学习相关<br>1、课程多久更新一次？<br>精品课程会定期优化。<br>2、视频无法播放或播放不流畅怎么办？<br>视频播放不流畅不光是网络原因，建议切换视频资源或使用Chrome、火狐浏览器。<br>3、视频在哪里下载？是否提供打包下载功能？<br>目前暂不提供视频下载。<br>4、找不到我需要的课程怎么办？<br>可以通过微信公众号或问题反馈，提交你的需求，我们会抓紧录制。<br>5、班级同学有什么用？<br>我们根据理论和算法，通过系统计算将在线学员分成班级，同一班级的学员可以互相交流和讨论
+		include footer.jade

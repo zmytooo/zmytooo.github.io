@@ -1,0 +1,70 @@
+doctype
+html
+	head
+		meta(chaset="utf-8")
+		link(rel="styleSheet",href="/stylesheets/command.css")
+		link(rel="styleSheet",href="/stylesheets/index.css")
+	body
+		include header.jade
+		div.main
+			div.like
+				ul
+					li
+						a(href="/all?type=all&name=ios")
+							span
+							p ios
+					li
+						a(href="/all?type=all&name=html5")
+							span
+							p HTML5
+					li
+						a(href="/all?type=all&name=unity")
+							span
+							p Unity-3D
+					li.differ
+						a(href="/all?type=all&name=all")
+							div
+								i
+								i
+								i
+							p More
+			div.cooperate
+				div.coo
+					p 合作机构
+					div.mechanism
+						ul.tab1.clear
+							li
+								img(src="/images/mechanism1.png")
+							li
+								img(src="/images/mechanism2.png")
+							li
+								img(src="/images/mechanism3.png")
+							li
+								img(src="/images/mechanism4.png")
+							li
+								img(src="/images/mechanism5.png")
+							li
+								img(src="/images/mechanism6.png")
+							li
+								img(src="/images/mechanism7.png")
+					span.next1 >
+				div.coo2
+					p 合作企业
+					div.enterprise
+						ul.tab2.clear
+							li
+								img(src="/images/enterprise1.png")
+							li
+								img(src="/images/enterprise2.png")
+							li
+								img(src="/images/enterprise3.png")
+							li
+								img(src="/images/enterprise4.png")
+							li
+								img(src="/images/enterprise5.png")
+							li
+								img(src="/images/enterprise6.png")
+					span.next2 >
+		include footer.jade
+	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	script(type="text/javascript",src="/javascripts/command.js")

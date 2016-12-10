@@ -48,13 +48,13 @@ div 的长和框由这4部分的长之和和宽之和组成
 	}
 
 	div {
-  		width: 100px;
+  	width: 100px;
  	 	height: 100px;
  	 	padding: 30px;
  	 	border: 10px solid blue;
  		margin: 10px;
  	 	background-color: red;
-  		text-align: center;
+  	text-align: center;
 	}
 例子很简单，但是可以看出：
 从外到内 依次是 margin, border, padding, content

@@ -30,77 +30,77 @@ tags:
 	var ctx=canvas.getContext("2d");
 
 	function fn(){
-    this.x=x;
-    this.y=y;
-    this.r=r;
-    this.color=color;
-    this.speedX=speedX;
-    this.speedY=speedY;
+        this.x=x;
+        this.y=y;
+        this.r=r;
+        this.color=color;
+        this.speedX=speedX;
+        this.speedY=speedY;
 	}
 
 	//绘制小球
 	fn.prototype.drawArc=function(){
-    ctx.save();
-    ctx.beginPath();
-    ctx.fillStyle=this.color;
-    ctx.arc(this.x,this.y,this.r,0,Math.PI*2);
-    ctx.fill();
-    ctx.closePath();
-    ctx.restore();
+        ctx.save();
+        ctx.beginPath();
+        ctx.fillStyle=this.color;
+        ctx.arc(this.x,this.y,this.r,0,Math.PI*2);
+        ctx.fill();
+        ctx.closePath();
+        ctx.restore();
 	}
 
 	//小球的运动
 	fn.prototype.move=function(){
-    if(this.x+this.speedX+this.r>canvas.width||this.x+this.speedX-this.r<0){
-        this.speedX=-this.speedX;
-    }
-    if(this.y+this.speedY+this.r>canvas.height||this.y+this.speedY-this.r<0){
-        this.speedY=-this.speedY;
-    }
-    this.x+=this.speedX;
-    this.y+=this.speedY;
+        if(this.x+this.speedX+this.r>canvas.width||this.x+this.speedX-this.r<0){
+            this.speedX=-this.speedX;
+        }
+        if(this.y+this.speedY+this.r>canvas.height||this.y+this.speedY-this.r<0){
+            this.speedY=-this.speedY;
+        }
+        this.x+=this.speedX;
+        this.y+=this.speedY;
 	}
 
 	//形成100个小球
 	var arr=[];
 	for(var i=0;i<100;i++){
-    var x=random(30,770);
-    var y=random(30,570);
-    var r=random(5,30);
-    var speedX=random(1,5);
-    var speedY=random(1,5);
-    var color = "rgb("+random(0,255)+","+random(0,255)+","+random(0,255)+")";
-    var obj = new fn(x,y,r,color,speedX,speedY);
-    arr.push(obj);
+        var x=random(30,770);
+        var y=random(30,570);
+        var r=random(5,30);
+        var speedX=random(1,5);
+        var speedY=random(1,5);
+        var color = "rgb("+random(0,255)+","+random(0,255)+","+random(0,255)+")";
+        var obj = new fn(x,y,r,color,speedX,speedY);
+        arr.push(obj);
 	}
 
 	//整体运动
 	var timer=null;
 	function ani(){
-    ctx.clearRect(0,0,canvas.width,canvas.height);
-    for(var i=0;i<arr.length;i++){
-        arr[i].drawArc();
-        arr[i].move();
-    }
-    timer=window.requestAnimationFrame(ani);
+        ctx.clearRect(0,0,canvas.width,canvas.height);
+        for(var i=0;i<arr.length;i++){
+            arr[i].drawArc();
+            arr[i].move();
+        }
+        timer=window.requestAnimationFrame(ani);
 	}
 	ani();
 
 	//点击暂停
 	var onOff=false;
 	document.onclick=function(){
-    onOff=!onOff;
-    if(onOff){
-        window.cancelAnimationFrame(timer);
-    }else{
-        ani();
-    }
+        onOff=!onOff;
+        if(onOff){
+            window.cancelAnimationFrame(timer);
+        }else{
+            ani();
+        }
 	}
 
 	//随机数
 	function random(m,n){
-    var num=Math.max(m,n)-Math.min(m,n);
-    return Math.ceil(Math.random()*num+Math.min(m,n));
+        var num=Math.max(m,n)-Math.min(m,n);
+        return Math.ceil(Math.random()*num+Math.min(m,n));
 	}
 	</script>
 	</html>

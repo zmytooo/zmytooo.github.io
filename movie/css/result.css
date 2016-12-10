@@ -1,0 +1,137 @@
+.ad{
+	height: 100px;
+}
+.ad img{
+	width: 100%;
+	height: 100%;
+}
+.box{
+	width: 1240px;
+	margin: 0 auto;
+}
+.about{
+	height: 49px;
+	width: 1200px;
+	box-sizing: border-box;
+	padding-left: 66px;
+	line-height: 48px;
+	margin-left: 20px;
+	border-bottom: 1px dashed #9b9b9b;
+}
+.about span{
+	font-size: 14px;
+	color: #697a81;
+	margin-left: 5px;
+}
+
+.part{
+	box-sizing: border-box;
+	padding-left: 52px;
+	padding-top: 20px;
+	padding-bottom: 30px;
+	border-bottom: 3px solid #f38c30;
+}
+.left img{
+	width: 265px;
+	height: 400px;
+}
+.right{
+	margin-left: 40px;
+}
+.title .name{
+	font-size: 30px;
+}
+.title .score{
+	font-size: 24px;
+	color: #ff9334;
+	margin-left: 31px;
+}
+.right .info li{
+	font-size: 14px;
+	margin-top: 15px;
+	color: #6b7a7f;
+}
+.right .info li span{
+	margin-left: 20px;
+}
+.right .info li p{
+	margin-left: 62px;
+	margin-top: -21px;
+	line-height: 25px;
+	width: 600px;
+	max-height: 150px;
+	overflow: hidden;
+}
+.select{
+	margin-top: 30px;
+}
+.select span{
+	font-size: 24px;
+	color: #656565;
+	margin-left: 12px;
+}
+.select ul{
+	width: 820px;
+	margin-left: -15px;
+}
+.select ul li{
+	float: left;
+	margin-left: 15px;
+	margin-top: 15px;
+	height: 47px;
+	width: 60px;
+	background: #dddddd;
+	color: #666666;
+	text-align: center;
+	line-height: 47px;
+	border-radius: 4px;
+	font-size: 18px;
+}
+.select ul .active{
+	background: #ff9233;
+	color: #fff;
+}
+.page{
+	width: 1240px;
+	margin: 40px auto;
+	text-align: center;
+}
+.page ul{
+	display: inline-block;
+}
+.page ul li{
+	float: left;
+	margin-left: 10px;
+}
+.page ul li a{
+	display: block;
+	height: 28px;
+	font-size: 18px;
+	border: 1px solid #e3e3e3;
+	padding: 0 13px;
+	text-align: center;
+	line-height: 30px;
+	color: #333333;
+	border-radius: 5px;
+}
+.page ul li a:hover{
+	border: 1px solid #ff9233;
+	background: #ff9233;
+	color: #fff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

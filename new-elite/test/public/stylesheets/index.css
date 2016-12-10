@@ -1,0 +1,172 @@
+.main{
+	width: 1232px;
+	margin: 31px auto;
+}
+.main .like{
+	height: 676px;
+	background: url(/images/index_bg.png);
+	background-size: 100% 100%;
+	position: relative;
+}
+.main .like ul{
+	position: absolute;
+	top: 426px;left: 138px;
+}
+.main .like ul li{
+	float: left;
+	width: 233px;
+	height: 198px;
+	position: relative;
+    border-radius: 10px;
+    background: #ffffff;
+    border: 1px solid #e5e5e5;
+    margin-right: 5px;
+}
+.main .like ul li:hover{
+	border: 1px solid #fb6c03;
+	transform: translateY(-10px);
+	transition: 1s; 
+}
+.main .like ul li:hover a{
+	color: #fb6c03;
+}
+.main .like ul li a{
+	display: block;
+	color: #8194a6;
+    font-size: 18px;
+	text-align: center;
+}
+.main .like ul li a span{
+	text-align: center;
+	display: block;
+	height: 100px;
+	margin: 0 auto;
+	margin-top: 28px;
+	margin-bottom: 18px;
+}
+.main .like ul li:nth-child(1) a span{
+	width: 83px;
+	background: url(/images/ios.png);
+}
+.main .like ul li:nth-child(1):hover a span{
+	background: url(/images/ios2.png);
+}
+.main .like ul li:nth-child(2) a span{
+	width: 89px;
+	background: url(/images/html5.png) no-repeat;
+}
+.main .like ul li:nth-child(2):hover a span{
+	background: url(/images/html5_2.png);
+}
+.main .like ul li:nth-child(3) a span{
+	width: 97px;
+	background: url(/images/unity.png) no-repeat;
+}
+.main .like ul li:nth-child(3):hover a span{
+	background: url(/images/unity2.png);
+}
+.main .like ul .differ div{
+	margin: 0 auto;
+	width: 87px;
+    height: 100px;
+    display: block;
+    margin-top: 28px;
+    margin-bottom: 18px;
+}
+.main .like ul .differ i{
+	float: left;
+	display: block;
+	width: 20px;
+    height: 20px;    
+    margin-right: 9px;
+    border-radius: 50px;
+    background: #8194a6;
+    margin-top: 65px;
+}
+.main .like ul li:nth-child(4):hover i{
+	background: #fb6c03;
+}
+
+
+.main .cooperate{
+	height: 254px;
+	background: #fff;
+	margin-top:22px;
+	color: #65707a;
+	position: relative;
+}
+.cooperate p{
+	float: left;
+}
+.cooperate span{
+	float: right;
+	font-family: Simsun;
+	color: #dedede;
+	font-size: 16px;
+	cursor: pointer;
+}
+.coo{
+	height: 50px;
+    line-height: 50px;
+    margin-left: 60px;
+    position: absolute;
+    top: 46px;
+}
+.mechanism{
+	float: left;
+	height: 50px;
+    width: 996px;
+    overflow: hidden;
+	margin-left: 50px;
+}
+.mechanism ul{
+	position: relative;
+	left: 0;
+	width: 10000px;
+    height: 50px;
+    overflow: hidden;
+}
+.mechanism ul li{
+	float: left;
+    width: 152px;
+    height: 50px;
+    margin-right: 14px;
+}
+.coo2{
+	height: 60px;
+    line-height: 60px;
+    margin-left: 60px;
+	position: absolute;
+	top: 148px;
+}
+.enterprise{
+	float: left;
+	height: 60px;
+    width: 996px;
+    overflow: hidden;
+	margin-left: 50px;
+}
+.enterprise ul{
+	position: relative;
+	left: 0;
+	width: 10000px;
+    height: 60px;
+    overflow: hidden;
+}
+.enterprise ul li{
+	float: left;
+    width: 183px;
+    height: 60px;
+    margin-right: 17px;
+}
+
+
+
+
+
+
+
+
+
+
+

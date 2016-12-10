@@ -1,0 +1,336 @@
+/*幻灯*/
+.slider{
+	height: 480px;
+	position: relative;
+}
+.slider ul li{
+	width: 100%;
+	height: 480px;
+	position: absolute;
+	top: 0;left: 0;
+	transition: 1.5s;
+	opacity: 0;
+}
+.slider ul .active{
+	opacity: 1;
+}
+.slider ul li img{
+	width: 100%;
+	height: 100%;
+}
+.slider .small{
+	width: 100%;
+	height: 95px;
+	background: rgba(0,0,0,0.7);
+	position: absolute;
+	bottom: 10px;
+	z-index: 1;
+}
+.slider ol{
+	width: 1255px;
+	position: absolute;
+	top: 6px;left: 50%;
+	margin-left: -627.5px;
+}
+.slider ol li{
+	height: 83px;
+	width: 246px;
+	float: left;
+	margin-left: 5px;
+	box-sizing: border-box;
+	border: 3px solid transparent;
+	position: relative;
+}
+.slider ol .active{
+	border: 3px solid #ff9235;
+}
+.slider ol li:hover{
+	border: 3px solid #ff9235;
+}
+.slider ol li img{
+	width: 83px;
+	height: 48px;
+	position: absolute;
+	top: 16px;left: 10px;
+} 
+.slider ol li p{
+	font-size: 16px;
+	color: #fff;
+	position: absolute;
+	top: 20px;left: 100px;
+}
+.slider ol li small{
+	color: #999999;
+	position: absolute;
+	top: 47px;left: 100px;
+	width: 135px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+/*主体部分*/
+section{
+	width: 1240px;
+	margin: 20px auto;
+}
+.left{
+	width: 1000px;
+}
+.right{
+	width: 240px;
+}
+.bt,.ph{
+	font-size: 24px;
+}
+.title{
+	margin-left: 115px;
+	margin-top: -26px;
+}
+.title li{
+	float: left;
+}
+.title li a{
+	display: block;
+	width: 70px;
+	height: 25px;
+	border-radius: 3px;
+	text-align: center;
+	line-height: 25px;
+	color: #919ba4;
+	margin-left: 9px;
+}
+.title li a:hover{
+	background: #ff9233;
+	color: #fff;
+}
+.title li div{
+	width: 1px;
+	height: 20px;
+	background: #e0e0e0;
+	margin-top: 3px;
+	margin-left: 9px;
+}
+/*电视剧和电影部分通用*/
+.list li{
+	width: 178px;
+	height: 297px;
+	float: left;
+	margin-top: 22px;
+	margin-right: 22px;
+	position: relative;
+	box-shadow: 2px 2px 10px #909090;
+}
+.list li a>img{
+	width: 178px;
+	height: 245px;
+}
+.list li .mask{
+	height: 28px;
+	width: 178px;
+	background: rgba(0,0,0,0.5);
+	box-sizing: border-box;
+	padding-left: 8px;
+	line-height: 28px;
+	position: absolute;
+	bottom:52px; 
+	color: #fff;
+}
+.list li .mask span:nth-child(2){
+	color: #eb8028;
+	position: absolute;
+	right: 8px;top: 0px;
+}
+.list li .tro{
+	height: 52px;
+	margin-top: -2px;
+	box-sizing: border-box;
+	padding-top: 10px;
+	padding-left: 5px;
+}
+.list li .tro p{
+	color: #333333;
+	font-size: 16px;
+}
+.list li .tro small{
+	display: block;
+	color: #aeaeae;
+	line-height: 25px;
+	width:95%;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	white-space:nowrap;
+}
+
+/*排行榜通用*/
+.array{
+	margin-top: 21px;
+	box-shadow: 2px 2px 10px #909090;
+	padding-bottom: 13px;
+}
+.array .first{
+	position: relative;
+}
+.array .first .firstpic{
+	width: 240px;
+	height: 150px;
+}
+.array .first div{
+	width: 240px;
+	height: 35px;
+	position: absolute;
+	top:115px;
+	background: rgba(0,0,0,0.5);
+}
+.array .first div span,.array ul li span{
+	color: #fff;
+	font-size: 15px;
+	line-height: 35px;
+}
+.array a:hover span{
+	color: #ff9233;
+}
+.array .first div img,.array ul li img{
+	margin-left: 6px;
+	margin-top: 4px;
+}
+.array .name{
+	margin-left: 12px;
+}
+.array .num{
+	margin-right: 15px;
+}
+.array ul li{
+	width: 240px;
+	height: 35px;
+	position: relative;
+	background: #eff4f7;
+	margin-top: 15px;
+}
+.array ul li span{
+	color: #6c797f;
+}
+
+/*综艺和动漫通用*/
+.news li{
+	float: left;
+	width: 178px;
+	height: 160px;  
+	margin-right: 22px;
+	margin-top: 22px; 
+	position: relative;
+	box-shadow: 2px 2px 10px #909090;
+}
+.news li:nth-child(1){
+	width: 378px;
+	height: 342px;
+}
+.news li a>img{
+	width: 178px;
+	height: 110px;
+}
+.news li:nth-child(1) img{
+	width: 378px;
+	height:292px;
+}
+.news li .cover{
+	width: 100%;
+	height: 28px;
+	position: absolute;
+	top: 82px;
+	background: rgba(0,0,0,0.5);
+}
+.news li:nth-child(1) .cover{
+	top: 264px;
+}
+.news li .cover span{
+	color: #fff;
+	font-size: 14px;
+	line-height: 28px;
+	margin-left: 7px;
+}
+.news li .below{
+	height: 50px;
+	margin-top: -2px;
+	padding-top: 10px;
+	padding-left: 5px;
+	box-sizing: border-box;
+}
+.news li .below p{
+	color: #333333;
+	font-size: 16px;
+}
+.news li .below small{
+	display: block;
+	color: #aeaeae;
+	line-height: 25px;
+	width:95%;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	white-space:nowrap;
+}
+
+/*综艺推荐*/
+.groom ul li{
+	height: 90px;
+	margin-top: 10px;
+	border-radius: 3px;
+	box-sizing: border-box;
+	box-shadow: 2px 2px 10px #909090;
+	position: relative;
+}
+.groom ul li:nth-child(1){
+	margin-top: 20px;
+}
+.groom ul li img{
+	border: 3px solid #ff9331;
+	border-radius: 3px;
+	width: 94px;
+	height: 84px;
+}
+.groom ul li p{
+	font-size: 16px;
+	color: #3f3f3f;
+	position: absolute;
+	top: 15px;left: 111px;
+}
+.groom ul li small{
+	color: #8ea0ac;
+	position: absolute;
+	top: 40px;left: 111px;
+	line-height: 15px;
+}
+
+.tv,.comic,.variety{
+	margin-top: 20px;
+}
+.film .bt,.film .ph{
+	color: #e56d93;
+}
+.tv .bt,.tv .ph{
+	color: #02c2d1;
+}
+.comic .bt,.comic .ph{
+	color: #a3dc51;
+}
+.variety .bt,.variety .ph{
+	color: #b188d7;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

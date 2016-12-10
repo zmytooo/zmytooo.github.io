@@ -1,0 +1,372 @@
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+}
+img{
+	border: none;
+}
+html,body{
+	width: 100%;
+	height: 100%;
+	min-width: 1280px;
+	font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+header{
+	height: 284px;
+	background: url(img/top-bg.png) no-repeat;
+	background-size: 100% 100%;
+}
+#head{
+	width: 1280px;
+	height: 284px;
+	margin: 0 auto;
+}
+.logo{
+	width: 957px;
+	height: 101px;
+	background: url(img/logo-bg.png) no-repeat;
+	margin: 0 auto;
+	position: relative;
+	top: 100px;
+}
+.logo .mine{
+	display: block;
+	width: 320px;
+	height: 80px;
+	font-size: 38px;
+	color: #000;
+	font-family: 'Rye', cursive;
+	text-align: center;
+	line-height: 80px;
+	position: absolute;
+	top: 10px;left: 50px;
+}
+.logo ul{
+	position: absolute;
+	left: 430px;top: 31px;
+}
+.logo ul li{
+	float: left;
+	margin-left: 60px;
+	font-size: 16px;
+	font-family: Simsun;
+}
+.logo ul li a{
+	color: #fff;
+}
+.logo ul .active a{
+	color: #000;
+}
+.logo ul li a:hover{
+	color: #000;
+}
+.contact{
+	height: 36px;
+	margin-top: 105px;
+	margin-left: 630px;
+}
+.contact span{
+	font-size: 20px;
+	font-family: Simsun;
+	color: #598268;
+	position: relative;
+	top: -10px;
+}
+section{
+	width: 1280px;
+	height: 410px;
+	margin: 0 auto;
+}
+.slider{
+	width: 500px;
+	height: 350px;
+	float: right;
+	position: relative;
+	top: 60px;
+	background: url(img/slider.png);
+	background-size: 100% 100%;
+}
+.slider .box{
+	width: 440px;
+	height: 240px;
+	position: absolute;
+	left: 30px;top: 40px;
+	overflow: hidden;
+}
+.slider .box ul{
+	width: 2200px;
+	height: 240px;
+	position: absolute;
+	left: 0px;
+	transition: 1.5s;
+}
+.slider .box ul li{
+	float: left;
+	width: 440px;
+	height: 240px;
+}
+.slider .box ul li img{
+	width: 100%;
+	height: 100%;
+}
+.slider ol{
+	position: absolute;
+	bottom: 35px;left: 21px;
+}
+.slider ol li{
+	float: left;
+	width: 15px;
+	height: 15px;
+	border-radius: 50%;
+	margin-left: 12px;
+	background: #766a71;
+}
+.slider ol li.show{
+	background: #f5d7b0;
+}
+.my{
+	width: 700px;
+	height: 321px;
+	position: relative;
+	top: 60px;
+}
+.my .tx{
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;	
+	overflow: hidden;
+}
+.my .tx:hover{
+	transition: 2s;
+	transform: rotate(360deg);
+}
+.my .tx img{
+	width: 100%;
+	height: 100%;
+}
+.my p{
+	text-align: center;
+	font-size: 30px;
+	line-height: 60px;
+	font-family:Simsun;
+	margin-left: 200px;
+	margin-top: -50px;
+}
+
+/*公共样式*/
+#life,#like,#skill,#project{
+	width: 1280px;
+	margin: 50px auto;
+}
+#life h1,#like h1,#skill h1,#project h1{
+	border-bottom: 1px dashed dodgerblue;
+	padding-bottom: 15px;
+	padding-left: 20px;
+	color: dodgerblue;
+}
+
+/*生活*/
+.life-content{
+	height: 350px;
+	background: #f1f1f1;
+	margin-top: 20px;
+	position: relative;
+}
+.life-content .div{
+	height: 300px;
+	width: 250px;
+	background:#fff;
+	position: absolute;
+	top: 10px;
+	text-align: center;
+	transition: 2s;
+}
+.life-content .div img{
+	width: 220px;
+	height: 250px;
+	margin-top:15px; 
+}
+.life-content .div p{
+	color: dodgerblue;
+	font-size: 16px;
+	margin-top: 5px;
+}
+.life-content .pic1{
+	left: 200px;
+	transform-origin: 220px 250px;
+	transform: rotate(-20deg);
+}
+.life-content .pic2{
+	left: 520px;
+}
+.life-content .pic3{
+	left: 840px;
+	transform-origin: 0px 250px;
+	transform: rotate(20deg);
+}
+
+/*爱好*/
+.like-content{
+	height: 500px;
+	margin-top: 20px;
+}
+.like-content ul{
+	height: 500px;
+	position: relative;
+}
+.like-content ul li{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	text-align: center;
+	opacity: 0;
+	transition: 2s;
+}
+.like-content ul li.picactive{
+	opacity: 1;
+}
+.like-content ul li img{
+	width: 100%;
+	height: 100%;
+}
+.like-content ol{
+	margin-top: -25px;
+	margin-left:580px; 
+	position: relative;
+}
+.like-content ol li{
+	width: 10px;
+	height: 10px;
+	float: left;
+	margin-left: 10px;
+	border-radius: 50%;
+	border: 2px solid #fff;
+}
+.like-content ol li.olactive{
+	background:#fff;
+}
+
+/*技术*/
+.skill-content{
+	height: 350px;
+	background: #f1f1f1;
+	margin-top: 20px;height: 350px;
+	background: #f1f1f1;
+	margin-top: 20px;
+}
+.skill-content ul{
+	height: 40px;
+	border-bottom: 1px solid dodgerblue;
+}
+.skill-content ul li{
+	float: left;
+	height: 38px;
+	width: 90px;
+	text-align: center;
+	line-height: 40px;
+	font-size: 14px;
+	color: deepskyblue;
+	border-top-left-radius: 2px;
+	border-top-right-radius: 2px;
+	border: 1px solid transparent;
+}
+.skill-content ul li:hover{
+	color: dodgerblue;
+}
+.skill-content ul li.gai{
+	border-color:dodgerblue;
+	border-bottom:2px solid #f1f1f1;
+	color: #555555;  
+}
+.skill-content ol li{
+	display: none;
+}
+.skill-content ol li.xian{
+	display: block;
+}
+.skill-content ol li p{
+	font-size: 20px;
+	color: dodgerblue;
+	line-height: 40px;
+	margin: 20px;
+}
+
+/*隐藏的导航条*/
+nav{
+	width: 100%;
+	height: 40px;
+	background: rgba(0,0,255,0.5);
+	line-height: 40px;
+	position: fixed;
+	top: 0;
+	display: none;
+}
+nav ul{
+	margin-left: 100px;
+}
+nav ul li{
+	float: left;
+	margin-left: 40px;
+}
+nav ul li a{
+	color: #fff;
+	font-size: 16px;
+	font-family: Simsun;
+}
+
+/*我的项目*/
+.project-content{
+	height: 350px;
+	background: #f1f1f1;
+	margin-top: 20px;
+}
+.project-content ul li{
+	float: left;
+	margin-left: 26px;
+	margin-top: 75px;
+	width: 224px;
+	height: 200px;
+	cursor:pointer;
+	overflow: hidden;
+	position: relative;
+	box-shadow: 1px 1px 20px lightgray;
+}
+.project-content ul li:hover{
+	box-shadow: 2px 5px 10px lightgray;
+	transition: 0.2s;
+}
+.project-content ul li:hover .tant{
+	transform: translateY(-72px);
+	transition: 1s;
+}
+.project-content ul li a img{
+	width: 100%;
+	height: 100%;
+}
+.tant{
+	width: 224px;
+	height: 144px;
+	background-image: url(img/toum.png);
+	background-size:100%; 
+	position: absolute;
+	top: 160px;
+	z-index: 2;
+	box-sizing: border-box;
+	padding: 20px;
+}
+.jies{
+	width: 224px;
+	height: 50px;
+	background-color: #fff;
+	position: absolute;
+	bottom: 0;
+	z-index: 3;
+	text-align: center;
+	line-height: 50px;
+	color: dodgerblue;
+}
+
+
+

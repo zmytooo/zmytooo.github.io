@@ -1,0 +1,64 @@
+doctype
+html
+	head
+		meta(chaset="utf-8")
+		link(rel="styleSheet",href="/stylesheets/command.css")
+		link(rel="styleSheet",href="/stylesheets/login.css")
+		style.
+			.kuai{
+				display: block;
+				right: 0px;
+			}
+			#zc{
+				color: #f46c03;
+			}
+			#dl{
+				color: #fff;
+			}
+			#dl:hover{
+				color: #f46c03;
+			}
+	body
+		include header.jade
+		div.box
+			div.box2
+				div.loginbox
+					div.top
+						a(href="#") 登录
+						a(href="#").active 注册
+					div.below.be1
+						div.box1
+							span
+							input(type="text",placeholder="请输入手机号").username
+						div.box2
+							span
+							input(type="password",placeholder="请输入密码(6-20个字符)").password
+						input(type="checkbox")#rem
+						label(for="rem") 记住我
+						a(href="#") 忘记密码
+						input(type="submit",value="登录").btn
+					div.below.be2#beactive
+						div.box1
+							span
+							input(type="text",placeholder="请输入手机号").yhm
+						div.box3
+							span
+							input(type="text",placeholder="注册码")
+							i
+							div 获取验证码
+						div.box2
+							span
+							input(type="password",placeholder="请输入密码(6-20个字符)").mima
+						div.box2
+							span
+							input(type="password",placeholder="请再次输入密码")
+						input(type="checkbox",checked)#rem2
+						a(href="#") 同意网站条款
+						input(type="submit",value="提交").btn2
+		div.dibu
+			ul
+				li 才信教育©2015-2017
+				li
+					a(href="#") 京ICP备16013954号
+	script(src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js")
+	script(type="text/javascript",src="/javascripts/command.js")

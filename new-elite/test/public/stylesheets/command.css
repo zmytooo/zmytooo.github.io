@@ -1,0 +1,349 @@
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+}
+img{
+	border: none;
+}
+body {
+  min-width: 1232px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+	background: #f5f5f5;
+}
+.fl{
+	float: left;
+}
+.fr{
+	float: right;
+}
+.clear{zoom:1;}
+.clear:after{
+	display: block;
+	content: "";
+	clear: both;
+}
+
+/*头部*/
+header{
+	height: 90px;
+	background: #323339;
+}
+.head{
+	width: 1232px;
+	height: 90px;
+	margin: 0 auto;
+	position: relative;
+}
+.head li a{
+	font-size: 16px;
+	color: #fff;
+}
+.head li a:hover{
+	color: #f46c03;
+}
+.logo{
+	display: block;
+	width: 104px;
+	height: 44px;
+	background: url(/images/logo.png);
+	background-size: 100% 100%;
+	position: relative;
+	top: 27px;
+}
+.logo2{
+	margin-left: 114px;
+	margin-top: -17px;
+}
+.head .left{
+	position: absolute;
+	top: 40px;left: 213px;
+}
+.head .left li{
+	float: left;
+	margin-left: 45px;
+}
+
+/*未登陆*/
+.login ul{
+	float: right;
+	height: 90px;
+	line-height: 90px;
+	margin-top: -61px;
+}
+.login ul li{
+	float: left;
+	color: #fff;
+}
+.login ul li:nth-child(1) a{
+	width: 130px;
+	height: 90px;
+	display: block;
+	text-align: center;
+	line-height: 90px;
+	background: #fc7a1b;
+}
+.login ul li:nth-child(1) a span{
+	margin-left: 8px;
+}
+.login ul li:nth-child(1) a:hover{
+	background: #fb6c03;
+	color: #fff;
+}
+.login ul li:nth-child(2){
+	margin-left: 70px;
+}
+.login ul li:nth-child(3),.login ul li:nth-child(4){
+	margin-left: 15px;
+}
+
+
+/*登陆之后*/
+.people{
+	height: 48px;
+	position: absolute;
+	top: 25px;right: 0;
+	line-height: 48px;
+	color: #fff;
+	font-size: 12px;
+}
+.people img{
+	width: 48px;
+	height: 48px;
+	border-radius: 50%;
+}
+.people .account li{
+	float: left;
+	margin-left: 12px;
+}
+.people .account li a{
+	font-size: 12px;
+	position: relative;
+}
+.people .account li a:hover{
+	color: #fff;
+}
+.people .account li:nth-child(2) span{
+	display: block;
+    width: 0px;
+    border-width: 5px;
+    border-color:transparent transparent #fff;
+    border-style:solid;
+    position: absolute;
+	top: 4px;left: 52px;
+	transform: rotate(180deg);
+}
+.people .account li:nth-child(2){
+	margin-left: 3px;
+}
+.people .account li:nth-child(3){
+	margin-left: 26px;
+}
+.people .mine{
+	width: 184px;
+	background: #ffffff;
+	box-shadow: 0px 6px 20px rgba(197,197,197,0.75);
+	position: absolute;
+	top: 55px;left: -13px;
+	display: none;
+	z-index: 10;
+}
+.people .mine span{
+	display: block;
+    width: 0px;
+    border-width: 11px;
+    border-color:transparent transparent #fff;
+    border-style:solid;
+    position: absolute;
+	top: -22px;left: 109px;
+}
+.people .mine ul li a{
+	color: #65707a;
+	display: block;
+	height: 64px;
+	font-size: 16px;
+	text-align: center;
+	line-height: 64px;
+}
+.people .mine ul li a:hover{
+	background: #f5f5f5;
+	color: #f46c03;
+}
+
+/*尾部*/
+footer{
+	height:360px;
+	background: #323339;
+	margin-top: 22px;
+}
+.foot-bottom{
+	height: 56px;
+	border-top: 1px solid #3b3c41;
+	background: #2d2e34;
+	line-height: 56px;
+}
+.foot-bottom ul{
+	width: 1232px;
+	margin: 0 auto;
+}
+.foot-bottom ul li{
+	float: left;
+	color: #fff;
+}
+.foot-bottom ul li a{
+	color: #fff;
+	margin-left: 12px;
+}
+.foot-bottom ul li a:hover{
+	text-decoration: underline;
+}
+.foot-bottom ul li:nth-child(1){
+	margin-left: 484px;
+}
+.foot{
+	width: 1232px;
+	height: 303px;
+	margin: 0 auto;
+	position: relative;
+}
+.foot h1{
+	width: 188px;
+	height: 78px;
+	background: url(/images/footer_logo.png);
+	background-size: 100% 100%;
+	position: relative;
+	top: 34px;
+}
+.foot p{
+	color: #aeaeae;
+	position: absolute;
+	top: 140px;
+}
+.foot .care{
+	color: #fff;
+	height: 26px;
+	line-height: 26px;
+	position: absolute;
+	top: 199px;
+}
+.foot .care li{
+	float: left;
+}
+.foot .care li a{
+	display: block;
+	width: 33px;
+	height: 26px;
+	background-size: 100% 100%;
+	margin-left: 20px;
+}
+.foot .care li a img{
+	display: none;
+	position: relative;
+	top: -193px;
+	left: -69px;
+}
+.foot .care li:nth-child(2) a{
+	background: url(/images/wechat2.png);
+}
+.foot .care li:nth-child(2) a:hover{
+	background: url(/images/wechat2_bg.png);
+}
+.foot .care li:nth-child(2) a:hover img{
+	display: block;
+}
+.foot .care li:nth-child(3) a{
+	background: url(/images/sina.png);
+}
+.foot .care li:nth-child(3) a:hover{
+	background: url(/images/sina2.png);
+}
+.foot .care li:nth-child(3) a:hover img{
+	display: block;
+}
+.foot .center ul{
+	position: absolute;
+	top: 88px;
+	color: #aeaeae;
+}
+.foot .center ul li:nth-child(1){
+	color: #fff;
+}
+.foot .center ul li:nth-child(2){
+	margin-top: 17px;
+}
+.foot .center ul li{
+	line-height: 27px;
+}
+.foot .center ul li:hover{
+	color: #fff;
+}
+.foot .center ul li a{
+	color: #aeaeae;
+}
+.foot .center ul li a:hover{
+	color: #fff;
+}
+.center .help{
+	left: 501px;
+}
+.center .course{
+	left: 623px;
+}
+.center .back{
+	left: 749px;
+}
+.app{
+	position: absolute;
+	top: 95px;left: 1092px;
+}
+.app a{
+	color: #fff;
+}
+.app li:nth-child(2){
+	margin-top: 43px;
+}
+.app li:nth-child(3){
+	margin-top: 31px;
+}
+.app li:nth-child(3) span{
+	margin-left: 4px;
+}
+.app li:nth-child(2) a:hover,.app li:nth-child(3) a:hover{
+	text-decoration: underline;
+}
+.app li:nth-child(1) a img{
+	display: none;
+	position: absolute;
+	left: -43px;
+	margin-top: 5px;
+}
+.app li:nth-child(1) a:hover img{
+	display: block;
+}
+
+.kuai{
+	width: 28px;
+	height: 2px;
+	background: #fb6c03;
+	position: absolute;
+	bottom: 0px;
+	display: none;
+}
+.longk{
+	width: 64px;
+	height: 2px;
+	background: #fb6c03;
+	position: absolute;
+	bottom: 0px;
+	display: none;
+}
+
+
+
+
+
+
+
+
+

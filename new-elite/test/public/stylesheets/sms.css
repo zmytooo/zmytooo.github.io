@@ -1,0 +1,195 @@
+.dibu{
+	height: 121px;
+	background: #2d2e34;
+	line-height: 121px;
+}
+.dibu ul{
+	width: 1232px;
+	margin: 0 auto;
+}
+.dibu ul li{
+	float: left;
+	color: #fff;
+}
+.dibu ul li a{
+	color: #fff;
+	margin-left: 12px;
+}
+.dibu ul li a:hover{
+	text-decoration: underline;
+}
+.dibu ul li:nth-child(1){
+	margin-left: 484px;
+}
+.box{
+	width: 100%;
+	height: 678px;
+	background: url(/images/logreg_bg.jpg);
+	background-size: 100% 100%;
+}
+.box2{
+	width: 1232px;
+	height: 100%;
+	margin: 0 auto;
+	position: relative;
+}
+.loginbox{
+    width: 500px;
+    position: absolute;
+    top: 120px;left: 50%;
+    margin-left: -250px;
+}
+.loginbox .title{
+	width: 500px;
+    height: 60px;
+    color: #ffffff;
+    font-size: 24px;
+    line-height: 60px;
+    text-align: center;
+    margin-bottom: 1px;
+    background-color: rgba(0,0,0,0.7) !important;
+}
+.loginbox .in{
+	width: 500px;
+	box-sizing: border-box;
+    padding: 32px 100px 44px 100px;
+    background-color: rgba(0,0,0,0.7) !important;
+}
+.loginbox .in .box1,.loginbox .in .box3{
+	width: 300px;
+	height: 42px;
+	border: 1px solid #fff;
+	box-sizing: border-box;
+	background: none ;
+    font-size: 14px;
+    color: #fff;
+}
+.loginbox .in .box1 input{
+	float: left;
+	border: none;
+    outline: none;
+    background: none !important;
+	width: 258px;
+	height: 40px;
+	font-size: 14px;
+	color: #fff;
+}
+.loginbox .in .box1 span{
+	background: url(/images/phone.png) no-repeat 10px 12px;
+	float: left;
+    width: 40px;
+    height: 40px;
+    display: block;
+}
+.loginbox .in .box3{
+	margin-top: 20px;
+}
+.loginbox .in .box3 input{
+	float: left;
+    width: 159px;
+    color: #ffffff;
+    font-size: 14px;
+    height: 40px;
+    border: none;
+    outline: none;
+    background: none;
+}
+.loginbox .in .box3 span{
+	background: url(/images/message.png) no-repeat 10px 12px;
+	float: left;
+    width: 40px;
+    height: 40px;
+    display: block;
+}
+.loginbox .in .box3 i{
+	float: left;
+    width: 1px;
+    height: 14px;
+    background: #fff;
+    margin-top: 13px;
+}
+.loginbox .in .box3 div{
+	float: right;
+    width: 97px;
+    height: 40px;
+    color: #ffffff;
+    font-size: 14px;
+    cursor: pointer;
+    line-height: 40px;
+    text-align: center;
+}
+
+.loginbox .in [type=submit]{
+	width: 300px;
+	height: 42px;
+	border: none;
+	background: #fb6c03;
+	border-radius: 2px;
+	font-size: 16px;
+	color: #fff;
+	margin-top: 30px;
+}
+.loginbox .in [type=submit]:hover{
+	background: #ee873c;
+}
+
+
+
+
+
+
+
+
+
+
+/*.loginbox .in input{
+	width: 300px;
+	height: 42px;
+	border: 1px solid #fff;
+	box-sizing: border-box;
+	outline: none;
+    background: none ;
+    font-size: 14px;
+    color: #fff;
+}
+
+
+
+
+
+
+
+.loginbox .in [type=submit]{
+	border: none;
+	background: #fb6c03;
+	border-radius: 2px;
+	font-size: 16px;
+}
+.loginbox .in [type=submit]:hover{
+	background: #ee873c;
+}
+.loginbox .in input:nth-child(2){
+	margin-top: 22px;
+}
+.loginbox .in input:nth-child(3){
+	margin-top: 30px;
+}
+
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

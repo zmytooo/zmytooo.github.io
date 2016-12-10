@@ -1,0 +1,28 @@
+doctype
+html
+	head
+		meta(chaset="utf-8")
+		link(rel="styleSheet",href="/stylesheets/command.css")
+		link(rel="styleSheet",href="/stylesheets/sms.css")
+	body
+		include header.jade
+		div.box
+			div.box2
+				div.loginbox
+					div.title 短信验证码登录
+					div.in
+						div.box1
+							span
+							input(type="text",placeholder="请输入手机号")
+						div.box3
+							span
+							input(type="text",placeholder="短信注册码")
+							i
+							div 获取验证码
+						input(type="submit",value="下一步")
+		div.dibu
+			ul
+				li 才信教育©2015-2017
+				li
+					a(href="#") 京ICP备16013954号
+	script(type="text/javascript",src="/javascripts/sms.js")

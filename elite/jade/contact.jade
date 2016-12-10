@@ -1,0 +1,117 @@
+doctype
+html
+	head
+		meta(charset="utf-8")
+		title 联系我们
+		link(rel="styleSheet",href="../css/command.css")
+		style.
+			section{
+				width:1225px;
+				height:1181px;
+				margin:30px auto;
+				position:relative;
+			}
+			aside{
+				width:171px;
+				height:336px;
+				background:#fff;
+				position:absolute;
+			}
+			aside ul li{
+				width:171px;
+				height:48px;
+				box-sizing:border-box;
+				padding-left:22px;
+				line-height:48px;
+				font-size:14px;
+				color:#333333;
+				position:relative;
+			}
+			aside ul li a{
+				display:block;
+				width:171px;
+				height:48px;
+				box-sizing:border-box;
+				padding-left:22px;
+				line-height:48px;
+				font-size:14px;
+				color:#333333;
+				position:absolute;
+				top:0px;left:0px;
+			}
+			.cate{
+				padding-left:20px;
+				border-left:2px solid #29b572;
+				background:#fafafa;
+			}
+			.contact{
+				width:1040px;
+				height:1181px;
+				box-sizing:border-box;
+				padding:0 36px;
+				background:#fff;
+				position:absolute;
+				left:185px;top:0px;
+			}
+			.dib{
+				width:968px;
+				height:1px;
+				background:#e8e8e8;
+				position:absolute;
+				top:94px;
+			}
+			.contact h2{
+				font-size:26px;
+				color:#333333;
+				position:absolute;
+				top:48px;
+			}
+			.contact .map{
+				position:absolute;
+				top:292px;left:111px;
+			}
+			.contact p{
+				font-size:16px;
+				color:#333333;
+				line-height:55px;
+				position:absolute;
+				left:67px;top:115px;
+			}
+			.contact span{
+				font-size:16px;
+				color:#333333;
+				line-height:55px;
+				position:absolute;
+				left:67px;top:846px;
+			}
+			.scan{
+				position:absolute;
+				left:66px;top:1023px;
+			}
+	body
+		include header.jade
+		section
+			aside
+				ul
+					li
+						span 目录
+					li
+						a(href="caixin.html") 才信教育简介
+					li
+						a(href="contact.html").cate 联系我们
+					li
+						a(href="join.html") 加入我们
+					li
+						a(href="question.html") 常见问题
+					li
+						a(href="#") 版权声明
+					li
+						a(href="#") 服务条款
+			div.contact
+				h2 联系我们
+				div.dib
+				p 服务时间：周一至周五9:00-18:00<br>精英吧办公地址：北京市昌平区黄平路19号4号楼307室<br>邮政编码：100085
+				img(src="../img/map.jpg").map
+				span 精英吧公众平台<br>关注官方平台，第一时间获取最新最实战的开发课程和优惠活动哦!<br>扫一扫，立刻关注微信：<br>
+				img(src="../img/scan.jpg").scan
+		include footer.jade

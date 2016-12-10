@@ -1,0 +1,106 @@
+section{
+	width: 1225px;
+	height: 990px;
+	margin: 0 auto;
+	position: relative;
+}
+.left{
+	width: 141px;
+	height: 96px;
+	background: #fff;
+	position: absolute;
+	top: 30px;
+}
+.letop{
+	width: 141px;
+	height: 48px;
+	box-sizing: border-box;
+	padding-left: 21px;
+	line-height: 48px;
+}
+.leboo a{
+	font-size: 14px;
+	color: #333333;
+}
+.leboo{
+	box-sizing: border-box;
+	width: 141px;
+	height: 48px;
+	background: #fafafa;
+	border-left: 2px solid #29b572;
+	line-height: 48px;
+	padding-left: 19px;
+	font-size: 14px;
+	color: #333333;
+}
+.right{
+	width: 1040px;
+	height: 930px;
+	box-sizing: border-box;
+	padding-left: 35px;
+	background: #fff;
+	position: absolute;
+	top: 30px;left: 185px;
+}
+.right h1{
+	font-size: 26px;
+	position: absolute;
+	top: 41px;
+}
+.xd{
+	width: 967px;
+	height: 1px;
+	background: #e8e8e8;
+	position: absolute;
+	top: 113px;
+}
+.right small{
+	font-size: 12px;
+	color: #858585;
+	position: absolute;
+	top: 91px;
+}
+.small2{
+	left: 101px;
+}
+.right img{
+	position: absolute;
+	top: 224px;left: 270px;
+}
+.right p{
+	font-size: 16px;
+	color: #333333;
+	text-indent: 2em;
+	line-height: 30px;
+}
+.right .p1{
+	position: absolute;
+	top: 146px;
+}
+.right .p2{
+	position: absolute;
+	top: 566px;
+}
+.right .p3{
+	position: absolute;
+	top: 621px;
+}
+.right .p4{
+	position: absolute;
+	top: 706px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,63 @@
+doctype
+html
+	head
+		meta(charset="utf-8")
+		title 会员中心
+		link(rel="styleSheet",href="../css/command.css")
+		link(rel="styleSheet",href="../css/header.css")
+		link(rel="styleSheet",href="../css/footer.css")
+		link(rel="styleSheet",href="../css/member.css")
+		link(rel="styleSheet",href="../css/enroll.css")
+	body
+		include header.jade
+		div.hy
+			ul.account
+				li.myzh
+					a(href="#") 我的账户
+				li.mydd
+					a(href="#") 我的订单
+				li
+					a(href="#") 订单退换
+				li.mydz
+					a(href="#") 收货地址
+				li
+					a(href="#") 退出
+			div.myac#show
+				span 编辑您的账户信息
+				label(for="name").lb1 姓名
+				input(type="text")#name
+				label(for="email").lb2 邮箱地址
+				input(type="email")#email
+				label(for="password").lb3 输入新密码
+				input(type="password")#password
+				label(for="nan").lb4 男
+				input(type="checkbox")#nan
+				label(for="nv").lb5 女
+				input(type="checkbox")#nv
+				input(type="submit",value="保存").keep
+			div.order
+				span 订单信息
+				ul
+					li 日期
+					li.collect 收件人
+					li.detail 详细内容
+					li.dollar 金额
+				div.date 2015/12/24
+				div.people
+				div.content 
+				div.money ￥586
+			div.address
+				span 管理，添加新的收货地址
+				div.info
+					div
+						span 王楠
+						span.span2 X
+					p.p1 上海市长宁区
+					p 天山路1726弄1号403
+					p 200050
+					p (默认地址)
+				button 添加新地址
+		include footer.jade
+		include enroll.jade
+	script(type="text/javascript",src="../js/member.js")
+	script(type="text/javascript",src="../js/enroll.js")

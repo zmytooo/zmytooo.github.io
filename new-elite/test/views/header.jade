@@ -1,0 +1,46 @@
+header
+	div.head
+		a(href="/").logo
+		img(src="/images/logo_bef.png").logo2
+		ul.left
+			li
+				a(href="/all?type=zhibo&name=all").azb 直播课程
+			li
+				a(href="/all?type=dian&name=all").adb 点播课程
+		div.longk
+		div.right
+			if(logined)
+				div.people
+					ul.account
+						li
+							img(src="/images/logo.png")
+						li
+							a(href="#").show 个人中心
+								span
+						li |
+						li
+							a(href="#").tchu 退出
+					div.mine
+						span
+						ul
+							li
+								a(href="#") 我的课程
+							li
+								a(href="#") 我的订单
+							li
+								a(href="#") 我的钱包
+							li
+								a(href="#") 账户设置
+			else
+				div.login
+					ul
+						li.dd
+							a(href="/sms")
+								img(src="/images/10000.png")
+								span 短信登录
+						li
+							a(href="/login")#dl 登录
+						li |
+						li
+							a(href="/reg")#zc 注册
+					div.kuai

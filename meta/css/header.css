@@ -1,0 +1,63 @@
+.headerbox{
+	width: 1301px;
+	height: 255px;
+	margin: 0 auto;
+	position: relative;
+}
+.headerbox .join{
+	color: #989898;
+	position: absolute;
+	top: 9px;
+}
+.headerbox .sign{
+	position: absolute;
+	top: 9px;left: 959px;
+}
+.headerbox .sign a{
+	color: #989898;
+}
+.headerbox .sign a:hover,.headerbox .join:hover{
+	color: #000;
+}
+.headerbox .sign span{
+	color: #c1c1c1;
+}
+.headerbox .shop{
+	position: absolute;
+	top: 9px;left: 1181px;
+}
+.headerbox .shop a{
+	color: #989898;
+}
+.headerbox .shop img{
+	position: absolute;
+	top: -9px;left: 86px;
+}
+.headerbox .logo{
+	position: absolute;
+	top: 105px;left: 50%;
+	margin-left: -120px;
+}
+.headerbox ul{
+	position: absolute;
+	top: 222px;left: 50%;
+	margin-left: -369px;
+}
+.headerbox ul li{
+	float: left;
+}
+.headerbox ul li:nth-child(2){
+	margin-left: 145px;
+}
+.headerbox ul li:nth-child(3){
+	margin-left: 139px;	
+}
+.headerbox ul li:nth-child(4){
+	margin-left: 134px;
+}
+.headerbox ul li a{
+	color: #000000;
+}
+.headerbox ul li a:hover{
+	color: red;
+}

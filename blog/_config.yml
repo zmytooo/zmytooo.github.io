@@ -4,8 +4,8 @@
 
 # Site
 title: tooo的前端路
-subtitle:
-description: 之路漫漫
+subtitle: 之路漫漫
+description:
 author: zmytooo
 language:
 timezone:
@@ -63,7 +63,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: hexo-theme-tranquilpeak
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html

@@ -1,0 +1,49 @@
+.sliderbox{
+	width: 1232px;
+	height: 406px;
+	overflow: hidden;
+	margin: 31px auto;
+	position: relative;
+}
+.sliderbox ul{
+	width: 10000px;
+	height: 406px;
+	position: absolute;
+	left: 0px;
+	transition: 1.5s;
+}
+.sliderbox ul li{
+	float: left;
+}
+.sliderbox ol{
+	position: absolute;
+	top: 373px;right: 33px;
+}
+.sliderbox ol li{
+	float: left;
+	width: 8px;
+    height: 8px;
+    border-radius: 50%;
+	background: rgba(255,255,255,0.4);
+	margin-left: 6px;
+}
+.sliderbox ol li.olactive{
+	background: #fff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
