@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>html5和canvas分别实现时钟 | tooo的前端路</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="最近学习了canvas，试着用canvas做了个简单的时钟。整理了一下以前用HTML做的时钟，下面放上两种实现时钟的方法，大家可以比较一下。
+HTML实现时钟&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt;
+&amp;lt;head&amp;gt;
+&amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt;
+&amp;lt;title&amp;gt;钟">
+<meta property="og:type" content="article">
+<meta property="og:title" content="html5和canvas分别实现时钟">
+<meta property="og:url" content="http://yoursite.com/2016/08/25/html5和canvas分别实现时钟/index.html">
+<meta property="og:site_name" content="tooo的前端路">
+<meta property="og:description" content="最近学习了canvas，试着用canvas做了个简单的时钟。整理了一下以前用HTML做的时钟，下面放上两种实现时钟的方法，大家可以比较一下。
+HTML实现时钟&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt;
+&amp;lt;head&amp;gt;
+&amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt;
+&amp;lt;title&amp;gt;钟">
+<meta property="og:image" content="http://a1.qpic.cn/psb?/V101Z8453moGbb/kgtSQ6GufupaPnxHz1KvasOpcqygRnKjEzQva8civwA!/b/dHcBAAAAAAAA&bo=qQKAAgAAAAADBws!&rf=viewer_4">
+<meta property="og:image" content="http://a2.qpic.cn/psb?/V101Z8453moGbb/7Vd3ZhjV.SunKTXOAxZYBDtO0lC9Sze.djcNcl5MOCg!/b/dAwBAAAAAAAA&bo=AALpAQAAAAADB8g!&rf=viewer_4">
+<meta property="og:updated_time" content="2016-12-10T03:14:14.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="html5和canvas分别实现时钟">
+<meta name="twitter:description" content="最近学习了canvas，试着用canvas做了个简单的时钟。整理了一下以前用HTML做的时钟，下面放上两种实现时钟的方法，大家可以比较一下。
+HTML实现时钟&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt;
+&amp;lt;head&amp;gt;
+&amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt;
+&amp;lt;title&amp;gt;钟">
+<meta name="twitter:image" content="http://a1.qpic.cn/psb?/V101Z8453moGbb/kgtSQ6GufupaPnxHz1KvasOpcqygRnKjEzQva8civwA!/b/dHcBAAAAAAAA&bo=qQKAAgAAAAADBws!&rf=viewer_4">
+  
+    <link rel="alternate" href="/atom.xml" title="tooo的前端路" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">tooo的前端路</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-html5和canvas分别实现时钟" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/08/25/html5和canvas分别实现时钟/" class="article-date">
+  <time datetime="2016-08-25T14:11:47.000Z" itemprop="datePublished">2016-08-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      html5和canvas分别实现时钟
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近学习了canvas，试着用canvas做了个简单的时钟。整理了一下以前用HTML做的时钟，下面放上两种实现时钟的方法，大家可以比较一下。</p>
+<h2 id="HTML实现时钟"><a href="#HTML实现时钟" class="headerlink" title="HTML实现时钟"></a>HTML实现时钟</h2><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;title&gt;钟表&lt;/title&gt;
+&lt;/head&gt;
+&lt;style type=&quot;text/css&quot;&gt;
+ul{
+margin: 0;
+list-style: none;
+}
+.huan1{
+width: 600px;
+height: 600px;
+border-radius: 20%;
+background: #d0f6e5;
+padding: 50px;
+box-sizing: border-box;
+margin: 100px auto;
+}
+.huan2{
+width: 500px;
+height: 500px;
+border-radius: 50%;
+box-sizing: border-box;
+padding: 30px;
+background:  -webkit-linear-gradient(#62bd97,#fff);
+}
+.huan3{
+width: 440px;
+height: 440px;
+border-radius: 50%;
+position: relative;
+box-sizing: border-box;
+background: -webkit-radial-gradient(#51d1c4 5%,#2a7770 95%);
+padding: 150px; 
+}
+.huan4{
+width: 140px;
+height: 140px;
+border-radius: 50%;
+box-sizing: border-box;
+background: -webkit-linear-gradient(#f0fbf9,#94eedf);
+padding: 40px;
+}
+.kedu{
+width: 440px;
+height: 20px;
+position: absolute;
+top: 210px;
+left: 0px;
+transform-origin: 220px 10px;
+}
+.kedu:nth-child(1){
+transform: rotate(90deg);
+}
+.kedu:nth-child(2){
+transform: rotate(60deg);
+}
+.kedu:nth-child(3){
+transform: rotate(30deg);
+}
+.kedu:nth-child(4){
+transform: rotate(0deg);
+}
+.kedu:nth-child(5){
+transform: rotate(-30deg);
+}
+.kedu:nth-child(6){
+transform: rotate(-60deg);
+}
+.right{
+float: right;
+margin-top: -40px;
+}
+p{
+width: 20px;
+height: 20px;
+line-height: 20px;
+margin-top: 0;
+font-size: 20px;
+padding: 0 10px;
+}
+.huan5{
+width: 60px;
+height: 60px;
+border-radius: 50%;
+position: relative;
+background: -webkit-linear-gradient(#fff 20%,#a5ded4);
+}
+.hours{
+width: 20px;
+height: 100px;
+background: #055248; 
+position: absolute;
+left: 20px;
+top: -60px;
+transform-origin: 10px 90px;
+}
+.minutes{
+width: 14px;
+height: 130px;
+position: absolute;
+top: -90px;
+left: 23px;
+background: #044f46;
+transform-origin: 7px 120px;
+}
+.seconds{
+width: 10px;
+height: 180px;
+position: absolute;
+left: 25px;
+top: -140px;
+background: #fe6f6f;
+transform-origin: 5px 170px;
+}
+
+&lt;/style&gt;
+&lt;body&gt;
+&lt;div class=&quot;huan1&quot;&gt;
+&lt;div class=&quot;huan2&quot;&gt;
+    &lt;div class=&quot;huan3&quot;&gt;
+        &lt;div class=&quot;kedu&quot;&gt;&lt;p style=&quot;transform:rotate(-90deg);&quot;&gt;12&lt;/p&gt;&lt;p class=&quot;right&quot; style=&quot;transform:rotate(-90deg);&quot;&gt;6&lt;/p&gt;&lt;/div&gt;
+        &lt;div class=&quot;kedu&quot;&gt;&lt;p style=&quot;transform:rotate(-60deg);&quot;&gt;11&lt;/p&gt;&lt;p class=&quot;right&quot; style=&quot;transform:rotate(-60deg);&quot;&gt;5&lt;/p&gt;&lt;/div&gt;
+        &lt;div class=&quot;kedu&quot;&gt;&lt;p style=&quot;transform:rotate(-30deg);&quot;&gt;10&lt;/p&gt;&lt;p class=&quot;right&quot; style=&quot;transform:rotate(-30deg);&quot;&gt;4&lt;/p&gt;&lt;/div&gt;
+        &lt;div class=&quot;kedu&quot;&gt;&lt;p&gt;9&lt;/p&gt;&lt;p class=&quot;right&quot; style=&quot;transform:rotate(0deg);&quot;&gt;3&lt;/p&gt;&lt;/div&gt;
+        &lt;div class=&quot;kedu&quot;&gt;&lt;p style=&quot;transform:rotate(30deg);&quot;&gt;8&lt;/p&gt;&lt;p class=&quot;right&quot; style=&quot;transform:rotate(30deg);&quot;&gt;2&lt;/p&gt;&lt;/div&gt;
+        &lt;div class=&quot;kedu&quot;&gt;&lt;p style=&quot;transform:rotate(60deg);&quot;&gt;7&lt;/p&gt;&lt;p class=&quot;right&quot; style=&quot;transform:rotate(60deg);&quot;&gt;1&lt;/p&gt;&lt;/div&gt; 
+        &lt;div class=&quot;huan4&quot;&gt;
+            &lt;div class=&quot;huan5&quot;&gt;
+                &lt;div class=&quot;hours&quot;&gt;&lt;/div&gt;
+                &lt;div class=&quot;minutes&quot;&gt;&lt;/div&gt;
+                &lt;div class=&quot;seconds&quot;&gt;&lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+
+var hours = document.querySelector(&quot;.hours&quot;);
+var minutes = document.querySelector(&quot;.minutes&quot;);
+var seconds = document.querySelector(&quot;.seconds&quot;);
+setInterval(fn,1000);
+function fn(){
+    var watch = new Date();
+    var hour = watch.getHours();
+    var minute = watch.getMinutes();
+    var second = watch.getSeconds();
+    hours.style.transform = &quot;rotate(&quot;+hour*30+&quot;deg)&quot;;
+    minutes.style.transform = &quot;rotate(&quot;+minute*6+&quot;deg)&quot;;
+    seconds.style.transform = &quot;rotate(&quot;+second*6+&quot;deg)&quot;;
+}   
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>实现的效果如下图：</p>
+<p><img src="http://a1.qpic.cn/psb?/V101Z8453moGbb/kgtSQ6GufupaPnxHz1KvasOpcqygRnKjEzQva8civwA!/b/dHcBAAAAAAAA&amp;bo=qQKAAgAAAAADBws!&amp;rf=viewer_4" alt="Alt text"></p>
+<h2 id="canvas实现时钟"><a href="#canvas实现时钟" class="headerlink" title="canvas实现时钟"></a>canvas实现时钟</h2><pre><code>&lt;!doctype html&gt;  
+&lt;html&gt;  
+&lt;head&gt;
+&lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;title&gt;canvas时钟&lt;/title&gt;
+&lt;/head&gt;  
+&lt;body&gt;  
+&lt;canvas id=&quot;clock&quot;&gt;  
+您的浏览器不支持canvas标签
+&lt;/canvas&gt;  
+&lt;script&gt;  
+var clock=document.getElementById(&apos;clock&apos;);  
+var cxt=clock.getContext(&apos;2d&apos;);  
+clock.width=500;
+clock.height=500;
+function drawClock(){     
+cxt.clearRect(0,0,500,500); //清除画布 
+var now =new Date();  
+var sec=now.getSeconds();  
+var min=now.getMinutes();  
+var hour=now.getHours();              
+
+hour=hour+min/60;   //小时必须获取浮点类型(小时+分数转化成的小时)  
+
+cxt.lineWidth=10;  
+cxt.strokeStyle=&quot;dodgerblue&quot;;  //绘制表盘 
+cxt.beginPath();  
+cxt.arc(250,250,200,0,Math.PI*360,false);  
+cxt.closePath();  
+cxt.stroke();  
+
+//刻度  
+for(var i=0;i&lt;60;i++){  
+    cxt.save();               
+    cxt.lineWidth=5;                  
+    cxt.strokeStyle=&quot;#000&quot;;                
+    cxt.translate(250,250);           
+    cxt.rotate(i*6*Math.PI/180);                  
+    cxt.beginPath();  
+    cxt.moveTo(0,-180);  
+    cxt.lineTo(0,-190);  
+    cxt.closePath();  
+    cxt.stroke();  
+    cxt.restore();  
+}  
+
+//时针  
+    cxt.save();           
+    cxt.lineWidth=7;                  
+    cxt.strokeStyle=&quot;pink&quot;;                
+    cxt.translate(250,250); 
+    cxt.rotate(hour*30*Math.PI/180);  
+    cxt.beginPath();  
+    cxt.moveTo(0,-120);     //针长  
+    cxt.lineTo(0,10);  
+    cxt.closePath();  
+    cxt.stroke();  
+    cxt.restore();  
+
+
+//分针  
+    cxt.save();  
+    cxt.lineWidth=5;  
+    cxt.strokeStyle=&quot;#000&quot;;  
+    cxt.translate(250,250);  
+    cxt.rotate(min*6*Math.PI/180);  
+    cxt.beginPath();  
+    cxt.moveTo(0,-150);  
+    cxt.lineTo(0,15);  
+    cxt.closePath();  
+    cxt.stroke();  
+    cxt.restore();  
+
+
+//秒针              
+    cxt.save();  
+    cxt.strokeStyle=&quot;red&quot;;  
+    cxt.lineWidth=3;  
+    cxt.translate(250,250);               
+    cxt.rotate(sec*6*Math.PI/180);//设置旋转角度                
+    cxt.beginPath();    //画图  
+    cxt.moveTo(0,-170);  
+    cxt.lineTo(0,20);  
+    cxt.closePath();  
+    cxt.stroke();                 
+    cxt.beginPath();    //画出时针、分针、秒针的交叉点、  
+    cxt.arc(0,0,5,0,360,false);  
+    cxt.closePath();                  
+    cxt.fillStyle=&quot;gray&quot;;   //交汇处的填充样式  
+    cxt.fill();               
+    cxt.stroke();  
+
+    //设置秒针前段的小圆点  
+    cxt.beginPath();  
+    cxt.arc(0,-150,5,0,360,false);  
+    cxt.closePath();  
+    cxt.fillStyle=&quot;#FFF&quot;;  
+    cxt.fill();               
+    cxt.stroke();//设置笔触样式(秒针已设置)                  
+    cxt.restore();  
+}  
+
+
+drawClock();    
+//使用setInterval  让时钟动起来  
+setInterval(drawClock,1000);  
+&lt;/script&gt;  
+&lt;/body&gt;  
+&lt;/html&gt;  
+</code></pre><p>效果图如下：</p>
+<p><img src="http://a2.qpic.cn/psb?/V101Z8453moGbb/7Vd3ZhjV.SunKTXOAxZYBDtO0lC9Sze.djcNcl5MOCg!/b/dAwBAAAAAAAA&amp;bo=AALpAQAAAAADB8g!&amp;rf=viewer_4" alt="Alt text"></p>
+<p>这两种实现时钟的方法不太一样，看大家比较习惯哪种了（有错误欢迎指出）</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/08/25/html5和canvas分别实现时钟/" data-id="ciwio0o9x0005ac0ylqb8izxl" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/10/12/socket-io中的emit和on方法/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          socket.io中的emit和on方法
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/08/14/用canvas实现100个小球的运动/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">用canvas实现100个小球的运动</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/12/10/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2016/11/21/简单的三栏布局/">简单的三栏布局</a>
+          </li>
+        
+          <li>
+            <a href="/2016/11/19/浅谈html-css与js/">浅谈html,css与js</a>
+          </li>
+        
+          <li>
+            <a href="/2016/11/13/Javascript定义类（class）的三种方法【转】/">Javascript定义类（class）的三种方法【转】</a>
+          </li>
+        
+          <li>
+            <a href="/2016/10/25/关于node-js的误会【转】/">关于node.js的误会【转】</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 zmytooo<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

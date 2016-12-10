@@ -3,21 +3,30 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Hello World | tooo的前端路</title>
+  <title>用css实现图片在div内的垂直居中 | tooo的前端路</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+  <meta name="description" content="关于图片垂直居中的问题大家应该都遇到过，大家应该也有搜索过，这里整理了一份此类问题希望对大家有帮助
+div相对与table对于图片的垂直居中支持的并不好,特别对于不同浏览器的兼容性来说,这里我们看下一个简洁的css解决方法:
+在曾经的 淘宝UED 招聘 中有这样一道题目：
+“使用纯CSS实现未知尺寸的图片(但高宽都小于200px)在200px的正方形容器中水平和垂直居中。”
+当然出题并不是随意，而">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2016/12/10/hello-world/index.html">
+<meta property="og:title" content="用css实现图片在div内的垂直居中">
+<meta property="og:url" content="http://yoursite.com/2016/07/15/用css实现图片在div内的垂直居中/index.html">
 <meta property="og:site_name" content="tooo的前端路">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
-<meta property="og:updated_time" content="2016-12-10T01:13:47.000Z">
+<meta property="og:description" content="关于图片垂直居中的问题大家应该都遇到过，大家应该也有搜索过，这里整理了一份此类问题希望对大家有帮助
+div相对与table对于图片的垂直居中支持的并不好,特别对于不同浏览器的兼容性来说,这里我们看下一个简洁的css解决方法:
+在曾经的 淘宝UED 招聘 中有这样一道题目：
+“使用纯CSS实现未知尺寸的图片(但高宽都小于200px)在200px的正方形容器中水平和垂直居中。”
+当然出题并不是随意，而">
+<meta property="og:updated_time" content="2016-12-10T03:07:22.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+<meta name="twitter:title" content="用css实现图片在div内的垂直居中">
+<meta name="twitter:description" content="关于图片垂直居中的问题大家应该都遇到过，大家应该也有搜索过，这里整理了一份此类问题希望对大家有帮助
+div相对与table对于图片的垂直居中支持的并不好,特别对于不同浏览器的兼容性来说,这里我们看下一个简洁的css解决方法:
+在曾经的 淘宝UED 招聘 中有这样一道题目：
+“使用纯CSS实现未知尺寸的图片(但高宽都小于200px)在200px的正方形容器中水平和垂直居中。”
+当然出题并不是随意，而">
   
     <link rel="alternate" href="/atom.xml" title="tooo的前端路" type="application/atom+xml">
   
@@ -66,10 +75,10 @@ Quick">
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-用css实现图片在div内的垂直居中" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/12/10/hello-world/" class="article-date">
-  <time datetime="2016-12-10T01:13:47.000Z" itemprop="datePublished">2016-12-10</time>
+    <a href="/2016/07/15/用css实现图片在div内的垂直居中/" class="article-date">
+  <time datetime="2016-07-15T08:15:29.000Z" itemprop="datePublished">2016-07-15</time>
 </a>
     
   </div>
@@ -80,7 +89,7 @@ Quick">
         
   
     <h1 class="article-title" itemprop="name">
-      Hello World
+      用css实现图片在div内的垂直居中
     </h1>
   
 
@@ -88,20 +97,41 @@ Quick">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <p>关于图片垂直居中的问题大家应该都遇到过，大家应该也有搜索过，这里整理了一份此类问题希望对大家有帮助</p>
+<p>div相对与table对于图片的垂直居中支持的并不好,特别对于不同浏览器的兼容性来说,这里我们看下一个简洁的css解决方法:</p>
+<p>在曾经的 淘宝UED 招聘 中有这样一道题目：</p>
+<p>“使用纯CSS实现未知尺寸的图片(但高宽都小于200px)在200px的正方形容器中水平和垂直居中。”</p>
+<p>当然出题并不是随意，而是有其现实的原因，垂直居中是 淘宝 工作中最常遇到的一个问题，很有代表性。<br>题目的难点在于两点：</p>
+<p>1.垂直居中；</p>
+<p>2.图片是个置换元素，有些特殊的特性。</p>
+<p>至于如何解决，下面是一个权衡的相对结构干净，CSS简单的解决方法：</p>
+<pre><code>.box { 
+/*非IE的主流浏览器识别的垂直居中的方法*/ 
+display: table-cell; 
+vertical-align:middle; 
+/*设置水平居中*/ 
+text-align:center; 
+/* 针对IE的Hack */ 
+*display: block; 
+*font-size: 175px;/*约为高度的0.873，200*0.873 约为175*/ 
+*font-family:Arial;/*防止非utf-8引起的hack失效问题，如gbk编码*/ 
+    width:200px; 
+    height:200px; 
+    border: 1px solid #eee; 
+} 
+.box img { 
+    /*设置图片垂直居中*/ 
+    vertical-align:middle; 
+} 
+&lt;div class=&quot;box&quot;&gt; 
+    &lt;img src=&quot;http://pics.taobao.com/bao/album/promotion/    taoscars_180x95_071112_sr.jpg&quot; /&gt; 
+&lt;/div&gt; 
+</code></pre><p>大家可以根据自己的问题修改代码</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/12/10/hello-world/" data-id="ciwio0o9v0004ac0y7ol5s5rs" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/07/15/用css实现图片在div内的垂直居中/" data-id="ciwio0oam000hac0yzt8sx3k4" class="article-share-link">Share</a>
       
       
     </footer>
@@ -110,10 +140,19 @@ Quick">
     
 <nav id="article-nav">
   
+    <a href="/2016/07/19/放大镜效果/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          放大镜效果
+        
+      </div>
+    </a>
   
-    <a href="/2016/11/21/简单的三栏布局/" id="article-nav-older" class="article-nav-link-wrap">
+  
+    <a href="/2016/07/11/javascript闭包问题【转】/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">简单的三栏布局</div>
+      <div class="article-nav-title">javascript闭包问题【转】</div>
     </a>
   
 </nav>
