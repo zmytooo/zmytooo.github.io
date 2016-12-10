@@ -1,9 +1,3 @@
-// $(".nav ul li").eq(1).mouseover(function() {
-//     $(this).find("img").attr('src','../img/movie2.png');   
-//   }).mouseout(function(){
-//     $(this).find("img").attr('src','../img/movie.png');   
-// });
-
 var li1 = document.querySelector('.nav ul li:nth-child(2)');
 var pic1 = document.querySelector('.nav ul li:nth-child(2) img');
 li1.onmouseover=function(){pic1.src="../img/movie2.png";}
@@ -30,6 +24,11 @@ li5.onmouseover=function(){pic5.src="../img/all2.png";}
 li5.onmouseout=function(){pic5.src="../img/all.png";}
 
 
+// $(".nav ul li").eq(1).mouseover(function() {
+//     $(this).find("img").attr('src','../img/movie2.png');   
+//   }).mouseout(function(){
+//     $(this).find("img").attr('src','../img/movie.png');   
+// });
 
 // $(".nav ul li").eq(2).mouseover(function() {
 //     $(this).find("img").attr('src','../img/tv2.png');   
