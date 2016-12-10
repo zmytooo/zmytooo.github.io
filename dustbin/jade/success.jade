@@ -1,0 +1,26 @@
+doctype
+html
+	head
+		meta(charset="utf-8")
+		title 成功案例
+		link(rel="styleSheet",href="../css/command.css")
+		link(rel="styleSheet",href="../css/header.css")
+		link(rel="styleSheet",href="../css/footer.css")
+		link(rel="styleSheet",href="../css/aside.css")
+		link(rel="styleSheet",href="../css/success.css")
+	body
+		include header.jade
+		div.center
+			include aside.jade
+			div.this
+				div.thistop
+					div.kuai
+					span.thissp 成功案例
+					div.thisright
+						span.thissp1 当前所在的位置:
+						a(href="main.html").thisa1 首页
+						span.thissp2 >
+						a(href="success.html").thisa2 成功案例
+				div.thislow
+		include footer.jade
+	script(type="text/javascript",src="../js/header.js")

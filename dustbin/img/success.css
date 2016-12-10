@@ -1,0 +1,389 @@
+/********reset**********/
+*{
+	margin: 0;
+	padding: 0;
+	font: 16px/1.5 "PingFang SC", Helvetica, "Helvetica Neue", "微软雅黑", Tahoma, Arial, sans-serif;
+}
+ul,ol,li{
+	margin: 0;
+	list-style: none;
+}
+dl,dt,dd{
+	margin: 0;
+	padding: 0;
+}
+a{
+	text-decoration: none;
+	color: black;
+}
+/******************头部logo及导航*******************/
+.logo {
+	height: 137px;
+	border-top:1px solid transparent;
+}
+.logo .content {
+	width:1200px;
+	height: 85px;
+	position: relative;
+	margin:29px auto 0; 
+}
+header .content .name {
+	font-size: 36px;
+	color:#646464;
+	margin-left: 26px;
+	margin-bottom: 2px;
+	position: absolute;
+	bottom: -7px;
+	font-weight: bold;
+	font-family: 'FZXBSJW';
+}
+header .content .tel {
+	color:#ec0608;
+	font-size: 18px;
+	display: inline-block;
+	height: 16px;
+	margin-left: 101px;
+	background:url(img/phone.gif) no-repeat ;
+	padding: 9px 0 0 36px;
+	position: absolute;
+	right: 225px;
+	bottom:5px;
+	line-height: 16px;
+	font-family: "微软雅黑";
+}
+.top_right{
+	float: right;
+}
+.top_right li{
+	float: left;
+	position: relative;
+	top: 62px;
+	font-size: 14px;
+	color: #646464;
+}
+.top_right li a{
+	font-size: 14px;
+	color: #646464;
+}
+.top_right li:hover a{
+	color: red;
+}
+/***************nav导航条***************/
+.nav{
+	background: #33a7fd;
+	height: 47px;
+	overflow: hidden;
+	position: relative;
+}
+.nav > ul{
+	width: 994px;
+	height: 46px;
+	margin: 0 auto;
+	position: relative;
+	top: -46px;
+}
+.nav > ul li{
+	width: 142px;
+	float: left;
+	text-align: center;
+	line-height: 46px;	
+}
+.nav > ul li a{
+	color: white;
+	font-family: "微软雅黑";
+}
+.nav > ul li:hover{
+	background: #8da7bd;
+}
+.nav ol{
+	position: relative;
+	height: 46px;
+	width: 994px;
+	margin: 0 auto;
+}
+.nav > ol li{
+	width: 141px;
+	float: left;
+	text-align: left;
+	position: relative;
+	top: 10px;
+}
+.nav > ol li:first-child{
+	color: #33a7fd;
+}
+.active{
+	opacity: 0;
+}
+/***************选项卡**************/
+.tab{
+	width: 100%;
+	height: 300px;
+	position: relative;
+	top: 1px;
+	overflow: hidden;
+}
+#scrollpic .pic{
+	position:absolute;
+	height:300px;
+}
+#scrollpic .pic li{
+	width: 610px;
+	float: left;
+	padding: 0 5px;
+}
+#scrollpic .pic li a img{
+	width: 610px;
+	height: 300px;
+}
+#prev,#next{
+	display: block;
+	width: 300px;
+	height: 300px;
+	background: #fff;
+	position: absolute;
+	top: 0;
+	opacity: 0;
+	z-index: 10;
+}
+#prev{
+	left: 0;
+}
+#next{
+	right: 0;
+}
+/****************主体内容区域*****************/
+.main{
+	width: 1200px;
+	margin: 50px auto 0;
+	position: relative;
+}
+/**********侧边栏***********/
+.sidebar_top{
+	width: 240px;
+	height: 68px;
+	background: #33a7fd;
+	color: white;
+	text-align: center;
+	padding: 10px 0;
+	box-sizing: border-box;
+}
+.sidebar_top h3{
+	font-size: 28px;
+}
+.sidebar_top p{
+	margin-top: -10px;
+	font-size: 14px;
+}
+.sidebar ul{
+	width: 240px;
+	height: 680px;
+	margin-bottom: 20px;
+	box-sizing: border-box;
+	border: 1px solid #e1e1e1;
+	overflow: hidden;
+}
+.sidebar ul li{
+	width: 240px;
+	height: 48px;
+	font-size: 20px;
+}
+.sidebar ul li a{
+	display: inline-block;
+	width: 190px;
+	height: 44px;
+	line-height: 45px;
+	margin-left: 25px;
+	font-size:20px;
+}
+.xia_line{
+	height: 1px;
+	width: 190px;
+	margin-left: 25px;
+	background: -webkit-linear-gradient(left,#f8f8f8 0%,#e3e3e3 50%,#f8f8f8 100%);
+}
+.sidebar ul li a span{
+	display: inline-block;
+	width: 0px;
+	height: 0px;
+	position: relative;
+	border: 6px solid transparent;
+	border-left-color: #0091fd; 
+	transform-origin: 3px 6px;
+	transition: 0.3s;
+	margin-right: 8px;
+}
+.sidebar ul li a:hover{
+	color: #0091fd;
+}
+.sidebar ul li a:hover span{
+	transform: rotate(90deg);
+}
+/************联系我们***********/
+.contact{
+	width: 240px;
+	height: 256px;
+	position: relative;
+}
+.contact ul{
+	height: 188px;
+	margin-bottom: 65px;
+	box-sizing: border-box;
+	border: 1px solid #e1e1e1;
+	overflow: hidden;
+}
+.contact ul li{
+	padding: 0 10px;
+	height: 40px;
+	font-size: 18px;
+	padding-top: 10px;
+	box-sizing: border-box;
+}
+.contact ul li span{
+	color: #0091fd;
+}
+.contact ul li:nth-child(4) span{
+	display: inline-block;
+	position: relative;
+	top: -20px;
+}
+.contact ul li:nth-child(4) div{
+	display: inline-block;
+	width: 165px;
+	line-height: 18px;
+	font-size: 18px;
+}
+/****************右侧内容***************/
+.mainright{
+	width: 941px;
+	height: 981px;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+.mainright_top{
+	height: 63px;
+	padding-bottom: 10px;
+	box-sizing: border-box;
+	border-bottom: 2px solid #e1e1e1;
+	overflow: hidden;
+}
+.mainright_top div{
+	width: 6px;
+	height: 23px;
+	position: relative;
+	top: 30px; 
+	background: -webkit-linear-gradient(#3aa9fc,#3aa9fc);
+}
+.mainright_top span{
+	display: inline-block;
+	margin-left: 11px;
+	margin-top: 5px;
+	font-size: 20px;
+	color: #42a2fd;
+}
+.mainright_top p{
+	float: right;
+	margin-top: 5px;
+	color: #646464;
+}
+.mainright_top p i{
+	font-family: "宋体";
+}
+.mainright ul{
+	width: 881px;
+	margin: 10px auto 0;
+}
+.mainright ul li{
+	height: 180px;
+	padding: 30px 0;
+	box-sizing: border-box;
+	border-bottom: 1px solid #e1e1e1;
+	overflow: hidden;
+}
+.mainright ul li a img{
+	width: 200px;
+	height: 120px;
+}
+.mainright ul li dl{
+	width: 660px;
+	float: right;
+	font-size: 18px;
+}
+.mainright ul li dl dt{
+	margin-left: -8px;
+}
+.mainright ul li dl dt a:hover{
+	color: red;
+}
+.mainright ul li dl dd{
+	margin-top: 10px;
+	font-size: 14px;
+	line-height: 20px;
+	color: #646464;
+}
+.mainright ul li dl dd a{
+	color: #0091fd;
+}
+/*************************底部***************************/
+.footer{
+	position: relative;
+	top: 64px;
+	width: 100%;
+	height: 184px;
+	background: #33a7fd;
+}
+.bottom{
+	width: 1200px;
+	margin: 0 auto;
+	position: relative;
+}
+.bottom .foot_left{
+	width: 490px;
+	position: relative;
+	left: 50px;
+	top: 55px;
+	color: #fff;
+}
+.foot_left ul{
+	width: 490px;
+	margin-bottom: 5px;
+	overflow: hidden;
+}
+.foot_left ul li{
+	float: left;
+}
+.foot_left ul li:hover a{
+	color: red;
+}
+.foot_left ul li a{
+	color: #fff;
+}
+.foot_left p{
+	line-height: 30px;
+}
+.hotLine{
+	margin-left: 778px;
+	color: #fff;
+}
+.hotLine b{
+	font-size: 24px;
+}
+.scan{
+	width: 128px;
+	height: 144px;
+	float: right;
+	color: #fff;
+	margin-top: -138px;
+	text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+

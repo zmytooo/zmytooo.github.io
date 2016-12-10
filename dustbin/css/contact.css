@@ -1,0 +1,43 @@
+.contactstyle{
+	width: 267px;
+	height: 185px;
+	position: absolute;
+	left: 0;
+	top:112px;
+	font-size: 18px;
+	font-family: "Microsoft YaHei";
+}
+.contactstyle div{
+	height: 16px;
+	margin-bottom: 23px;
+}
+.contactstyle div>span{
+	color: #269afd;
+}
+#maptitle{
+	position: absolute;
+	top: 328px;
+	font-size: 20px;
+	font-family: "Microsoft YaHei";
+}
+#dituContent{
+	position: absolute;
+	top: 356px;
+	width:938px;
+	height:420px;
+	border:#ccc solid 1px;
+}
+#mapinput{
+	width: 295px;
+	height: 28px;
+	top: 386px;
+	left:60px;
+	position: absolute;
+}
+#mapinput .input1 {
+	width: 245px;
+}
+#mapinput .input2{
+	width: 40px;
+	height: 28px;
+}

@@ -1,0 +1,157 @@
+.logo {
+	height: 137px;
+	border-top:1px solid transparent;
+}
+.logo .content {
+	width:1200px;
+	height: 85px;
+	position: relative;
+	margin:29px auto 0; 
+}
+.header .content .name {
+	font-size: 36px;
+	color:#646464;
+	margin-left: 26px;
+	margin-bottom: 2px;
+	position: absolute;
+	bottom: -7px;
+	font-weight: bold;
+	font-family: Simsun;
+}
+.header .content .tel {
+	color:#ec0608;
+	font-size: 18px;
+	display: inline-block;
+	height: 16px;
+	margin-left: 101px;
+	background:url(../img/phone.gif) no-repeat ;
+	padding: 9px 0 0 36px;
+	position: absolute;
+	right: 225px;
+	bottom:5px;
+	line-height: 16px;
+	font-family: "Microsoft YaHei";
+}
+.top-right{
+	float: right;
+	margin-top:-2px; 
+}
+.top-right li{
+	float: left;
+	position: relative;
+	top: 64px;
+	font-size: 14px;
+	color: #646464;
+}
+.top-right li:nth-child(2){
+	margin-left: 5px;
+}
+.top-right li:nth-child(3){
+	margin-left: 5px;
+}
+.top-right li a{
+	font-size: 14px;
+	color: #646464;
+}
+.top-right li:hover a{
+	color: red;
+}
+.nav{
+	background: #33a7fd;
+	height: 46px;
+	border-bottom: 1px solid #e7e7e7;
+	overflow: hidden;
+	position: relative;
+}
+.nav > ul{
+	width: 994px;
+	height: 46px;
+	margin: 0 auto;
+	position: relative;
+	top: -46px;
+}
+.nav > ul li{
+	width: 142px;
+	float: left;
+	text-align: center;
+	line-height: 46px;	
+}
+.nav > ul .active{
+	background: #8da7bd;
+}
+.nav > ul li a{
+	color: white;
+	font-family: 'Microsoft YaHei';
+}
+.nav > ul li:hover{
+	background: #8da7bd;
+}
+.nav ol{
+	position: relative;
+	height: 46px;
+	width: 994px;
+	margin: 0 auto;
+}
+.nav > ol li{
+	width: 141px;
+	float: left;
+	text-align: left;
+	position: relative;
+	top: 10px;
+}
+#firstli {
+	color: #33a7fd;
+}
+.nav > ol .active{
+	opacity: 0;
+}
+.tab{
+	width: 100%;
+	height: 300px;
+	position: relative;
+	overflow: hidden;
+}
+#scrollpic .pic{
+	position:absolute;
+	height:300px;
+}
+#scrollpic .pic li{
+	width: 610px;
+	float: left;
+	padding: 0 5px;
+}
+#scrollpic .pic li a img{
+	width: 610px;
+	height: 300px;
+}
+#prev,#next{
+	display: block;
+	width: 300px;
+	height: 300px;
+	background:transparent;
+	position: absolute;
+	top: 0;
+	opacity: 0;
+	z-index: 10;
+}
+#prev{
+	left: 0;
+}
+#next{
+	right: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,16 @@
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	font: 16px/1.5 "PingFang SC", Helvetica, "Helvetica Neue", "微软雅黑", Tahoma, Arial, sans-serif;
+}
+body,html{
+	min-width: 1200px;
+}
+a{
+	text-decoration: none;
+	color: #000;
+}
+img{
+	border: none;
+}

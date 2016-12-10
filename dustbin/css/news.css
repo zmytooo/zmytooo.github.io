@@ -1,0 +1,89 @@
+.this .below{
+	position: absolute;
+	top: 63px;
+	width: 880px;
+	margin-left: 30px;
+}
+.this .below ul{
+	margin-top: 10px;
+}
+.this .below ul li{
+	width: 880px;
+	height: 180px;
+	border-bottom: 1px solid #e1e1e1;
+}
+.this .below .imgdiv{
+	float: left;
+	width: 200px;
+	height: 121px;
+	margin-top: 30px;
+}
+.this .below .textdiv{
+	width: 660px;
+	height: 100px;
+	float: left;
+	margin-top: 33px;
+	margin-left: 20px;
+}
+.this .below .textdiv h2{
+	display: inline-block;
+	float: left;
+	font-size: 18px;
+	color: #212121;
+	font-family: 'Microsoft YaHei';
+	
+}
+.this .below .textdiv h2:hover{
+	color: red;
+}
+.this .below .textdiv span{
+	display: inline-block;
+	float: left;
+	color: #727272;
+	font-size: 14px;
+	line-height: 25px;
+	margin-left: 10px;
+	margin-top: 15px;
+	font-family: 'Microsoft YaHei';
+
+}
+.this .below .textdiv a i{
+	color: #0091fd;
+	font-style: normal;
+}
+/*分页*/
+.paging {
+    width: 650px;
+    height: 36px;
+    color:#646464; 
+    margin: 42px auto 0;
+}
+.paging a:hover {
+	background:#f0f0f0;
+}
+.paging a {
+    display: inline-block;
+    height: 34px;
+    border:1px solid #e1e1e1;
+    color: #646464;
+    text-decoration: none;
+    line-height: 34px;
+    padding: 0 12px;
+    margin-left: 5px;
+}
+.paging .page,.paging .pre,.paging .back,.paging .jump {
+    border:none;
+}
+.paging input {
+    display: inline-block;
+	font-style: normal;
+	height: 34px;
+	width: 49px;
+	border:none;
+	text-align: center;
+	outline: none;
+	border-bottom:1px solid #646464;
+}
+.paging .active {
+    background:#f0f0f0;
+}

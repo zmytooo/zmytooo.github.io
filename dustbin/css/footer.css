@@ -1,0 +1,55 @@
+.footer{
+	position: relative;
+	top: 64px;
+	width: 100%;
+	height: 184px;
+	background: #33a7fd;
+	font-family: 'Microsoft YaHei';
+}
+.foot{
+	width: 1200px;
+	margin: 0 auto;
+	position: relative;
+}
+.foot .foot-left{
+	position: relative;
+	left: 69px;
+	top: 56px;
+	color: #fff;
+}
+.foot-left ul{
+	margin-bottom: 5px;
+	overflow: hidden;
+}
+.foot-left ul li{
+	float: left;
+	margin-left: 10px;
+}
+.foot-left ul li:nth-child(1){
+	margin-left: 0px;
+}
+.foot-left ul li:hover a{
+	color: red;
+	text-decoration: underline;
+}
+.foot-left ul li a{
+	color: #fff;
+}
+.foot-left p{
+	line-height: 30px;
+}
+.hotline{
+	margin-left: 778px;
+	color: #fff;
+}
+.hotline b{
+	font-size: 24px;
+}
+.scan{
+	width: 128px;
+	height: 144px;
+	position: absolute;
+	color: #fff;
+	top: 7px;right: 0;
+	text-align: center;
+}
