@@ -31,11 +31,13 @@ Javascript语言不支持”类”，但是可以用一些变通的方法，模�
 	function Cat() { 
     	this.name = "大毛";
 	}
-	生成实例的时候，使用new关键字。
+
+生成实例的时候，使用new关键字。
 
 	var cat1 = new Cat();
 	alert(cat1.name); // 大毛
-	类的属性和方法，还可以定义在构造函数的prototype对象之上。
+
+类的属性和方法，还可以定义在构造函数的prototype对象之上。
 
 	Cat.prototype.makeSound = function(){
     	alert("喵喵喵");
@@ -61,9 +63,9 @@ Javascript语言不支持”类”，但是可以用一些变通的方法，模�
 
 	if (!Object.create) {
       Object.create = function (o) {
-      function F() {}
-      F.prototype = o;
-      return new F();
+        function F() {}
+        F.prototype = o;
+        return new F();
       };
 	}
 这种方法比”构造函数法”简单，但是不能实现私有属性和私有方法，实例对象之间也不能共享数据，对”类”的模拟不够全面。
@@ -76,19 +78,19 @@ Javascript语言不支持”类”，但是可以用一些变通的方法，模�
 首先，它也是用一个对象模拟”类”。在这个类里面，定义一个构造函数createNew()，用来生成实例。
 
 	var Cat = {
-    createNew: function(){
-    // some code here
-    }
+        createNew: function(){
+            // some code here
+        }
 	};
 然后，在createNew()里面，定义一个实例对象，把这个实例对象作为返回值。
 
 	var Cat = {
-    createNew: function(){
-    var cat = {};
-    cat.name = "大毛";
-    cat.makeSound = function(){ alert("喵喵喵"); };
-    return cat;
-    }
+        createNew: function(){
+            var cat = {};
+            cat.name = "大毛";
+            cat.makeSound = function(){ alert("喵喵喵"); };
+            return cat;
+        }
 	};
 使用的时候，调用createNew()方法，就可以得到实例对象。
 
@@ -101,21 +103,21 @@ Javascript语言不支持”类”，但是可以用一些变通的方法，模�
 先定义一个Animal类。
 
 	var Animal = {
-    createNew: function(){
-    var animal = {};
-    animal.sleep = function(){ alert("睡懒觉"); };
-    return animal;
-    }
+        createNew: function(){
+            var animal = {};
+            animal.sleep = function(){ alert("睡懒觉"); };
+            return animal;
+        }
 	};
 然后，在Cat的createNew()方法中，调用Animal的createNew()方法。
 
 	var Cat = {
-    createNew: function(){
-    var cat = Animal.createNew();
-    cat.name = "大毛";
-    cat.makeSound = function(){ alert("喵喵喵"); };
-    return cat;
-    }
+        createNew: function(){
+            var cat = Animal.createNew();
+            cat.name = "大毛";
+            cat.makeSound = function(){ alert("喵喵喵"); };
+            return cat;
+        }
 	};
 这样得到的Cat实例，就会同时继承Cat类和Animal类。
 

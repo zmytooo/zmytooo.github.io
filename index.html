@@ -270,7 +270,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/21/简单的三栏布局/" data-id="ciwiub6fr000i4a0y3odsurgv" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/21/简单的三栏布局/" data-id="ciwiwytzl000kiy0y4v23ggy0" class="article-share-link">Share</a>
       
       
     </footer>
@@ -314,7 +314,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/19/浅谈html-css与js/" data-id="ciwiub6fk000e4a0ybfwg57o0" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/19/浅谈html-css与js/" data-id="ciwiwytzf000giy0yw1ee7etx" class="article-share-link">Share</a>
       
       
     </footer>
@@ -359,13 +359,11 @@
 <pre><code>function Cat() { 
     this.name = &quot;大毛&quot;;
 }
-生成实例的时候，使用new关键字。
-
-var cat1 = new Cat();
+</code></pre><p>生成实例的时候，使用new关键字。</p>
+<pre><code>var cat1 = new Cat();
 alert(cat1.name); // 大毛
-类的属性和方法，还可以定义在构造函数的prototype对象之上。
-
-Cat.prototype.makeSound = function(){
+</code></pre><p>类的属性和方法，还可以定义在构造函数的prototype对象之上。</p>
+<pre><code>Cat.prototype.makeSound = function(){
     alert(&quot;喵喵喵&quot;);
 }
 </code></pre><p>　　<br>关于这种方法的详细介绍，请看我写的系列文章《Javascript 面向对象编程》，这里就不多说了。它的主要缺点是，比较复杂，用到了this和prototype，编写和阅读都很费力。</p>
@@ -382,27 +380,27 @@ cat1.makeSound(); // 喵喵喵
 </code></pre><p>目前，各大浏览器的最新版本（包括IE9）都部署了这个方法。如果遇到老式浏览器，可以用下面的代码自行部署。</p>
 <pre><code>if (!Object.create) {
   Object.create = function (o) {
-  function F() {}
-  F.prototype = o;
-  return new F();
+    function F() {}
+    F.prototype = o;
+    return new F();
   };
 }
 </code></pre><p>这种方法比”构造函数法”简单，但是不能实现私有属性和私有方法，实例对象之间也不能共享数据，对”类”的模拟不够全面。</p>
 <h3 id="三、极简主义法"><a href="#三、极简主义法" class="headerlink" title="三、极简主义法"></a>三、极简主义法</h3><p>荷兰程序员Gabor de Mooij提出了一种比Object.create()更好的新方法，他称这种方法为”极简主义法”（minimalist approach）。这也是我推荐的方法。</p>
 <h3 id="3-1-封装"><a href="#3-1-封装" class="headerlink" title="3.1 封装"></a>3.1 封装</h3><p>这种方法不使用this和prototype，代码部署起来非常简单，这大概也是它被叫做”极简主义法”的原因。<br>首先，它也是用一个对象模拟”类”。在这个类里面，定义一个构造函数createNew()，用来生成实例。</p>
 <pre><code>var Cat = {
-createNew: function(){
-// some code here
-}
+    createNew: function(){
+        // some code here
+    }
 };
 </code></pre><p>然后，在createNew()里面，定义一个实例对象，把这个实例对象作为返回值。</p>
 <pre><code>var Cat = {
-createNew: function(){
-var cat = {};
-cat.name = &quot;大毛&quot;;
-cat.makeSound = function(){ alert(&quot;喵喵喵&quot;); };
-return cat;
-}
+    createNew: function(){
+        var cat = {};
+        cat.name = &quot;大毛&quot;;
+        cat.makeSound = function(){ alert(&quot;喵喵喵&quot;); };
+        return cat;
+    }
 };
 </code></pre><p>使用的时候，调用createNew()方法，就可以得到实例对象。</p>
 <pre><code>var cat1 = Cat.createNew();
@@ -410,20 +408,20 @@ cat1.makeSound(); // 喵喵喵
 </code></pre><p>这种方法的好处是，容易理解，结构清晰优雅，符合传统的”面向对象编程”的构造，因此可以方便地部署下面的特性。</p>
 <h3 id="3-2-继承"><a href="#3-2-继承" class="headerlink" title="3.2 继承"></a>3.2 继承</h3><p>让一个类继承另一个类，实现起来很方便。只要在前者的createNew()方法中，调用后者的createNew()方法即可。<br>先定义一个Animal类。</p>
 <pre><code>var Animal = {
-createNew: function(){
-var animal = {};
-animal.sleep = function(){ alert(&quot;睡懒觉&quot;); };
-return animal;
-}
+    createNew: function(){
+        var animal = {};
+        animal.sleep = function(){ alert(&quot;睡懒觉&quot;); };
+        return animal;
+    }
 };
 </code></pre><p>然后，在Cat的createNew()方法中，调用Animal的createNew()方法。</p>
 <pre><code>var Cat = {
-createNew: function(){
-var cat = Animal.createNew();
-cat.name = &quot;大毛&quot;;
-cat.makeSound = function(){ alert(&quot;喵喵喵&quot;); };
-return cat;
-}
+    createNew: function(){
+        var cat = Animal.createNew();
+        cat.name = &quot;大毛&quot;;
+        cat.makeSound = function(){ alert(&quot;喵喵喵&quot;); };
+        return cat;
+    }
 };
 </code></pre><p>这样得到的Cat实例，就会同时继承Cat类和Animal类。</p>
 <pre><code>var cat1 = Cat.createNew();
@@ -461,7 +459,387 @@ cat1.makeSound(); // 啦啦啦
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/13/Javascript定义类（class）的三种方法【转】/" data-id="ciwiub6ev00014a0yen4fefdm" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/13/Javascript定义类（class）的三种方法【转】/" data-id="ciwiwytyp0002iy0ymthtmlcf" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Flex布局教程：实例篇【转】" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/11/01/Flex布局教程：实例篇【转】/" class="article-date">
+  <time datetime="2016-11-01T12:26:16.000Z" itemprop="datePublished">2016-11-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/01/Flex布局教程：实例篇【转】/">Flex布局教程：实例篇【转】</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p> 本篇博客转至 阮一峰–Flex 布局教程：实例篇</p>
+<h1 id="Flex-布局教程：实例篇"><a href="#Flex-布局教程：实例篇" class="headerlink" title="Flex 布局教程：实例篇"></a>Flex 布局教程：实例篇</h1><p>今天介绍常见布局的Flex写法。</p>
+<p>你会看到，不管是什么布局，Flex往往都可以几行命令搞定。<br><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071327.png" alt="Alt text"></p>
+<h2 id="一、骰子的布局"><a href="#一、骰子的布局" class="headerlink" title="一、骰子的布局"></a>一、骰子的布局</h2><p>骰子的一面，最多可以放置9个点。</p>
+<p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071328.png" alt="Alt text"></p>
+<p>下面，就来看看Flex如何实现，从1个点到9个点的布局。你可以到codepen查看Demo。</p>
+<p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071329.png" alt="Alt text"></p>
+<p>如果不加说明，本节的HTML模板一律如下。</p>
+<pre><code>&lt;div class=&quot;box&quot;&gt;
+    &lt;span class=&quot;item&quot;&gt;&lt;/span&gt;
+&lt;/div&gt;
+</code></pre><p>上面代码中，div元素（代表骰子的一个面）是Flex容器，span元素（代表一个点）是Flex项目。如果有多个项目，就要添加多个span元素，以此类推。</p>
+<h3 id="1-1-单项目"><a href="#1-1-单项目" class="headerlink" title="1.1 单项目"></a>1.1 单项目</h3><p>首先，只有左上角1个点的情况。Flex布局默认就是首行左对齐，所以一行代码就够了。<br><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071301.png" alt="Alt text"></p>
+<pre><code>.box {
+    display: flex;
+}
+</code></pre><p>设置项目的对齐方式，就能实现居中对齐和右对齐。<br><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071302.png" alt="Alt text"></p>
+<pre><code>.box {
+    display: flex;
+    justify-content: center;
+}
+</code></pre><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071303.png" alt="Alt text"></p>
+<pre><code>.box {
+    display: flex;
+    justify-content: flex-end;
+</code></pre><p>设置交叉轴对齐方式，可以垂直移动主轴。</p>
+<p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071304.png" alt="Alt text"></p>
+<pre><code>.box {
+    display: flex;
+    align-items: center;
+}
+</code></pre><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071305.png" alt="Alt text"></p>
+<pre><code>.box {
+    display: flex;
+    justify-content: center;
+     align-items: center;
+}
+</code></pre><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071306.png" alt="Alt text"></p>
+<pre><code>.box {
+    display: flex;
+    justify-content: center;
+     align-items: flex-end;
+}
+</code></pre><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071307.png" alt="Alt text"></p>
+<pre><code>.box { 
+    display: flex;
+    justify-content: flex-end;
+     align-items: flex-end;
+}
+</code></pre><h2 id="二、网格布局"><a href="#二、网格布局" class="headerlink" title="二、网格布局"></a>二、网格布局</h2><h3 id="2-1-基本网格布局"><a href="#2-1-基本网格布局" class="headerlink" title="2.1 基本网格布局"></a>2.1 基本网格布局</h3><p>最简单的网格布局，就是平均分布。在容器里面平均分配空间，跟上面的骰子布局很像，但是需要设置项目的自动缩放。<br><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071321.png" alt="Alt text"><br>HTML代码如下。</p>
+<pre><code>&lt;div class=&quot;Grid&quot;&gt;
+      &lt;div class=&quot;Grid-cell&quot;&gt;...&lt;/div&gt;
+      &lt;div class=&quot;Grid-cell&quot;&gt;...&lt;/div&gt;
+      &lt;div class=&quot;Grid-cell&quot;&gt;...&lt;/div&gt;
+&lt;/div&gt;
+</code></pre><p>CSS代码如下。</p>
+<pre><code>.Grid {
+      display: flex;
+}
+.Grid-cell {
+      flex: 1;
+}
+</code></pre><h3 id="2-2-百分比布局"><a href="#2-2-百分比布局" class="headerlink" title="2.2 百分比布局"></a>2.2 百分比布局</h3><p>某个网格的宽度为固定的百分比，其余网格平均分配剩余的空间。<br><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071322.png" alt="Alt text"><br>HTML代码如下。</p>
+<pre><code>&lt;div class=&quot;Grid&quot;&gt;
+      &lt;div class=&quot;Grid-cell u-1of4&quot;&gt;...&lt;/div&gt;
+      &lt;div class=&quot;Grid-cell&quot;&gt;...&lt;/div&gt;
+      &lt;div class=&quot;Grid-cell u-1of3&quot;&gt;...&lt;/div&gt;
+&lt;/div&gt;
+
+.Grid {
+      display: flex;
+}
+
+.Grid-cell {
+      flex: 1;
+}
+
+.Grid-cell.u-full {
+      flex: 0 0 100%;
+}
+
+.Grid-cell.u-1of2 {
+      flex: 0 0 50%;
+}
+
+.Grid-cell.u-1of3 {
+      flex: 0 0 33.3333%;
+}
+
+.Grid-cell.u-1of4 {
+      flex: 0 0 25%;
+}
+</code></pre><h2 id="三、圣杯布局"><a href="#三、圣杯布局" class="headerlink" title="三、圣杯布局"></a>三、圣杯布局</h2><p>圣杯布局（Holy Grail Layout）指的是一种最常见的网站布局。页面从上到下，分成三个部分：头部（header），躯干（body），尾部（footer）。其中躯干又水平分成三栏，从左到右为：导航、主栏、副栏。</p>
+<p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071323.png" alt="Alt text"><br>HTML代码如下。</p>
+<pre><code>&lt;body class=&quot;HolyGrail&quot;&gt;
+  &lt;header&gt;...&lt;/header&gt;
+  &lt;div class=&quot;HolyGrail-body&quot;&gt;
+    &lt;main class=&quot;HolyGrail-content&quot;&gt;...&lt;/main&gt;
+    &lt;nav class=&quot;HolyGrail-nav&quot;&gt;...&lt;/nav&gt;
+    &lt;aside class=&quot;HolyGrail-ads&quot;&gt;...&lt;/aside&gt;
+  &lt;/div&gt;
+  &lt;footer&gt;...&lt;/footer&gt;
+&lt;/body&gt;
+</code></pre><p>CSS代码如下。</p>
+<pre><code>.HolyGrail {
+      display: flex;
+      min-height: 100vh;
+     flex-direction: column;
+}
+
+header,
+footer {
+      flex: 1;
+}
+
+.HolyGrail-body {
+      display: flex;
+      flex: 1;
+}
+
+.HolyGrail-content {
+      flex: 1;
+}
+
+.HolyGrail-nav, .HolyGrail-ads {
+      /* 两个边栏的宽度设为12em */
+      flex: 0 0 12em;
+}
+
+.HolyGrail-nav {
+      /* 导航放到最左边 */
+      order: -1;
+}
+</code></pre><p>如果是小屏幕，躯干的三栏自动变为垂直叠加。</p>
+<pre><code>@media (max-width: 768px) {
+      .HolyGrail-body {
+        flex-direction: column;
+        flex: 1;
+      }
+      .HolyGrail-nav,
+      .HolyGrail-ads,
+      .HolyGrail-content {
+           flex: auto;
+      }
+}
+</code></pre><h2 id="四、悬挂式布局"><a href="#四、悬挂式布局" class="headerlink" title="四、悬挂式布局"></a>四、悬挂式布局</h2><p>有时，主栏的左侧或右侧，需要添加一个图片栏。<br><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071325.png" alt="Alt text"><br>HTML代码如下。</p>
+<pre><code>&lt;div class=&quot;Media&quot;&gt;
+  &lt;img class=&quot;Media-figure&quot; src=&quot;&quot; alt=&quot;&quot;&gt;
+  &lt;p class=&quot;Media-body&quot;&gt;...&lt;/p&gt;
+&lt;/div&gt;
+</code></pre><p>CSS代码如下。</p>
+<pre><code>.Media {
+     display: flex;
+      align-items: flex-start;
+}
+
+.Media-figure {
+      margin-right: 1em;
+}
+
+.Media-body {
+      flex: 1;
+}
+</code></pre><h2 id="五、固定的底栏"><a href="#五、固定的底栏" class="headerlink" title="五、固定的底栏"></a>五、固定的底栏</h2><p>有时，页面内容太少，无法占满一屏的高度，底栏就会抬高到页面的中间。这时可以采用Flex布局，让底栏总是出现在页面的底部。<br><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071326.png" alt="Alt text"><br>HTML代码如下。</p>
+<pre><code>&lt;body class=&quot;Site&quot;&gt;
+  &lt;header&gt;...&lt;/header&gt;
+  &lt;main class=&quot;Site-content&quot;&gt;...&lt;/main&gt;
+  &lt;footer&gt;...&lt;/footer&gt;
+&lt;/body&gt;
+</code></pre><p>CSS代码如下。</p>
+<pre><code>.Site {
+      display: flex;
+      min-height: 100vh;
+      flex-direction: column;
+}
+
+.Site-content {
+      flex: 1;
+}
+</code></pre><h2 id="六，流式布局"><a href="#六，流式布局" class="headerlink" title="六，流式布局"></a>六，流式布局</h2><p>每行的项目数固定，会自动分行。<br><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071330.png" alt="Alt text"><br>CSS的写法。</p>
+<pre><code>.parent {
+      width: 200px;
+      height: 150px;
+      background-color: black;
+      display: flex;
+      flex-flow: row wrap;
+      align-content: flex-start;
+}
+
+.child {
+      box-sizing: border-box;
+      background-color: white;
+      flex: 0 0 25%;
+      height: 50px;
+      border: 1px solid red;
+}
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/11/01/Flex布局教程：实例篇【转】/" data-id="ciwiwytym0001iy0yuwxb4lv9" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Flex布局教程：语法篇【转】" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/10/29/Flex布局教程：语法篇【转】/" class="article-date">
+  <time datetime="2016-10-29T07:19:20.000Z" itemprop="datePublished">2016-10-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/29/Flex布局教程：语法篇【转】/">Flex布局教程：语法篇【转】</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>本篇博客转至 阮一峰–Flex 布局教程：语法篇</p>
+<h1 id="网页布局（layout）是CSS的一个重点应用。"><a href="#网页布局（layout）是CSS的一个重点应用。" class="headerlink" title="网页布局（layout）是CSS的一个重点应用。"></a>网页布局（layout）是CSS的一个重点应用。</h1><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071001.gif" alt="Alt text"></p>
+<p>布局的传统解决方案，基于盒状模型，依赖 display属性 + position属性 + float属性。它对于那些特殊布局非常不方便，比如，垂直居中就不容易实现。<br><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071002.png" alt="Alt text"><br>2009年，W3C提出了一种新的方案—-Flex布局，可以简便、完整、响应式地实现各种页面布局。目前，它已经得到了所有浏览器的支持，这意味着，现在就能很安全地使用这项功能。<br><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071003.jpg" alt="Alt text"></p>
+<h2 id="一、Flex布局是什么？"><a href="#一、Flex布局是什么？" class="headerlink" title="一、Flex布局是什么？"></a>一、Flex布局是什么？</h2><p>Flex是Flexible Box的缩写，意为”弹性布局”，用来为盒状模型提供最大的灵活性。<br>任何一个容器都可以指定为Flex布局。</p>
+<pre><code>.box{
+    display: flex;
+}
+</code></pre><p>行内元素也可以使用Flex布局。</p>
+<pre><code>.box{
+    display: inline-flex;
+}
+</code></pre><p>Webkit内核的浏览器，必须加上 “-webkit” 前缀。</p>
+<pre><code>.box{
+    display: -webkit-flex; /* Safari */
+    display: flex;
+}
+</code></pre><p>注意，设为Flex布局以后，子元素的float、clear和vertical-align属性将失效。</p>
+<h2 id="二、基本概念"><a href="#二、基本概念" class="headerlink" title="二、基本概念"></a>二、基本概念</h2><p>采用Flex布局的元素，称为Flex容器（flex container），简称”容器”。它的所有子元素自动成为容器成员，称为Flex项目（flex item），简称”项目”。<br><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071004.png" alt="Alt text"><br>容器默认存在两根轴：水平的主轴（main axis）和垂直的交叉轴（cross axis）。主轴的开始位置（与边框的交叉点）叫做main start，结束位置叫做main end；交叉轴的开始位置叫做cross start，结束位置叫做cross end。<br>项目默认沿主轴排列。单个项目占据的主轴空间叫做main size，占据的交叉轴空间叫做cross size。</p>
+<h2 id="三、容器的属性"><a href="#三、容器的属性" class="headerlink" title="三、容器的属性"></a>三、容器的属性</h2><p>以下6个属性设置在容器上。</p>
+<p>flex-direction</p>
+<p>flex-wrap</p>
+<p>flex-flow</p>
+<p>justify-content</p>
+<p>align-items</p>
+<p>align-content</p>
+<h3 id="3-1-flex-direction属性"><a href="#3-1-flex-direction属性" class="headerlink" title="3.1 flex-direction属性"></a>3.1 flex-direction属性</h3><p>flex-direction属性决定主轴的方向（即项目的排列方向）。</p>
+<pre><code>.box {
+    flex-direction: row | row-reverse | column | column-reverse;
+}
+</code></pre><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071005.png" alt="Alt text"><br>它可能有4个值。</p>
+<p>row（默认值）：主轴为水平方向，起点在左端。</p>
+<p>row-reverse：主轴为水平方向，起点在右端。</p>
+<p>column：主轴为垂直方向，起点在上沿。</p>
+<p>column-reverse：主轴为垂直方向，起点在下沿。</p>
+<h3 id="3-2-flex-wrap属性"><a href="#3-2-flex-wrap属性" class="headerlink" title="3.2 flex-wrap属性"></a>3.2 flex-wrap属性</h3><p>默认情况下，项目都排在一条线（又称”轴线”）上。flex-wrap属性定义，如果一条轴线排不下，如何换行。<br><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071006.png" alt="Alt text"></p>
+<pre><code>.box{
+    flex-wrap: nowrap | wrap | wrap-reverse;
+}
+</code></pre><p>它可能取三个值。</p>
+<p>（1）nowrap（默认）：不换行。<br><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071007.png" alt="Alt text"><br>（2）wrap：换行，第一行在上方。</p>
+<p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071008.jpg" alt="Alt text"><br>（3）wrap-reverse：换行，第一行在下方。<br><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071009.jpg" alt="Alt text"></p>
+<h3 id="3-3-flex-flow"><a href="#3-3-flex-flow" class="headerlink" title="3.3 flex-flow"></a>3.3 flex-flow</h3><p>flex-flow属性是flex-direction属性和flex-wrap属性的简写形式，默认值为row nowrap。</p>
+<pre><code>.box {
+    flex-flow: &lt;flex-direction&gt; || &lt;flex-wrap&gt;;
+}
+</code></pre><h3 id="3-4-justify-content属性"><a href="#3-4-justify-content属性" class="headerlink" title="3.4 justify-content属性"></a>3.4 justify-content属性</h3><p>justify-content属性定义了项目在主轴上的对齐方式。</p>
+<pre><code>.box {
+    justify-content: flex-start | flex-end | center | space-between | space-around;
+}
+</code></pre><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071010.png" alt="Alt text"><br>它可能取5个值，具体对齐方式与轴的方向有关。下面假设主轴为从左到右。</p>
+<p>flex-start（默认值）：左对齐</p>
+<p>flex-end：右对齐</p>
+<p>center： 居中</p>
+<p>space-between：两端对齐，项目之间的间隔都相等。</p>
+<p>space-around：每个项目两侧的间隔相等。所以，项目之间的间隔比项目与边框的间隔大一倍。</p>
+<h3 id="3-5-align-items属性"><a href="#3-5-align-items属性" class="headerlink" title="3.5 align-items属性"></a>3.5 align-items属性</h3><p>align-items属性定义项目在交叉轴上如何对齐。</p>
+<pre><code>.box {
+    align-items: flex-start | flex-end | center | baseline | stretch;
+}
+</code></pre><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071011.png" alt="Alt text"><br>它可能取5个值。具体的对齐方式与交叉轴的方向有关，下面假设交叉轴从上到下。</p>
+<p>flex-start：交叉轴的起点对齐。</p>
+<p>flex-end：交叉轴的终点对齐。</p>
+<p>center：交叉轴的中点对齐。</p>
+<p>baseline: 项目的第一行文字的基线对齐。</p>
+<p>stretch（默认值）：如果项目未设置高度或设为auto，将占满整个容器的高度。</p>
+<h3 id="3-6-align-content属性"><a href="#3-6-align-content属性" class="headerlink" title="3.6 align-content属性"></a>3.6 align-content属性</h3><p>align-content属性定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用。</p>
+<pre><code>.box {
+    align-content: flex-start | flex-end | center | space-between | space-around | stretch;
+}
+</code></pre><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071012.png" alt="Alt text"><br>该属性可能取6个值。</p>
+<p>flex-start：与交叉轴的起点对齐。</p>
+<p>flex-end：与交叉轴的终点对齐。</p>
+<p>center：与交叉轴的中点对齐。</p>
+<p>space-between：与交叉轴两端对齐，轴线之间的间隔平均分布。</p>
+<p>space-around：每根轴线两侧的间隔都相等。所以，轴线之间的间隔比轴线与边框的间隔大一倍。<br>stretch（默认值）：轴线占满整个交叉轴。</p>
+<h2 id="四、项目的属性"><a href="#四、项目的属性" class="headerlink" title="四、项目的属性"></a>四、项目的属性</h2><p>以下6个属性设置在项目上。</p>
+<p>order</p>
+<p>flex-grow</p>
+<p>flex-shrink</p>
+<p>flex-basis</p>
+<p>flex</p>
+<p>align-self</p>
+<h3 id="4-1-order属性"><a href="#4-1-order属性" class="headerlink" title="4.1 order属性"></a>4.1 order属性</h3><p>order属性定义项目的排列顺序。数值越小，排列越靠前，默认为0。</p>
+<pre><code>.item {
+    order: &lt;integer&gt;;
+}
+</code></pre><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071013.png" alt="Alt text"></p>
+<h3 id="4-2-flex-grow属性"><a href="#4-2-flex-grow属性" class="headerlink" title="4.2 flex-grow属性"></a>4.2 flex-grow属性</h3><p>flex-grow属性定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大。</p>
+<pre><code>.item {
+    flex-grow: &lt;number&gt;; /* default 0 *;
+}
+</code></pre><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071014.png" alt="Alt text"><br>如果所有项目的flex-grow属性都为1，则它们将等分剩余空间（如果有的话）。如果一个项目的flex-grow属性为2，其他项目都为1，则前者占据的剩余空间将比其他项多一倍。</p>
+<h3 id="4-3-flex-shrink属性"><a href="#4-3-flex-shrink属性" class="headerlink" title="4.3 flex-shrink属性"></a>4.3 flex-shrink属性</h3><p>flex-shrink属性定义了项目的缩小比例，默认为1，即如果空间不足，该项目将缩小。</p>
+<pre><code>.item {
+    flex-shrink: &lt;number&gt;; /* default 1 */
+}
+</code></pre><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071015.jpg" alt="Alt text"><br>如果所有项目的flex-shrink属性都为1，当空间不足时，都将等比例缩小。如果一个项目的flex-shrink属性为0，其他项目都为1，则空间不足时，前者不缩小。<br>负值对该属性无效。</p>
+<h3 id="4-4-flex-basis属性"><a href="#4-4-flex-basis属性" class="headerlink" title="4.4 flex-basis属性"></a>4.4 flex-basis属性</h3><p>flex-basis属性定义了在分配多余空间之前，项目占据的主轴空间（main size）。浏览器根据这个属性，计算主轴是否有多余空间。它的默认值为auto，即项目的本来大小。</p>
+<pre><code>.item {
+    flex-basis: &lt;length&gt; | auto; /* default auto */
+}
+</code></pre><p>它可以设为跟width或height属性一样的值（比如350px），则项目将占据固定空间。</p>
+<h3 id="4-5-flex属性"><a href="#4-5-flex属性" class="headerlink" title="4.5 flex属性"></a>4.5 flex属性</h3><p>flex属性是flex-grow, flex-shrink 和 flex-basis的简写，默认值为0 1 auto。后两个属性可选。</p>
+<pre><code>.item {
+    flex: none | [ &lt;&apos;flex-grow&apos;&gt; &lt;&apos;flex-shrink&apos;&gt;? || &lt;&apos;flex-basis&apos;&gt; ]
+}
+</code></pre><p>该属性有两个快捷值：auto (1 1 auto) 和 none (0 0 auto)。<br>建议优先使用这个属性，而不是单独写三个分离的属性，因为浏览器会推算相关值。</p>
+<h3 id="4-6-align-self属性"><a href="#4-6-align-self属性" class="headerlink" title="4.6 align-self属性"></a>4.6 align-self属性</h3><p>align-self属性允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性。默认值为auto，表示继承父元素的align-items属性，如果没有父元素，则等同于stretch。</p>
+<pre><code>.item {
+    align-self: auto | flex-start | flex-end | center | baseline | stretch;
+}
+</code></pre><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071016.png" alt="Alt text"><br>该属性可能取6个值，除了auto，其他都与align-items属性完全一致。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/10/29/Flex布局教程：语法篇【转】/" data-id="ciwiwytyr0003iy0yf2zvb1pj" class="article-share-link">Share</a>
       
       
     </footer>
@@ -531,7 +909,7 @@ res.output();
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/10/25/关于node-js的误会【转】/" data-id="ciwiub6fc00084a0yyiiuxtsp" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/10/25/关于node-js的误会【转】/" data-id="ciwiwytz6000aiy0yih2pissh" class="article-share-link">Share</a>
       
       
     </footer>
@@ -608,7 +986,7 @@ console.log(&apos;Server running at http://127.0.0.1:8124/&apos;);
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/10/19/node-js入门【转】/" data-id="ciwiub6f700064a0ymz8feb8j" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/10/19/node-js入门【转】/" data-id="ciwiwytyz0006iy0yvftjz4bg" class="article-share-link">Share</a>
       
       
     </footer>
@@ -659,7 +1037,7 @@ console.log(&apos;Server running at http://127.0.0.1:8124/&apos;);
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/10/12/socket-io中的emit和on方法/" data-id="ciwiub6f800074a0y1ox3gsnw" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/10/12/socket-io中的emit和on方法/" data-id="ciwiwytz50009iy0ykadvcpjr" class="article-share-link">Share</a>
       
       
     </footer>
@@ -968,7 +1346,7 @@ setInterval(drawClock,1000);
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/08/25/html5和canvas分别实现时钟/" data-id="ciwiub6f200044a0yzr71g8kt" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/08/25/html5和canvas分别实现时钟/" data-id="ciwiwytz30008iy0yv5itss1s" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1105,231 +1483,7 @@ function random(m,n){
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/08/14/用canvas实现100个小球的运动/" data-id="ciwiub6fl000f4a0ynv222scq" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-放大镜效果" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/07/19/放大镜效果/" class="article-date">
-  <time datetime="2016-07-19T07:07:43.000Z" itemprop="datePublished">2016-07-19</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/07/19/放大镜效果/">放大镜效果</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="用js原生实现放大镜效果"><a href="#用js原生实现放大镜效果" class="headerlink" title="用js原生实现放大镜效果"></a>用js原生实现放大镜效果</h3><p>一般PC端网页中的商品详情页都会有放大镜效果，今天就用js原生来实现基础的放大镜效果。</p>
-<p>1.首先，我们在HTML里写上内容和一些简单的样式。代码如下：</p>
-<pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-&lt;meta charset=&quot;UTF-8&quot;&gt;
-&lt;title&gt;&lt;/title&gt;
-&lt;style type=&quot;text/css&quot;&gt;
-.box{
-    width: 850px;
-    margin: 100px auto;
-    background: #ccc;
-    position: relative;
-}
-.small{
-    width: 400px;
-    height: 300px;
-    position: absolute;
-}
-.small img{
-    width: 100%;
-    height: 100%;
-}
-.small span{
-    width: 100px;
-    height: 100px;
-    background: blue;
-    opacity: 0.3;
-    position: absolute;
-    top: 0;left: 0;
-    cursor: move;
-}
-.small #show{
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;left: 0;
-    z-index: 10;
-}
-.big{
-    width: 400px;
-    height: 300px;
-    position: absolute;
-    top: 0;left: 450px;
-    overflow: hidden;
-}
-.big img{
-    width: 200%;
-    height: 200%;
-    position: absolute;
-    top: 0;left: 0;
-}
-&lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-&lt;div class=&quot;box&quot;&gt;
-&lt;div class=&quot;small&quot;&gt;
-    &lt;img src=&quot;qyc.jpg&quot;&gt;
-    &lt;span&gt;&lt;/span&gt;
-    &lt;div id=&quot;show&quot;&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;big&quot;&gt;
-    &lt;img src=&quot;qyc.jpg&quot;&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre><p>初始化效果如下：</p>
-<p><img src="http://a1.qpic.cn/psb?/V101Z8453moGbb/pc.2DHAYwAjvJ*0vq8.fmWhFE.gf97eMkMGaTIdwAu8!/b/dOQAAAAAAAAA&amp;bo=LwS2AQAAAAADB74!&amp;rf=viewer_4" alt="Alt text"></p>
-<p>2.一般放大镜的放大效果和蒙版初始是不显示的，当我们鼠标移入图片时放大的效果图片和蒙版就会显示。我们应该在CSS样式中添加如下内容：</p>
-<pre><code>.small span{
-    display:none;
-}
-.big{
-    display: none;
-}
-</code></pre><p>效果如下：</p>
-<p><img src="http://a2.qpic.cn/psb?/V101Z8453moGbb/*wqjAHnjDjTMi591BeHsTrCAmGOE*Fq9olXJprthldU!/b/dI0BAAAAAAAA&amp;bo=LwSUAQAAAAADB5w!&amp;rf=viewer_4" alt="Alt text"></p>
-<p>3.下面是js部分</p>
-<pre><code>&lt;script type=&quot;text/javascript&quot;&gt;
-var mask = document.querySelector(&apos;.small span&apos;);
-var show = document.querySelector(&apos;#show&apos;);
-var small = document.querySelector(&apos;.small&apos;);
-var smallImg = document.querySelector(&apos;.small img&apos;);
-var big = document.querySelector(&apos;.big&apos;);
-var bigImg = document.querySelector(&apos;.big img&apos;);
-
-small.onmouseover=function(){
-    mask.style.display=&apos;block&apos;;
-    big.style.display=&apos;block&apos;;
-}
-small.onmouseout=function(){
-    mask.style.display=&apos;none&apos;;
-    big.style.display=&apos;none&apos;;
-}
-
-show.onmousemove=function(event){
-    var oEvent=event || window.event;
-    var x=oEvent.offsetX;
-    var y=oEvent.offsetY;
-    var le=x-mask.offsetWidth/2;
-    var to=y-mask.offsetHeight/2;
-    if(le&lt;=0){
-        le=0;
-    }else if(show.offsetWidth-x&lt;=mask.offsetWidth/2){
-        le=show.offsetWidth-mask.offsetWidth;
-    }
-    if(to&lt;=0){
-        to=0;
-    }else if(show.offsetHeight-y&lt;=mask.offsetHeight/2){
-        to=show.offsetHeight-mask.offsetHeight;
-    }
-    mask.style.left=le+&quot;px&quot;;
-    mask.style.top=to+&quot;px&quot;;
-    var xishuX=le/(show.offsetWidth-mask.offsetWidth);
-    var xishuY=to/(show.offsetHeight-mask.offsetHeight);
-    bigImg.style.left=-xishuX*(bigImg.offsetWidth-big.offsetWidth)+&quot;px&quot;;
-    bigImg.style.top=-xishuY*(bigImg.offsetHeight-big.offsetHeight)+&quot;px&quot;;
-}
-&lt;/script&gt;
-</code></pre><p>最终的效果就是我们所需要的放大镜效果</p>
-<p><img src="http://a2.qpic.cn/psb?/V101Z8453moGbb/AFs8L92qi0wxEtzWzpePf6*KUuHZhq1ywBLlHYl1yw8!/b/dAkBAAAAAAAA&amp;bo=0gN5AQAAAAADB4s!&amp;rf=viewer_4" alt="Alt text"></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/07/19/放大镜效果/" data-id="ciwiub6fj000d4a0yqs243uo2" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-用css实现图片在div内的垂直居中" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/07/15/用css实现图片在div内的垂直居中/" class="article-date">
-  <time datetime="2016-07-15T08:15:29.000Z" itemprop="datePublished">2016-07-15</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/07/15/用css实现图片在div内的垂直居中/">用css实现图片在div内的垂直居中</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>关于图片垂直居中的问题大家应该都遇到过，大家应该也有搜索过，这里整理了一份此类问题希望对大家有帮助</p>
-<p>div相对与table对于图片的垂直居中支持的并不好,特别对于不同浏览器的兼容性来说,这里我们看下一个简洁的css解决方法:</p>
-<p>在曾经的 淘宝UED 招聘 中有这样一道题目：</p>
-<p>“使用纯CSS实现未知尺寸的图片(但高宽都小于200px)在200px的正方形容器中水平和垂直居中。”</p>
-<p>当然出题并不是随意，而是有其现实的原因，垂直居中是 淘宝 工作中最常遇到的一个问题，很有代表性。<br>题目的难点在于两点：</p>
-<p>1.垂直居中；</p>
-<p>2.图片是个置换元素，有些特殊的特性。</p>
-<p>至于如何解决，下面是一个权衡的相对结构干净，CSS简单的解决方法：</p>
-<pre><code>.box { 
-/*非IE的主流浏览器识别的垂直居中的方法*/ 
-display: table-cell; 
-vertical-align:middle; 
-/*设置水平居中*/ 
-text-align:center; 
-/* 针对IE的Hack */ 
-*display: block; 
-*font-size: 175px;/*约为高度的0.873，200*0.873 约为175*/ 
-*font-family:Arial;/*防止非utf-8引起的hack失效问题，如gbk编码*/ 
-    width:200px; 
-    height:200px; 
-    border: 1px solid #eee; 
-} 
-.box img { 
-    /*设置图片垂直居中*/ 
-    vertical-align:middle; 
-} 
-&lt;div class=&quot;box&quot;&gt; 
-    &lt;img src=&quot;http://pics.taobao.com/bao/album/promotion/    taoscars_180x95_071112_sr.jpg&quot; /&gt; 
-&lt;/div&gt; 
-</code></pre><p>大家可以根据自己的问题修改代码</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/07/15/用css实现图片在div内的垂直居中/" data-id="ciwiub6fn000g4a0y4cj2kb6d" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/08/14/用canvas实现100个小球的运动/" data-id="ciwiwytzh000hiy0yduf32v07" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1385,11 +1539,11 @@ text-align:center;
           </li>
         
           <li>
-            <a href="/2016/10/25/关于node-js的误会【转】/">关于node.js的误会【转】</a>
+            <a href="/2016/11/01/Flex布局教程：实例篇【转】/">Flex布局教程：实例篇【转】</a>
           </li>
         
           <li>
-            <a href="/2016/10/19/node-js入门【转】/">node.js入门【转】</a>
+            <a href="/2016/10/29/Flex布局教程：语法篇【转】/">Flex布局教程：语法篇【转】</a>
           </li>
         
       </ul>
