@@ -1,17 +1,11 @@
-
- <!DOCTYPE HTML>
-<html >
+<!DOCTYPE html>
+<html>
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   
-    <title>行高与对齐问题【转】 | tooo的前端路</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
-    
-    <meta name="author" content="zmytooo">
-    
-
-    
-    <meta name="description" content="line-height，vertical-align及图片居中对齐问题根源解析关于图片居中对齐的问题，进入前端行业虽然有一段时间了，以为自己懂了，可是实际上还是一知半解，找了一些博客来看了一下，但是感觉讲的有点碎，看完还是一知半解。
+  <title>行高与对齐问题【转】 | tooo的前端路</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="line-height，vertical-align及图片居中对齐问题根源解析关于图片居中对齐的问题，进入前端行业虽然有一段时间了，以为自己懂了，可是实际上还是一知半解，找了一些博客来看了一下，但是感觉讲的有点碎，看完还是一知半解。
 查阅了一下《css权威指南》，结合遇到的问题，这才了解到前前后后的问题根源。主要的问题如下：
 1.line-height是个什么东西，范围在哪里，具体应用于什么元素？">
 <meta property="og:type" content="article">
@@ -37,86 +31,81 @@
 查阅了一下《css权威指南》，结合遇到的问题，这才了解到前前后后的问题根源。主要的问题如下：
 1.line-height是个什么东西，范围在哪里，具体应用于什么元素？">
 <meta name="twitter:image" content="http://images2015.cnblogs.com/blog/1061033/201611/1061033-20161109234632030-848113497.png">
+  
+    <link rel="alternate" href="/atom.xml" title="tooo的前端路" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
 
-    
-    <link rel="alternative" href="/atom.xml" title="tooo的前端路" type="application/atom+xml">
-    
-    
-    <link rel="icon" href="/img/favicon.ico">
-    
-    
-    <link rel="apple-touch-icon" href="/img/jacman.jpg">
-    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
-    
-    <link rel="stylesheet" href="/css/style.css">
 </head>
 
-  <body>
-    <header>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">tooo的前端路</a>
+      </h1>
       
-<div>
-		
-			<div id="imglogo">
-				<a href="/"><img src="/img/logo.png" alt="tooo的前端路" title="tooo的前端路"/></a>
-			</div>
-			
-			<div id="textlogo">
-				<h1 class="site-name"><a href="/" title="tooo的前端路">tooo的前端路</a></h1>
-				<h2 class="blog-motto">之路漫漫</h2>
-			</div>
-			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
-			</a></div>
-			<nav class="animated">
-				<ul>
-					<ul>
-					 
-						<li><a href="/">Home</a></li>
-					
-						<li><a href="/archives">Archives</a></li>
-					
-						<li><a href="/about">About</a></li>
-					
-					<li>
- 					
-					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
-						<label>Search</label>
-						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
-						<input type="hidden" name="q" value="site:yoursite.com">
-					</form>
-					
-					</li>
-				</ul>
-			</nav>			
-</div>
-    </header>
-    <div id="container">
-      <div id="main" class="post" itemscope itemprop="blogPost">
-  
-	<article itemprop="articleBody"> 
-		<header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2016/03/12/行高与对齐问题【转】/" title="行高与对齐问题【转】" itemprop="url">行高与对齐问题【转】</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="zmytooo" target="_blank" itemprop="author">zmytooo</a>
-		
-  <p class="article-time">
-    <time datetime="2016-03-12T06:23:53.000Z" itemprop="datePublished"> Published 2016-03-12</time>
-    
-  </p>
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">之路漫漫</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
 </header>
-	<div class="article-content">
-		
-		<div id="toc" class="toc-article">
-			<strong class="toc-title">Contents</strong>
-		
-			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#line-height，vertical-align及图片居中对齐问题根源解析"><span class="toc-number">1.</span> <span class="toc-text">line-height，vertical-align及图片居中对齐问题根源解析</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-line-height是个什么东西，范围在哪里，具体应用于什么元素？"><span class="toc-number">1.1.</span> <span class="toc-text">1.line-height是个什么东西，范围在哪里，具体应用于什么元素？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-vertiacal-align和line-height有什么关系，元素对齐到底是一个什么样的过程。"><span class="toc-number">1.2.</span> <span class="toc-text">2.vertiacal-align和line-height有什么关系，元素对齐到底是一个什么样的过程。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-图片对齐和文本对齐有什么区别？"><span class="toc-number">1.3.</span> <span class="toc-text">3.图片对齐和文本对齐有什么区别？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-浮动元素为什么对齐会出现问题？"><span class="toc-number">1.4.</span> <span class="toc-text">4.浮动元素为什么对齐会出现问题？</span></a></li></ol></li></ol>
-		
-		</div>
-		
-		<h1 id="line-height，vertical-align及图片居中对齐问题根源解析"><a href="#line-height，vertical-align及图片居中对齐问题根源解析" class="headerlink" title="line-height，vertical-align及图片居中对齐问题根源解析"></a>line-height，vertical-align及图片居中对齐问题根源解析</h1><p>关于图片居中对齐的问题，进入前端行业虽然有一段时间了，以为自己懂了，可是实际上还是一知半解，找了一些博客来看了一下，但是感觉讲的有点碎，看完还是一知半解。</p>
+      <div class="outer">
+        <section id="main"><article id="post-行高与对齐问题【转】" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/03/12/行高与对齐问题【转】/" class="article-date">
+  <time datetime="2016-03-12T06:23:53.000Z" itemprop="datePublished">2016-03-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      行高与对齐问题【转】
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="line-height，vertical-align及图片居中对齐问题根源解析"><a href="#line-height，vertical-align及图片居中对齐问题根源解析" class="headerlink" title="line-height，vertical-align及图片居中对齐问题根源解析"></a>line-height，vertical-align及图片居中对齐问题根源解析</h1><p>关于图片居中对齐的问题，进入前端行业虽然有一段时间了，以为自己懂了，可是实际上还是一知半解，找了一些博客来看了一下，但是感觉讲的有点碎，看完还是一知半解。</p>
 <p>查阅了一下《css权威指南》，结合遇到的问题，这才了解到前前后后的问题根源。<br>主要的问题如下：</p>
 <h2 id="1-line-height是个什么东西，范围在哪里，具体应用于什么元素？"><a href="#1-line-height是个什么东西，范围在哪里，具体应用于什么元素？" class="headerlink" title="1.line-height是个什么东西，范围在哪里，具体应用于什么元素？"></a>1.line-height是个什么东西，范围在哪里，具体应用于什么元素？</h2><h2 id="2-vertiacal-align和line-height有什么关系，元素对齐到底是一个什么样的过程。"><a href="#2-vertiacal-align和line-height有什么关系，元素对齐到底是一个什么样的过程。" class="headerlink" title="2.vertiacal-align和line-height有什么关系，元素对齐到底是一个什么样的过程。"></a>2.vertiacal-align和line-height有什么关系，元素对齐到底是一个什么样的过程。</h2><h2 id="3-图片对齐和文本对齐有什么区别？"><a href="#3-图片对齐和文本对齐有什么区别？" class="headerlink" title="3.图片对齐和文本对齐有什么区别？"></a>3.图片对齐和文本对齐有什么区别？</h2><h2 id="4-浮动元素为什么对齐会出现问题？"><a href="#4-浮动元素为什么对齐会出现问题？" class="headerlink" title="4.浮动元素为什么对齐会出现问题？"></a>4.浮动元素为什么对齐会出现问题？</h2><p>——-》解答这些问题，牵涉的碎片化知识：</p>
 <p>基线，底端，行内框，行框，行间距，替换元素及非替换元素，对齐</p>
@@ -212,342 +201,123 @@ span{line-height:40px;} /*可以在浏览器中取消一下，观察一下位置
 <p><img src="http://images2015.cnblogs.com/blog/1061033/201611/1061033-20161109234418061-1611749192.png" alt="Alt text"><br>参考文档：</p>
 <p>《css权威指南》</p>
 <p>张鑫旭文章：《css行高line-height的一些深入理解及应用》</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/03/12/行高与对齐问题【转】/" data-id="ciwiwytzo000miy0yu759etsb" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
   
-	</div>
-		<footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-</div>
-
-
-
-	<div class="article-share" id="share">
-	
-	  <div data-url="http://yoursite.com/2016/03/12/行高与对齐问题【转】/" data-title="行高与对齐问题【转】 | tooo的前端路" data-tsina="null" class="share clearfix">
-	  </div>
-	
-	</div>
-
-
-</footer>
-
-   	       
-	</article>
-	
-<nav class="article-nav clearfix">
- 
- <div class="prev" >
- <a href="/2016/03/26/css清除浮动/" title="css清除浮动">
-  <strong>上一篇：</strong><br/>
-  <span>
-  css清除浮动</span>
-</a>
-</div>
-
-
-<div class="next">
-<a href="/2016/03/02/简单三角实现/"  title="简单三角实现">
- <strong>下一篇：</strong><br/> 
- <span>简单三角实现
-</span>
-</a>
-</div>
-
+    
+<nav id="article-nav">
+  
+    <a href="/2016/03/26/css清除浮动/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          css清除浮动
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/03/02/简单三角实现/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">简单三角实现</div>
+    </a>
+  
 </nav>
 
-	
+  
+</article>
 
-</div>  
-      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+</section>
+        
+          <aside id="sidebar">
+  
+    
 
-  <div id="toc" class="toc-aside">
-  <strong class="toc-title">Contents</strong>
- 
- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#line-height，vertical-align及图片居中对齐问题根源解析"><span class="toc-number">1.</span> <span class="toc-text">line-height，vertical-align及图片居中对齐问题根源解析</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-line-height是个什么东西，范围在哪里，具体应用于什么元素？"><span class="toc-number">1.1.</span> <span class="toc-text">1.line-height是个什么东西，范围在哪里，具体应用于什么元素？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-vertiacal-align和line-height有什么关系，元素对齐到底是一个什么样的过程。"><span class="toc-number">1.2.</span> <span class="toc-text">2.vertiacal-align和line-height有什么关系，元素对齐到底是一个什么样的过程。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-图片对齐和文本对齐有什么区别？"><span class="toc-number">1.3.</span> <span class="toc-text">3.图片对齐和文本对齐有什么区别？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-浮动元素为什么对齐会出现问题？"><span class="toc-number">1.4.</span> <span class="toc-text">4.浮动元素为什么对齐会出现问题？</span></a></li></ol></li></ol>
- 
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a></li></ul>
+    </div>
   </div>
 
-<div id="asidepart">
-<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
-<aside class="clearfix">
 
   
-
-
-  
-
-  
-
-  <div class="linkslist">
-  <p class="asidetitle">Links</p>
-    <ul>
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
         
           <li>
-            
-            	<a href="https://coderq.com" target="_blank" title="一个面向程序员交流分享的新一代社区">码农圈</a>
-            
+            <a href="/2016/11/21/简单的三栏布局/">简单的三栏布局</a>
           </li>
         
           <li>
-            
-            	<a href="http://wuchong.me" target="_blank" title="Jark&#39;s Blog">Jark&#39;s Blog</a>
-            
+            <a href="/2016/11/19/浅谈html-css与js/">浅谈html,css与js</a>
           </li>
         
-    </ul>
-</div>
-
-  
-
-
-  <div class="rsspart">
-	<a href="/atom.xml" target="_blank" title="rss">RSS</a>
-</div>
-
-  <div class="weiboshow">
-  <p class="asidetitle">Weibo</p>
-    <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=null&verifier=b3593ceb&dpc=1"></iframe>
-</div>
-
-
-</aside>
-</div>
+          <li>
+            <a href="/2016/11/13/Javascript定义类（class）的三种方法【转】/">Javascript定义类（class）的三种方法【转】</a>
+          </li>
+        
+          <li>
+            <a href="/2016/11/01/Flex布局教程：实例篇【转】/">Flex布局教程：实例篇【转】</a>
+          </li>
+        
+          <li>
+            <a href="/2016/10/29/Flex布局教程：语法篇【转】/">Flex布局教程：语法篇【转】</a>
+          </li>
+        
+      </ul>
     </div>
-    <footer><div id="footer" >
-	
-	<div class="line">
-		<span></span>
-		<div class="author"></div>
-	</div>
-	
-	
-	<section class="info">
-		<p> Hello ,I&#39;m Larry Page in Google. <br/>
-			This is my blog,believe it or not.</p>
-	</section>
-	 
-	<div class="social-font" class="clearfix">
-		
-		<a href="http://weibo.com/2176287895" target="_blank" class="icon-weibo" title="微博"></a>
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-	</div>
-			
-		
+  </div>
 
-		<p class="copyright">
-		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2016 
-		
-		<a href="/about" target="_blank" title="zmytooo">zmytooo</a>
-		
-		
-		</p>
-</div>
-</footer>
-    <script src="/js/jquery-2.0.3.min.js"></script>
-<script src="/js/jquery.imagesloaded.min.js"></script>
-<script src="/js/gallery.js"></script>
-<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
-
-<script type="text/javascript">
-$(document).ready(function(){ 
-  $('.navbar').click(function(){
-    $('header nav').toggleClass('shownav');
-  });
-  var myWidth = 0;
-  function getSize(){
-    if( typeof( window.innerWidth ) == 'number' ) {
-      myWidth = window.innerWidth;
-    } else if( document.documentElement && document.documentElement.clientWidth) {
-      myWidth = document.documentElement.clientWidth;
-    };
-  };
-  var m = $('#main'),
-      a = $('#asidepart'),
-      c = $('.closeaside'),
-      o = $('.openaside');
-  c.click(function(){
-    a.addClass('fadeOut').css('display', 'none');
-    o.css('display', 'block').addClass('fadeIn');
-    m.addClass('moveMain');
-  });
-  o.click(function(){
-    o.css('display', 'none').removeClass('beforeFadeIn');
-    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
-    m.removeClass('moveMain');
-  });
-  $(window).scroll(function(){
-    o.css("top",Math.max(80,260-$(this).scrollTop()));
-  });
   
-  $(window).resize(function(){
-    getSize(); 
-    if (myWidth >= 1024) {
-      $('header nav').removeClass('shownav');
-    }else{
-      m.removeClass('moveMain');
-      a.css('display', 'block').removeClass('fadeOut');
-      o.css('display', 'none');
-      
-      $('#toc.toc-aside').css('display', 'none');
+</aside>
         
-    }
-  });
-});
-</script>
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 zmytooo<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
 
-<script type="text/javascript">
-$(document).ready(function(){ 
-  var ai = $('.article-content>iframe'),
-      ae = $('.article-content>embed'),
-      t  = $('#toc'),
-      ta = $('#toc.toc-aside'),
-      o  = $('.openaside'),
-      c  = $('.closeaside');
-  if(ai.length>0){
-    ai.wrap('<div class="video-container" />');
-  };
-  if(ae.length>0){
-   ae.wrap('<div class="video-container" />');
-  };
-  c.click(function(){
-    ta.css('display', 'block').addClass('fadeIn');
-  });
-  o.click(function(){
-    ta.css('display', 'none');
-  });
-  $(window).scroll(function(){
-    ta.css("top",Math.max(140,320-$(this).scrollTop()));
-  });
-});
-</script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 
-<script type="text/javascript">
-$(document).ready(function(){ 
-  var $this = $('.share'),
-      url = $this.attr('data-url'),
-      encodedUrl = encodeURIComponent(url),
-      title = $this.attr('data-title'),
-      tsina = $this.attr('data-tsina'),
-      description = $this.attr('description');
-  var html = [
-  '<div class="hoverqrcode clearfix"></div>',
-  '<a class="overlay" id="qrcode"></a>',
-  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
-  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
-  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
-  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
-  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
-  '<span title="Share to"></span>'
-  ].join('');
-  $this.append(html);
-
-  $('.hoverqrcode').hide();
-
-  var myWidth = 0;
-  function updatehoverqrcode(){
-    if( typeof( window.innerWidth ) == 'number' ) {
-      myWidth = window.innerWidth;
-    } else if( document.documentElement && document.documentElement.clientWidth) {
-      myWidth = document.documentElement.clientWidth;
-    };
-    var qrsize = myWidth > 1024 ? 200:100;
-    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
-    var p = $('.article-share-qrcode').position();
-    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
-                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
-                          .qrcode(options);
-  };
-  $(window).resize(function(){
-    $('.hoverqrcode').hide();
-  });
-  $('.article-share-qrcode').click(function(){
-    updatehoverqrcode();
-    $('.hoverqrcode').toggle();
-  });
-  $('.article-share-qrcode').hover(function(){}, function(){
-      $('.hoverqrcode').hide();
-  });
-});   
-</script>
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
 
 
+<script src="/js/script.js"></script>
 
-
-
-
-
-
-
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
-<script type="text/javascript">
-$(document).ready(function(){ 
-  $('.article-content').each(function(i){
-    $(this).find('img').each(function(){
-      if ($(this).parent().hasClass('fancybox')) return;
-      var alt = this.alt;
-      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
-      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
-    });
-    $(this).find('.fancybox').each(function(){
-      $(this).attr('rel', 'article' + i);
-    });
-  });
-  if($.fancybox){
-    $('.fancybox').fancybox();
-  }
-}); 
-</script>
-
-
-
-<!-- Analytics Begin -->
-
-
-
-<script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "//hm.baidu.com/hm.js?e6d1f421bbc9962127a50488f9ed37d1";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
-</script>
-
-
-
-<!-- Analytics End -->
-
-<!-- Totop Begin -->
-
-	<div id="totop">
-	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
-	</div>
-	<script src="/js/totop.js"></script>
-
-<!-- Totop End -->
-
-<!-- MathJax Begin -->
-<!-- mathjax config similar to math.stackexchange -->
-
-
-<!-- MathJax End -->
-
-<!-- Tiny_search Begin -->
-
-<!-- Tiny_search End -->
-
-  </body>
+  </div>
+</body>
 </html>
