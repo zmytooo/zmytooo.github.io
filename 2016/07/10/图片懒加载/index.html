@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>图片懒加载 | tooo的前端路</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="图片延迟加载也称为懒加载，延迟加载图片或符合某些条件时才加载某些图片，通常用于图片比较多的网页。可以减少请求数或者延迟请求数，优化性能。下面是一个比较简单的懒加载例子（前端小菜鸟，有错误请多多指教）下面是图片懒加载中的HTML部分，因为我们一开始是有个初始化的过程，在浏览器显现出来的部分图片是存在的，没有显现出来的图片是先不加载的。这样我们就不能一开始就把图片的src直接给出来。在这里，我们给图片">
+<meta property="og:type" content="article">
+<meta property="og:title" content="图片懒加载">
+<meta property="og:url" content="http://yoursite.com/2016/07/10/图片懒加载/index.html">
+<meta property="og:site_name" content="tooo的前端路">
+<meta property="og:description" content="图片延迟加载也称为懒加载，延迟加载图片或符合某些条件时才加载某些图片，通常用于图片比较多的网页。可以减少请求数或者延迟请求数，优化性能。下面是一个比较简单的懒加载例子（前端小菜鸟，有错误请多多指教）下面是图片懒加载中的HTML部分，因为我们一开始是有个初始化的过程，在浏览器显现出来的部分图片是存在的，没有显现出来的图片是先不加载的。这样我们就不能一开始就把图片的src直接给出来。在这里，我们给图片">
+<meta property="og:updated_time" content="2016-12-10T05:17:38.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="图片懒加载">
+<meta name="twitter:description" content="图片延迟加载也称为懒加载，延迟加载图片或符合某些条件时才加载某些图片，通常用于图片比较多的网页。可以减少请求数或者延迟请求数，优化性能。下面是一个比较简单的懒加载例子（前端小菜鸟，有错误请多多指教）下面是图片懒加载中的HTML部分，因为我们一开始是有个初始化的过程，在浏览器显现出来的部分图片是存在的，没有显现出来的图片是先不加载的。这样我们就不能一开始就把图片的src直接给出来。在这里，我们给图片">
+  
+    <link rel="alternate" href="/atom.xml" title="tooo的前端路" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">tooo的前端路</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">之路漫漫</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-图片懒加载" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/07/10/图片懒加载/" class="article-date">
+  <time datetime="2016-07-10T03:02:21.000Z" itemprop="datePublished">2016-07-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      图片懒加载
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>图片延迟加载也称为懒加载，延迟加载图片或符合某些条件时才加载某些图片，通常用于图片比较多的网页。可以减少请求数或者延迟请求数，优化性能。下面是一个比较简单的懒加载例子（前端小菜鸟，有错误请多多指教）<br>下面是图片懒加载中的HTML部分，因为我们一开始是有个初始化的过程，在浏览器显现出来的部分图片是存在的，没有显现出来的图片是先不加载的。这样我们就不能一开始就把图片的src直接给出来。在这里，我们给图片的路径取名为data-src。简单的给图片一些样式</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;title&gt;&lt;/title&gt;
+&lt;style type=&quot;text/css&quot;&gt;
+    *{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    html,body{
+        height: 100%;
+    }
+    ul{
+        min-height: 100vh;
+        overflow: hidden;
+    }
+    ul li{
+        width: 25%;
+        float: left;
+        overflow: hidden;
+        box-sizing: border-box;
+        background: #000;
+        border: 1px solid #fff;
+    }
+    a{
+        display: block;
+        text-align: center;
+    }
+    a img{
+        height: 200px;
+    }
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;ul&gt;
+    &lt;li&gt;
+        &lt;a href=&quot;#&quot;&gt;
+            &lt;img class=&quot;lazyload&quot; data-src=&quot;http://www.bz55.com/uploads/allimg/160419/139-160419162216.jpg&quot; alt=&quot;&quot;&gt;
+        &lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;a href=&quot;#&quot;&gt;
+            &lt;img class=&quot;lazyload&quot; data-src=&quot;http://www.bz55.com/uploads/allimg/160419/139-160419162216.jpg&quot; alt=&quot;&quot;&gt;
+        &lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;a href=&quot;#&quot;&gt;
+            &lt;img class=&quot;lazyload&quot; data-src=&quot;http://www.bz55.com/uploads/allimg/160419/139-160419162216.jpg&quot; alt=&quot;&quot;&gt;
+        &lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;a href=&quot;#&quot;&gt;
+            &lt;img class=&quot;lazyload&quot; data-src=&quot;http://www.bz55.com/uploads/allimg/160419/139-160419162216.jpg&quot; alt=&quot;&quot;&gt;
+        &lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;a href=&quot;#&quot;&gt;
+            &lt;img class=&quot;lazyload&quot; data-src=&quot;http://www.bz55.com/uploads/allimg/160419/139-160419162216.jpg&quot; alt=&quot;&quot;&gt;
+        &lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;a href=&quot;#&quot;&gt;
+            &lt;img class=&quot;lazyload&quot; data-src=&quot;http://www.bz55.com/uploads/allimg/160419/139-160419162216.jpg&quot; alt=&quot;&quot;&gt;
+        &lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;a href=&quot;#&quot;&gt;
+            &lt;img class=&quot;lazyload&quot; data-src=&quot;http://www.bz55.com/uploads/allimg/160419/139-160419162216.jpg&quot; alt=&quot;&quot;&gt;
+        &lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;a href=&quot;#&quot;&gt;
+            &lt;img class=&quot;lazyload&quot; data-src=&quot;http://www.bz55.com/uploads/allimg/160419/139-160419162216.jpg&quot; alt=&quot;&quot;&gt;
+        &lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;a href=&quot;#&quot;&gt;
+            &lt;img class=&quot;lazyload&quot; data-src=&quot;http://www.bz55.com/uploads/allimg/160419/139-160419162216.jpg&quot; alt=&quot;&quot;&gt;
+        &lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;a href=&quot;#&quot;&gt;
+            &lt;img class=&quot;lazyload&quot; data-src=&quot;http://www.bz55.com/uploads/allimg/160419/139-160419162216.jpg&quot; alt=&quot;&quot;&gt;
+        &lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;a href=&quot;#&quot;&gt;
+            &lt;img class=&quot;lazyload&quot; data-src=&quot;http://www.bz55.com/uploads/allimg/160419/139-160419162216.jpg&quot; alt=&quot;&quot;&gt;
+        &lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;a href=&quot;#&quot;&gt;
+            &lt;img class=&quot;lazyload&quot; data-src=&quot;http://www.bz55.com/uploads/allimg/160419/139-160419162216.jpg&quot; alt=&quot;&quot;&gt;
+        &lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;a href=&quot;#&quot;&gt;
+            &lt;img class=&quot;lazyload&quot; data-src=&quot;http://www.bz55.com/uploads/allimg/160419/139-160419162216.jpg&quot; alt=&quot;&quot;&gt;
+        &lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;a href=&quot;#&quot;&gt;
+            &lt;img class=&quot;lazyload&quot; data-src=&quot;http://www.bz55.com/uploads/allimg/160419/139-160419162216.jpg&quot; alt=&quot;&quot;&gt;
+        &lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;a href=&quot;#&quot;&gt;
+            &lt;img class=&quot;lazyload&quot; data-src=&quot;http://www.bz55.com/uploads/allimg/160419/139-160419162216.jpg&quot; alt=&quot;&quot;&gt;
+        &lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;a href=&quot;#&quot;&gt;
+            &lt;img class=&quot;lazyload&quot; data-src=&quot;http://www.bz55.com/uploads/allimg/160419/139-160419162216.jpg&quot; alt=&quot;&quot;&gt;
+        &lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;a href=&quot;#&quot;&gt;
+            &lt;img class=&quot;lazyload&quot; data-src=&quot;http://www.bz55.com/uploads/allimg/160419/139-160419162216.jpg&quot; alt=&quot;&quot;&gt;
+        &lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;a href=&quot;#&quot;&gt;
+            &lt;img class=&quot;lazyload&quot; data-src=&quot;http://www.bz55.com/uploads/allimg/160419/139-160419162216.jpg&quot; alt=&quot;&quot;&gt;
+        &lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;a href=&quot;#&quot;&gt;
+            &lt;img class=&quot;lazyload&quot; data-src=&quot;http://www.bz55.com/uploads/allimg/160419/139-160419162216.jpg&quot; alt=&quot;&quot;&gt;
+        &lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;a href=&quot;#&quot;&gt;
+            &lt;img class=&quot;lazyload&quot; data-src=&quot;http://www.bz55.com/uploads/allimg/160419/139-160419162216.jpg&quot; alt=&quot;&quot;&gt;
+        &lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;a href=&quot;#&quot;&gt;
+            &lt;img class=&quot;lazyload&quot; data-src=&quot;http://www.bz55.com/uploads/allimg/160419/139-160419162216.jpg&quot; alt=&quot;&quot;&gt;
+        &lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;a href=&quot;#&quot;&gt;
+            &lt;img class=&quot;lazyload&quot; data-src=&quot;http://www.bz55.com/uploads/allimg/160419/139-160419162216.jpg&quot; alt=&quot;&quot;&gt;
+        &lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;a href=&quot;#&quot;&gt;
+            &lt;img class=&quot;lazyload&quot; data-src=&quot;http://www.bz55.com/uploads/allimg/160419/139-160419162216.jpg&quot; alt=&quot;&quot;&gt;
+        &lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;a href=&quot;#&quot;&gt;
+            &lt;img class=&quot;lazyload&quot; data-src=&quot;http://www.bz55.com/uploads/allimg/160419/139-160419162216.jpg&quot; alt=&quot;&quot;&gt;
+        &lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;a href=&quot;#&quot;&gt;
+            &lt;img class=&quot;lazyload&quot; data-src=&quot;http://www.bz55.com/uploads/allimg/160419/139-160419162216.jpg&quot; alt=&quot;&quot;&gt;
+        &lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;a href=&quot;#&quot;&gt;
+            &lt;img class=&quot;lazyload&quot; data-src=&quot;http://www.bz55.com/uploads/allimg/160419/139-160419162216.jpg&quot; alt=&quot;&quot;&gt;
+        &lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;a href=&quot;#&quot;&gt;
+            &lt;img class=&quot;lazyload&quot; data-src=&quot;http://www.bz55.com/uploads/allimg/160419/139-160419162216.jpg&quot; alt=&quot;&quot;&gt;
+        &lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;a href=&quot;#&quot;&gt;
+            &lt;img class=&quot;lazyload&quot; data-src=&quot;http://www.bz55.com/uploads/allimg/160419/139-160419162216.jpg&quot; alt=&quot;&quot;&gt;
+        &lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;a href=&quot;#&quot;&gt;
+            &lt;img class=&quot;lazyload&quot; data-src=&quot;http://www.bz55.com/uploads/allimg/160419/139-160419162216.jpg&quot; alt=&quot;&quot;&gt;
+        &lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;a href=&quot;#&quot;&gt;
+            &lt;img class=&quot;lazyload&quot; data-src=&quot;http://www.bz55.com/uploads/allimg/160419/139-160419162216.jpg&quot; alt=&quot;&quot;&gt;
+        &lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;a href=&quot;#&quot;&gt;
+            &lt;img class=&quot;lazyload&quot; data-src=&quot;http://www.bz55.com/uploads/allimg/160419/139-160419162216.jpg&quot; alt=&quot;&quot;&gt;
+        &lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;a href=&quot;#&quot;&gt;
+            &lt;img class=&quot;lazyload&quot; data-src=&quot;http://www.bz55.com/uploads/allimg/160419/139-160419162216.jpg&quot; alt=&quot;&quot;&gt;
+        &lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;a href=&quot;#&quot;&gt;
+            &lt;img class=&quot;lazyload&quot; data-src=&quot;http://www.bz55.com/uploads/allimg/160419/139-160419162216.jpg&quot; alt=&quot;&quot;&gt;
+        &lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;a href=&quot;#&quot;&gt;
+            &lt;img class=&quot;lazyload&quot; data-src=&quot;http://www.bz55.com/uploads/allimg/160419/139-160419162216.jpg&quot; alt=&quot;&quot;&gt;
+        &lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;a href=&quot;#&quot;&gt;
+            &lt;img class=&quot;lazyload&quot; data-src=&quot;http://www.bz55.com/uploads/allimg/160419/139-160419162216.jpg&quot; alt=&quot;&quot;&gt;
+        &lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;a href=&quot;#&quot;&gt;
+            &lt;img class=&quot;lazyload&quot; data-src=&quot;http://www.bz55.com/uploads/allimg/160419/139-160419162216.jpg&quot; alt=&quot;&quot;&gt;
+        &lt;/a&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;    
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>下面是js部分，逻辑分为两部分。第一部分是初始化，第二部分是滚动事件。<br>初始化：先定义了body的高度，浏览器窗口的高度。如果图片到浏览器顶部的高度小于浏览器的高度图片就会显示。所以，这时候就把data-src改为src。<br>滚动事件：当滚动时图片滚动条的高度如果小于等于浏览器窗口的高度加上body滚动条的高度，这时，就把这些图片的data-src改成src。</p>
+<pre><code>&lt;script type=&quot;text/javascript&quot;&gt;
+    var imgArr=document.querySelectorAll(&quot;.lazyload&quot;);
+    function init(){    //初始化
+        var scrollTop=document.body.scrollTop||document.documentElement.scrollTop;
+        var windowHeight=window.innerHeight;
+        var height=document.body.scrollHeight;
+        console.log(scrollTop);
+        for(var i=0;i&lt;imgArr.length;i++){
+            if(imgArr[i].offsetTop&lt;windowHeight){
+                imgArr[i].src=imgArr[i].getAttribute(&quot;data-src&quot;);
+            }
+        }
+    }
+    init();
+
+    window.onscroll=function(){
+        var scrollTop=document.body.scrollTop||document.documentElement.scrollTop;
+        var windowHeight=window.innerHeight;
+        var height=document.body.scrollHeight;
+        for(var i=0;i&lt;imgArr.length;i++){
+            if(imgArr[i].scrollTop&lt;=(windowHeight+scrollTop)&amp;&amp; !imgArr[i].src){
+                imgArr[i].src=imgArr[i].getAttribute(&quot;data-src&quot;);
+            }
+        }
+    }
+&lt;/script&gt;
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/07/10/图片懒加载/" data-id="ciwiwytz9000ciy0y4x3usts5" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/07/11/javascript闭包问题【转】/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          javascript闭包问题【转】
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/06/19/封装一个函数实现不同种类的幻灯/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">封装一个函数实现不同种类的幻灯</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/11/21/简单的三栏布局/">简单的三栏布局</a>
+          </li>
+        
+          <li>
+            <a href="/2016/11/19/浅谈html-css与js/">浅谈html,css与js</a>
+          </li>
+        
+          <li>
+            <a href="/2016/11/13/Javascript定义类（class）的三种方法【转】/">Javascript定义类（class）的三种方法【转】</a>
+          </li>
+        
+          <li>
+            <a href="/2016/11/01/Flex布局教程：实例篇【转】/">Flex布局教程：实例篇【转】</a>
+          </li>
+        
+          <li>
+            <a href="/2016/10/29/Flex布局教程：语法篇【转】/">Flex布局教程：语法篇【转】</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 zmytooo<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
