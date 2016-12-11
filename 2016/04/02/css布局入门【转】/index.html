@@ -1,181 +1,92 @@
-<!DOCTYPE html>
-<html>
+
+ <!DOCTYPE HTML>
+<html >
 <head>
-  <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-
-
-<title>
+  <meta charset="UTF-8">
   
-    css布局入门【转】
-  
-</title>
-
-<meta name="description" content="概述Web 兴起之后，关于CSS的介绍和学习资料已经铺天盖地。本文不涉及具体的CSS语法之类的，而是希望从初学者的角度，让没有接触或很少接触CSS的人能快速的了解 CSS 到底是什么以及如何使用。
-什么是 CSS了解一个概念，首先看到的就是它的名字，而往往被忽略的，也是它的名字。CSS (cascading style sheets)，可以翻译成中文 层叠样式表 。从名字可以看出：层叠：说明 样式">
-<meta property="og:type" content="article">
-<meta property="og:title" content="css布局入门【转】">
-<meta property="og:url" content="http://yoursite.com/2016/04/02/css布局入门【转】/index.html">
-<meta property="og:site_name" content="tooo的前端路">
-<meta property="og:description" content="概述Web 兴起之后，关于CSS的介绍和学习资料已经铺天盖地。本文不涉及具体的CSS语法之类的，而是希望从初学者的角度，让没有接触或很少接触CSS的人能快速的了解 CSS 到底是什么以及如何使用。
-什么是 CSS了解一个概念，首先看到的就是它的名字，而往往被忽略的，也是它的名字。CSS (cascading style sheets)，可以翻译成中文 层叠样式表 。从名字可以看出：层叠：说明 样式">
-<meta property="og:updated_time" content="2016-12-10T05:35:11.000Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="css布局入门【转】">
-<meta name="twitter:description" content="概述Web 兴起之后，关于CSS的介绍和学习资料已经铺天盖地。本文不涉及具体的CSS语法之类的，而是希望从初学者的角度，让没有接触或很少接触CSS的人能快速的了解 CSS 到底是什么以及如何使用。
-什么是 CSS了解一个概念，首先看到的就是它的名字，而往往被忽略的，也是它的名字。CSS (cascading style sheets)，可以翻译成中文 层叠样式表 。从名字可以看出：层叠：说明 样式">
-
-
-  <link rel="alternative" href="/atom.xml" title="tooo的前端路" type="application/atom+xml">
-
-
-
-  <link rel="icon" href="/favicon.png">
-
-
-<link rel="stylesheet" href="/perfect-scrollbar/css/perfect-scrollbar.min.css">
-<link rel="stylesheet" href="/styles/main.css">
-
-
-
-
-
-
+    <title>css布局入门【转】 | tooo的前端路</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+    
+    <meta name="author" content="zmytooo">
+    
+    <meta name="description" content="概述Web 兴起之后，关于CSS的介绍和学习资料已经铺天盖地。本文不涉及具体的CSS语法之类的，而是希望从初学者的角度，让没有接触或很少接触CSS的人能快速的了解 CSS 到底是什么以及如何使用。
+什么是 CSS了解一个概念，首先看到的就是它的名字，而往往被忽略的，也是它的名字。CSS (casca">
+    
+    
+    
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/pacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/pacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
 </head>
-<body
-  
-    class="monochrome"
-  
-  >
-  <div class="mobile-header">
-  <button class="sidebar-toggle" type="button">
-    <span class="icon-bar"></span>
-    <span class="icon-bar"></span>
-    <span class="icon-bar"></span>
-  </button>
-  <a class="title" href="/">tooo的前端路</a>
+
+  <body>
+    <header>
+      <div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.svg" alt="tooo的前端路" title="tooo的前端路"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="tooo的前端路">tooo的前端路</a></h1>
+				<h2 class="blog-motto">之路漫漫</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+					<li>
+					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="text" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:yoursite.com">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
 </div>
 
-  <div class="main-container">
-    <div class="sidebar">
-  <div class="header">
-    <h1 class="title"><a href="/">tooo的前端路</a></h1>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
     
-      <p class="subtitle">
-        之路漫漫
-      </p>
+      <a href="/2016/04/02/css布局入门【转】/" title="css布局入门【转】" itemprop="url">css布局入门【转】</a>
+  </h1>
+  <p class="article-author">By
     
-    <div class="info">
-      <div class="content">
-        
-        
-          <div class="author">zmytooo</div>
-        
-      </div>
-      
-        <div class="avatar">
-          
-            <a href="/about"><img src="https://cn.gravatar.com/avatar/35fef74d731255cd569c2c2b0b9e87e4?s=200"></a>
-          
-        </div>
-      
-    </div>
-  </div>
-  <div class="body">
+      <a href="http://yoursite.com" title="zmytooo">zmytooo</a>
+    </p>
+  <p class="article-time">
+    <time datetime="2016-04-02T03:37:39.000Z" itemprop="datePublished">2016-04-02</time>
+    更新日期:<time datetime="2016-12-10T05:35:11.000Z" itemprop="dateModified">2016-12-10</time>
     
-      
-        <ul class="nav">
-          
-            
-              <li class="category-list-container">
-                <a href="javascript:;">分类</a>
-                
-              </li>
-            
-          
-            
-              <li class="tag-list-container">
-                <a href="javascript:;">标签</a>
-                
-              </li>
-            
-          
-            
-              <li class="archive-list-container">
-                <a href="javascript:;">归档</a>
-                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">2016</a><span class="archive-list-count">23</span></li></ul>
-              </li>
-            
-          
-        </ul>
-      
-        <ul class="nav">
-          
-            
-              <li>
-                <a href="/" title="Homepage">Homepage</a>
-              </li>
-            
-          
-            
-              <li>
-                <a href="/archives" title="By Year">By Year</a>
-              </li>
-            
-          
-        </ul>
-      
-        <ul class="nav">
-          
-            
-              <li>
-                <a href="https://github.com/denjones/hexo-theme-chan" title="Chan" target="_blank" rel="external">Chan</a>
-              </li>
-            
-          
-            
-              <li>
-                <a href="https://github.com/denjones" title="Github" target="_blank" rel="external">Github</a>
-              </li>
-            
-          
-            
-              <li>
-                <a href="/atom.xml" title="RSS">RSS</a>
-              </li>
-            
-          
-        </ul>
-      
-    
-  </div>
-</div>
-
-    <div class="main-content">
-      
-        <div style="max-width: 1000px">
-      
-          <article id="post-css布局入门【转】" class="article article-type-post">
-  
-    <h1 class="article-header">
-      css布局入门【转】
-    </h1>
-  
-  
-
-  <div class="article-info">
-    <span class="article-date">
-  2016-04-02
-</span>
-
-    
-
-    
-
-  </div>
-  <div class="article-entry">
-    <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>Web 兴起之后，关于CSS的介绍和学习资料已经铺天盖地。<br>本文不涉及具体的CSS语法之类的，而是希望从初学者的角度，让没有接触或很少接触CSS的人能快速的了解 CSS 到底是什么以及如何使用。</p>
+  </p>
+</header>
+	<div class="article-content">
+		
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#概述"><span class="toc-number">1.</span> <span class="toc-text">概述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是-CSS"><span class="toc-number">1.1.</span> <span class="toc-text">什么是 CSS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CSS-的作用"><span class="toc-number">1.2.</span> <span class="toc-text">CSS 的作用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CSS-for-布局"><span class="toc-number">1.3.</span> <span class="toc-text">CSS for 布局</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#框模型"><span class="toc-number">1.4.</span> <span class="toc-text">框模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#定位"><span class="toc-number">1.5.</span> <span class="toc-text">定位</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#绝对定位"><span class="toc-number">1.6.</span> <span class="toc-text">绝对定位</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#相对定位"><span class="toc-number">1.7.</span> <span class="toc-text">相对定位</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#浮动"><span class="toc-number">1.8.</span> <span class="toc-text">浮动</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-number">2.</span> <span class="toc-text">总结</span></a></li></ol>
+		</div>
+		
+		<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>Web 兴起之后，关于CSS的介绍和学习资料已经铺天盖地。<br>本文不涉及具体的CSS语法之类的，而是希望从初学者的角度，让没有接触或很少接触CSS的人能快速的了解 CSS 到底是什么以及如何使用。</p>
 <h3 id="什么是-CSS"><a href="#什么是-CSS" class="headerlink" title="什么是 CSS"></a>什么是 CSS</h3><p>了解一个概念，首先看到的就是它的名字，而往往被忽略的，也是它的名字。<br>CSS (cascading style sheets)，可以翻译成中文 层叠样式表 。从名字可以看出：<br>层叠：说明 样式可以叠加，所以会有优先级<br>样式表：说明CSS是描述样式的，而且只是个 表 ，不是程序语言，所以后来随着 CSS 的应用越来越多，才会有 Sass 和 Less 这些扩充 CSS 语法的语言出来</p>
 <h3 id="CSS-的作用"><a href="#CSS-的作用" class="headerlink" title="CSS 的作用"></a>CSS 的作用</h3><p>CSS 的作用就是样式，其实 Web 只用 HTML也可以做出来，只是随着机器和浏览器性能的提升，人们对网页的美观和易用性要求越来越高，CSS 的重要性才逐渐凸显。<br>CSS 我觉得有2个主要的作用：</p>
 <p>可以将 Web 的样式统一管理，便于修改，类似于程序语言中的变量或者配置文件<br>将网页内容和样式分离开，让灵活呈现内容成为可能<br>注意 HTML 才是网页的实际内容，CSS 只是控制HTML元素的如何显示，显示与否。</p>
@@ -313,120 +224,211 @@ div {
 }
 </code></pre><p>上面的示例中，head，foot 高度固定，nav 宽度固定。其他都是自适应的，可以通过调整浏览器窗口的大小看到效果。</p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>CSS 布局很简单，如果还有其他的交互动作，可以通过js来实现（比如导航和内容的联动）。<br>现在已经基本没有人会用 table 的布局方式了，因为 table 本来只展现数据的一种方式，row，cell 的方式也不适合组件化。</p>
+  
+	</div>
+		<footer class="article-footer clearfix">
 
-  </div>
-  <footer class="article-footer">
-    
-  <div class="cc">
-    <a href="http://creativecommons.org/licenses/by-sa/4.0/deed.en" target="_blank" title="署名-相同方式共享">
-      <img src="/images/cc/cc.png">
-      
-          <img src="/images/cc/by.png">
-        
-          <img src="/images/cc/sa.png">
-      
-      <span>
-        本作品采用知识共享 署名-相同方式共享 4.0 国际许可协议进行许可。
-      </span>
-    </a>
+
+
+
+<div class="article-share" id="share">
+
+  <div data-url="http://yoursite.com/2016/04/02/css布局入门【转】/" data-title="css布局入门【转】 | tooo的前端路" data-tsina="null" class="share clearfix">
   </div>
 
-
-    
-
-  </footer>
-</article>
-
-
-
-
-
-
-
-          <div class="main-footer">
-  
-    © 2016 tooo的前端路 - Powered by <a href="http://hexo.io" target="_blank">Hexo</a> - Theme <a href="https://github.com/denjones/hexo-theme-chan" target="_blank">Chan</a>
-  
+</div>
+</footer>   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2016/04/17/数组重排序方法/" title="数组重排序方法">
+  <strong>PREVIOUS:</strong><br/>
+  <span>
+  数组重排序方法</span>
+</a>
 </div>
 
-      
-        </div>
-      
-    </div>
-  </div>
-  <script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
 
-  <link rel="stylesheet" href="/PhotoSwipe/photoswipe.css">
-  <link rel="stylesheet" href="/PhotoSwipe/default-skin/default-skin.css">
+<div class="next">
+<a href="/2016/03/26/css清除浮动/"  title="css清除浮动">
+ <strong>NEXT:</strong><br/> 
+ <span>css清除浮动
+</span>
+</a>
+</div>
 
-  <!-- Root element of PhotoSwipe. Must have class pswp. -->
-  <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+</nav>
 
-    <!-- Background of PhotoSwipe.
-             It's a separate element as animating opacity is faster than rgba(). -->
-    <div class="pswp__bg"></div>
+	
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
 
-    <!-- Slides wrapper with overflow:hidden. -->
-    <div class="pswp__scroll-wrap">
-
-      <!-- Container that holds slides.
-                PhotoSwipe keeps only 3 of them in the DOM to save memory.
-                Don't modify these 3 pswp__item elements, data is added later on. -->
-      <div class="pswp__container">
-        <div class="pswp__item"></div>
-        <div class="pswp__item"></div>
-        <div class="pswp__item"></div>
-      </div>
-
-      <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
-      <div class="pswp__ui pswp__ui--hidden">
-
-        <div class="pswp__top-bar">
-
-          <!--  Controls are self-explanatory. Order can be changed. -->
-
-          <div class="pswp__counter"></div>
-
-          <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-
-          <button class="pswp__button pswp__button--share" title="Share"></button>
-
-          <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-
-          <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-
-          <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
-          <!-- element will get class pswp__preloader--active when preloader is running -->
-          <div class="pswp__preloader">
-            <div class="pswp__preloader__icn">
-              <div class="pswp__preloader__cut">
-                <div class="pswp__preloader__donut"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-          <div class="pswp__share-tooltip"></div>
-        </div>
-
-        <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
-
-        <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
-
-        <div class="pswp__caption">
-          <div class="pswp__caption__center"></div>
-        </div>
-      </div>
-    </div>
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#概述"><span class="toc-number">1.</span> <span class="toc-text">概述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是-CSS"><span class="toc-number">1.1.</span> <span class="toc-text">什么是 CSS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CSS-的作用"><span class="toc-number">1.2.</span> <span class="toc-text">CSS 的作用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CSS-for-布局"><span class="toc-number">1.3.</span> <span class="toc-text">CSS for 布局</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#框模型"><span class="toc-number">1.4.</span> <span class="toc-text">框模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#定位"><span class="toc-number">1.5.</span> <span class="toc-text">定位</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#绝对定位"><span class="toc-number">1.6.</span> <span class="toc-text">绝对定位</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#相对定位"><span class="toc-number">1.7.</span> <span class="toc-text">相对定位</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#浮动"><span class="toc-number">1.8.</span> <span class="toc-text">浮动</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-number">2.</span> <span class="toc-text">总结</span></a></li></ol>
   </div>
 
-  <script src="/PhotoSwipe/photoswipe.js"></script>
-  <script src="/PhotoSwipe/photoswipe-ui-default.js"></script>
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			<li><a href="/tags/js/" title="js">js<sup>1</sup></a></li>
+		
+		</ul>
+</div>
 
 
-<script src="/perfect-scrollbar/js/min/perfect-scrollbar.min.js"></script>
-<script src="/scripts/main.js"></script>
+  <div class="rsspart">
+	<a href="null" target="_blank" title="rss">RSS 订阅</a>
+</div>
 
-</body>
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<div class="social-font clearfix">
+		
+		
+		
+		
+		
+	</div>
+		<p class="copyright">Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/A-limon/pacman" target="_blank" title="Pacman">Pacman</a> © 2016 
+		
+		<a href="http://yoursite.com" target="_blank" title="zmytooo">zmytooo</a>
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+    c.click(function(){
+      ta.css('display', 'block').addClass('fadeIn');
+    });
+    o.click(function(){
+      ta.css('display', 'none');
+    });
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,320-$(this).scrollTop()));
+    });
+  };
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
+
+
+
+
+
+
+  </body>
 </html>
