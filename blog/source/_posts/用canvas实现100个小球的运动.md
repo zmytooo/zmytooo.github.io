@@ -1,7 +1,7 @@
 ---
 title: 用canvas实现100个小球的运动
 date: 2016-08-14 19:29:46
-tags:
+tags: [canvas]
 ---
 最近在学习canvas的有关内容，用canvas和构造函数做了个100个随机大小随机颜色的小例子。
 

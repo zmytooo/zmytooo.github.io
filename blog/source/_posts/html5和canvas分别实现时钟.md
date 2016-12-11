@@ -1,7 +1,7 @@
 ---
 title: html5和canvas分别实现时钟
 date: 2016-08-25 22:11:47
-tags:
+tags: [canvas,js,html]
 ---
 最近学习了canvas，试着用canvas做了个简单的时钟。整理了一下以前用HTML做的时钟，下面放上两种实现时钟的方法，大家可以比较一下。
 

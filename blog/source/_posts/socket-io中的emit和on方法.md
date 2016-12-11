@@ -1,7 +1,7 @@
 ---
 title: socket.io中的emit和on方法
 date: 2016-10-12 17:34:40
-tags:
+tags: [node.js]
 ---
 最近在学习node.js,做了一个初级的聊天室。里面涉及到了socket的一些方法，对于socket.io中的emit和on方法不太清楚的可以看一看。
 

@@ -1,7 +1,7 @@
 ---
 title: javascript闭包问题【转】
 date: 2016-07-11 14:43:56
-tags:
+tags: [js]
 ---
 ### JavaScript闭包
 闭包是指有权访问另一个函数作用域中的变量的函数。如下例：

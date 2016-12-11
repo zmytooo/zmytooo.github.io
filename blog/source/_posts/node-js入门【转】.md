@@ -1,7 +1,7 @@
 ---
 title: node.js入门【转】
 date: 2016-10-19 21:17:09
-tags:
+tags: [node.js]
 ---
 由于跑到另一个城市，手头没电脑，dom framework不能如期发布，趁此学习一些新东西。这时期最迫切的需要是寻求一个超轻量的后端来架起我的框架，于是触爪伸向传说中的Server-Side Javascrpt。后端JS最出名无疑是Ryan Dahl的node.js，另一个是aptana IDE提供商搞出的jaxer。
 

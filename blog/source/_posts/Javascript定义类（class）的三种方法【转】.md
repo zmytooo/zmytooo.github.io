@@ -1,7 +1,7 @@
 ---
 title: Javascript定义类（class）的三种方法【转】
 date: 2016-11-13 16:23:48
-tags:
+tags: [js]
 ---
 本篇博客转载自 软一峰——Javascript定义类（class）的三种方法
 
