@@ -28,10 +28,10 @@ var guan = document.querySelector("#guan");
 var guan2 = document.querySelector("#guan2");
 
 guan.onclick=function(){
-    mask.style.display='none'
+    mask.style.display='none';
 }
 guan2.onclick=function(){
-    mask.style.display='none'
+    mask.style.display='none';
 }
 
 Regedit.onclick =function(){
