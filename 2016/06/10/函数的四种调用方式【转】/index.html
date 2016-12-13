@@ -1,0 +1,428 @@
+
+ <!DOCTYPE HTML>
+<html >
+<head>
+  <meta charset="UTF-8">
+  
+    <title>函数的四种调用方式【转】 | tooo的前端路</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+    
+    <meta name="author" content="zmytooo">
+    
+    <meta name="description" content="在 js 中 无论是函数, 还是方法, 还是事件, 还是构造器, … 其本质都是函数. 只是处在不同的位子而已.
+四种:函数模式方法模式构造器模式上下文模式函数模式特征: 就是一个简单的函数调用. 函数名的前面没有任何引导内容.
+function foo () {}
+var func = funct">
+    
+    
+    
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/pacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/pacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+  <body>
+    <header>
+      <div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.svg" alt="tooo的前端路" title="tooo的前端路"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="tooo的前端路">tooo的前端路</a></h1>
+				<h2 class="blog-motto">之路漫漫</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+					<li>
+					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="text" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
+						<input type="hidden" name="q" value="site:yoursite.com">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2016/06/10/函数的四种调用方式【转】/" title="函数的四种调用方式【转】" itemprop="url">函数的四种调用方式【转】</a>
+  </h1>
+  <p class="article-author">By
+    
+      <a href="http://yoursite.com" title="zmytooo">zmytooo</a>
+    </p>
+  <p class="article-time">
+    <time datetime="2016-06-10T02:27:41.000Z" itemprop="datePublished">2016-06-10</time>
+    Updated:<time datetime="2016-12-11T11:14:09.000Z" itemprop="dateModified">2016-12-11</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">Contents</strong>
+		<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#四种"><span class="toc-number">1.</span> <span class="toc-text">四种:</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#函数模式"><span class="toc-number">1.1.</span> <span class="toc-text">函数模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#方法模式"><span class="toc-number">1.2.</span> <span class="toc-text">方法模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#构造器模式"><span class="toc-number">1.3.</span> <span class="toc-text">构造器模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#上下文模式"><span class="toc-number">1.4.</span> <span class="toc-text">上下文模式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#函数模式-1"><span class="toc-number">1.4.1.</span> <span class="toc-text">函数模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#方法模式-1"><span class="toc-number">1.4.2.</span> <span class="toc-text">方法模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#构造器调用模式"><span class="toc-number">1.4.3.</span> <span class="toc-text">构造器调用模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#创建对象的模式"><span class="toc-number">1.4.4.</span> <span class="toc-text">创建对象的模式</span></a></li></ol></li></ol></li></ol>
+		</div>
+		
+		<p>在 js 中 无论是函数, 还是方法, 还是事件, 还是构造器, … 其本质都是函数. 只是处在不同的位子而已.</p>
+<h1 id="四种"><a href="#四种" class="headerlink" title="四种:"></a>四种:</h1><h2 id="函数模式"><a href="#函数模式" class="headerlink" title="函数模式"></a>函数模式</h2><h2 id="方法模式"><a href="#方法模式" class="headerlink" title="方法模式"></a>方法模式</h2><h2 id="构造器模式"><a href="#构造器模式" class="headerlink" title="构造器模式"></a>构造器模式</h2><h2 id="上下文模式"><a href="#上下文模式" class="headerlink" title="上下文模式"></a>上下文模式</h2><h3 id="函数模式-1"><a href="#函数模式-1" class="headerlink" title="函数模式"></a>函数模式</h3><p>特征: 就是一个简单的函数调用. 函数名的前面没有任何引导内容.</p>
+<pre><code>function foo () {}
+var func = function () {};
+...
+
+foo();
+func();
+(function (){})();
+</code></pre><p>this 的含义: 在 函数中 this 表示全局对象, 在浏览器中是 window</p>
+<h3 id="方法模式-1"><a href="#方法模式-1" class="headerlink" title="方法模式"></a>方法模式</h3><p>特征: 方法一定是依附于一个对象, 将函数赋值给对象的一个属性, 那么就成为了方法.</p>
+<pre><code> function f() {
+    this.method = function () {};
+}
+var o = {
+    method: function () {} 
+}
+</code></pre><p>this 的含义: 这个依附的对象.</p>
+<h3 id="构造器调用模式"><a href="#构造器调用模式" class="headerlink" title="构造器调用模式"></a>构造器调用模式</h3><p>创建对象的时候 构造函数做了什么?</p>
+<p>由于构造函数只是给 this 添加成员. 没有做其他事情. 而方法也可以完成这个操作, 就 this 而言,<br>构造函数与方法没有本质区别.</p>
+<p>特征:</p>
+<p>使用 new 关键字, 来引导构造函数.<br>构造函数中发 this 与方法中一样, 表示对象, 但是构造函数中的对象是刚刚创建出来的对象<br>构造函数中不需要 return, 就会默认的 return this<br>补充:</p>
+<p>如果手动的添加 return, 就相当于 return this<br>如果手动的添加 return 基本类型; 无效, 还是保留原来 返回 this<br>如果手动添加 return null; 或 return undefiend, 无效<br>如果手动添加 return 对象类型; 那么原来创建的 this 就会被丢掉, 返回的是 return 后面的对象</p>
+<h3 id="创建对象的模式"><a href="#创建对象的模式" class="headerlink" title="创建对象的模式"></a>创建对象的模式</h3><p>1.工厂方法</p>
+<pre><code>// 工厂就是用来生产的, 因此如果函数创建对象并返回, 就称该函数为工厂函数
+function createPerson( name, age, gender ) {
+    var o = {};
+    o.name = name;
+    o.age = age;
+    o.gender = gender;
+    return o;
+}
+
+// document.createElement() 
+</code></pre><p>2.构造方法</p>
+<p>3.寄生式创建对象</p>
+<pre><code>// 外表看起来就是构造方法, 但是本质不是的构造方法创建对象的方式
+function createPerson( name, age, gender ) {
+var o = {};
+    o.name = name;
+    o.age = age;
+    o.gender = gender;
+    return o;
+}
+var p = new createPerson( &apos;jim&apos;, 19, &apos;male&apos; );
+</code></pre><p>4.混合式创建</p>
+<p>上下文调用模型<br>上下文 就是环境, 就是自定义设置 this 的含义</p>
+<p>语法:</p>
+<p>函数名.apply( 对象, [ 参数 ] );<br>函数名.call( 对象, 参数 );<br>描述:</p>
+<p>函数名就是表示的函数本身, 使用函数进行调用的时候默认 this 是全局变量<br>函数名也可以是方法提供, 使用方法调用的时候, this 是指当前对象.<br>使用 apply 进行调用后, 无论是函数, 还是方法都无效了. 我们的 this, 由 apply 的第一个参数决定<br>注意:</p>
+<p>如果函数或方法中没有 this 的操作, 那么无论什么调用其实都一样.<br>如果是函数调用 foo(), 那么有点像 foo.apply( window ).<br>如果是方法调用 o.method(), 那么有点像 o.method.apply( o ).</p>
+<p>参数问题<br>无论是 call 还是 apply 在没有后面的参数的情况下( 函数无参数, 方法无参数 ) 是完全一样的.</p>
+<pre><code>function foo() {
+    console.log( this );
+}
+foo.apply( obj );
+foo.call( obj );
+</code></pre><p>1.第一个参数的使用也是有规则的</p>
+<p>2.如果传入的是一个对象, 那么就相当于设置该函数中的 this 为参数<br>如果不传入参数, 或传入 null. undefiend 等, 那么相当于 this 默认为 window</p>
+<pre><code>foo();
+foo.apply();
+foo.apply( null );
+foo.call( undefined );
+</code></pre><p>3.如果传入的是基本类型, 那么 this 就是基本类型对应的包装类型的引用<br>number -&gt; Number<br>boolean -&gt; Boolean<br>string -&gt; String</p>
+<p>除了 this 的参数外的参数<br>在使用 上下文调用的 时候, 原函数(方法)可能会带有参数, 那么这个参数在上下文调用中使用 第二个( 第 n 个 )参数来表示</p>
+<pre><code>function foo( num ) {
+    console.log( num );
+}
+foo.apply( null, [ 123 ] );
+// 等价于
+foo( 123 );
+</code></pre><p>应用<br>上下文调用只是能修改 this, 但是使用的最多的地方上是借用函数调用.</p>
+<p>将伪数组转换为数组<br>传统的做法</p>
+<pre><code>var a = {};
+a[ 0 ] = &apos;a&apos;; 
+a[ 1 ] = &apos;b&apos;;
+a.length = 2;
+
+// 数组自带的方法 concat
+// 语法: arr.concat( 1, 2, 3, [ 4, [ 5 ] ] );
+// 特点不修改原数组
+var arr = [];
+var newArr = arr.concat( a );
+</code></pre><p>由于 a 是伪数组, 只是长得像数组. 所以这里不行, 但是 apply 方法有一个特性, 可以将数组或伪数组作为参数</p>
+<pre><code>foo.apply( obj, 伪数组 ); // IE8 不支持
+将 a 作为 apply 的第二个参数
+
+var newArr = Array.prototype.concat.apply( [], a )
+</code></pre><p>处理数组转换, 实际上就是将元素一个一个的取出来构成一个新数组, 凡是涉及到该操作的方法理论上都可以</p>
+<p>push, unshift</p>
+<p>slice</p>
+<p>splice<br>push 方法</p>
+<p>用法:  arr.push( 1 ); 将这个元素加到数组中, 并返回所加元素的个数<br>      arr.push( 1, 2, 3 ); 将这三个元素依次加到数组中, 返回所加个数</p>
+<pre><code>var a = { length: 0 }; // 伪数组
+a[ a.length++ ] = &apos;abc&apos;; // a[ 0 ] = &apos;abc&apos;; a.length++;
+a[ a.length++ ] = &apos;def&apos;;
+
+// 使用一个空数组, 将元素一个个放到数组中即可
+var arr = [];
+arr.push( a ); // 此时不会将元素展开, 而是将这个伪数组作为一个元素加到数组中
+// 再次利用 apply 可以展开伪数组的特征
+arr.push.apply( arr, a );
+// 利用 apply 可以展开伪数组的特性, 这里就相当于 arr.push( a[0], a[1] )
+slice
+</code></pre><p>语法: arr.slice( index, endIndex )</p>
+<p>如果第二个参数不传, 那么就是 从 index 一致获取到结尾<br>该方法不会修改原数组</p>
+<pre><code>var a = { length: 0 };
+a[ a.length++ ] = &apos;abc&apos;;
+a[ a.length++ ] = &apos;def&apos;;
+
+// 假设他是一个数组, 就是应该 从 0 项开始截取到 最后
+// 如果可以的话, 应该 a.slice( 0 )
+// 但是他没有该方法
+// 借用 数组的 slice, 将 this 转换成 这个伪数组
+
+var arr = [];
+var newArr = arr.slice.apply( a, [ 0 ] );
+</code></pre>  
+	</div>
+		<footer class="article-footer clearfix">
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/js/">js</a>
+  </div>
+
+
+
+
+<div class="article-share" id="share">
+
+  <div data-url="http://yoursite.com/2016/06/10/函数的四种调用方式【转】/" data-title="函数的四种调用方式【转】 | tooo的前端路" data-tsina="null" class="share clearfix">
+  </div>
+
+</div>
+</footer>   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2016/06/19/封装一个函数实现不同种类的幻灯/" title="封装一个函数实现不同种类的幻灯">
+  <strong>PREVIOUS:</strong><br/>
+  <span>
+  封装一个函数实现不同种类的幻灯</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/2016/05/13/简单的循环滚动图/"  title="简单的循环滚动图">
+ <strong>NEXT:</strong><br/> 
+ <span>简单的循环滚动图
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">Contents</strong>
+  <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#四种"><span class="toc-number">1.</span> <span class="toc-text">四种:</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#函数模式"><span class="toc-number">1.1.</span> <span class="toc-text">函数模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#方法模式"><span class="toc-number">1.2.</span> <span class="toc-text">方法模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#构造器模式"><span class="toc-number">1.3.</span> <span class="toc-text">构造器模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#上下文模式"><span class="toc-number">1.4.</span> <span class="toc-text">上下文模式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#函数模式-1"><span class="toc-number">1.4.1.</span> <span class="toc-text">函数模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#方法模式-1"><span class="toc-number">1.4.2.</span> <span class="toc-text">方法模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#构造器调用模式"><span class="toc-number">1.4.3.</span> <span class="toc-text">构造器调用模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#创建对象的模式"><span class="toc-number">1.4.4.</span> <span class="toc-text">创建对象的模式</span></a></li></ol></li></ol></li></ol>
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<aside class="clearfix">
+
+  
+
+  
+<div class="tagslist">
+	<p class="asidetitle">Tags</p>
+		<ul class="clearfix">
+		
+			<li><a href="/tags/canvas/" title="canvas">canvas<sup>2</sup></a></li>
+		
+			<li><a href="/tags/css/" title="css">css<sup>9</sup></a></li>
+		
+			<li><a href="/tags/html/" title="html">html<sup>6</sup></a></li>
+		
+			<li><a href="/tags/js/" title="js">js<sup>11</sup></a></li>
+		
+			<li><a href="/tags/node-js/" title="node.js">node.js<sup>3</sup></a></li>
+		
+		</ul>
+</div>
+
+
+  <div class="rsspart">
+	<a href="null" target="_blank" title="rss">RSS</a>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<div class="social-font clearfix">
+		
+		
+		
+		
+		
+	</div>
+		<p class="copyright">Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/A-limon/pacman" target="_blank" title="Pacman">Pacman</a> © 2016 
+		
+		<a href="http://yoursite.com" target="_blank" title="zmytooo">zmytooo</a>
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+    c.click(function(){
+      ta.css('display', 'block').addClass('fadeIn');
+    });
+    o.click(function(){
+      ta.css('display', 'none');
+    });
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,320-$(this).scrollTop()));
+    });
+  };
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
+
+
+
+
+
+
+  </body>
+</html>

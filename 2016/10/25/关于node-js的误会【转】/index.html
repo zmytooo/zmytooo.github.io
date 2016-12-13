@@ -1,0 +1,343 @@
+
+ <!DOCTYPE HTML>
+<html >
+<head>
+  <meta charset="UTF-8">
+  
+    <title>关于node.js的误会【转】 | tooo的前端路</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+    
+    <meta name="author" content="zmytooo">
+    
+    <meta name="description" content="关于单线程一个由来已久的误会
+在上篇博客中提到我们使用node.js写的JavaScript代码是单线程运行的，让很多同学很疑惑，单线程怎么实现异步操作，单线程谁去响应事件。。。在html5 Web Workers中我也有提到过客户端的JavaScript也是单线程运行的，大家明显没有这么大反应，还">
+    
+    
+    
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/pacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/pacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+  <body>
+    <header>
+      <div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.svg" alt="tooo的前端路" title="tooo的前端路"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="tooo的前端路">tooo的前端路</a></h1>
+				<h2 class="blog-motto">之路漫漫</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+					<li>
+					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="text" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
+						<input type="hidden" name="q" value="site:yoursite.com">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2016/10/25/关于node-js的误会【转】/" title="关于node.js的误会【转】" itemprop="url">关于node.js的误会【转】</a>
+  </h1>
+  <p class="article-author">By
+    
+      <a href="http://yoursite.com" title="zmytooo">zmytooo</a>
+    </p>
+  <p class="article-time">
+    <time datetime="2016-10-25T13:22:52.000Z" itemprop="datePublished">2016-10-25</time>
+    Updated:<time datetime="2016-12-11T11:14:01.000Z" itemprop="dateModified">2016-12-11</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">Contents</strong>
+		<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#node-js是什么？和JavaScript有什么关系？"><span class="toc-number">1.</span> <span class="toc-text">node.js是什么？和JavaScript有什么关系？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#关于node-js究竟是什么，大家的问题在于"><span class="toc-number">2.</span> <span class="toc-text">关于node.js究竟是什么，大家的问题在于</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#node-js是不是一门语言？"><span class="toc-number">3.</span> <span class="toc-text">node.js是不是一门语言？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#node-js是不是一个JavaScript库函数？"><span class="toc-number">4.</span> <span class="toc-text">node.js是不是一个JavaScript库函数？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#node-js是不是一个JavaScript框架？"><span class="toc-number">5.</span> <span class="toc-text">node.js是不是一个JavaScript框架？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#为什么要使用node-js"><span class="toc-number">6.</span> <span class="toc-text">为什么要使用node.js</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-web-socket服务器"><span class="toc-number">7.</span> <span class="toc-text">1.web socket服务器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-TCP-UDP套接字应用程序"><span class="toc-number">8.</span> <span class="toc-text">2.TCP/UDP套接字应用程序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-复杂逻辑的web应用"><span class="toc-number">9.</span> <span class="toc-text">3.复杂逻辑的web应用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-命令行工具"><span class="toc-number">10.</span> <span class="toc-text">4.命令行工具</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-客户端Javascript编译器"><span class="toc-number">11.</span> <span class="toc-text">5.客户端Javascript编译器</span></a></li></ol>
+		</div>
+		
+		<p>关于单线程一个由来已久的误会</p>
+<p>在上篇博客中提到我们使用node.js写的JavaScript代码是单线程运行的，让很多同学很疑惑，单线程怎么实现异步操作，单线程谁去响应事件。。。在html5 Web Workers中我也有提到过客户端的JavaScript也是单线程运行的，大家明显没有这么大反应，还是普遍能接受的。可单线程的客户端JavaScript也能响应DOM事件，还有大家都很熟悉的ajax操作，回调函数也是异步的，既然客户端JavaScript是单线程执行的，回调函数是谁调用的呢？答案很简单，JavaScript的宿主环境——浏览器，也就是说虽然JavaScript是单线程执行的，但浏览器是多线程的，负责调度管理JavaScript代码，让它们在恰当的时机执行。</p>
+<p>所以我们所说的node.js单线程，是指node.js并没有给我们创建一个线程的能力，所有我们自己写的代码都是单线程执行的，在同一时间内，只能执行我们写的一句代码。但宿主环境node.js并不是单线程的，它会维护一个执行队列，循环检测，调度JavaScript线程来执行。因此单线程执行和并发操作并不冲突。</p>
+<p>阻塞与线程什么叫阻塞（block）？<br>线程在执行中如果遇到I/O操作（磁盘读写、网络通信等）通常需要耗费较长的时间，这时候操作系统会剥夺线程对CPU的控制权，使其暂停，并把资源让给其它的工作线程，这种线程调度方式成为阻塞。当I/O操作完毕的时候操作系统将这个线程的阻塞状态解除，恢复其对CPU的控制权，令其继续执行，这种I/O模式就是同步I/O或成为阻塞I/O。</p>
+<p>响应的异步I/O或非阻塞I/O则针对所有的I/O操作采取不阻塞的策略，当线程遇到I/O操作时不会以阻塞的方式等待I/O操作结束，而只是将I/O请求发送给操作系统，继续执行后续语句。当操作系统完成I/O操作时以事件的形式通知执行I/O操作的线程，线程会在特定时间处理这个事件。为了处理异步I/O必须有事件循环，不断检查有没有未处理的事件，依次予以处理。</p>
+<p>在阻塞模式下，一个线程只能处理一个任务，要想提高吞吐量必须通过多线程。而在非阻塞模式下一个线程永远在执行计算操作，这个线程所使用的CPU核心利用率永远是100%，I/O以事件的方式通知。在阻塞模式下多线程往往能够提高系统吞吐量，因为一个线程阻塞时还有其他线程在工作，多线程何以让CPU资源不被阻塞的线程浪费。而在非阻塞模式下，线程不会被I/O阻塞，永远在利用CPU。异步I/O减少了多线程中创建线程、分配内存、列入调度、切换线程、内存换页、CPU缓存等方面的开销。</p>
+<p>事件循环机制<br>上面提到了几次事件循环机制，那么这个听起来貌似很高端的东东究竟是什么呢？所谓事件循环是指node.js会把所有的异步操作使用事件机制解决，有个线程在不断地循环检测事件队列。node.js中所有的逻辑都是事件的回调函数，所以node.js始终在事件循环中，程序入口就是事件循环第一个事件的回调函数。事件的回调函数中可能会发出I/O请求或直接发射（ emit）事件，执行完毕后返回事件循环。事件循环会检查事件队列中有没有未处理的事件，直到程序结束。node.js的事件循环对开发者不可见，由libev库实现，libev不断检查是否有活动的、可供检测的事件监听器，直到检查不到时才退出事件循环，程序结束。<br><img src="http://images.cnitblog.com/blog/349217/201312/15164932-d9522c09f6094aa2b89455889a3f0e3b.png" alt="Alt text"></p>
+<h3 id="node-js是什么？和JavaScript有什么关系？"><a href="#node-js是什么？和JavaScript有什么关系？" class="headerlink" title="node.js是什么？和JavaScript有什么关系？"></a>node.js是什么？和JavaScript有什么关系？</h3><h3 id="关于node-js究竟是什么，大家的问题在于"><a href="#关于node-js究竟是什么，大家的问题在于" class="headerlink" title="关于node.js究竟是什么，大家的问题在于"></a>关于node.js究竟是什么，大家的问题在于</h3><h3 id="node-js是不是一门语言？"><a href="#node-js是不是一门语言？" class="headerlink" title="node.js是不是一门语言？"></a>node.js是不是一门语言？</h3><h3 id="node-js是不是一个JavaScript库函数？"><a href="#node-js是不是一个JavaScript库函数？" class="headerlink" title="node.js是不是一个JavaScript库函数？"></a>node.js是不是一个JavaScript库函数？</h3><h3 id="node-js是不是一个JavaScript框架？"><a href="#node-js是不是一个JavaScript框架？" class="headerlink" title="node.js是不是一个JavaScript框架？"></a>node.js是不是一个JavaScript框架？</h3><p>很遗憾，这三个问题的答案都是NO，看看官方对自己的描述</p>
+<p>Node.js is a platform built on Chrome’s JavaScript runtime for easily building fast, scalable network applications. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient, perfect for data-intensive real-time applications that run across distributed devices.</p>
+<p>官方很明确地说node.js是一个platform，也就是一个做xxx的平台。node.js是一个可以在服务器端运行JavaScript的平台，其实这句话华也不准确，按照《JavaScript权威指南》《JavaScript高级程序设计》等书中的定义，JavaScript是由两部分组成</p>
+<p>core JavaScript<br>client JavaScript（DOM、BOM）<br>而只有core JavaScript可以在node.js上运行，所以node.js借用了JavaScript的语法，但并不能用来处理浏览器对象（BOM）及文档对象（DOM），所以node.js并不是设计为在服务器端运行解析html文档的（当然有module可以做此事），所以“在服务器端运行的JavaScript”在一定程度上误导了初学者。</p>
+<p>同时node.js并不仅仅运行core JavaScript，node.js中还有文件系统、模块包、操作系统API、网络通信、二进制类型处理等core JavaScript不具备的功能。</p>
+<p>node.js是在执行JavaScript语句吗<br>从字面意思上是的，因为我们在使用node.js开发的时候写的确实是JavaScript语句，而且node.js利用Google的V8 Javascript 引擎来解析JavaScript语句，但系统真正调用执行的代码是用C++写的，我们做的只是用JavaScript语句来调用这些底层API，所以不用担心其执行效率过低问题</p>
+<p>异步I/O与事件驱动<br>毫不夸张的说node.js最大的特定就是采用异步I/O和事件驱动架构，对于高并发解决方案传统架构师多线程模型，为每个业务逻辑童工一个线程，通过系统线程切换来来弥补同步I/O调用的时间开销。node.js使用的是单线程模型，对所有I/O都采用异步式的请求方式，避免频繁的上下文切换，在node.js执行的时候维护着一个事件队列，程序在执行时进入事件循环等待下一个事件到来，每个异步I/O请求完成后都会被推送到事件队列中的等待执行。</p>
+<p>对于一个简单的数据库访问操作，传统方式是这样实现的</p>
+<pre><code>res = db.query(&apos;SELECT * from some_table&apos;);
+res.output();
+</code></pre><p>代码执行到第一行的时候线程会阻塞，等待query返回结果，然后继续处理。由于数据库查询、磁盘读写、网络通信等原因阻塞时间会非常大（相对于CPU始终频率）。对于高并发的访问，一方面线程长期阻塞等待，另一方面为了应付新情求而不断添加新线程，会浪费大量系统资源，同时线程的增加也会也会占用大量的CPU时间来处理内存上下文切换。看看node.js怎么处理</p>
+<pre><code> db.query(&apos;SELECT * from some_table&apos;, function(res) { 
+       res.output();
+});
+</code></pre><p>在代码中熟悉Javascript的同学一眼就可以看明白query的第二个参数是一个回调函数，进程执行到db.query的时候不会等待结果返回，而是直接继续执行下面的语句，直到进入事件循环。当数据库执行结果返回的时候会将事件发送到事件队列，等到线程进入事件循环后才会调用之前的回调函数。</p>
+<p>node.js的异步机制是基于事件的，所有的I/O、网络通信、数据库查询都以非阻塞的方式执行，返回结果由事件循环来处理。node.js在同一时刻只会处理一个事件，完成后立即进入事件循环检查后面事件。这样CPU和内存在同一时间集中处理一件事，同时尽量让耗时的I/O等操作并行执行。</p>
+<p>node.js架构<br>node.js用异步式I/O和事件驱动代替多线程提升性能，除了使用高效的V8作为JavaScript引擎外还使用了高效的libev和libeio库支持事件驱动和异步I/O。</p>
+<p><img src="http://images.cnitblog.com/blog/349217/201312/15160642-f5975482ad8641dab0712d26b7118401.png" alt="Alt text"></p>
+<p>node.js作者在libeio和libev的基础上抽象出了libuv层，对于POSIX(Portable Operating System Interface 是一套操作系统API规范，遵循的有Unix、Linux、Mac OS X等)操作系统libuv通过封装libev和libio来利用epoll或kqueue。而在Windows下libuv使用了IOCP（Input/Output Completion Port,输入输出完􏰛端）机制 在不同平台下实现高性能。</p>
+<p>了解了这个就不要再以为node.js是利用JavaScript来操作系统了</p>
+<h3 id="为什么要使用node-js"><a href="#为什么要使用node-js" class="headerlink" title="为什么要使用node.js"></a>为什么要使用node.js</h3><p>其实这个问题可以归结为node.js有什么特长，除了语法上让熟悉JavaScript的人很舒服。相对于Javascript为客户端而生，node.js为网络而生，一切都以http为主，其内建HTTP服务器支持，使用node.js可以轻易地搭建一个网站和服务器组合，而不用想使用PHP还需要额外的Apache服务器，通过特有模块或CGI调用才能将PHP脚本结果返回给用户。</p>
+<p>node.js还可以部署到非网络应用环境下，因为其可以调用C/C++代码，充分利用现有函数库，在性能上有很大优越性。</p>
+<p>在这些场景下使用node.js是非常合适的</p>
+<h3 id="1-web-socket服务器"><a href="#1-web-socket服务器" class="headerlink" title="1.web socket服务器"></a>1.web socket服务器</h3><h3 id="2-TCP-UDP套接字应用程序"><a href="#2-TCP-UDP套接字应用程序" class="headerlink" title="2.TCP/UDP套接字应用程序"></a>2.TCP/UDP套接字应用程序</h3><h3 id="3-复杂逻辑的web应用"><a href="#3-复杂逻辑的web应用" class="headerlink" title="3.复杂逻辑的web应用"></a>3.复杂逻辑的web应用</h3><h3 id="4-命令行工具"><a href="#4-命令行工具" class="headerlink" title="4.命令行工具"></a>4.命令行工具</h3><h3 id="5-客户端Javascript编译器"><a href="#5-客户端Javascript编译器" class="headerlink" title="5.客户端Javascript编译器"></a>5.客户端Javascript编译器</h3><p>参考及最后<br>博客中基本理论知识都来源于《Node.js开发指南》，甚至很多篇幅都是直接使用原话，没有抄袭据为己有的意思，只是作者说的太明白了，希望对初入node.js的朋友有帮助，当然如果感兴趣可以直接购买原书。</p>
+<p>希望唠唠叨叨这么多，能够对对之前博客持有疑问的博友有所帮助，最后在唠叨一句，单线程执行是指我们写的JavaScript语句在同一时刻只能执行一句，而不是node.js是单线程，其实我们的异步I/O及事件循环都是另外线程在做。</p>
+<p>当然对于一些CPU密集的操作在node.js里面也有process.nextTick()这样的解决方案或者直接使用C++处理，研究明白了和大家分享，也有人不满意node.js的单线程写了自己的module来让node.js多线程，感兴趣的同学可以看看node-threads-a-gogo</p>
+<p>由于刚刚接触node.js，文中谬误颇多，希望多家多多批评指教</p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/node-js/">node.js</a>
+  </div>
+
+
+
+
+<div class="article-share" id="share">
+
+  <div data-url="http://yoursite.com/2016/10/25/关于node-js的误会【转】/" data-title="关于node.js的误会【转】 | tooo的前端路" data-tsina="null" class="share clearfix">
+  </div>
+
+</div>
+</footer>   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2016/10/29/Flex布局教程：语法篇【转】/" title="Flex布局教程：语法篇【转】">
+  <strong>PREVIOUS:</strong><br/>
+  <span>
+  Flex布局教程：语法篇【转】</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/2016/10/19/node-js入门【转】/"  title="node.js入门【转】">
+ <strong>NEXT:</strong><br/> 
+ <span>node.js入门【转】
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">Contents</strong>
+  <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#node-js是什么？和JavaScript有什么关系？"><span class="toc-number">1.</span> <span class="toc-text">node.js是什么？和JavaScript有什么关系？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#关于node-js究竟是什么，大家的问题在于"><span class="toc-number">2.</span> <span class="toc-text">关于node.js究竟是什么，大家的问题在于</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#node-js是不是一门语言？"><span class="toc-number">3.</span> <span class="toc-text">node.js是不是一门语言？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#node-js是不是一个JavaScript库函数？"><span class="toc-number">4.</span> <span class="toc-text">node.js是不是一个JavaScript库函数？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#node-js是不是一个JavaScript框架？"><span class="toc-number">5.</span> <span class="toc-text">node.js是不是一个JavaScript框架？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#为什么要使用node-js"><span class="toc-number">6.</span> <span class="toc-text">为什么要使用node.js</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-web-socket服务器"><span class="toc-number">7.</span> <span class="toc-text">1.web socket服务器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-TCP-UDP套接字应用程序"><span class="toc-number">8.</span> <span class="toc-text">2.TCP/UDP套接字应用程序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-复杂逻辑的web应用"><span class="toc-number">9.</span> <span class="toc-text">3.复杂逻辑的web应用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-命令行工具"><span class="toc-number">10.</span> <span class="toc-text">4.命令行工具</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-客户端Javascript编译器"><span class="toc-number">11.</span> <span class="toc-text">5.客户端Javascript编译器</span></a></li></ol>
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<aside class="clearfix">
+
+  
+
+  
+<div class="tagslist">
+	<p class="asidetitle">Tags</p>
+		<ul class="clearfix">
+		
+			<li><a href="/tags/canvas/" title="canvas">canvas<sup>2</sup></a></li>
+		
+			<li><a href="/tags/css/" title="css">css<sup>9</sup></a></li>
+		
+			<li><a href="/tags/html/" title="html">html<sup>6</sup></a></li>
+		
+			<li><a href="/tags/js/" title="js">js<sup>11</sup></a></li>
+		
+			<li><a href="/tags/node-js/" title="node.js">node.js<sup>3</sup></a></li>
+		
+		</ul>
+</div>
+
+
+  <div class="rsspart">
+	<a href="null" target="_blank" title="rss">RSS</a>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<div class="social-font clearfix">
+		
+		
+		
+		
+		
+	</div>
+		<p class="copyright">Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/A-limon/pacman" target="_blank" title="Pacman">Pacman</a> © 2016 
+		
+		<a href="http://yoursite.com" target="_blank" title="zmytooo">zmytooo</a>
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+    c.click(function(){
+      ta.css('display', 'block').addClass('fadeIn');
+    });
+    o.click(function(){
+      ta.css('display', 'none');
+    });
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,320-$(this).scrollTop()));
+    });
+  };
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
+
+
+
+
+
+
+  </body>
+</html>
