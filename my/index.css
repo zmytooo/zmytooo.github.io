@@ -49,7 +49,7 @@ header{
 }
 .logo ul li{
 	float: left;
-	margin-left: 60px;
+	margin-left: 40px;
 	font-size: 16px;
 	font-family: Simsun;
 }
@@ -156,11 +156,11 @@ section{
 }
 
 /*公共样式*/
-#life,#like,#skill,#project{
+#life,#like,#skill,#project,#demo{
 	width: 1280px;
 	margin: 50px auto;
 }
-#life h1,#like h1,#skill h1,#project h1{
+#life h1,#like h1,#skill h1,#project h1,#demo h1{
 	border-bottom: 1px dashed dodgerblue;
 	padding-bottom: 15px;
 	padding-left: 20px;
@@ -317,14 +317,14 @@ nav ul li a{
 }
 
 /*我的项目*/
-.project-content{
+.project-content,.demo-content{
 	height: 350px;
 	background: #f1f1f1;
 	margin-top: 20px;
 }
-.project-content ul li{
+.project-content ul li,.demo-content ul li{
 	float: left;
-	margin-left: 26px;
+	margin-left: 77px;
 	margin-top: 75px;
 	width: 224px;
 	height: 200px;
@@ -333,15 +333,15 @@ nav ul li a{
 	position: relative;
 	box-shadow: 1px 1px 20px lightgray;
 }
-.project-content ul li:hover{
+.project-content ul li:hover,.demo-content ul li:hover{
 	box-shadow: 2px 5px 10px lightgray;
 	transition: 0.2s;
 }
-.project-content ul li:hover .tant{
+.project-content ul li:hover .tant,.demo-content ul li:hover .tant{
 	transform: translateY(-72px);
 	transition: 1s;
 }
-.project-content ul li a img{
+.project-content ul li a img,.demo-content ul li a img{
 	width: 100%;
 	height: 100%;
 }
@@ -354,7 +354,8 @@ nav ul li a{
 	top: 160px;
 	z-index: 2;
 	box-sizing: border-box;
-	padding: 20px;
+	text-align: center;
+	padding-top: 20px;
 }
 .jies{
 	width: 224px;
