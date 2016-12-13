@@ -24,6 +24,16 @@ var login_after=document.querySelector(".login_after");
 //退出登录
 var sign_out = document.querySelector(".sign_out");
 
+var guan = document.querySelector("#guan");
+var guan2 = document.querySelector("#guan2");
+
+guan.onclick=function(){
+    mask.style.display='none'
+}
+guan2.onclick=function(){
+    mask.style.display='none'
+}
+
 Regedit.onclick =function(){
     mask.style.display='block';
     regedit1.style.display='block';
