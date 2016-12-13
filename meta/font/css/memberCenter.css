@@ -1,0 +1,457 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+/*
+KISSY CSS Reset
+理念：1. reset 的目的不是清除浏览器的默认样式，这仅是部分工作。清除和重置是紧密不可分的。
+2. reset 的目的不是让默认样式在所有浏览器下一致，而是减少默认样式有可能带来的问题。
+3. reset 期望提供一套普适通用的基础样式。但没有银弹，推荐根据具体需求，裁剪和修改后再使用。
+特色：1. 适应中文；2. 基于最新主流浏览器。
+ */
+/** 清除内外边距 **/
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote,
+dl, dt, dd, ul, ol, li,
+pre,
+form, fieldset, legend, button, input, textarea,
+th, td {
+  margin: 0;
+  padding: 0px; }
+
+/** 设置默认字体 **/
+body,
+button, input, select, textarea {
+  font: 14px/1.5 '经典细圆简',tahoma, arial, \5b8b\4f53, sans-serif; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+  font-weight: normal; }
+
+address, cite, dfn, em, var {
+  font-style: normal; }
+
+/* 将斜体扶正 */
+code, kbd, pre, samp {
+  font-family: courier new, courier, monospace; }
+
+/* 统一等宽字体 */
+small {
+  font-size: 12px; }
+
+/* 小于 12px 的中文很难阅读，让 small 正常化 */
+/** 重置列表元素 **/
+ul, ol {
+  list-style: none; }
+
+/** 重置文本格式元素 **/
+a {
+  text-decoration: none;
+  color: black; }
+
+a:hover {
+  text-decoration: underline;
+  cursor: pointer; }
+
+i {
+  font-style: normal; }
+
+/** 重置表单元素 **/
+legend {
+  color: #000; }
+
+/* for ie6 */
+img {
+  border: 0; }
+
+/* image 搭车：让链接里的 image 无边框 */
+button, input, select, textarea {
+  font-size: 12px; }
+
+/** 重置表格元素 **/
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+@font-face {
+  font-family: '经典细圆简';
+  src: url("../font/经典细圆简.ttf"); }
+
+.header {
+  width: 1310px;
+  margin: 0 auto;
+  color: #6e6e6e;
+  height: 272px;
+  border: 1px solid #ffffff; }
+  .header .left a {
+    font-size: 21px;
+    line-height: 40px;
+    float: left;
+    color: #6e6e6e; }
+  .header .right {
+    width: 354px;
+    height: 40px;
+    font-size: 16px;
+    line-height: 40px;
+    float: right;
+    position: relative; }
+    .header .right .login_before {
+      float: left; }
+      .header .right .login_before a {
+        font-size: 16px;
+        line-height: 32px;
+        color: #6e6e6e; }
+    .header .right .login_after {
+      float: left;
+      background: #fff;
+      position: relative;
+      border: 1px solid #fff;
+      padding: 0 10px 5px;
+      cursor: pointer;
+      display: none; }
+      .header .right .login_after p .dot {
+        display: inline-block;
+        font-size: 10px;
+        transform: rotate(45deg);
+        position: relative;
+        top: -1px; }
+      .header .right .login_after p .name {
+        font-size: 16px; }
+      .header .right .login_after ul {
+        text-align: center;
+        display: none; }
+        .header .right .login_after ul a {
+          color: #6e6e6e; }
+      .header .right .login_after:hover {
+        border: 1px solid #d1d1d1;
+        border-top-color: #fff; }
+        .header .right .login_after:hover ul {
+          display: block; }
+        .header .right .login_after:hover .dot {
+          transform: rotate(135deg);
+          top: -4px; }
+    .header .right .shopping {
+      padding-left: 38px;
+      padding-right: 36px;
+      background: #fff;
+      border: 1px solid white;
+      border-top: none;
+      float: right;
+      cursor: pointer;
+      position: relative;
+      z-index: 2; }
+      .header .right .shopping .span {
+        margin-right: 29px;
+        float: left; }
+      .header .right .shopping .box {
+        float: right;
+        width: 52px;
+        height: 80px;
+        text-align: center; }
+        .header .right .shopping .box .img {
+          height: 39px;
+          background: url("../img/shoppingBag.png") 9px 0 no-repeat; }
+        .header .right .shopping .box .count {
+          display: none;
+          /******************/
+          width: 15px;
+          height: 15px;
+          border-radius: 50%;
+          background: #fff;
+          text-align: center;
+          line-height: 12px;
+          margin-left: 17px;
+          margin-top: -7px;
+          font-size: 10px;
+          border: 2px solid #9d6f89; }
+    .header .right .shopping_list {
+      display: none;
+      /******************/
+      border: 1px solid #dddddd;
+      position: absolute;
+      padding: 32px 30px 25px 25px;
+      top: 80px;
+      right: 0;
+      z-index: 1;
+      background: #fff;
+      width: 440px; }
+      .header .right .shopping_list .have {
+        display: none; }
+        .header .right .shopping_list .have ul li {
+          overflow: hidden;
+          position: relative;
+          padding: 24px 0;
+          border-bottom: 3px solid #dddddd; }
+          .header .right .shopping_list .have ul li img {
+            float: left;
+            margin-right: 32px; }
+          .header .right .shopping_list .have ul li .right1 {
+            width: 300px;
+            float: left;
+            line-height: 34px; }
+            .header .right .shopping_list .have ul li .right1 div {
+              float: left;
+              width: 88px;
+              text-align: center; }
+            .header .right .shopping_list .have ul li .right1 .size {
+              text-align: left;
+              width: 70px; }
+            .header .right .shopping_list .have ul li .right1 input {
+              width: 20px;
+              text-align: center; }
+            .header .right .shopping_list .have ul li .right1 .minus, .header .right .shopping_list .have ul li .right1 .plus {
+              cursor: pointer; }
+          .header .right .shopping_list .have ul li .del {
+            position: absolute;
+            right: 0;
+            font-size: 24px;
+            cursor: pointer;
+            color: #6e6e6e; }
+        .header .right .shopping_list .have .bottom {
+          text-align: center; }
+          .header .right .shopping_list .have .bottom p {
+            font-size: 21px;
+            line-height: 56px; }
+            .header .right .shopping_list .have .bottom p a {
+              color: #6e6e6e; }
+          .header .right .shopping_list .have .bottom .a {
+            color: white;
+            display: block;
+            line-height: 44px;
+            background: #9d6f89;
+            font-size: 25px;
+            font-family: "Adobe 黑体 Std"; }
+            .header .right .shopping_list .have .bottom .a:hover {
+              text-decoration: none; }
+      .header .right .shopping_list .no {
+        display: none;
+        text-align: center;
+        color: #999; }
+        .header .right .shopping_list .no p {
+          font-size: 25px; }
+        .header .right .shopping_list .no a {
+          font-size: 19px;
+          color: #999; }
+  .header h1 {
+    margin: 120px 0 34px;
+    text-align: center; }
+  .header .tab {
+    width: 940px;
+    margin: 0 auto; }
+    .header .tab li {
+      padding: 0 74px;
+      margin: 14px 0 14px;
+      font-size: 21px;
+      float: left; }
+      .header .tab li a {
+        color: #666; }
+
+.footer {
+  border-top: 1px solid #b2b1b1;
+  padding: 36px 0 86px; }
+  .footer ul {
+    width: 170px;
+    float: left; }
+    .footer ul p {
+      line-height: 34px;
+      color: #999; }
+    .footer ul li a {
+      color: #6e6e6e;
+      line-height: 21px; }
+  .footer .box {
+    width: 510px;
+    margin: 0 auto; }
+
+.mask {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: #6e6e6e;
+  display: none; }
+  .mask .regedit1 {
+    width: 600px;
+    position: absolute;
+    left: 50%;
+    margin-left: -300px;
+    top: 90px;
+    display: none; }
+  .mask #guan,.mask #guan2{
+    position: absolute;
+    top: 10px;right: 20px;
+    font-size: 34px;
+    color: #000;
+  }
+    .mask .regedit1 .top {
+      padding: 72px 40px 32px;
+      font-size: 19px;
+      text-align: center;
+      margin-bottom: 15px;
+      background: #fff; }
+      .mask .regedit1 .top h2 {
+        font-size: 38px;
+        line-height: 126px; }
+      .mask .regedit1 .top label {
+        margin-top: 10px;
+        display: block;
+        text-align: left; }
+        .mask .regedit1 .top label input {
+          display: block;
+          width: 100%;
+          height: 42px;
+          margin-bottom: 20px;
+          border: 2px solid #ddd;
+          font-size: 19px;
+          text-indent: 1em; }
+      .mask .regedit1 .top div {
+        height: 42px;
+        margin-bottom: 20px;
+        line-height: 42px; }
+      .mask .regedit1 .top .create {
+        background: #c4a9b8;
+        color: #fff;
+        cursor: pointer; }
+      .mask .regedit1 .top .weibo {
+        background: #f1ead8 url("../img/weiboicon.png") 20px 5px no-repeat;
+        cursor: pointer; }
+      .mask .regedit1 .top .qq {
+        border: 2px solid #ddd;
+        background: url("../img/qqicon.png") 12px -5px no-repeat;
+        cursor: pointer; }
+    .mask .regedit1 .bottom {
+      line-height: 56px;
+      text-align: center;
+      background: #000;
+      color: #fff;
+      font-size: 19px; }
+      .mask .regedit1 .bottom span {
+        border-bottom: 1px solid #ddd;
+        cursor: pointer; }
+  .mask .regedit2 {
+    width: 600px;
+    position: absolute;
+    left: 50%;
+    margin-left: -300px;
+    top: 90px;
+    box-sizing: border-box;
+    padding: 0 40px 42px;
+    background: #fff;
+    display: none; }
+    .mask .regedit2 h2 {
+      font-size: 34px;
+      line-height: 110px;
+      text-align: center; }
+    .mask .regedit2 label {
+      display: block;
+      line-height: 40px;
+      font-size: 21px; }
+      .mask .regedit2 label input {
+        display: block;
+        height: 40px;
+        font-size: 21px;
+        margin-bottom: 15px;
+        border: 2px solid #ddd;
+        text-indent: 1em;
+        width: 100%; }
+    .mask .regedit2 .enter {
+      line-height: 50px;
+      font-size: 25px;
+      color: #fff;
+      background: #c4a9b8;
+      margin-top: 28px;
+      text-align: center;
+      cursor: pointer; }
+  .mask .sign_in {
+    color: #6e6e6e;
+    width: 600px;
+    position: absolute;
+    left: 50%;
+    margin-left: -300px;
+    top: 50px;
+    display: none; }
+    .mask .sign_in div {
+      margin-bottom: 20px;
+      line-height: 42px; }
+    .mask .sign_in .top {
+      padding: 36px 40px 5px;
+      background: #fff;
+      font-size: 19px;
+      text-align: center;
+      margin-bottom: 15px; }
+      .mask .sign_in .top p {
+        font-size: 25px; }
+      .mask .sign_in .top h2 {
+        font-size: 60px;
+        line-height: 150px;
+        color: #000;
+        font-family: arial; }
+      .mask .sign_in .top .weibo {
+        background: #f1ead8 url("../img/weiboicon.png") 20px 5px no-repeat;
+        cursor: pointer; }
+      .mask .sign_in .top .qq {
+        border: 2px solid #ddd;
+        background: url("../img/qqicon.png") 12px -5px no-repeat;
+        cursor: pointer; }
+      .mask .sign_in .top label {
+        display: block;
+        text-align: left; }
+        .mask .sign_in .top label input {
+          display: block;
+          width: 100%;
+          height: 42px;
+          margin-bottom: 20px;
+          border: 2px solid #ddd;
+          font-size: 19px;
+          text-indent: 1em; }
+      .mask .sign_in .top .enter {
+        line-height: 50px;
+        font-size: 25px;
+        color: #fff;
+        background: #c4a9b8;
+        margin-top: 28px;
+        text-align: center;
+        cursor: pointer; }
+    .mask .sign_in .bottom {
+      line-height: 56px;
+      text-align: center;
+      background: #000;
+      color: #fff;
+      font-size: 19px; }
+      .mask .sign_in .bottom span {
+        border-bottom: 1px solid #ddd;
+        cursor: pointer; }
+
+.content {
+  width: 1230px;
+  margin: 86px auto 200px;
+  font-size: 21px;
+  line-height: 40px;
+  overflow: hidden;
+  color: #6e6e6e; }
+  .content a {
+    color: #6e6e6e; }
+  .content .left {
+    padding-top: 45px;
+    float: left;
+    width: 214px; }
+  .content .right {
+    width: 1014px;
+    float: left; }
+    .content .right input {
+      display: inline-block;
+      height: 24px;
+      vertical-align: middle; }
+    .content .right #_name {
+      width: 210px; }
+    .content .right #_psd, .content .right #_mail {
+      width: 430px; }
+    .content .right .save {
+      width: 194px;
+      line-height: 32px;
+      text-align: center;
+      background: #808080;
+      color: #fff;
+      cursor: pointer; }

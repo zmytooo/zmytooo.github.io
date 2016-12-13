@@ -1,0 +1,204 @@
+@import "reset";
+@import "head";
+@import "foot";
+@import 'login';
+.header{
+    height:230px;
+}
+.box{
+    .top{
+        ul{
+            width:1080px;
+            margin: 0px auto 15px;
+            text-align: center;
+            color: $lightColor;
+            overflow: hidden;
+            li{
+                float: left;
+                width:270px;
+                div{
+                    width:29px;
+                    height:29px;
+                    margin:0 auto;
+                    text-align: center;
+                    line-height: 29px;
+                    font-size: 21px;
+                    background: #b1afaf;
+                    -webkit-border-radius:50%;
+                    -moz-border-radius:50%;
+                    border-radius:50%;
+                    color: #fff;
+                }
+                .active1{
+                    background: #c29bb1;
+                }
+                .active2{
+                    background: #9d6f89;
+                }
+                a{
+                    font-size: 21px;
+                    color: $lightColor;
+                    line-height: 42px;
+                }
+            }
+
+        }
+        .title{
+            border-bottom: 2px solid #ddd;
+            padding:32px 0;
+            height:104px;
+            width:1325px;
+            margin:0 auto;
+            p{
+                width:340px;
+                line-height:52px;
+                margin:0 auto;
+                font-size: 37px;
+                color: #000;
+                text-align: center;
+            }
+        }
+
+    }
+    .bottom{
+        padding:60px 120px 40px;
+        overflow: hidden;
+        width:1325px;
+        margin:0 auto;
+        box-sizing: border-box;
+        .left{
+            width:750px;
+            float: left;
+            .top{
+                font-size: 25px;
+                color: $lightColor;
+                line-height: 50px;
+                margin-bottom: 164px;
+                h4{
+                    line-height: 25px;
+                    margin-bottom: 36px;
+                }
+                a{
+                    color: #9d6f89;
+                }
+            }
+            .bottom1{
+                .have{
+                    ul{
+                        border-top:3px solid #dddddd;
+                        color: $lightColor;
+                        li{
+                            overflow: hidden;
+                            position: relative;
+                            padding: 24px 0;
+                            border-bottom:3px solid #dddddd;
+                            img{
+                                float: left;
+                                margin-right: 32px;
+                            }
+                            .right1{
+                                width:300px;
+                                float: left;
+                                line-height: 34px;
+                                div{
+                                    float: left;
+                                    width:88px;
+                                    text-align: center;
+                                }
+                                .size{
+                                    text-align: left;
+                                    width:70px;
+                                }
+                                input{
+                                    width:20px;
+                                    text-align: center;
+                                }
+                                .minus,.plus{
+                                    cursor: pointer;
+                                }
+                            }
+                            .del{
+                                position: absolute;
+                                right:0;
+                                font-size: 24px;
+                                cursor: pointer;
+                                color: $lightColor;
+                            }
+                        }
+                        .last{
+                            border-bottom: none;
+                        }
+
+                    }
+                    .bottom{
+                        text-align: center;
+                        p{
+                            font-size: 21px;
+                            line-height: 56px;
+                            color: $lightColor;
+                        }
+                        a{
+                            color: white;
+                            display: block;
+                            line-height: 44px;
+                            background: #9d6f89;
+                            font-size: 25px;
+                            font-family: "Adobe 黑体 Std";
+                            &:hover{
+                                text-decoration: none;
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+        .right{
+            width:260px;
+            float: right;
+            font-size: 21px;
+            .top{
+                border:1px solid #ddd;
+                padding:0 15px 10px;
+                background: #f9f9f9;
+                p{
+                    line-height: 60px;
+                    text-align: center;
+                    color: $lightColor;
+                }
+                li{
+                    float: none;
+                    width:228px;
+                    box-sizing: border-box;
+                    font-size: 16px;
+                    border-top: 1px solid #ddd;
+                    line-height: 84px;
+                    padding: 0 18px 0 12px;
+                    text-align: left;
+                    span{
+                        float: right;
+                    }
+                }
+            }
+            .bottom{
+                width:260px;
+                padding:0;
+                margin-top: 30px;
+                a{
+                    line-height: 36px;
+                    display: block;
+                    height:36px;
+                    margin-bottom: 20px;
+                    color: #fff;
+                    background: #9d6f89;
+                    text-align: center;
+                    font-size: 21px;
+                    &:hover{
+                        text-decoration: none;
+                    }
+                }
+
+            }
+        }
+    }
+}

@@ -1,0 +1,15 @@
+.footer {
+  border-top: 1px solid #b2b1b1;
+  padding: 36px 0 86px; }
+  .footer ul {
+    width: 170px;
+    float: left; }
+    .footer ul p {
+      line-height: 34px;
+      color: #999; }
+    .footer ul li a {
+      color: #6e6e6e;
+      line-height: 21px; }
+  .footer .box {
+    width: 510px;
+    margin: 0 auto; }

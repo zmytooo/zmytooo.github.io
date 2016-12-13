@@ -1,0 +1,95 @@
+.neitu{
+	width: 100%;
+	height: 540px;
+	position: relative;
+}
+.neitu img{
+	width: 100%;
+	height: 100%;
+}
+.neitu .zi{
+	text-align: center;
+	position: absolute;
+	left: 50%;top: 141px;
+	margin-left: -312.5px;
+}
+.neitu .zi .p1{
+	font-size: 50px;
+	color: #fbfafa;
+}
+.neitu .zi .p2{
+	font-size: 125px;
+	color: #fbfafa;
+	margin-top: 40px;
+}
+.inbox{
+	width: 1443px;
+	height: 3694px;
+	position: relative;
+	margin: 65px auto;
+	text-align: center;
+	font-size: 33px;
+}
+.inbox .p1{
+	line-height: 39px;
+	letter-spacing: 6px; 
+}
+.there{
+	position: absolute;
+	left: 50%;
+	margin-left: -620px;
+	margin-top: 107px;
+}
+.there ul li{
+	float: left;
+	margin-top: 85px;
+	color: #b2b2b2;
+}
+.there ul li:nth-child(2){
+	margin-left: 281px;
+	margin-top: 95px;
+}
+.there ul li:nth-child(3){
+	margin-left: 265px;
+	margin-top: 107px;
+}
+.there ul li:nth-child(1) p{margin-top: 23px;}
+.there ul li:nth-child(2) p{margin-top: 18px;}
+.there ul li:nth-child(3) p{margin-top: 27px;}
+.find .p2,.feature .p2,.host .p2{
+	font-size: 16px;
+	line-height: 20px;
+	margin-top: 28px;
+}
+.find,.feature,.host{
+	position: absolute;
+	left: 50%;
+}
+.find{
+	top: 572px;
+	margin-left: -360px;
+}
+.feature{
+	top: 873px;
+	margin-left: -424px;
+}
+.host{
+	top: 1232px;
+	margin-left: -232px;
+}
+.inbox .in1,.inbox .in2,.inbox .in3,.inbox .in4{
+	position: absolute;
+	left: 216px;
+}
+.inbox .in1{
+	top: 1430px;
+}
+.inbox .in2{
+	top: 2005px;
+}
+.inbox .in3{
+	top: 2579px;
+}
+.inbox .in4{
+	top: 3151px;
+}

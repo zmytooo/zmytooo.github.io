@@ -1,21 +1,25 @@
 .map{
+	width: 100%;
+	height: 616px;
+	margin: 0px auto;
 	position: relative;
-	top: -44px;
+	top: -45px;
+	background: url(../img/map.png) no-repeat;
+	background-size: 100% 100%;
 	z-index: -1;
-	margin: 0 auto;
 }
-.map .span1{
+.map .sous{
+	font-size: 50px;
+	color: #b3b4b6;
 	position: absolute;
 	top: 306px;left: 50%;
 	margin-left: -365px;
-	font-size: 50px;
-	color: #b3b4b6;
 }
-.map .span2{
-	position: absolute;
-	top: 656px;left: 50%;
+.map .tans{
 	font-size: 40px;
 	color: #020202;
+	position: absolute;
+	top: 656px;left: 50%;
 	margin-left: -140px;
 }
 .scroll{

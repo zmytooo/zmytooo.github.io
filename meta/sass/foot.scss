@@ -1,0 +1,21 @@
+$lightColor : #6e6e6e;
+.footer{
+    border-top:1px solid #b2b1b1;
+    padding: 36px 0 86px;
+    ul{
+        width:170px;
+        float: left;
+        p{
+            line-height: 34px;
+            color: #999;
+        }
+        li a{
+            color: $lightColor;
+            line-height: 21px;
+        }
+    }
+    .box{
+        width:510px;
+        margin:0 auto;
+    }
+}

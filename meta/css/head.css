@@ -1,0 +1,169 @@
+@charset "UTF-8";
+.header {
+  width: 1310px;
+  margin: 0 auto;
+  color: #6e6e6e;
+  height: 272px;
+  border: 1px solid #ffffff; }
+  .header .left a {
+    font-size: 21px;
+    line-height: 40px;
+    float: left;
+    color: #6e6e6e; }
+  .header .right {
+    width: 354px;
+    height: 40px;
+    font-size: 16px;
+    line-height: 40px;
+    float: right;
+    position: relative; }
+    .header .right .login_before {
+      float: left; }
+      .header .right .login_before a {
+        font-size: 16px;
+        line-height: 32px;
+        color: #6e6e6e; }
+    .header .right .login_after {
+      float: left;
+      background: #fff;
+      position: relative;
+      border: 1px solid #fff;
+      padding: 0 10px 5px;
+      cursor: pointer;
+      display: none; }
+      .header .right .login_after p .dot {
+        display: inline-block;
+        font-size: 10px;
+        transform: rotate(45deg);
+        position: relative;
+        top: -1px; }
+      .header .right .login_after p .name {
+        font-size: 16px; }
+      .header .right .login_after ul {
+        text-align: center;
+        display: none; }
+        .header .right .login_after ul a {
+          color: #6e6e6e; }
+      .header .right .login_after:hover {
+        border: 1px solid #d1d1d1;
+        border-top-color: #fff; }
+        .header .right .login_after:hover ul {
+          display: block; }
+        .header .right .login_after:hover .dot {
+          transform: rotate(135deg);
+          top: -4px; }
+    .header .right .shopping {
+      padding-left: 38px;
+      padding-right: 36px;
+      background: #fff;
+      border: 1px solid white;
+      border-top: none;
+      float: right;
+      cursor: pointer;
+      position: relative;
+      z-index: 2; }
+      .header .right .shopping .span {
+        margin-right: 29px;
+        float: left; }
+      .header .right .shopping .box {
+        float: right;
+        width: 52px;
+        height: 80px;
+        text-align: center; }
+        .header .right .shopping .box .img {
+          height: 39px;
+          background: url("../img/shoppingBag.png") 9px 0 no-repeat; }
+        .header .right .shopping .box .count {
+          display: none;
+          /******************/
+          width: 15px;
+          height: 15px;
+          border-radius: 50%;
+          background: #fff;
+          text-align: center;
+          line-height: 12px;
+          margin-left: 17px;
+          margin-top: -7px;
+          font-size: 10px;
+          border: 2px solid #9d6f89; }
+    .header .right .shopping_list {
+      display: none;
+      /******************/
+      border: 1px solid #dddddd;
+      position: absolute;
+      padding: 32px 30px 25px 25px;
+      top: 80px;
+      right: 0;
+      z-index: 1;
+      background: #fff;
+      width: 440px; }
+      .header .right .shopping_list .have {
+        display: none; }
+        .header .right .shopping_list .have ul li {
+          overflow: hidden;
+          position: relative;
+          padding: 24px 0;
+          border-bottom: 3px solid #dddddd; }
+          .header .right .shopping_list .have ul li img {
+            float: left;
+            margin-right: 32px; }
+          .header .right .shopping_list .have ul li .right1 {
+            width: 300px;
+            float: left;
+            line-height: 34px; }
+            .header .right .shopping_list .have ul li .right1 div {
+              float: left;
+              width: 88px;
+              text-align: center; }
+            .header .right .shopping_list .have ul li .right1 .size {
+              text-align: left;
+              width: 70px; }
+            .header .right .shopping_list .have ul li .right1 input {
+              width: 20px;
+              text-align: center; }
+            .header .right .shopping_list .have ul li .right1 .minus, .header .right .shopping_list .have ul li .right1 .plus {
+              cursor: pointer; }
+          .header .right .shopping_list .have ul li .del {
+            position: absolute;
+            right: 0;
+            font-size: 24px;
+            cursor: pointer;
+            color: #6e6e6e; }
+        .header .right .shopping_list .have .bottom {
+          text-align: center; }
+          .header .right .shopping_list .have .bottom p {
+            font-size: 21px;
+            line-height: 56px; }
+            .header .right .shopping_list .have .bottom p a {
+              color: #6e6e6e; }
+          .header .right .shopping_list .have .bottom .a {
+            color: white;
+            display: block;
+            line-height: 44px;
+            background: #9d6f89;
+            font-size: 25px;
+            font-family: "Adobe 黑体 Std"; }
+            .header .right .shopping_list .have .bottom .a:hover {
+              text-decoration: none; }
+      .header .right .shopping_list .no {
+        display: none;
+        text-align: center;
+        color: #999; }
+        .header .right .shopping_list .no p {
+          font-size: 25px; }
+        .header .right .shopping_list .no a {
+          font-size: 19px;
+          color: #999; }
+  .header h1 {
+    margin: 120px 0 34px;
+    text-align: center; }
+  .header .tab {
+    width: 940px;
+    margin: 0 auto; }
+    .header .tab li {
+      padding: 0 74px;
+      margin: 14px 0 14px;
+      font-size: 21px;
+      float: left; }
+      .header .tab li a {
+        color: #666; }
