@@ -10,8 +10,7 @@
     <meta name="author" content="zmytooo">
     
     <meta name="description" content="接触前端已经大概有10个月了，最近总结了一下已经了解的知识。到底什么是html,什么是css，什么是js又让我仔细回想了很久。这里，我个人对这些概念性的东西做了个总结（欢迎各位大神指教）
-什么是HTMLHTML5是最新的HTML标准。
-HTML5的设计目的是为了在移动设备上支持多媒体。新的语法特征被">
+HTML1.1 什么是html？HTML（Hypertext Markup Language）即超文本标记语言，">
     
     
     
@@ -38,7 +37,7 @@ HTML5的设计目的是为了在移动设备上支持多媒体。新的语法特
 				<h1 class="site-name"><a href="/" title="tooo的前端路">tooo的前端路</a></h1>
 				<h2 class="blog-motto">之路漫漫</h2>
 			</div>
-			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
 			</a></div>
 			<nav class="animated">
 				<ul>
@@ -51,7 +50,7 @@ HTML5的设计目的是为了在移动设备上支持多媒体。新的语法特
 					
 					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
 						<label>Search</label>
-						<input type="text" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
+						<input type="text" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
 						<input type="hidden" name="q" value="site:yoursite.com">
 					</form>
 					
@@ -75,7 +74,7 @@ HTML5的设计目的是为了在移动设备上支持多媒体。新的语法特
     </p>
   <p class="article-time">
     <time datetime="2016-11-19T10:27:35.000Z" itemprop="datePublished">2016-11-19</time>
-    Updated:<time datetime="2016-12-11T11:13:35.000Z" itemprop="dateModified">2016-12-11</time>
+    更新日期:<time datetime="2016-12-17T13:50:19.000Z" itemprop="dateModified">2016-12-17</time>
     
   </p>
 </header>
@@ -83,17 +82,14 @@ HTML5的设计目的是为了在移动设备上支持多媒体。新的语法特
 		
 		
 		<div id="toc" class="toc-article">
-			<strong class="toc-title">Contents</strong>
-		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是HTML"><span class="toc-number">1.</span> <span class="toc-text">什么是HTML</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#·-新的解析规则增强了灵活性"><span class="toc-number">1.1.</span> <span class="toc-text">· 新的解析规则增强了灵活性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#·-新属性"><span class="toc-number">1.2.</span> <span class="toc-text">· 新属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#·-淘汰过时的或冗余的属性"><span class="toc-number">1.3.</span> <span class="toc-text">· 淘汰过时的或冗余的属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#·-一个HTML5文档到另一个文档间的拖放功能"><span class="toc-number">1.4.</span> <span class="toc-text">· 一个HTML5文档到另一个文档间的拖放功能</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是CSS"><span class="toc-number">2.</span> <span class="toc-text">什么是CSS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是javascript"><span class="toc-number">3.</span> <span class="toc-text">什么是javascript</span></a></li></ol>
+			<strong class="toc-title">文章目录</strong>
+		<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#HTML"><span class="toc-number">1.</span> <span class="toc-text">HTML</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-什么是html？"><span class="toc-number">1.1.</span> <span class="toc-text">1.1 什么是html？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#HTML（Hypertext-Markup-Language）即超文本标记语言，是用于描述网页文档的一种标记语言。"><span class="toc-number">1.1.1.</span> <span class="toc-text">HTML（Hypertext Markup Language）即超文本标记语言，是用于描述网页文档的一种标记语言。</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-什么是html5？"><span class="toc-number">1.2.</span> <span class="toc-text">1.2 什么是html5？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#HTML5-是对-HTML-标准的第五次修订。其主要的目标是将互联网语义化，以便更好地被人类和机器阅读，并同时提供更好地支持各种媒体的嵌入。新的语法特征被引进以支持这一点-如video、audio和canvas-标记。"><span class="toc-number">1.2.1.</span> <span class="toc-text">HTML5 是对 HTML 标准的第五次修订。其主要的目标是将互联网语义化，以便更好地被人类和机器阅读，并同时提供更好地支持各种媒体的嵌入。新的语法特征被引进以支持这一点,如video、audio和canvas 标记。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#·-新的解析规则增强了灵活性"><span class="toc-number">1.2.2.</span> <span class="toc-text">· 新的解析规则增强了灵活性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#·-新属性"><span class="toc-number">1.2.3.</span> <span class="toc-text">· 新属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#·-淘汰过时的或冗余的属性"><span class="toc-number">1.2.4.</span> <span class="toc-text">· 淘汰过时的或冗余的属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#·-一个HTML5文档到另一个文档间的拖放功能"><span class="toc-number">1.2.5.</span> <span class="toc-text">· 一个HTML5文档到另一个文档间的拖放功能</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#CSS"><span class="toc-number">2.</span> <span class="toc-text">CSS</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1什么是css？"><span class="toc-number">2.1.</span> <span class="toc-text">1.1什么是css？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#css（Cascading-Style-Sheets）即层叠样式表，是一种用来表现HTML（标准通用标记语言的一个应用）或XML（标准通用标记语言的一个子集）等文件样式的计算机语言"><span class="toc-number">2.1.1.</span> <span class="toc-text">css（Cascading Style Sheets）即层叠样式表，是一种用来表现HTML（标准通用标记语言的一个应用）或XML（标准通用标记语言的一个子集）等文件样式的计算机语言</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-什么是css3？"><span class="toc-number">2.2.</span> <span class="toc-text">1.2 什么是css3？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#css3是css目前的最新版本，是能够真正做到网页表现与内容分离的一种样式设计语言。"><span class="toc-number">2.2.1.</span> <span class="toc-text">css3是css目前的最新版本，是能够真正做到网页表现与内容分离的一种样式设计语言。</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#什么是javascript"><span class="toc-number">3.</span> <span class="toc-text">什么是javascript</span></a></li></ol>
 		</div>
 		
 		<p>接触前端已经大概有10个月了，最近总结了一下已经了解的知识。到底什么是html,什么是css，什么是js又让我仔细回想了很久。这里，我个人对这些概念性的东西做了个总结（欢迎各位大神指教）</p>
-<h2 id="什么是HTML"><a href="#什么是HTML" class="headerlink" title="什么是HTML"></a>什么是HTML</h2><p>HTML5是最新的HTML标准。</p>
-<p>HTML5的设计目的是为了在移动设备上支持多媒体。新的语法特征被引进以支持这一点,如video、audio和canvas 标记。</p>
-<p>HTML5还引进了新的功能,可以真正改变用户与文档的交互方式,包括:</p>
+<h1 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h1><h2 id="1-1-什么是html？"><a href="#1-1-什么是html？" class="headerlink" title="1.1 什么是html？"></a>1.1 什么是html？</h2><h3 id="HTML（Hypertext-Markup-Language）即超文本标记语言，是用于描述网页文档的一种标记语言。"><a href="#HTML（Hypertext-Markup-Language）即超文本标记语言，是用于描述网页文档的一种标记语言。" class="headerlink" title="HTML（Hypertext Markup Language）即超文本标记语言，是用于描述网页文档的一种标记语言。"></a>HTML（Hypertext Markup Language）即超文本标记语言，是用于描述网页文档的一种标记语言。</h3><h2 id="1-2-什么是html5？"><a href="#1-2-什么是html5？" class="headerlink" title="1.2 什么是html5？"></a>1.2 什么是html5？</h2><h3 id="HTML5-是对-HTML-标准的第五次修订。其主要的目标是将互联网语义化，以便更好地被人类和机器阅读，并同时提供更好地支持各种媒体的嵌入。新的语法特征被引进以支持这一点-如video、audio和canvas-标记。"><a href="#HTML5-是对-HTML-标准的第五次修订。其主要的目标是将互联网语义化，以便更好地被人类和机器阅读，并同时提供更好地支持各种媒体的嵌入。新的语法特征被引进以支持这一点-如video、audio和canvas-标记。" class="headerlink" title="HTML5 是对 HTML 标准的第五次修订。其主要的目标是将互联网语义化，以便更好地被人类和机器阅读，并同时提供更好地支持各种媒体的嵌入。新的语法特征被引进以支持这一点,如video、audio和canvas 标记。"></a>HTML5 是对 HTML 标准的第五次修订。其主要的目标是将互联网语义化，以便更好地被人类和机器阅读，并同时提供更好地支持各种媒体的嵌入。新的语法特征被引进以支持这一点,如video、audio和canvas 标记。</h3><p>HTML5还引进了新的功能,可以真正改变用户与文档的交互方式,包括:</p>
 <h3 id="·-新的解析规则增强了灵活性"><a href="#·-新的解析规则增强了灵活性" class="headerlink" title="· 新的解析规则增强了灵活性"></a>· 新的解析规则增强了灵活性</h3><h3 id="·-新属性"><a href="#·-新属性" class="headerlink" title="· 新属性"></a>· 新属性</h3><h3 id="·-淘汰过时的或冗余的属性"><a href="#·-淘汰过时的或冗余的属性" class="headerlink" title="· 淘汰过时的或冗余的属性"></a>· 淘汰过时的或冗余的属性</h3><h3 id="·-一个HTML5文档到另一个文档间的拖放功能"><a href="#·-一个HTML5文档到另一个文档间的拖放功能" class="headerlink" title="· 一个HTML5文档到另一个文档间的拖放功能"></a>· 一个HTML5文档到另一个文档间的拖放功能</h3><p>这里新的HTML标签对我们的代码也有很大的帮助。一个典型的WEB页面包含头部,脚部,导航,中心区域,侧边栏。现在如果我们想在在更早的HTML区域中呈现这些内容,我们可能要使用DIV标签。但是html5定义的新标签会使区域创建元素名称使他们更加清晰,也使得你的HTML更加可读。<br>比如，我个人的代码风格是头部最外面使用header标签，尾部使用footer，导航区域使用nav标签。中心内容使用aside和section包裹</p>
-<h2 id="什么是CSS"><a href="#什么是CSS" class="headerlink" title="什么是CSS"></a>什么是CSS</h2><p>css称为层叠样式表，是一种用来表现HTML(标准通用标记语言的一个应用)或XML(标准通用标记语言的一个子集)等文件样式的计算机语言。CSS目前最新版本为CSS3,是能够真正做到网页表现与内容分离的一种样式设计语言。CSS能够根据不同使用者的理解能力,简化或者优化写法,针对各类人群,有较强的易读性。</p>
-<h2 id="什么是javascript"><a href="#什么是javascript" class="headerlink" title="什么是javascript"></a>什么是javascript</h2><p>JavaScript一种直译式脚本语言，是一种动态类型、弱类型、基于原型的语言，内置支持类型。它的解释器被称为JavaScript引擎，为浏览器的一部分，广泛用于客户端的脚本语言，最早是在HTML（标准通用标记语言下的一个应用）网页上使用，用来给HTML网页增加动态功能。</p>
+<h1 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h1><h2 id="1-1什么是css？"><a href="#1-1什么是css？" class="headerlink" title="1.1什么是css？"></a>1.1什么是css？</h2><h3 id="css（Cascading-Style-Sheets）即层叠样式表，是一种用来表现HTML（标准通用标记语言的一个应用）或XML（标准通用标记语言的一个子集）等文件样式的计算机语言"><a href="#css（Cascading-Style-Sheets）即层叠样式表，是一种用来表现HTML（标准通用标记语言的一个应用）或XML（标准通用标记语言的一个子集）等文件样式的计算机语言" class="headerlink" title="css（Cascading Style Sheets）即层叠样式表，是一种用来表现HTML（标准通用标记语言的一个应用）或XML（标准通用标记语言的一个子集）等文件样式的计算机语言"></a>css（Cascading Style Sheets）即层叠样式表，是一种用来表现HTML（标准通用标记语言的一个应用）或XML（标准通用标记语言的一个子集）等文件样式的计算机语言</h3><h2 id="1-2-什么是css3？"><a href="#1-2-什么是css3？" class="headerlink" title="1.2 什么是css3？"></a>1.2 什么是css3？</h2><h3 id="css3是css目前的最新版本，是能够真正做到网页表现与内容分离的一种样式设计语言。"><a href="#css3是css目前的最新版本，是能够真正做到网页表现与内容分离的一种样式设计语言。" class="headerlink" title="css3是css目前的最新版本，是能够真正做到网页表现与内容分离的一种样式设计语言。"></a>css3是css目前的最新版本，是能够真正做到网页表现与内容分离的一种样式设计语言。</h3><h1 id="什么是javascript"><a href="#什么是javascript" class="headerlink" title="什么是javascript"></a>什么是javascript</h1><p>JavaScript一种直译式脚本语言，是一种动态类型、弱类型、基于原型的语言，内置支持类型。它的解释器被称为JavaScript引擎，为浏览器的一部分，广泛用于客户端的脚本语言，最早是在HTML（标准通用标记语言下的一个应用）网页上使用，用来给HTML网页增加动态功能。</p>
 <p>对于这些基础的知识还有很多内容，我们下次再聊~~~</p>
   
 	</div>
@@ -139,29 +135,35 @@ HTML5的设计目的是为了在移动设备上支持多媒体。新的语法特
 
 	
 </div>  
-      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
 
   <div id="toc" class="toc-aside">
-  <strong class="toc-title">Contents</strong>
-  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是HTML"><span class="toc-number">1.</span> <span class="toc-text">什么是HTML</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#·-新的解析规则增强了灵活性"><span class="toc-number">1.1.</span> <span class="toc-text">· 新的解析规则增强了灵活性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#·-新属性"><span class="toc-number">1.2.</span> <span class="toc-text">· 新属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#·-淘汰过时的或冗余的属性"><span class="toc-number">1.3.</span> <span class="toc-text">· 淘汰过时的或冗余的属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#·-一个HTML5文档到另一个文档间的拖放功能"><span class="toc-number">1.4.</span> <span class="toc-text">· 一个HTML5文档到另一个文档间的拖放功能</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是CSS"><span class="toc-number">2.</span> <span class="toc-text">什么是CSS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是javascript"><span class="toc-number">3.</span> <span class="toc-text">什么是javascript</span></a></li></ol>
+  <strong class="toc-title">文章目录</strong>
+  <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#HTML"><span class="toc-number">1.</span> <span class="toc-text">HTML</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-什么是html？"><span class="toc-number">1.1.</span> <span class="toc-text">1.1 什么是html？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#HTML（Hypertext-Markup-Language）即超文本标记语言，是用于描述网页文档的一种标记语言。"><span class="toc-number">1.1.1.</span> <span class="toc-text">HTML（Hypertext Markup Language）即超文本标记语言，是用于描述网页文档的一种标记语言。</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-什么是html5？"><span class="toc-number">1.2.</span> <span class="toc-text">1.2 什么是html5？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#HTML5-是对-HTML-标准的第五次修订。其主要的目标是将互联网语义化，以便更好地被人类和机器阅读，并同时提供更好地支持各种媒体的嵌入。新的语法特征被引进以支持这一点-如video、audio和canvas-标记。"><span class="toc-number">1.2.1.</span> <span class="toc-text">HTML5 是对 HTML 标准的第五次修订。其主要的目标是将互联网语义化，以便更好地被人类和机器阅读，并同时提供更好地支持各种媒体的嵌入。新的语法特征被引进以支持这一点,如video、audio和canvas 标记。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#·-新的解析规则增强了灵活性"><span class="toc-number">1.2.2.</span> <span class="toc-text">· 新的解析规则增强了灵活性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#·-新属性"><span class="toc-number">1.2.3.</span> <span class="toc-text">· 新属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#·-淘汰过时的或冗余的属性"><span class="toc-number">1.2.4.</span> <span class="toc-text">· 淘汰过时的或冗余的属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#·-一个HTML5文档到另一个文档间的拖放功能"><span class="toc-number">1.2.5.</span> <span class="toc-text">· 一个HTML5文档到另一个文档间的拖放功能</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#CSS"><span class="toc-number">2.</span> <span class="toc-text">CSS</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1什么是css？"><span class="toc-number">2.1.</span> <span class="toc-text">1.1什么是css？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#css（Cascading-Style-Sheets）即层叠样式表，是一种用来表现HTML（标准通用标记语言的一个应用）或XML（标准通用标记语言的一个子集）等文件样式的计算机语言"><span class="toc-number">2.1.1.</span> <span class="toc-text">css（Cascading Style Sheets）即层叠样式表，是一种用来表现HTML（标准通用标记语言的一个应用）或XML（标准通用标记语言的一个子集）等文件样式的计算机语言</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-什么是css3？"><span class="toc-number">2.2.</span> <span class="toc-text">1.2 什么是css3？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#css3是css目前的最新版本，是能够真正做到网页表现与内容分离的一种样式设计语言。"><span class="toc-number">2.2.1.</span> <span class="toc-text">css3是css目前的最新版本，是能够真正做到网页表现与内容分离的一种样式设计语言。</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#什么是javascript"><span class="toc-number">3.</span> <span class="toc-text">什么是javascript</span></a></li></ol>
   </div>
 
 <div id="asidepart">
-<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
 <aside class="clearfix">
 
   
 
   
 <div class="tagslist">
-	<p class="asidetitle">Tags</p>
+	<p class="asidetitle">标签</p>
 		<ul class="clearfix">
+		
+			<li><a href="/tags/Ajax/" title="Ajax">Ajax<sup>1</sup></a></li>
 		
 			<li><a href="/tags/canvas/" title="canvas">canvas<sup>2</sup></a></li>
 		
-			<li><a href="/tags/css/" title="css">css<sup>9</sup></a></li>
+			<li><a href="/tags/css/" title="css">css<sup>11</sup></a></li>
 		
 			<li><a href="/tags/html/" title="html">html<sup>6</sup></a></li>
+		
+			<li><a href="/tags/http/" title="http">http<sup>1</sup></a></li>
+		
+			<li><a href="/tags/https/" title="https">https<sup>1</sup></a></li>
 		
 			<li><a href="/tags/js/" title="js">js<sup>11</sup></a></li>
 		
@@ -172,7 +174,7 @@ HTML5的设计目的是为了在移动设备上支持多媒体。新的语法特
 
 
   <div class="rsspart">
-	<a href="null" target="_blank" title="rss">RSS</a>
+	<a href="null" target="_blank" title="rss">RSS 订阅</a>
 </div>
 
 </aside>
