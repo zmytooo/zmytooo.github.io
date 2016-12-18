@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>简单的三栏布局 | tooo的前端路</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="最近整理了一些面试题，看到了一些或简单或难的题目。这里跟大家分享一个看到的面试题，关于三栏布局的。（如有问题欢迎指教）
+float实现三栏布局代码如下：
+&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt;
+&amp;lt;head&amp;gt;
+&amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt;
+&amp;lt;title&amp;gt;三栏分">
+<meta property="og:type" content="article">
+<meta property="og:title" content="简单的三栏布局">
+<meta property="og:url" content="http://yoursite.com/2016/11/21/简单的三栏布局/index.html">
+<meta property="og:site_name" content="tooo的前端路">
+<meta property="og:description" content="最近整理了一些面试题，看到了一些或简单或难的题目。这里跟大家分享一个看到的面试题，关于三栏布局的。（如有问题欢迎指教）
+float实现三栏布局代码如下：
+&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt;
+&amp;lt;head&amp;gt;
+&amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt;
+&amp;lt;title&amp;gt;三栏分">
+<meta property="og:image" content="http://a2.qpic.cn/psb?/V101Z8453moGbb/MJThidPBFVrbR3DTRWXvyetmdzYXjiGtS7fmGfB73ls!/b/dHgBAAAAAAAA&bo=gAf3AQAAAAADB1M!&rf=viewer_4">
+<meta property="og:image" content="http://a2.qpic.cn/psb?/V101Z8453moGbb/KX5bxLeRcC*SBR*pRDHYbn7fDh5pcA1HyJ8wxdrJbb8!/b/dAkBAAAAAAAA&bo=fwf2AQAAAAADB60!&rf=viewer_4">
+<meta property="og:image" content="http://a1.qpic.cn/psb?/V101Z8453moGbb/E.WB.XNYHy9nSwgfvHK9NumZojYvG1K4BTiztyZ0gkM!/b/dHoBAAAAAAAA&bo=gAf1AQAAAAADB1E!&rf=viewer_4">
+<meta property="og:image" content="http://a1.qpic.cn/psb?/V101Z8453moGbb/IGOPDG9KJxTBSlxUM3BR8Ft3URZPsvm9lUYBCuIm2bs!/b/dHcBAAAAAAAA&bo=gAfKAAAAAAADB28!&rf=viewer_4">
+<meta property="og:updated_time" content="2016-12-11T11:24:09.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="简单的三栏布局">
+<meta name="twitter:description" content="最近整理了一些面试题，看到了一些或简单或难的题目。这里跟大家分享一个看到的面试题，关于三栏布局的。（如有问题欢迎指教）
+float实现三栏布局代码如下：
+&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt;
+&amp;lt;head&amp;gt;
+&amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt;
+&amp;lt;title&amp;gt;三栏分">
+<meta name="twitter:image" content="http://a2.qpic.cn/psb?/V101Z8453moGbb/MJThidPBFVrbR3DTRWXvyetmdzYXjiGtS7fmGfB73ls!/b/dHgBAAAAAAAA&bo=gAf3AQAAAAADB1M!&rf=viewer_4">
+  
+    <link rel="alternate" href="/atom.xml" title="tooo的前端路" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">tooo的前端路</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">之路漫漫</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-简单的三栏布局" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/11/21/简单的三栏布局/" class="article-date">
+  <time datetime="2016-11-21T03:29:20.000Z" itemprop="datePublished">2016-11-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      简单的三栏布局
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近整理了一些面试题，看到了一些或简单或难的题目。这里跟大家分享一个看到的面试题，关于三栏布局的。（如有问题欢迎指教）</p>
+<h2 id="float实现三栏布局"><a href="#float实现三栏布局" class="headerlink" title="float实现三栏布局"></a>float实现三栏布局</h2><p>代码如下：</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;title&gt;三栏分布&lt;/title&gt;
+&lt;style type=&quot;text/css&quot;&gt;
+*{
+    margin: 0;
+    padding: 0;
+}
+.left{
+    width: 200px;
+    height: 200px;
+    background: red;
+    float: left;
+}
+.right{
+    width: 150px;
+    height: 200px;
+    background: pink;
+    float: right;
+}
+.main{
+    height: 500px;
+    background: yellow;
+    /*保证在中间区域的高度大于两边的时候不会溢出*/
+    margin: 0 150px 0 200px;
+    /*规定自动换行的处理方法   break-word允许在单词内换行*/
+    word-break: break-word;
+}
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div class=&quot;box&quot;&gt;
+    &lt;div class=&quot;left&quot;&gt;我是左边内容我是左边内容我是左边内容我是左边内容我是左边内容我是左边内容我是左边内容我是左边内容&lt;/div&gt;
+    &lt;div class=&quot;right&quot;&gt;我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容&lt;/div&gt;
+    &lt;div class=&quot;main&quot;&gt;我是中间内容我是中间内容我是中间内容我是中间内容我是中间内容我是中间内容我是中间内容我是中间内容&lt;/div&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>效果图如下：</p>
+<p><img src="http://a2.qpic.cn/psb?/V101Z8453moGbb/MJThidPBFVrbR3DTRWXvyetmdzYXjiGtS7fmGfB73ls!/b/dHgBAAAAAAAA&amp;bo=gAf3AQAAAAADB1M!&amp;rf=viewer_4" alt="Alt text"></p>
+<p>这样布局我们是最后在HTML里写入中间的部分，不管中间的内容有多高，都不会出现溢出的情况。</p>
+<h2 id="float与position实现三栏布局"><a href="#float与position实现三栏布局" class="headerlink" title="float与position实现三栏布局"></a>float与position实现三栏布局</h2><p>代码如下：</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;title&gt;三栏分布&lt;/title&gt;
+&lt;style type=&quot;text/css&quot;&gt;
+*{
+    margin: 0;
+    padding: 0;
+}
+.left{
+    width: 200px;
+    height: 200px;
+    background: red;
+    float: left;
+}
+.right{
+    width: 150px;
+    height: 200px;
+    background: yellow;
+    float: right;
+}
+.main{
+    height: 500px;
+    background: pink;
+    position: absolute;
+    left: 200px;
+    right: 150px;
+    word-break: break-word;
+}
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div class=&quot;box&quot;&gt;
+    &lt;div class=&quot;left&quot;&gt;我是左边内容我是左边内容我是左边内容我是左边内容我是左边内容我是左边内容我是左边内容我是左边内容&lt;/div&gt;
+    &lt;div class=&quot;main&quot;&gt;我是中间内容我是中间内容我是中间内容我是中间内容我是中间内容我是中间内容我是中间内容我是中间内容&lt;/div&gt;
+    &lt;div class=&quot;right&quot;&gt;我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容&lt;/div&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>效果图如下：<br><img src="http://a2.qpic.cn/psb?/V101Z8453moGbb/KX5bxLeRcC*SBR*pRDHYbn7fDh5pcA1HyJ8wxdrJbb8!/b/dAkBAAAAAAAA&amp;bo=fwf2AQAAAAADB60!&amp;rf=viewer_4" alt="Alt text"></p>
+<p>这种结合定位的布局，要注意定位的元素的父级（父父级）要有定位（直到找到body）.这里我没有给box定位，因为main的父父级就是body，效果是一样的。大家在写的时候可根据自己的需要设置。</p>
+<h2 id="position实现"><a href="#position实现" class="headerlink" title="position实现"></a>position实现</h2><p>代码如下：</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;title&gt;三栏分布&lt;/title&gt;
+&lt;style type=&quot;text/css&quot;&gt;
+*{
+    margin: 0;
+    padding: 0;
+}
+.left{
+    width: 200px;
+    height: 200px;
+    background: yellow;
+    position: absolute;
+    top: 0;left: 0;
+}
+.right{
+    width: 150px;
+    height: 200px;
+    background: pink;
+    position: absolute;
+    top: 0;right: 0;
+}
+.main{
+    height: 500px;
+    background: red;
+    position: absolute;
+    left: 200px;
+    right: 150px;
+    word-break: break-word;
+}
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div class=&quot;box&quot;&gt;
+    &lt;div class=&quot;left&quot;&gt;我是左边内容我是左边内容我是左边内容我是左边内容我是左边内容我是左边内容我是左边内容我是左边内容&lt;/div&gt;
+    &lt;div class=&quot;main&quot;&gt;我是中间内容我是中间内容我是中间内容我是中间内容我是中间内容我是中间内容我是中间内容我是中间内容&lt;/div&gt;
+    &lt;div class=&quot;right&quot;&gt;我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容&lt;/div&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>效果图如下：<br><img src="http://a1.qpic.cn/psb?/V101Z8453moGbb/E.WB.XNYHy9nSwgfvHK9NumZojYvG1K4BTiztyZ0gkM!/b/dHoBAAAAAAAA&amp;bo=gAf1AQAAAAADB1E!&amp;rf=viewer_4" alt="Alt text"></p>
+<p>这种和上面的方法类似，都是有定位的。</p>
+<p>使用flex进行布局<br>代码如下：</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;title&gt;三栏分布&lt;/title&gt;
+&lt;style type=&quot;text/css&quot;&gt;
+*{
+    margin: 0;
+    padding: 0;
+}
+.box{
+    display: -webkit-box;
+    display: -moz-box;
+    width: 100%;
+    height: 200px;
+}
+.left{
+    width: 200px;
+    height: 200px;
+    background: blue;
+}
+.right{
+    width: 150px;
+    height: 200px;
+    background: gray;
+}
+.main{
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    background-color: pink;
+    word-wrap: break-word;
+}
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div class=&quot;box&quot;&gt;
+    &lt;div class=&quot;left&quot;&gt;我是左边内容我是左边内容我是左边内容我是左边内容我是左边内容我是左边内容我是左边内容我是左边内容&lt;/div&gt;
+    &lt;div class=&quot;main&quot;&gt;我是中间内容我是中间内容我是中间内容我是中间内容我是中间内容我是中间内容我是中间内容我是中间内容&lt;/div&gt;
+    &lt;div class=&quot;right&quot;&gt;我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容&lt;/div&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>效果图如下：<br><img src="http://a1.qpic.cn/psb?/V101Z8453moGbb/IGOPDG9KJxTBSlxUM3BR8Ft3URZPsvm9lUYBCuIm2bs!/b/dHcBAAAAAAAA&amp;bo=gAfKAAAAAAADB28!&amp;rf=viewer_4" alt="Alt text"></p>
+<p>这flex布局前面的内容中也有说到，感兴趣的可以看看我前面的文章。</p>
+<p>后面还会继续分享一些面试题，欢迎大家一起加入讨论指教！</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/11/21/简单的三栏布局/" data-id="ciwu5dwh4001boe0ydns4rr0s" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html/">html</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/12/02/关于http与https/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          关于http与https
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/11/19/浅谈html-css与js/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">浅谈html,css与js</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ajax/">Ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/canvas/">canvas</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/http/">http</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/https/">https</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/">js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node-js/">node.js</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Ajax/" style="font-size: 10px;">Ajax</a> <a href="/tags/canvas/" style="font-size: 12.5px;">canvas</a> <a href="/tags/css/" style="font-size: 20px;">css</a> <a href="/tags/html/" style="font-size: 17.5px;">html</a> <a href="/tags/http/" style="font-size: 10px;">http</a> <a href="/tags/https/" style="font-size: 10px;">https</a> <a href="/tags/js/" style="font-size: 20px;">js</a> <a href="/tags/node-js/" style="font-size: 15px;">node.js</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/12/15/事件流/">事件流</a>
+          </li>
+        
+          <li>
+            <a href="/2016/12/02/关于http与https/">关于http与https</a>
+          </li>
+        
+          <li>
+            <a href="/2016/11/21/简单的三栏布局/">简单的三栏布局</a>
+          </li>
+        
+          <li>
+            <a href="/2016/11/19/浅谈html-css与js/">浅谈html,css与js</a>
+          </li>
+        
+          <li>
+            <a href="/2016/11/13/Javascript定义类（class）的三种方法【转】/">Javascript定义类（class）的三种方法【转】</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 zmytooo<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

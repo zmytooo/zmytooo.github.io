@@ -1,0 +1,1420 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>tooo的前端路</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="tooo的前端路">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="tooo的前端路">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="tooo的前端路">
+  
+    <link rel="alternate" href="/atom.xml" title="tooo的前端路" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">tooo的前端路</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">之路漫漫</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-事件流" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/12/15/事件流/" class="article-date">
+  <time datetime="2016-12-15T14:15:59.000Z" itemprop="datePublished">2016-12-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/12/15/事件流/">事件流</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="事件流描述的是从页面中接收事件的顺序"><a href="#事件流描述的是从页面中接收事件的顺序" class="headerlink" title="事件流描述的是从页面中接收事件的顺序"></a>事件流描述的是从页面中接收事件的顺序</h2><h3 id="IE浏览器采用事件冒泡流"><a href="#IE浏览器采用事件冒泡流" class="headerlink" title="IE浏览器采用事件冒泡流"></a>IE浏览器采用事件冒泡流</h3><p>即事件开始时由最具体的元素（文档中嵌套层次最深的那个节点）接收，然后逐级向上传播到较为不具体的节点（文档）。</p>
+<h3 id="标准浏览器采用事件捕获流"><a href="#标准浏览器采用事件捕获流" class="headerlink" title="标准浏览器采用事件捕获流"></a>标准浏览器采用事件捕获流</h3><p>事件捕获的思想是不太具体的节点应该更早的接收到事件，而最具体的节点应该在最后接收到节点。事件捕获的用意在于事件到达预定目标之前捕获它。</p>
+<h3 id="DOM事件流"><a href="#DOM事件流" class="headerlink" title="DOM事件流"></a>DOM事件流</h3><p>“DOM2级事件流”规定的事件流包括三个阶段：事件捕获阶段、处于目标阶段和冒泡阶段。首先发生的是事件捕获，为截获事件提供了机会。然后是实际的目标接收到事件。最后一个阶段是冒泡阶段，可以在这个阶段对事件作出响应。以简单的HTML页面为例，单击<div>元素会按照下图顺序触发事件<br><img src="http://images.cnblogs.com/cnblogs_com/blackwood/416364/o_eventpic.jpg" alt="Alt text"></div></p>
+<p>在DOM事件流中，实际的目标（<div>元素）在捕获阶段不会接收到事件。这意味着在捕获阶段，事件从document到<html>再到<body>后就停止了。下一个阶段是“处于目标”阶段，于是事件在<div>上发生，并在事件处理中被看成冒泡阶段的一部分。然后冒泡阶段发生，事件又传播回文档。</div></body></html></div></p>
+<p>多数支持DOM事件流的浏览器都实现了一种特定行为；即使“DOM2级事件”规范明确要求捕获阶段不会涉及事件的目标，但Safari、Chrome、Firefox和Opera9.5及更高版本都会在捕获阶段触发事件对象上的事件。结果，就是有两个机会在目标对象上面操作事件。</p>
+<p>Opera、Firefox、Chrome和Safari都支持DOM事件流；IE不支持DOM事件流。</p>
+<h3 id="addEventLister给出了第三个参数同时支持冒泡与捕获。"><a href="#addEventLister给出了第三个参数同时支持冒泡与捕获。" class="headerlink" title="addEventLister给出了第三个参数同时支持冒泡与捕获。"></a>addEventLister给出了第三个参数同时支持冒泡与捕获。</h3><h3 id="常用的事件主要有"><a href="#常用的事件主要有" class="headerlink" title="常用的事件主要有:"></a>常用的事件主要有:</h3><p>(1)单击事件:onclick。</p>
+<p>用户单击鼠标按键时产生的事件，同时。nclick指定的事件处理程序或代码将被调用执行.</p>
+<p>(2)改变事件:onchange。</p>
+<p>当text或textarea元素内的字符值改变或select表格选项状态改变时发生该事件。</p>
+<p>(3)选中事件:onselect。</p>
+<p>当text或textarea对象中的文字被选中时会引发该事件。如:</p>
+<pre><code>&lt;ipnut type=&quot;text&quot; value=&quot;默认信息”onselect=alert(”您选中T文本框中的文字”)&gt;
+</code></pre><p>(4)获得焦点事件:onfocus。</p>
+<p>用户单击text或textarea以及select对象，即光标落在文本框或选择框时会产生该事件。如:</p>
+<pre><code>&lt;select name= &quot;zhengjian&quot; onfocus=alert(”我成为焦点”)&gt;
+</code></pre><p>(5)失去焦点事件:onblur。</p>
+<p>失去焦点事件正好与获得焦点事件相对，当text或textarea以及select对象不再拥有焦点而退出后台时，引发该事件。</p>
+<p>(6)载人文件事件:onload。</p>
+<p>当页面文件载人时产生该事件。onload的一个作用就是在首次载人一个页面文件时检测cookie的值，并用一个变量为其赋值，使它可以被源代码使用，本事件是window的事件，但是在HTML中指定事件处理程序时，一般把它写在<body>标记中。如:</body></p>
+<pre><code>&lt;body onload=alert(”正在加载页面，请等待一”)&gt;
+</code></pre><p>(7)卸载文件事件:onunload。</p>
+<p>与载人文件事件。nload正好相反，当Web页面退出时引发的事件，并可更新。ookie的状态。如:</p>
+<pre><code>&lt;body onunload=confirm(”你确定要离开本页?”)&gt;
+</code></pre><p>(8)鼠标镇盖事件:onmouseover。</p>
+<p>onmouseover是当鼠标位于元素上方时所引发的事件。如:</p>
+<pre><code>&lt;input type= &quot;boutton&quot; value=”按钮”onmouseover= &quot;window. status=‘请您注意下面的状态栏·;return true&quot;&gt;
+</code></pre><p>(9)鼠标离开事件:onmouseout。</p>
+<p>onmouseout是当鼠标离开元素时引发的事件。如果和鼠标覆盖事件同时使用，可以创建动态按钮的效果。</p>
+<p>(10)一般事件。</p>
+<p>   ondbclick:鼠标双击事件。</p>
+<p>   onkeypress:当键盘上的某个键被按下并且释放时触发的事件，要求页面内必须有激活的对象。</p>
+<p>   onkeydown:当键盘上某个键被按下时触发的事件，要求页面内必须有激活的对象。</p>
+<p>   onkeyup:当键盘上某个键被放开时触发的事件，要求页面内必须有激活的对象。</p>
+<p>(11)页面相关事件。</p>
+<p>   onabort:图片在下载时被用户中断时触发的事件。</p>
+<p>   onbeforeunload:当前页面的内容将要被改变时触发的事件。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/12/15/事件流/" data-id="ciwu5dwg5000foe0yr9jwn0te" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-关于http与https" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/12/02/关于http与https/" class="article-date">
+  <time datetime="2016-12-02T13:51:01.000Z" itemprop="datePublished">2016-12-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/12/02/关于http与https/">关于http与https</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>本篇博客转自于<a href="http://www.mahaixiang.cn/internet/1233.html" target="_blank" rel="external">http://www.mahaixiang.cn/internet/1233.html</a></p>
+<p>作者：马海祥</p>
+<p>超文本传输协议HTTP协议被用于在Web浏览器和网站服务器之间传递信息，HTTP协议以明文方式发送内容，不提供任何方式的数据加密，如果攻击者截取了Web浏览器和网站服务器之间的传输报文，就可以直接读懂其中的信息，因此，HTTP协议不适合传输一些敏感信息，比如：信用卡号、密码等支付信息。</p>
+<p><img src="http://www.mahaixiang.cn/uploads/allimg/1507/1-150H1203035626.jpg" alt="Alt text"></p>
+<p>为了解决HTTP协议的这一缺陷，需要使用另一种协议：安全套接字层超文本传输协议HTTPS，为了数据传输的安全，HTTPS在HTTP的基础上加入了SSL协议，SSL依靠证书来验证服务器的身份，并为浏览器和服务器之间的通信加密。</p>
+<h2 id="一、HTTP和HTTPS的基本概念"><a href="#一、HTTP和HTTPS的基本概念" class="headerlink" title="一、HTTP和HTTPS的基本概念"></a>一、HTTP和HTTPS的基本概念</h2><p>HTTP：是互联网上应用最为广泛的一种网络协议，是一个客户端和服务器端请求和应答的标准（TCP），用于从WWW服务器传输超文本到本地浏览器的传输协议，它可以使浏览器更加高效，使网络传输减少。</p>
+<p>HTTPS：是以安全为目标的HTTP通道，简单讲是HTTP的安全版，即HTTP下加入SSL层，HTTPS的安全基础是SSL，因此加密的详细内容就需要SSL。</p>
+<p>HTTPS协议的主要作用可以分为两种：一种是建立一个信息安全通道，来保证数据传输的安全；另一种就是确认网站的真实性。</p>
+<h2 id="二、HTTP与HTTPS有什么区别？"><a href="#二、HTTP与HTTPS有什么区别？" class="headerlink" title="二、HTTP与HTTPS有什么区别？"></a>二、HTTP与HTTPS有什么区别？</h2><p>HTTP协议传输的数据都是未加密的，也就是明文的，因此使用HTTP协议传输隐私信息非常不安全，为了保证这些隐私数据能加密传输，于是网景公司设计了SSL（Secure Sockets Layer）协议用于对HTTP协议传输的数据进行加密，从而就诞生了HTTPS。</p>
+<p>HTTPS加密、加密、及验证过程，如下图所示：<br><img src="http://www.mahaixiang.cn/uploads/allimg/1507/1-150H1203123303.jpg" alt="Alt text"></p>
+<p>简单来说，HTTPS协议是由SSL+HTTP协议构建的可进行加密传输、身份认证的网络协议，要比http协议安全。</p>
+<p>HTTPS和HTTP的区别主要如下：</p>
+<h3 id="1、https协议需要到ca申请证书，一般免费证书较少，因而需要一定费用。"><a href="#1、https协议需要到ca申请证书，一般免费证书较少，因而需要一定费用。" class="headerlink" title="1、https协议需要到ca申请证书，一般免费证书较少，因而需要一定费用。"></a>1、https协议需要到ca申请证书，一般免费证书较少，因而需要一定费用。</h3><h3 id="2、http是超文本传输协议，信息是明文传输，https则是具有安全性的ssl加密传输协议。"><a href="#2、http是超文本传输协议，信息是明文传输，https则是具有安全性的ssl加密传输协议。" class="headerlink" title="2、http是超文本传输协议，信息是明文传输，https则是具有安全性的ssl加密传输协议。"></a>2、http是超文本传输协议，信息是明文传输，https则是具有安全性的ssl加密传输协议。</h3><h3 id="3、http和https使用的是完全不同的连接方式，用的端口也不一样，前者是80，后者是443。"><a href="#3、http和https使用的是完全不同的连接方式，用的端口也不一样，前者是80，后者是443。" class="headerlink" title="3、http和https使用的是完全不同的连接方式，用的端口也不一样，前者是80，后者是443。"></a>3、http和https使用的是完全不同的连接方式，用的端口也不一样，前者是80，后者是443。</h3><h3 id="4、http的连接很简单，是无状态的；HTTPS协议是由SSL-HTTP协议构建的可进行加密传输、身份认证的网络协议，比http协议安全。"><a href="#4、http的连接很简单，是无状态的；HTTPS协议是由SSL-HTTP协议构建的可进行加密传输、身份认证的网络协议，比http协议安全。" class="headerlink" title="4、http的连接很简单，是无状态的；HTTPS协议是由SSL+HTTP协议构建的可进行加密传输、身份认证的网络协议，比http协议安全。"></a>4、http的连接很简单，是无状态的；HTTPS协议是由SSL+HTTP协议构建的可进行加密传输、身份认证的网络协议，比http协议安全。</h3><h2 id="三、HTTPS的工作原理"><a href="#三、HTTPS的工作原理" class="headerlink" title="三、HTTPS的工作原理"></a>三、HTTPS的工作原理</h2><p>我们都知道HTTPS能够加密信息，以免敏感信息被第三方获取，所以很多银行网站或电子邮箱等等安全级别较高的服务都会采用HTTPS协议。<br><img src="http://www.mahaixiang.cn/uploads/allimg/1507/1-150H120343I41.jpg" alt="Alt text"></p>
+<h3 id="1、客户端发起HTTPS请求"><a href="#1、客户端发起HTTPS请求" class="headerlink" title="1、客户端发起HTTPS请求"></a>1、客户端发起HTTPS请求</h3><p>这个没什么好说的，就是用户在浏览器里输入一个https网址，然后连接到server的443端口。</p>
+<h3 id="2、服务端的配置"><a href="#2、服务端的配置" class="headerlink" title="2、服务端的配置"></a>2、服务端的配置</h3><p>采用HTTPS协议的服务器必须要有一套数字证书，可以自己制作，也可以向组织申请，区别就是自己颁发的证书需要客户端验证通过，才可以继续访问，而使用受信任的公司申请的证书则不会弹出提示页面(startssl就是个不错的选择，有1年的免费服务)。<br>这套证书其实就是一对公钥和私钥，如果对公钥和私钥不太理解，可以想象成一把钥匙和一个锁头，只是全世界只有你一个人有这把钥匙，你可以把锁头给别人，别人可以用这个锁把重要的东西锁起来，然后发给你，因为只有你一个人有这把钥匙，所以只有你才能看到被这把锁锁起来的东西。</p>
+<h3 id="3、传送证书"><a href="#3、传送证书" class="headerlink" title="3、传送证书"></a>3、传送证书</h3><p>这个证书其实就是公钥，只是包含了很多信息，如证书的颁发机构，过期时间等等。</p>
+<h3 id="4、客户端解析证书"><a href="#4、客户端解析证书" class="headerlink" title="4、客户端解析证书"></a>4、客户端解析证书</h3><p>这部分工作是有客户端的TLS来完成的，首先会验证公钥是否有效，比如颁发机构，过期时间等等，如果发现异常，则会弹出一个警告框，提示证书存在问题。<br>如果证书没有问题，那么就生成一个随机值，然后用证书对该随机值进行加密，就好像上面说的，把随机值用锁头锁起来，这样除非有钥匙，不然看不到被锁住的内容。</p>
+<h3 id="5、传送加密信息"><a href="#5、传送加密信息" class="headerlink" title="5、传送加密信息"></a>5、传送加密信息</h3><p>这部分传送的是用证书加密后的随机值，目的就是让服务端得到这个随机值，以后客户端和服务端的通信就可以通过这个随机值来进行加密解密了。</p>
+<h3 id="6、服务段解密信息"><a href="#6、服务段解密信息" class="headerlink" title="6、服务段解密信息"></a>6、服务段解密信息</h3><p>服务端用私钥解密后，得到了客户端传过来的随机值(私钥)，然后把内容通过该值进行对称加密，所谓对称加密就是，将信息和私钥通过某种算法混合在一起，这样除非知道私钥，不然无法获取内容，而正好客户端和服务端都知道这个私钥，所以只要加密算法够彪悍，私钥够复杂，数据就够安全。</p>
+<h3 id="7、传输加密后的信息"><a href="#7、传输加密后的信息" class="headerlink" title="7、传输加密后的信息"></a>7、传输加密后的信息</h3><p>这部分信息是服务段用私钥加密后的信息，可以在客户端被还原。</p>
+<h3 id="8、客户端解密信息"><a href="#8、客户端解密信息" class="headerlink" title="8、客户端解密信息"></a>8、客户端解密信息</h3><p>客户端用之前生成的私钥解密服务段传过来的信息，于是获取了解密后的内容，整个过程第三方即使监听到了数据，也束手无策。</p>
+<h2 id="四、搜索引擎对HTTPS的态度"><a href="#四、搜索引擎对HTTPS的态度" class="headerlink" title="四、搜索引擎对HTTPS的态度"></a>四、搜索引擎对HTTPS的态度</h2><p>百度推出了全站HTTPS加密搜索服务，以此解决“第三方”对用户隐私的嗅探和劫持，其实，早在2010年5月份，谷歌便开始提供HTTPS加密搜索服务，在HTTPS网页的抓取问题上，百度在2014年9月份的一份公告中表示“百度不会主动抓取HTTPS网页”，谷歌在算法更新中则表示“同等条件下，使用HTTPS加密技术的站点在搜索排名上更具优势”。</p>
+<p>那么，在这种大环境下，站长是否该采用“具有风险”的HTTPS协议呢？HTTPS对搜索引擎的SEO影响又如何呢？</p>
+<h3 id="1、谷歌的态度"><a href="#1、谷歌的态度" class="headerlink" title="1、谷歌的态度"></a>1、谷歌的态度</h3><p>谷歌在HTTPS站点的收录问题上与对HTTP站点态度并无什么不同之处，甚至把“是否使用安全加密”（HTTPS）作为搜索排名算法中的一个参考因素，采用HTTPS加密技术的网站能得到更多的展示机会，排名相对同类网站的HTTP站点也更有优势。<br>而且谷歌曾明确表示“希望所有的站长都能将使用HTTPS协议，而非HTTP”更是表明了其对达到“HTTPS everywhere”这一目标的决心。</p>
+<h3 id="2、百度的态度"><a href="#2、百度的态度" class="headerlink" title="2、百度的态度"></a>2、百度的态度</h3><p>虽然百度曾表示“不会主动抓取https网页”，但对于“很多https网页无法被收录”也是“耿耿于怀”，去年9月份，百度曾就“https站点如何建设才能对百度友好”问题发布了一篇文章，给出了“提高https站点的百度友好度”的四项建议及具体操作。<br>此外，近日的“百度全站HTTPS加密搜索”事件也再次彰显了百度对HTTPS加密的重视，可见，百度并不“反感”HTTPS站点，所以“不主动抓取”应该也只是暂时的吧！</p>
+<h2 id="五、HTTPS要比HTTP多用多少服务器资源？"><a href="#五、HTTPS要比HTTP多用多少服务器资源？" class="headerlink" title="五、HTTPS要比HTTP多用多少服务器资源？"></a>五、HTTPS要比HTTP多用多少服务器资源？</h2><p>HTTPS其实就是建构在SSL/TLS之上的 HTTP协议，所以，要比较HTTPS比HTTP多用多少服务器资源，马海祥认为主要看SSL/TLS本身消耗多少服务器资源。<br><img src="http://www.mahaixiang.cn/uploads/allimg/1507/1-150H1203353317.jpg" alt="Alt text"></p>
+<p>HTTP使用TCP三次握手建立连接，客户端和服务器需要交换3个包（具体可查看马海祥博客《HTTP服务的七层架构技术解析及运用》的相关介绍）；HTTPS除了TCP的三个包，还要加上ssl握手需要的9个包，所以一共是12个包。</p>
+<p>HTTP建立连接，按照下面链接中针对Computer Science House的测试，是114毫秒；HTTPS建立连接，耗费436毫秒，ssl部分花费322毫秒，包括网络延时和ssl本身加解密的开销（服务器根据客户端的信息确定是否需要生成新的主密钥；服务器回复该主密钥，并返回给客户端一个用主密钥认证的信息；服务器向客户端请求数字签名和公开密钥）。</p>
+<p>当SSL连接建立后，之后的加密方式就变成了3DES等对于CPU负荷较轻的对称加密方式，相对前面SSL建立连接时的非对称加密方式，对称加密方式对CPU的负荷基本可以忽略不记，所以问题就来了，如果频繁的重建ssl的session，对于服务器性能的影响将会是致命的，尽管打开HTTPS保活可以缓解单个连接的性能问题，但是对于并发访问用户数极多的大型网站，基于负荷分担的独立的SSL termination proxy就显得必不可少了，Web服务放在SSL termination proxy之后，SSL termination proxy既可以是基于硬件的，譬如F5；也可以是基于软件的，譬如维基百科用到的就是Nginx。</p>
+<p>那采用HTTPS后，到底会多用多少服务器资源，2010年1月Gmail切换到完全使用HTTPS， 前端处理SSL机器的CPU负荷增加不超过1%，每个连接的内存消耗少于20KB，网络流量增加少于2%，由于Gmail应该是使用N台服务器分布式处理，所以CPU负荷的数据并不具有太多的参考意义，每个连接内存消耗和网络流量数据有参考意义，这篇文章中还列出了单核每秒大概处理1500次握手（针对1024-bit 的 RSA），这个数据很有参考意义。</p>
+<p>Heartbleed这个被称作史上最大的网络安全漏洞，想必很多人都有所耳闻，Heartbleed之所以能够出现，其实和我们这个问题关系还不小，前面我们谈到了频繁重建SSL/TLS的session对于服务器影响是致命的，所以，聪明的RFC在2012年提出了RFC6520 TLS的心跳扩展，这个协议本身是简单和完美的，通过在客户端和服务器之间来回发送心跳的请求和应答，保活TLS session，减少重建TLS的session的性能开销，令人遗憾的是，openssl在实现这个心跳扩展时，犯了一个低级的错误，没有对收到的心跳请求进行长度检查，直接根据心跳请求长度拷贝数据区，导致简单的心跳应答中可能包含了服务器端的核心数据区内容，用户名，密码，信用卡信息，甚至服务器的私有密钥都有可能泄露。</p>
+<h2 id="六、HTTPS的优点"><a href="#六、HTTPS的优点" class="headerlink" title="六、HTTPS的优点"></a>六、HTTPS的优点</h2><p>正是由于HTTPS非常的安全，攻击者无法从中找到下手的地方，从站长的角度来说，HTTPS的优点有以下2点：</p>
+<h3 id="1、SEO方面"><a href="#1、SEO方面" class="headerlink" title="1、SEO方面"></a>1、SEO方面</h3><p>谷歌曾在2014年8月份调整搜索引擎算法，并称“比起同等HTTP网站，采用HTTPS加密的网站在搜索结果中的排名将会更高”。</p>
+<h3 id="2、安全性"><a href="#2、安全性" class="headerlink" title="2、安全性"></a>2、安全性</h3><p>尽管HTTPS并非绝对安全，掌握根证书的机构、掌握加密算法的组织同样可以进行中间人形式的攻击，但HTTPS仍是现行架构下最安全的解决方案，主要有以下几个好处：</p>
+<p>（1）、使用HTTPS协议可认证用户和服务器，确保数据发送到正确的客户机和服务器；</p>
+<p>（2）、HTTPS协议是由SSL+HTTP协议构建的可进行加密传输、身份认证的网络协议，要比http协议安全，可防止数据在传输过程中不被窃取、改变，确保数据的完整性。</p>
+<p>（3）、HTTPS是现行架构下最安全的解决方案，虽然不是绝对安全，但它大幅增加了中间人攻击的成本。</p>
+<h2 id="七、HTTPS的缺点"><a href="#七、HTTPS的缺点" class="headerlink" title="七、HTTPS的缺点"></a>七、HTTPS的缺点</h2><p>虽然说HTTPS有很大的优势，但其相对来说，还是有些不足之处的，具体来说，有以下2点：</p>
+<h3 id="1、SEO方面-1"><a href="#1、SEO方面-1" class="headerlink" title="1、SEO方面"></a>1、SEO方面</h3><p>据ACM CoNEXT数据显示，使用HTTPS协议会使页面的加载时间延长近50%，增加10%到20%的耗电，此外，HTTPS协议还会影响缓存，增加数据开销和功耗，甚至已有安全措施也会受到影响也会因此而受到影响。</p>
+<p>而且HTTPS协议的加密范围也比较有限，在黑客攻击、拒绝服务攻击、服务器劫持等方面几乎起不到什么作用。</p>
+<p>最关键的，SSL证书的信用链体系并不安全，特别是在某些国家可以控制CA根证书的情况下，中间人攻击一样可行。</p>
+<h3 id="2、经济方面"><a href="#2、经济方面" class="headerlink" title="2、经济方面"></a>2、经济方面</h3><p>（1）、SSL证书需要钱，功能越强大的证书费用越高，个人网站、小网站没有必要一般不会用。</p>
+<p>（2）、SSL证书通常需要绑定IP，不能在同一IP上绑定多个域名，IPv4资源不可能支撑这个消耗（SSL有扩展可以部分解决这个问题，但是比较麻烦，而且要求浏览器、操作系统支持，Windows XP就不支持这个扩展，考虑到XP的装机量，这个特性几乎没用）。</p>
+<p>（3）、HTTPS连接缓存不如HTTP高效，大流量网站如非必要也不会采用，流量成本太高。</p>
+<p>（4）、HTTPS连接服务器端资源占用高很多，支持访客稍多的网站需要投入更大的成本，如果全部采用HTTPS，基于大部分计算资源闲置的假设的VPS的平均成本会上去。</p>
+<p>（5）、HTTPS协议握手阶段比较费时，对网站的相应速度有负面影响，如非必要，没有理由牺牲用户体验。</p>
+<h2 id="八、网站是否需要采用HTTPS加密？"><a href="#八、网站是否需要采用HTTPS加密？" class="headerlink" title="八、网站是否需要采用HTTPS加密？"></a>八、网站是否需要采用HTTPS加密？</h2><p>虽然谷歌和百度都对HTTPS“另眼相看”，但这并不意味着站长们都应该把网站协议转换成HTTPS的！<br>早在去年9月份，Moz就针对“采用HTTPS协议”展开了一项调查，结果如下图：<br><img src="http://www.mahaixiang.cn/uploads/allimg/1507/1-150H1203241503.jpg" alt="Alt text"><br>注：调查开展时间在谷歌宣布“使用HTTPS协议的网站可以获得更好的排名”后<br>如上图所示，在此项调查中，17.24%的站长表示其网站已采用HTTPS协议；24.9%的站长表示正在搭建中；57.85%的站长表示目前仍无此项计划，从这些数据可以看出，当时大部分的站长还是没有选择使用HTTPS协议，那么，站长们到底该不该选择有利有弊的HTTPS协议呢？</p>
+<p>从这些数据可以看出，当时大部分的站长还是没有选择使用HTTPS协议，那么站长们到底该不该选择有利有弊的HTTPS协议呢？</p>
+<p>首先说说谷歌方面，虽然谷歌不断强调“使用HTTPS加密技术的网站能获得更好的排名”，但也不能排除这是“别有用心”之举。</p>
+<p>国外分析师就曾针对这一问题表示：谷歌之所以做出这一举动（更新算法，将是否采用HTTPS加密技术作为搜索引擎排名的的一个参考因素）也许并非是为了提高用户的搜索体验和互联网安全问题，只是为了挽回在“棱镜门”丑闻中的“损失”，这是一个典型的打着“牺牲小我”旗号的利我之举，高举“安全影响排名”旗帜、高呼“HTTPS everywhere”口号，然后不费吹灰之力让广大站长们心甘情愿的投入HTTPS协议阵营。</p>
+<p>然后是百度方面，虽然百度宣布全站进入HTTPS加密搜索时代，但至今仍“不会主动抓取HTTPS页面”，也从未就“未来是否会调整算法”问题表过态，如果站长在采用HTTPS协议后仍需制作个“http可访问版”、或是通过301重定向“自动跳入https版本”，那么，采用HTTPS协议的代价就不再只是多花money的问题了。</p>
+<p>在思考“到底该不该采用HTTPS协议”这个问题时，多考虑考虑怎样做对你的用户更友好吧（具体可查看马海祥博客《从SEO的角度来分析网站是否该采用HTTPS协议》的相关介绍）！</p>
+<p>如果你的网站属于电子商务、金融、社交网络等领域的话，那最好是采用HTTPS协议；如果是博客站点、宣传类网站、分类信息网站、或者是新闻网站之类的话，大可不必跟风而行，毕竟HTTPS协议不仅耗钱，浪费精力，而且暂时也不利于网站的SEO工作。详情可查看：我到底该不该用“影响搜索排名”的HTTPS？</p>
+<h2 id="九、站长如何搭建HTTPS站点？"><a href="#九、站长如何搭建HTTPS站点？" class="headerlink" title="九、站长如何搭建HTTPS站点？"></a>九、站长如何搭建HTTPS站点？</h2><p>说到HTTPS站点的搭建，就不得不提到SSL协议，SSL是Netscape公司率先采用的网络安全协议，它是在传输通信协议（TCP/IP）上实现的一种安全协议，采用公开密钥技术，SSL广泛支持各种类型的网络，同时提供三种基本的安全服务，它们都使用公开密钥技术。</p>
+<h3 id="1、SSL的作用"><a href="#1、SSL的作用" class="headerlink" title="1、SSL的作用"></a>1、SSL的作用</h3><p>（1）、认证用户和服务器，确保数据发送到正确的客户机和服务器；</p>
+<p>（2）、加密数据以防止数据中途被窃取；</p>
+<p>（3）、维护数据的完整性，确保数据在传输过程中不被改变。</p>
+<p>而SSL证书指的是在SSL通信中验证通信双方身份的数字文件，一般分为服务器证书和客户端证书，我们通常说的SSL证书主要指服务器证书，SSL证书由受信任的数字证书颁发机构CA（如VeriSign，GlobalSign，WoSign等），在验证服务器身份后颁发，具有服务器身份验证和数据传输加密功能，分为扩展验证型(EV)SSL证书、组织验证型(OV)SSL证书、和域名验证型（DV）SSL证书。</p>
+<h3 id="2、SSL证书申请的3个主要步骤"><a href="#2、SSL证书申请的3个主要步骤" class="headerlink" title="2、SSL证书申请的3个主要步骤"></a>2、SSL证书申请的3个主要步骤</h3><p>对于SSL证书的申请，主要有以下3个步骤：</p>
+<p>（1）、制作CSR文件</p>
+<p>所谓CSR就是由申请人制作的Certificate Secure Request证书请求文件，制作过程中，系统会产生2个密钥，一个是公钥就是这个CSR文件；另外一个是私钥，存放在服务器上。<br>要制作CSR文件，申请人可以参考WEB SERVER的文档，一般APACHE等，使用OPENSSL命令行来生成KEY+CSR2个文件，Tomcat，JBoss，Resin等使用KEYTOOL来生成JKS和CSR文件，IIS通过向导建立一个挂起的请求和一个CSR文件。</p>
+<p>（2）、CA认证</p>
+<p>将CSR提交给CA，CA一般有2种认证方式：</p>
+<p>①、域名认证：一般通过对管理员邮箱认证的方式，这种方式认证速度快，但是签发的证书中没有企业的名称。</p>
+<p>②、企业文档认证：需要提供企业的营业执照，一般需要3-5个工作日。</p>
+<p>也有需要同时认证以上2种方式的证书，叫EV证书，这种证书可以使IE7以上的浏览器地址栏变成绿色，所以认证也最严格。</p>
+<p>（3）、证书的安装</p>
+<p>在收到CA的证书后，可以将证书部署上服务器，一般APACHE文件直接将KEY+CER复制到文件上，然后修改HTTPD.CONF文件；TOMCAT等，需要将CA签发的证书CER文件导入JKS文件后，复制上服务器，然后修改SERVER.XML；IIS需要处理挂起的请求，将CER文件导入。</p>
+<h2 id="十、免费证书推荐"><a href="#十、免费证书推荐" class="headerlink" title="十、免费证书推荐"></a>十、免费证书推荐</h2><p>使用SSL证书不仅能让信息的安全性更有保障，还可以提高用户对于网站的信任度，但鉴于对建站成本的考虑，很多站长对其望而却步，在网络上免费始终是一个永远不过时的市场，主机空间有免费的，而SSL证书自然也有免费的，此前，便有消息称，Mozilla、思科、Akamai、IdenTrust、EFF、以及密歇根大学的研究人员将开启Let’s Encrypt CA项目，计划从今夏开始，为网站提供免费SSL证书以及证书管理服务（注：如需更高级的复杂证书，则需付费），同时，还降低了证书安装的复杂程度，安装时间仅需20-30秒。</p>
+<p>而需要复杂证书的往往是大中型网站，诸如个人博客之类的小型站点完全可以先尝试免费SSL证书，如果想要购买低价SSL证书可查看站长之家之前发布的文章：如何购买廉价SSL证书？。</p>
+<p>下面马海祥博客再为大家介绍几款免费SSL证书，比如：CloudFlare SSL、StartSSL、Wosign沃通SSL、NameCheap等。</p>
+<h3 id="1、CloudFlare-SSL"><a href="#1、CloudFlare-SSL" class="headerlink" title="1、CloudFlare SSL"></a>1、CloudFlare SSL</h3><p>CloudFlare是美国一家提供CDN服务的网站，在世界各地都有自己的CDN服务器节点，国内外很多大型公司或者网站都在使用CloudFlare的CDN服务，当然国内站长最常用的就是CloudFlare的免费CDN，加速也很好，CloudFlare提供的免费SSL证书是UniversalSSL，即通用SSL，用户无需向证书发放机构申请和配置证书就可以使用的SSL证书，CloudFlare向所有用户(包括免费用户)提供SSL加密功能，web界面5分钟内就设置好证书，24小时内完成自动部署，为网站的流量提供基于椭圆曲线数字签名算法（ECDSA）的TLS加密服务。</p>
+<h3 id="2、StartSSL"><a href="#2、StartSSL" class="headerlink" title="2、StartSSL"></a>2、StartSSL</h3><p>StartSSL是StartCom公司旗下的SSL证书，提供免费SSL证书服务，且StartSSL被包括Chrome、Firefox、IE在内的主流浏览器支持，几乎所有的主流浏览器都可以正常识别StartSSL，任何个人都可以从StartSSL中申请到免费一年的SSL证书。</p>
+<h3 id="3、Wosign沃通SSL"><a href="#3、Wosign沃通SSL" class="headerlink" title="3、Wosign沃通SSL"></a>3、Wosign沃通SSL</h3><p>Wosign沃通是国内一家提供SSL证书服务的网站，其免费的SSL证书申请比较简单，在线开通，一个SSL证书只能对应一个域名，支持证书状态在线查询协议(OCSP)。</p>
+<h3 id="4、NameCheap"><a href="#4、NameCheap" class="headerlink" title="4、NameCheap"></a>4、NameCheap</h3><p>NameCheap是一家领先的ICANN认可的域名注册和网站托管公司，成立于2000年，该公司提供免费DNS解析，网址转发（可隐藏原URL，支持301重定向）等服务，此外，NameCheap还提供了一年的SSL证书免费服务。</p>
+<p>本文为马海祥博客原创文章，如想转载，请注明原文网址摘自于<a href="http://www.mahaixiang.cn/internet/1233.html，注明出处；否则，禁止转载；谢谢配合！" target="_blank" rel="external">http://www.mahaixiang.cn/internet/1233.html，注明出处；否则，禁止转载；谢谢配合！</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/12/02/关于http与https/" data-id="ciwu5dwg9000koe0y4fjgga2t" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/http/">http</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/https/">https</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-简单的三栏布局" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/11/21/简单的三栏布局/" class="article-date">
+  <time datetime="2016-11-21T03:29:20.000Z" itemprop="datePublished">2016-11-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/21/简单的三栏布局/">简单的三栏布局</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近整理了一些面试题，看到了一些或简单或难的题目。这里跟大家分享一个看到的面试题，关于三栏布局的。（如有问题欢迎指教）</p>
+<h2 id="float实现三栏布局"><a href="#float实现三栏布局" class="headerlink" title="float实现三栏布局"></a>float实现三栏布局</h2><p>代码如下：</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;title&gt;三栏分布&lt;/title&gt;
+&lt;style type=&quot;text/css&quot;&gt;
+*{
+    margin: 0;
+    padding: 0;
+}
+.left{
+    width: 200px;
+    height: 200px;
+    background: red;
+    float: left;
+}
+.right{
+    width: 150px;
+    height: 200px;
+    background: pink;
+    float: right;
+}
+.main{
+    height: 500px;
+    background: yellow;
+    /*保证在中间区域的高度大于两边的时候不会溢出*/
+    margin: 0 150px 0 200px;
+    /*规定自动换行的处理方法   break-word允许在单词内换行*/
+    word-break: break-word;
+}
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div class=&quot;box&quot;&gt;
+    &lt;div class=&quot;left&quot;&gt;我是左边内容我是左边内容我是左边内容我是左边内容我是左边内容我是左边内容我是左边内容我是左边内容&lt;/div&gt;
+    &lt;div class=&quot;right&quot;&gt;我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容&lt;/div&gt;
+    &lt;div class=&quot;main&quot;&gt;我是中间内容我是中间内容我是中间内容我是中间内容我是中间内容我是中间内容我是中间内容我是中间内容&lt;/div&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>效果图如下：</p>
+<p><img src="http://a2.qpic.cn/psb?/V101Z8453moGbb/MJThidPBFVrbR3DTRWXvyetmdzYXjiGtS7fmGfB73ls!/b/dHgBAAAAAAAA&amp;bo=gAf3AQAAAAADB1M!&amp;rf=viewer_4" alt="Alt text"></p>
+<p>这样布局我们是最后在HTML里写入中间的部分，不管中间的内容有多高，都不会出现溢出的情况。</p>
+<h2 id="float与position实现三栏布局"><a href="#float与position实现三栏布局" class="headerlink" title="float与position实现三栏布局"></a>float与position实现三栏布局</h2><p>代码如下：</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;title&gt;三栏分布&lt;/title&gt;
+&lt;style type=&quot;text/css&quot;&gt;
+*{
+    margin: 0;
+    padding: 0;
+}
+.left{
+    width: 200px;
+    height: 200px;
+    background: red;
+    float: left;
+}
+.right{
+    width: 150px;
+    height: 200px;
+    background: yellow;
+    float: right;
+}
+.main{
+    height: 500px;
+    background: pink;
+    position: absolute;
+    left: 200px;
+    right: 150px;
+    word-break: break-word;
+}
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div class=&quot;box&quot;&gt;
+    &lt;div class=&quot;left&quot;&gt;我是左边内容我是左边内容我是左边内容我是左边内容我是左边内容我是左边内容我是左边内容我是左边内容&lt;/div&gt;
+    &lt;div class=&quot;main&quot;&gt;我是中间内容我是中间内容我是中间内容我是中间内容我是中间内容我是中间内容我是中间内容我是中间内容&lt;/div&gt;
+    &lt;div class=&quot;right&quot;&gt;我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容&lt;/div&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>效果图如下：<br><img src="http://a2.qpic.cn/psb?/V101Z8453moGbb/KX5bxLeRcC*SBR*pRDHYbn7fDh5pcA1HyJ8wxdrJbb8!/b/dAkBAAAAAAAA&amp;bo=fwf2AQAAAAADB60!&amp;rf=viewer_4" alt="Alt text"></p>
+<p>这种结合定位的布局，要注意定位的元素的父级（父父级）要有定位（直到找到body）.这里我没有给box定位，因为main的父父级就是body，效果是一样的。大家在写的时候可根据自己的需要设置。</p>
+<h2 id="position实现"><a href="#position实现" class="headerlink" title="position实现"></a>position实现</h2><p>代码如下：</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;title&gt;三栏分布&lt;/title&gt;
+&lt;style type=&quot;text/css&quot;&gt;
+*{
+    margin: 0;
+    padding: 0;
+}
+.left{
+    width: 200px;
+    height: 200px;
+    background: yellow;
+    position: absolute;
+    top: 0;left: 0;
+}
+.right{
+    width: 150px;
+    height: 200px;
+    background: pink;
+    position: absolute;
+    top: 0;right: 0;
+}
+.main{
+    height: 500px;
+    background: red;
+    position: absolute;
+    left: 200px;
+    right: 150px;
+    word-break: break-word;
+}
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div class=&quot;box&quot;&gt;
+    &lt;div class=&quot;left&quot;&gt;我是左边内容我是左边内容我是左边内容我是左边内容我是左边内容我是左边内容我是左边内容我是左边内容&lt;/div&gt;
+    &lt;div class=&quot;main&quot;&gt;我是中间内容我是中间内容我是中间内容我是中间内容我是中间内容我是中间内容我是中间内容我是中间内容&lt;/div&gt;
+    &lt;div class=&quot;right&quot;&gt;我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容&lt;/div&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>效果图如下：<br><img src="http://a1.qpic.cn/psb?/V101Z8453moGbb/E.WB.XNYHy9nSwgfvHK9NumZojYvG1K4BTiztyZ0gkM!/b/dHoBAAAAAAAA&amp;bo=gAf1AQAAAAADB1E!&amp;rf=viewer_4" alt="Alt text"></p>
+<p>这种和上面的方法类似，都是有定位的。</p>
+<p>使用flex进行布局<br>代码如下：</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;title&gt;三栏分布&lt;/title&gt;
+&lt;style type=&quot;text/css&quot;&gt;
+*{
+    margin: 0;
+    padding: 0;
+}
+.box{
+    display: -webkit-box;
+    display: -moz-box;
+    width: 100%;
+    height: 200px;
+}
+.left{
+    width: 200px;
+    height: 200px;
+    background: blue;
+}
+.right{
+    width: 150px;
+    height: 200px;
+    background: gray;
+}
+.main{
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    background-color: pink;
+    word-wrap: break-word;
+}
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div class=&quot;box&quot;&gt;
+    &lt;div class=&quot;left&quot;&gt;我是左边内容我是左边内容我是左边内容我是左边内容我是左边内容我是左边内容我是左边内容我是左边内容&lt;/div&gt;
+    &lt;div class=&quot;main&quot;&gt;我是中间内容我是中间内容我是中间内容我是中间内容我是中间内容我是中间内容我是中间内容我是中间内容&lt;/div&gt;
+    &lt;div class=&quot;right&quot;&gt;我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容我是右边内容&lt;/div&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>效果图如下：<br><img src="http://a1.qpic.cn/psb?/V101Z8453moGbb/IGOPDG9KJxTBSlxUM3BR8Ft3URZPsvm9lUYBCuIm2bs!/b/dHcBAAAAAAAA&amp;bo=gAfKAAAAAAADB28!&amp;rf=viewer_4" alt="Alt text"></p>
+<p>这flex布局前面的内容中也有说到，感兴趣的可以看看我前面的文章。</p>
+<p>后面还会继续分享一些面试题，欢迎大家一起加入讨论指教！</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/11/21/简单的三栏布局/" data-id="ciwu5dwh4001boe0ydns4rr0s" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html/">html</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-浅谈html-css与js" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/11/19/浅谈html-css与js/" class="article-date">
+  <time datetime="2016-11-19T10:27:35.000Z" itemprop="datePublished">2016-11-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/19/浅谈html-css与js/">浅谈html,css与js</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>接触前端已经大概有10个月了，最近总结了一下已经了解的知识。到底什么是html,什么是css，什么是js又让我仔细回想了很久。这里，我个人对这些概念性的东西做了个总结（欢迎各位大神指教）</p>
+<h1 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h1><h2 id="1-1-什么是html？"><a href="#1-1-什么是html？" class="headerlink" title="1.1 什么是html？"></a>1.1 什么是html？</h2><h3 id="HTML（Hypertext-Markup-Language）即超文本标记语言，是用于描述网页文档的一种标记语言。"><a href="#HTML（Hypertext-Markup-Language）即超文本标记语言，是用于描述网页文档的一种标记语言。" class="headerlink" title="HTML（Hypertext Markup Language）即超文本标记语言，是用于描述网页文档的一种标记语言。"></a>HTML（Hypertext Markup Language）即超文本标记语言，是用于描述网页文档的一种标记语言。</h3><h2 id="1-2-什么是html5？"><a href="#1-2-什么是html5？" class="headerlink" title="1.2 什么是html5？"></a>1.2 什么是html5？</h2><h3 id="HTML5-是对-HTML-标准的第五次修订。其主要的目标是将互联网语义化，以便更好地被人类和机器阅读，并同时提供更好地支持各种媒体的嵌入。新的语法特征被引进以支持这一点-如video、audio和canvas-标记。"><a href="#HTML5-是对-HTML-标准的第五次修订。其主要的目标是将互联网语义化，以便更好地被人类和机器阅读，并同时提供更好地支持各种媒体的嵌入。新的语法特征被引进以支持这一点-如video、audio和canvas-标记。" class="headerlink" title="HTML5 是对 HTML 标准的第五次修订。其主要的目标是将互联网语义化，以便更好地被人类和机器阅读，并同时提供更好地支持各种媒体的嵌入。新的语法特征被引进以支持这一点,如video、audio和canvas 标记。"></a>HTML5 是对 HTML 标准的第五次修订。其主要的目标是将互联网语义化，以便更好地被人类和机器阅读，并同时提供更好地支持各种媒体的嵌入。新的语法特征被引进以支持这一点,如video、audio和canvas 标记。</h3><p>HTML5还引进了新的功能,可以真正改变用户与文档的交互方式,包括:</p>
+<h3 id="·-新的解析规则增强了灵活性"><a href="#·-新的解析规则增强了灵活性" class="headerlink" title="· 新的解析规则增强了灵活性"></a>· 新的解析规则增强了灵活性</h3><h3 id="·-新属性"><a href="#·-新属性" class="headerlink" title="· 新属性"></a>· 新属性</h3><h3 id="·-淘汰过时的或冗余的属性"><a href="#·-淘汰过时的或冗余的属性" class="headerlink" title="· 淘汰过时的或冗余的属性"></a>· 淘汰过时的或冗余的属性</h3><h3 id="·-一个HTML5文档到另一个文档间的拖放功能"><a href="#·-一个HTML5文档到另一个文档间的拖放功能" class="headerlink" title="· 一个HTML5文档到另一个文档间的拖放功能"></a>· 一个HTML5文档到另一个文档间的拖放功能</h3><p>这里新的HTML标签对我们的代码也有很大的帮助。一个典型的WEB页面包含头部,脚部,导航,中心区域,侧边栏。现在如果我们想在在更早的HTML区域中呈现这些内容,我们可能要使用DIV标签。但是html5定义的新标签会使区域创建元素名称使他们更加清晰,也使得你的HTML更加可读。<br>比如，我个人的代码风格是头部最外面使用header标签，尾部使用footer，导航区域使用nav标签。中心内容使用aside和section包裹</p>
+<h1 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h1><h2 id="1-1什么是css？"><a href="#1-1什么是css？" class="headerlink" title="1.1什么是css？"></a>1.1什么是css？</h2><h3 id="css（Cascading-Style-Sheets）即层叠样式表，是一种用来表现HTML（标准通用标记语言的一个应用）或XML（标准通用标记语言的一个子集）等文件样式的计算机语言"><a href="#css（Cascading-Style-Sheets）即层叠样式表，是一种用来表现HTML（标准通用标记语言的一个应用）或XML（标准通用标记语言的一个子集）等文件样式的计算机语言" class="headerlink" title="css（Cascading Style Sheets）即层叠样式表，是一种用来表现HTML（标准通用标记语言的一个应用）或XML（标准通用标记语言的一个子集）等文件样式的计算机语言"></a>css（Cascading Style Sheets）即层叠样式表，是一种用来表现HTML（标准通用标记语言的一个应用）或XML（标准通用标记语言的一个子集）等文件样式的计算机语言</h3><h2 id="1-2-什么是css3？"><a href="#1-2-什么是css3？" class="headerlink" title="1.2 什么是css3？"></a>1.2 什么是css3？</h2><h3 id="css3是css目前的最新版本，是能够真正做到网页表现与内容分离的一种样式设计语言。"><a href="#css3是css目前的最新版本，是能够真正做到网页表现与内容分离的一种样式设计语言。" class="headerlink" title="css3是css目前的最新版本，是能够真正做到网页表现与内容分离的一种样式设计语言。"></a>css3是css目前的最新版本，是能够真正做到网页表现与内容分离的一种样式设计语言。</h3><h1 id="什么是javascript"><a href="#什么是javascript" class="headerlink" title="什么是javascript"></a>什么是javascript</h1><p>JavaScript一种直译式脚本语言，是一种动态类型、弱类型、基于原型的语言，内置支持类型。它的解释器被称为JavaScript引擎，为浏览器的一部分，广泛用于客户端的脚本语言，最早是在HTML（标准通用标记语言下的一个应用）网页上使用，用来给HTML网页增加动态功能。</p>
+<p>对于这些基础的知识还有很多内容，我们下次再聊~~~</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/11/19/浅谈html-css与js/" data-id="ciwu5dwgm000zoe0yo3korr6v" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html/">html</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Javascript定义类（class）的三种方法【转】" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/11/13/Javascript定义类（class）的三种方法【转】/" class="article-date">
+  <time datetime="2016-11-13T08:23:48.000Z" itemprop="datePublished">2016-11-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/13/Javascript定义类（class）的三种方法【转】/">Javascript定义类（class）的三种方法【转】</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>本篇博客转载自 软一峰——Javascript定义类（class）的三种方法</p>
+<p>将近20年前，Javascript诞生的时候，只是一种简单的网页脚本语言。如果你忘了填写用户名，它就跳出一个警告。</p>
+<p><img src="http://image.beekka.com/blog/201207/bg2012070901.png" alt="Alt text"></p>
+<p>如今，它变得几乎无所不能，从前端到后端，有着各种匪夷所思的用途。程序员用它完成越来越庞大的项目。<br>Javascript代码的复杂度也直线上升。单个网页包含10000行Javascript代码，早就司空见惯。2010年，一个工程师透露，Gmail的代码长度是443000行！</p>
+<p><img src="http://image.beekka.com/blog/201207/bg2012070902.png" alt="Alt text"></p>
+<p>编写和维护如此复杂的代码，必须使用模块化策略。目前，业界的主流做法是采用”面向对象编程”。因此，Javascript如何实现面向对象编程，就成了一个热门课题。<br>麻烦的是，Javascipt语法不支持”类”（class），导致传统的面向对象编程方法无法直接使用。程序员们做了很多探索，研究如何用Javascript模拟”类”。本文总结了Javascript定义”类”的三种方法，讨论了每种方法的特点，着重介绍了我眼中的最佳方法。</p>
+<p>Javascript定义类（class）的三种方法</p>
+<p>作者：阮一峰</p>
+<p><img src="http://image.beekka.com/blog/201207/bg2012070903.jpg" alt="Alt text"><br>在面向对象编程中，类（class）是对象（object）的模板，定义了同一组对象（又称”实例”）共有的属性和方法。<br>Javascript语言不支持”类”，但是可以用一些变通的方法，模拟出”类”。</p>
+<h3 id="一、构造函数法"><a href="#一、构造函数法" class="headerlink" title="一、构造函数法"></a>一、构造函数法</h3><p>这是经典方法，也是教科书必教的方法。它用构造函数模拟”类”，在其内部用this关键字指代实例对象。</p>
+<pre><code>function Cat() { 
+    this.name = &quot;大毛&quot;;
+}
+</code></pre><p>生成实例的时候，使用new关键字。</p>
+<pre><code>var cat1 = new Cat();
+alert(cat1.name); // 大毛
+</code></pre><p>类的属性和方法，还可以定义在构造函数的prototype对象之上。</p>
+<pre><code>Cat.prototype.makeSound = function(){
+    alert(&quot;喵喵喵&quot;);
+}
+</code></pre><p>　　<br>关于这种方法的详细介绍，请看我写的系列文章《Javascript 面向对象编程》，这里就不多说了。它的主要缺点是，比较复杂，用到了this和prototype，编写和阅读都很费力。</p>
+<h3 id="二、Object-create-法"><a href="#二、Object-create-法" class="headerlink" title="二、Object.create()法"></a>二、Object.create()法</h3><p>为了解决”构造函数法”的缺点，更方便地生成对象，Javascript的国际标准ECMAScript第五版（目前通行的是第三版），提出了一个新的方法Object.create()。</p>
+<p>用这个方法，”类”就是一个对象，不是函数。</p>
+<pre><code>var Cat = {
+        name: &quot;大毛&quot;,
+    makeSound: function(){ alert(&quot;喵喵喵&quot;); }
+};
+</code></pre><p>然后，直接用Object.create()生成实例，不需要用到new。</p>
+<pre><code>var cat1 = Object.create(Cat);
+alert(cat1.name); // 大毛
+cat1.makeSound(); // 喵喵喵
+</code></pre><p>目前，各大浏览器的最新版本（包括IE9）都部署了这个方法。如果遇到老式浏览器，可以用下面的代码自行部署。</p>
+<pre><code>if (!Object.create) {
+  Object.create = function (o) {
+    function F() {}
+    F.prototype = o;
+    return new F();
+  };
+}
+</code></pre><p>这种方法比”构造函数法”简单，但是不能实现私有属性和私有方法，实例对象之间也不能共享数据，对”类”的模拟不够全面。</p>
+<h3 id="三、极简主义法"><a href="#三、极简主义法" class="headerlink" title="三、极简主义法"></a>三、极简主义法</h3><p>荷兰程序员Gabor de Mooij提出了一种比Object.create()更好的新方法，他称这种方法为”极简主义法”（minimalist approach）。这也是我推荐的方法。</p>
+<h3 id="3-1-封装"><a href="#3-1-封装" class="headerlink" title="3.1 封装"></a>3.1 封装</h3><p>这种方法不使用this和prototype，代码部署起来非常简单，这大概也是它被叫做”极简主义法”的原因。<br>首先，它也是用一个对象模拟”类”。在这个类里面，定义一个构造函数createNew()，用来生成实例。</p>
+<pre><code>var Cat = {
+    createNew: function(){
+        // some code here
+    }
+};
+</code></pre><p>然后，在createNew()里面，定义一个实例对象，把这个实例对象作为返回值。</p>
+<pre><code>var Cat = {
+    createNew: function(){
+        var cat = {};
+        cat.name = &quot;大毛&quot;;
+        cat.makeSound = function(){ alert(&quot;喵喵喵&quot;); };
+        return cat;
+    }
+};
+</code></pre><p>使用的时候，调用createNew()方法，就可以得到实例对象。</p>
+<pre><code>var cat1 = Cat.createNew();
+cat1.makeSound(); // 喵喵喵
+</code></pre><p>这种方法的好处是，容易理解，结构清晰优雅，符合传统的”面向对象编程”的构造，因此可以方便地部署下面的特性。</p>
+<h3 id="3-2-继承"><a href="#3-2-继承" class="headerlink" title="3.2 继承"></a>3.2 继承</h3><p>让一个类继承另一个类，实现起来很方便。只要在前者的createNew()方法中，调用后者的createNew()方法即可。<br>先定义一个Animal类。</p>
+<pre><code>var Animal = {
+    createNew: function(){
+        var animal = {};
+        animal.sleep = function(){ alert(&quot;睡懒觉&quot;); };
+        return animal;
+    }
+};
+</code></pre><p>然后，在Cat的createNew()方法中，调用Animal的createNew()方法。</p>
+<pre><code>var Cat = {
+    createNew: function(){
+        var cat = Animal.createNew();
+        cat.name = &quot;大毛&quot;;
+        cat.makeSound = function(){ alert(&quot;喵喵喵&quot;); };
+        return cat;
+    }
+};
+</code></pre><p>这样得到的Cat实例，就会同时继承Cat类和Animal类。</p>
+<pre><code>var cat1 = Cat.createNew();
+cat1.sleep(); // 睡懒觉
+</code></pre><h3 id="3-3-私有属性和私有方法"><a href="#3-3-私有属性和私有方法" class="headerlink" title="3.3 私有属性和私有方法"></a>3.3 私有属性和私有方法</h3><p>在createNew()方法中，只要不是定义在cat对象上的方法和属性，都是私有的。</p>
+<pre><code>var Cat = {
+    createNew: function(){
+        var cat = {};
+        var sound = &quot;喵喵喵&quot;;
+        cat.makeSound = function(){ alert(sound); };
+        return cat;
+    }
+};
+</code></pre><p>上例的内部变量sound，外部无法读取，只有通过cat的公有方法makeSound()来读取。</p>
+<pre><code>var cat1 = Cat.createNew();
+alert(cat1.sound); // undefined
+</code></pre><h3 id="3-4-数据共享"><a href="#3-4-数据共享" class="headerlink" title="3.4 数据共享"></a>3.4 数据共享</h3><p>有时候，我们需要所有实例对象，能够读写同一项内部数据。这个时候，只要把这个内部数据，封装在类对象的里面、createNew()方法的外面即可。</p>
+<pre><code>var Cat = {
+    sound : &quot;喵喵喵&quot;,
+    createNew: function(){
+        var cat = {};
+        cat.makeSound = function(){ alert(Cat.sound); };
+        cat.changeSound = function(x){ Cat.sound = x; };
+        return cat;
+    }
+};
+</code></pre><p>然后，生成两个实例对象：</p>
+<pre><code>var cat1 = Cat.createNew();
+var cat2 = Cat.createNew();
+cat1.makeSound(); // 喵喵喵
+</code></pre><p>这时，如果有一个实例对象，修改了共享的数据，另一个实例对象也会受到影响。</p>
+<pre><code>cat2.changeSound(&quot;啦啦啦&quot;);
+cat1.makeSound(); // 啦啦啦
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/11/13/Javascript定义类（class）的三种方法【转】/" data-id="ciwu5dwfn0003oe0y4p4c0ctm" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-关于Ajax" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/11/07/关于Ajax/" class="article-date">
+  <time datetime="2016-11-07T12:46:56.000Z" itemprop="datePublished">2016-11-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/07/关于Ajax/">关于Ajax</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Ajax的工作原理"><a href="#Ajax的工作原理" class="headerlink" title="Ajax的工作原理"></a>Ajax的工作原理</h1><p>在写这篇文章之前，曾经写过一篇关于AJAX技术的随笔，不过涉及到的方面很窄，对AJAX技术的背景、原理、优缺点等各个方面都很少涉及null。这次写这篇文章的背景是因为公司需要对内部程序员做一个培训。项目经理找到了我，并且征询我培训的主题，考虑到之前Javascript、CSS等WEB开发技术都已经讲解过了，所以决定针对AJAX这一块做一个比较系统的培训，所以这篇文章实际上是一个培训的材料。</p>
+<p>在这篇文章中，我将从10个方面来对AJAX技术进行系统的讲解。</p>
+<h2 id="1、ajax技术的背景"><a href="#1、ajax技术的背景" class="headerlink" title="1、ajax技术的背景"></a>1、ajax技术的背景</h2><p>不可否认，ajax技术的流行得益于google的大力推广，正是由于google earth、google suggest以及gmail等对ajax技术的广泛应用，催生了ajax的流行。而这也让微软感到无比的尴尬，因为早在97年，微软便已经发明了ajax中的关键技术，并且在99年IE5推出之时，它便开始支持XmlHttpRequest对象，并且微软之前已经开始在它的一些产品中应用ajax，比如说MSDN网站菜单中的一些应用。遗憾的是，不知道出于什么想法，当时微软发明了ajax的核心技术之后，并没有看到它的潜力而加以发展和推广，而是将它搁置起来。对于这一点来说，我个人是觉得非常奇怪的，因为以微软的资源和它的战略眼光来说，应该不会看不到ajax技术的前景，唯一的解释也许就是因为当时它的主要竞争对手Netscape的消失反而使它变得麻痹和迟钝，毕竟巨人也有打盹的时候，比如IBM曾经在对微软战略上的失误。正是这一次的失误，成就了它现在的竞争对手google在ajax方面的领先地位，而事实上google目前在ajax技术方面的领先是微软所无法达到的，这一点在后面我讲述ajax缺陷的时候也会提到。现在微软也意识到了这个问题，因此它也开始在ajax领域奋起直追，比如说推出它自己的ajax框架atlas，并且在.NET2.0也提供了一个用来实现异步回调的接口，即ICallBack接口。那么微软为什么对自己在ajax方面的落后如此紧张呢？现在就让我们来分析一下ajax技术后面隐藏的深刻意义。</p>
+<h2 id="2、ajax技术的意义"><a href="#2、ajax技术的意义" class="headerlink" title="2、ajax技术的意义"></a>2、ajax技术的意义</h2><p>我们在平时的开发中都多多少少的接触或者应用到了ajax，谈到ajax技术的意义，我们关注得最多的毫无疑问是提升用户的体验。但是，如果我们结合将来电脑和互联网的发展趋势，我们会发现ajax技 术在某些方面正好代表了这种趋势。为什么这样说呢？我们知道，自从电脑出现以来，一直是桌面软件占据着绝对主导的地位，但是互联网的出现和成功使这一切开 始发生着微妙的变化。相当一部分的人都相信，迟早有一天，数据和电脑软件将会从桌面转移到互联网。也就是说，将来的电脑有可能抛弃笨重的硬盘，而直接从互 联网来获取数据和服务，我记得我念大学的时候，有位教授给我们上课的时候，曾经设想过这样一种情景，也许在将来的电脑桌面上，没有任何多余的软件和程序， 而仅仅只有一个IE，虽然现在看起来我们距离这一天还很遥远，并且这其中还有很多的问题需要解决，但是我觉得这个并非梦想，而是迟早将实现的现实。那么，这其中的主要问题就是互联网的连接不稳定，谁也不愿意看着自己的电脑从服务器一点一滴的下载数据，那么，ajax是不是解决了这个问题呢，说实话，与其说ajax解决了这个问题，倒不如它只是掩盖了这个问题，它只是在服务器和客户端之间充当了一个缓冲器，让用户误以为服务没有中断。精确的说，ajax并不能提高从服务器端下载数据的速度，而只是使这个等待不那么令人沮丧。但是正是这一点就足以产生巨大的影响和震动，它实际上也对桌面软件产生了巨大的冲击。这一点我用一个例子来说明，我们可以比较一下Outlook Express和Gmail，前者是典型的桌面软件，后者是ajax所实现的B/S模式，实际上后者目前已经在慢慢取代前者了，Gmail在收发邮件的时候已经和Outlook Express的功能几乎没有差别了，而且它不需要安装客户端程序。这就是为什么微软对ajax所带来的冲击有着如此的恐惧心理，并且在它前不久所进行的调查之中，将google看做他们未来十年内的主要竞争对手的主要原因之一。当然，这种变化也并不会将桌面软件全部淘汰，现有的浏览器还没有一个能像PhotoShop等桌面程序那样处理复杂的图像。但是我们也不能忽视它带来的影响和冲击。</p>
+<h2 id="3、关于ajax的名字"><a href="#3、关于ajax的名字" class="headerlink" title="3、关于ajax的名字"></a>3、关于ajax的名字</h2><p>ajax 的全称是Asynchronous JavaScript and XML，其中，Asynchronous 是异步的意思，它有别于传统web开发中采用的同步的方式。</p>
+<h2 id="4、关于同步和异步"><a href="#4、关于同步和异步" class="headerlink" title="4、关于同步和异步"></a>4、关于同步和异步</h2><p>异步传输是面向字符的传输，它的单位是字符；而同步传输是面向比特的传输，它的单位是桢，它传输的时候要求接受方和发送方的时钟是保持一致的。<br>具体来说，异步传输是将比特分成小组来进行传送。一般每个小组是一个8位字符，在每个小组的头部和尾部都有一个开始位和一个停止位，它在传送过程中接收方和发送方的时钟不要求一致，也就是说，发送方可以在任何时刻发送这些小组，而接收方并不知道它什么时候到达。一个最明显的例子就是计算机键盘和主机的通信，按下一个键的同时向主机发送一个8比特位的ASCII代 码，键盘可以在任何时刻发送代码，这取决于用户的输入速度，内部的硬件必须能够在任何时刻接收一个键入的字符。这是一个典型的异步传输过程。异步传输存在 一个潜在的问题，即接收方并不知道数据会在什么时候到达。在它检测到数据并做出响应之前，第一个比特已经过去了。这就像有人出乎意料地从后面走上来跟你说 话，而你没来得及反应过来，漏掉了最前面的几个词。因此，每次异步传输的信息都以一个起始位开头，它通知接收方数据已经到达了，这就给了接收方响应、接收 和缓存数据比特的时间；在传输结束时，一个停止位表示该次传输信息的终止。按照惯例，空闲（没有传送数据）的线路实际携带着一个代表二进制1的信号。步传输的开始位使信号变成0，其他的比特位使信号随传输的数据信息而变化。最后，停止位使信号重新变回1，该信号一直保持到下一个开始位到达。例如在键盘上数字“1”，按照8比特位的扩展ASCII编码，将发送“00110001”，同时需要在8比特位的前面加一个起始位，后面一个停止位。<br>同步传输的比特分组要大得多。它不是独立地发送每个字符，每个字符都有自己的开始位和停止位，而是把它们组合起来一起发送。我们将这些组合称为数据帧，或简称为帧。<br>　　数据帧的第一部分包含一组同步字符，它是一个独特的比特组合，类似于前面提到的起始位，用于通知接收方一个帧已经到达，但它同时还能确保接收方的采样速度和比特的到达速度保持一致，使收发双方进入同步。<br>　　帧的最后一部分是一个帧结束标记。与同步字符一样，它也是一个独特的比特串，类似于前面提到的停止位，用于表示在下一帧开始之前没有别的即将到达的数据了。<br>　　同步传输通常要比异步传输快速得多。接收方不必对每个字符进行开始和停止的操作。一旦检测到帧同步字符，它就在接下来的数据到达时接收它们。另外，同步传输的开销也比较少。例如，一个典型的帧可能有500字节（即4000比特）的数据，其中可能只包含100比特的开销。这时，增加的比特位使传输的比特总数增加2.5%，这与异步传输中25 %的增值要小得多。随着数据帧中实际数据比特位的增加，开销比特所占的百分比将相应地减少。但是，数据比特位越长，缓存数据所需要的缓冲区也越大，这就限制了一个帧的大小。另外，帧越大，它占据传输媒体的连续时间也越长。在极端的情况下，这将导致其他用户等得太久。<br>     了解了同步和异步的概念之后，大家应该对ajax为什么可以提升用户体验应该比较清晰了，它是利用异步请求方式的。打个比方，如果现在你家里所在的小区因 某种情况而面临停水，现在有关部门公布了两种方案，一是完全停水8个小时，在这8个小时内完全停水，8个小时后恢复正常。二是不完全停水10 个小时，在这10个小时内水没有完全断，只是流量比原来小了很多，在10个小时后恢复正常流量，那么，如果是你你会选择哪种方式呢？显然是后者。</p>
+<h2 id="5、ajax所包含的技术"><a href="#5、ajax所包含的技术" class="headerlink" title="5、ajax所包含的技术"></a>5、ajax所包含的技术</h2><p>大家都知道ajax并非一种新的技术，而是几种原有技术的结合体。它由下列技术组合而成。</p>
+<h3 id="1-使用CSS和XHTML来表示。"><a href="#1-使用CSS和XHTML来表示。" class="headerlink" title="1.使用CSS和XHTML来表示。"></a>1.使用CSS和XHTML来表示。</h3><h3 id="2-使用DOM模型来交互和动态显示。"><a href="#2-使用DOM模型来交互和动态显示。" class="headerlink" title="2. 使用DOM模型来交互和动态显示。"></a>2. 使用DOM模型来交互和动态显示。</h3><h3 id="3-使用XMLHttpRequest来和服务器进行异步通信。"><a href="#3-使用XMLHttpRequest来和服务器进行异步通信。" class="headerlink" title="3.使用XMLHttpRequest来和服务器进行异步通信。"></a>3.使用XMLHttpRequest来和服务器进行异步通信。</h3><h3 id="4-使用javascript来绑定和调用。"><a href="#4-使用javascript来绑定和调用。" class="headerlink" title="4.使用javascript来绑定和调用。"></a>4.使用javascript来绑定和调用。</h3><p>在上面几中技术中，除了XmlHttpRequest对象以外，其它所有的技术都是基于web标准并且已经得到了广泛使用的，XMLHttpRequest虽然目前还没有被W3C所采纳，但是它已经是一个事实的标准，因为目前几乎所有的主流浏览器都支持它。</p>
+<h2 id="6、ajax原理和XmlHttpRequest对象"><a href="#6、ajax原理和XmlHttpRequest对象" class="headerlink" title="6、ajax原理和XmlHttpRequest对象"></a>6、ajax原理和XmlHttpRequest对象</h2><p>Ajax的原理简单来说通过XmlHttpRequest对象来向服务器发异步请求，从服务器获得数据，然后用javascript来操作DOM而更新页面。这其中最关键的一步就是从服务器获得请求数据。要清楚这个过程和原理，我们必须对 XMLHttpRequest有所了解。</p>
+<p>　 XMLHttpRequest是ajax的核心机制，它是在IE5中首先引入的，是一种支持异步请求的技术。简单的说，也就是javascript可以及时向服务器提出请求和处理响应，而不阻塞用户。达到无刷新的效果。</p>
+<p>所以我们先从XMLHttpRequest讲起，来看看它的工作原理。</p>
+<p>首先，我们先来看看XMLHttpRequest这个对象的属性。</p>
+<p>它的属性有：</p>
+<p>  onreadystatechange  每次状态改变所触发事件的事件处理程序。</p>
+<p>  responseText     从服务器进程返回数据的字符串形式。　</p>
+<p>  responseXML    从服务器进程返回的DOM兼容的文档数据对象。</p>
+<p>  status           从服务器返回的数字代码，比如常见的404（未找到）和200（已就绪）<br>  　<br>  status Text       伴随状态码的字符串信息</p>
+<p>  readyState       对象状态值</p>
+<p>　0 (未初始化) 对象已建立，但是尚未初始化（尚未调用open方法）</p>
+<p>　1 (初始化) 对象已建立，尚未调用send方法</p>
+<p>　2 (发送数据) send方法已调用，但是当前的状态及http头未知</p>
+<p>　3 (数据传送中) 已接收部分数据，因为响应及http头不全，这时通过responseBody和responseText获取部分数据会出现错误</p>
+<p>　4 (完成) 数据接收完毕,此时可以通过通过responseXml和responseText获取完整的回应数据</p>
+<p>　　但是，由于各浏览器之间存在差异，所以创建一个XMLHttpRequest对象可能需要不同的方法。这个差异主要体现在IE和其它浏览器之间。下面是一个比较标准的创建XMLHttpRequest对象的方法。</p>
+<pre><code>function CreateXmlHttp() {
+    //非IE浏览器创建XmlHttpRequest对象
+    if (window.XmlHttpRequest) {
+        xmlhttp = new XmlHttpRequest();
+    }
+
+    //IE浏览器创建XmlHttpRequest对象
+    if (window.ActiveXObject) {
+        try {
+            xmlhttp = new ActiveXObject(&quot;Microsoft.XMLHTTP&quot;);
+        }
+        catch (e) {
+            try {
+                xmlhttp = new ActiveXObject(&quot;msxml2.XMLHTTP&quot;);
+            }
+            catch (ex) { }
+        }
+    }
+}
+function Ustbwuyi() {
+    var data = document.getElementById(&quot;username&quot;).value;
+    CreateXmlHttp();
+    if (!xmlhttp) {
+        alert(&quot;创建xmlhttp对象异常！&quot;);
+        return false;
+    }
+
+    xmlhttp.open(&quot;POST&quot;, url, false);
+
+    xmlhttp.onreadystatechange = function () {
+        if (xmlhttp.readyState == 4) {
+            document.getElementById(&quot;user1&quot;).innerHTML = &quot;数据正在加载...&quot;;
+            if (xmlhttp.status == 200) {
+                document.write(xmlhttp.responseText);
+            }
+        }
+    }
+    xmlhttp.send();
+}　　
+</code></pre><p>如上所示，函数首先检查XMLHttpRequest的整体状态并且保证它已经完成（readyStatus=4），即数据已经发送完毕。然后根据服务器的设定询问请求状态，如果一切已经就绪（status=200），那么就执行下面需要的操作。</p>
+<p>对于XmlHttpRequest的两个方法，open和send，其中open方法指定了：</p>
+<p>a、向服务器提交数据的类型，即post还是get。</p>
+<p>b、请求的url地址和传递的参数。</p>
+<p>c、传输方式，false为同步，true为异步。默认为true。如果是异步通信方式(true)，客户机就不等待服务器的响应；如果是同步方式(false)，客户机就要等到服务器返回消息后才去执行其他操作。我们需要根据实际需要来指定同步方式，在某些页面中，可能会发出多个请求，甚至是有组织有计划有队形大规模的高强度的request，而后一个是会覆盖前一个的，这个时候当然要指定同步方式。<br>    Send方法用来发送请求。</p>
+<p>　　知道了XMLHttpRequest的工作流程，我们可以看出，XMLHttpRequest是完全用来向服务器发出一个请求的，它的作用也局限于此，但它的作用是整个ajax实现的关键，因为ajax无非是两个过程，发出请求和响应请求。并且它完全是一种客户端的技术。而XMLHttpRequest正是处理了服务器端和客户端通信的问题所以才会如此的重要。<br>　　现在，我们对ajax的原理大概可以有一个了解了。我们可以把服务器端看成一个数据接口，它返回的是一个纯文本流，当然，这个文本流可以是XML格式，可以是Html，可以是Javascript代码，也可以只是一个字符串。这时候，XMLHttpRequest向服务器端请求这个页面，服务器端将文本的结果写入页面，这和普通的web开发流程是一样的，不同的是，客户端在异步获取这个结果后，不是直接显示在页面，而是先由javascript来处理，然后再显示在页面。至于现在流行的很多ajax控件，比如magicajax等，可以返回DataSet等其它数据类型，只是将这个过程封装了的结果，本质上他们并没有什么太大的区别。</p>
+<h2 id="8、ajax的缺点"><a href="#8、ajax的缺点" class="headerlink" title="8、ajax的缺点"></a>8、ajax的缺点</h2><p>下面我着重讲一讲ajax的缺陷，因为平时我们大多注意的都是ajax给我们所带来的好处诸如用户体验的提升。而对ajax所带来的缺陷有所忽视。</p>
+<p>下面所阐述的ajax的缺陷都是它先天所产生的。</p>
+<p>1、ajax干掉了back按钮，即对浏览器后退机制的破坏。后退按钮是一个标准的web站点的重要功能，但是它没法和js进行很好的合作。这是ajax所带来的一个比较严重的问题，因为用户往往是希望能够通过后退来取消前一次操作的。那么对于这个问题有没有办法？答案是肯定的，用过Gmail的知道，Gmail下面采用的ajax技术解决了这个问题，在Gmail下面是可以后退的，但是，它也并不能改变ajax的机制，它只是采用的一个比较笨但是有效的办法，即用户单击后退按钮访问历史记录时，通过创建或使用一个隐藏的IFRAME来重现页面上的变更。（例如，当用户在Google Maps中单击后退时，它在一个隐藏的IFRAME中进行搜索，然后将搜索结果反映到Ajax元素上，以便将应用程序状态恢复到当时的状态。）<br>但是，虽然说这个问题是可以解决的，但是它所带来的开发成本是非常高的，和ajax框架所要求的快速开发是相背离的。这是ajax所带来的一个非常严重的问题。</p>
+<p>2、安全问题</p>
+<p>技术同时也对IT企业带来了新的安全威胁，ajax技术就如同对企业数据建立了一个直接通道。这使得开发者在不经意间会暴露比以前更多的数据和服务器逻辑。ajax的逻辑可以对客户端的安全扫描技术隐藏起来，允许黑客从远端服务器上建立新的攻击。还有ajax也难以避免一些已知的安全弱点，诸如跨站点脚步攻击、SQL注入攻击和基于credentials的安全漏洞等。</p>
+<p>3、对搜索引擎的支持比较弱。</p>
+<p>4、破坏了程序的异常机制。至少从目前看来，像ajax.dll，ajaxpro.dll这些ajax框架是会破坏程序的异常机制的。关于这个问题，我曾经在开发过程中遇到过，但是查了一下网上几乎没有相关的介绍。后来我自己做了一次试验，分别采用ajax和传统的form提交的模式来删除一条数据……给我们的调试带来了很大的困难。</p>
+<p>5、另外，像其他方面的一些问题，比如说违背了url和资源定位的初衷。例如，我给你一个url地址，如果采用了ajax技术，也许你在该url地址下面看到的和我在这个url地址下看到的内容是不同的。这个和资源定位的初衷是相背离的。</p>
+<p>6、一些手持设备（如手机、PDA等）现在还不能很好的支持ajax，比如说我们在手机的浏览器上打开采用ajax技术的网站时，它目前是不支持的，当然，这个问题和我们没太多关系。</p>
+<h2 id="9、ajax的几种框架"><a href="#9、ajax的几种框架" class="headerlink" title="9、ajax的几种框架"></a>9、ajax的几种框架</h2><p>目前我们采用的比较多的ajax框架主要有ajax.dll,ajaxpro.dll,magicajax.dll 以及微软的atlas框架。Ajax.dll和Ajaxpro.dll这两个框架差别不大，而magicajax.dll只是封装得更厉害一些，比如说它可以直接返回DataSet数据集，前面我们已经说过，ajax返回的都是字符串，magicajax只是对它进行了封装而已。但是它的这个特点可以给我们带来很大的方便，比如说我们的页面有一个列表，而列表的数据是不断变化的，那么我们可以采用magicajax来处理，操作很简单，添加magicajax之后，将要更新的列表控件放在magicajax的控件之内，然后在pageload里面定义更新间隔的时间就ok了，atlas的原理和magicajax差不多。但是，需要注意的一个问题是，这几种框架都只支持IE，没有进行浏览器兼容方面的处理，用反编译工具察看他们的代码就可以知道。</p>
+<p> 除了这几种框架之外，我们平时用到的比较多的方式是自己创建xmlHttpRequest对象，这种方式和前面的几种框架相比更具有灵活性。另外，在这里还提一下aspnet2.0自带的异步回调接口，它和ajax一样也可以实现局部的无刷新，但它的实现实际上也是基于xmlhttprequest对象的，另外也是只支持IE，当然这是微软的一个竞争策略。</p>
+<h2 id="此文要感谢：http-www-cnblogs-com-ustbwuyi-archive-2007-02-08-645061-html-2215165"><a href="#此文要感谢：http-www-cnblogs-com-ustbwuyi-archive-2007-02-08-645061-html-2215165" class="headerlink" title="此文要感谢：http://www.cnblogs.com/ustbwuyi/archive/2007/02/08/645061.html#2215165"></a>此文要感谢：<a href="http://www.cnblogs.com/ustbwuyi/archive/2007/02/08/645061.html#2215165" target="_blank" rel="external">http://www.cnblogs.com/ustbwuyi/archive/2007/02/08/645061.html#2215165</a></h2>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/11/07/关于Ajax/" data-id="ciwu5dwg6000hoe0y8m28p4na" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ajax/">Ajax</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Flex布局教程：实例篇【转】" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/11/01/Flex布局教程：实例篇【转】/" class="article-date">
+  <time datetime="2016-11-01T12:26:16.000Z" itemprop="datePublished">2016-11-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/01/Flex布局教程：实例篇【转】/">Flex布局教程：实例篇【转】</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p> 本篇博客转至 阮一峰–Flex 布局教程：实例篇</p>
+<h1 id="Flex-布局教程：实例篇"><a href="#Flex-布局教程：实例篇" class="headerlink" title="Flex 布局教程：实例篇"></a>Flex 布局教程：实例篇</h1><p>今天介绍常见布局的Flex写法。</p>
+<p>你会看到，不管是什么布局，Flex往往都可以几行命令搞定。<br><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071327.png" alt="Alt text"></p>
+<h2 id="一、骰子的布局"><a href="#一、骰子的布局" class="headerlink" title="一、骰子的布局"></a>一、骰子的布局</h2><p>骰子的一面，最多可以放置9个点。</p>
+<p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071328.png" alt="Alt text"></p>
+<p>下面，就来看看Flex如何实现，从1个点到9个点的布局。你可以到codepen查看Demo。</p>
+<p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071329.png" alt="Alt text"></p>
+<p>如果不加说明，本节的HTML模板一律如下。</p>
+<pre><code>&lt;div class=&quot;box&quot;&gt;
+    &lt;span class=&quot;item&quot;&gt;&lt;/span&gt;
+&lt;/div&gt;
+</code></pre><p>上面代码中，div元素（代表骰子的一个面）是Flex容器，span元素（代表一个点）是Flex项目。如果有多个项目，就要添加多个span元素，以此类推。</p>
+<h3 id="1-1-单项目"><a href="#1-1-单项目" class="headerlink" title="1.1 单项目"></a>1.1 单项目</h3><p>首先，只有左上角1个点的情况。Flex布局默认就是首行左对齐，所以一行代码就够了。<br><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071301.png" alt="Alt text"></p>
+<pre><code>.box {
+    display: flex;
+}
+</code></pre><p>设置项目的对齐方式，就能实现居中对齐和右对齐。<br><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071302.png" alt="Alt text"></p>
+<pre><code>.box {
+    display: flex;
+    justify-content: center;
+}
+</code></pre><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071303.png" alt="Alt text"></p>
+<pre><code>.box {
+    display: flex;
+    justify-content: flex-end;
+</code></pre><p>设置交叉轴对齐方式，可以垂直移动主轴。</p>
+<p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071304.png" alt="Alt text"></p>
+<pre><code>.box {
+    display: flex;
+    align-items: center;
+}
+</code></pre><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071305.png" alt="Alt text"></p>
+<pre><code>.box {
+    display: flex;
+    justify-content: center;
+     align-items: center;
+}
+</code></pre><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071306.png" alt="Alt text"></p>
+<pre><code>.box {
+    display: flex;
+    justify-content: center;
+     align-items: flex-end;
+}
+</code></pre><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071307.png" alt="Alt text"></p>
+<pre><code>.box { 
+    display: flex;
+    justify-content: flex-end;
+     align-items: flex-end;
+}
+</code></pre><h2 id="二、网格布局"><a href="#二、网格布局" class="headerlink" title="二、网格布局"></a>二、网格布局</h2><h3 id="2-1-基本网格布局"><a href="#2-1-基本网格布局" class="headerlink" title="2.1 基本网格布局"></a>2.1 基本网格布局</h3><p>最简单的网格布局，就是平均分布。在容器里面平均分配空间，跟上面的骰子布局很像，但是需要设置项目的自动缩放。<br><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071321.png" alt="Alt text"><br>HTML代码如下。</p>
+<pre><code>&lt;div class=&quot;Grid&quot;&gt;
+      &lt;div class=&quot;Grid-cell&quot;&gt;...&lt;/div&gt;
+      &lt;div class=&quot;Grid-cell&quot;&gt;...&lt;/div&gt;
+      &lt;div class=&quot;Grid-cell&quot;&gt;...&lt;/div&gt;
+&lt;/div&gt;
+</code></pre><p>CSS代码如下。</p>
+<pre><code>.Grid {
+      display: flex;
+}
+.Grid-cell {
+      flex: 1;
+}
+</code></pre><h3 id="2-2-百分比布局"><a href="#2-2-百分比布局" class="headerlink" title="2.2 百分比布局"></a>2.2 百分比布局</h3><p>某个网格的宽度为固定的百分比，其余网格平均分配剩余的空间。<br><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071322.png" alt="Alt text"><br>HTML代码如下。</p>
+<pre><code>&lt;div class=&quot;Grid&quot;&gt;
+      &lt;div class=&quot;Grid-cell u-1of4&quot;&gt;...&lt;/div&gt;
+      &lt;div class=&quot;Grid-cell&quot;&gt;...&lt;/div&gt;
+      &lt;div class=&quot;Grid-cell u-1of3&quot;&gt;...&lt;/div&gt;
+&lt;/div&gt;
+
+.Grid {
+      display: flex;
+}
+
+.Grid-cell {
+      flex: 1;
+}
+
+.Grid-cell.u-full {
+      flex: 0 0 100%;
+}
+
+.Grid-cell.u-1of2 {
+      flex: 0 0 50%;
+}
+
+.Grid-cell.u-1of3 {
+      flex: 0 0 33.3333%;
+}
+
+.Grid-cell.u-1of4 {
+      flex: 0 0 25%;
+}
+</code></pre><h2 id="三、圣杯布局"><a href="#三、圣杯布局" class="headerlink" title="三、圣杯布局"></a>三、圣杯布局</h2><p>圣杯布局（Holy Grail Layout）指的是一种最常见的网站布局。页面从上到下，分成三个部分：头部（header），躯干（body），尾部（footer）。其中躯干又水平分成三栏，从左到右为：导航、主栏、副栏。</p>
+<p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071323.png" alt="Alt text"><br>HTML代码如下。</p>
+<pre><code>&lt;body class=&quot;HolyGrail&quot;&gt;
+  &lt;header&gt;...&lt;/header&gt;
+  &lt;div class=&quot;HolyGrail-body&quot;&gt;
+    &lt;main class=&quot;HolyGrail-content&quot;&gt;...&lt;/main&gt;
+    &lt;nav class=&quot;HolyGrail-nav&quot;&gt;...&lt;/nav&gt;
+    &lt;aside class=&quot;HolyGrail-ads&quot;&gt;...&lt;/aside&gt;
+  &lt;/div&gt;
+  &lt;footer&gt;...&lt;/footer&gt;
+&lt;/body&gt;
+</code></pre><p>CSS代码如下。</p>
+<pre><code>.HolyGrail {
+      display: flex;
+      min-height: 100vh;
+     flex-direction: column;
+}
+
+header,
+footer {
+      flex: 1;
+}
+
+.HolyGrail-body {
+      display: flex;
+      flex: 1;
+}
+
+.HolyGrail-content {
+      flex: 1;
+}
+
+.HolyGrail-nav, .HolyGrail-ads {
+      /* 两个边栏的宽度设为12em */
+      flex: 0 0 12em;
+}
+
+.HolyGrail-nav {
+      /* 导航放到最左边 */
+      order: -1;
+}
+</code></pre><p>如果是小屏幕，躯干的三栏自动变为垂直叠加。</p>
+<pre><code>@media (max-width: 768px) {
+      .HolyGrail-body {
+        flex-direction: column;
+        flex: 1;
+      }
+      .HolyGrail-nav,
+      .HolyGrail-ads,
+      .HolyGrail-content {
+           flex: auto;
+      }
+}
+</code></pre><h2 id="四、悬挂式布局"><a href="#四、悬挂式布局" class="headerlink" title="四、悬挂式布局"></a>四、悬挂式布局</h2><p>有时，主栏的左侧或右侧，需要添加一个图片栏。<br><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071325.png" alt="Alt text"><br>HTML代码如下。</p>
+<pre><code>&lt;div class=&quot;Media&quot;&gt;
+  &lt;img class=&quot;Media-figure&quot; src=&quot;&quot; alt=&quot;&quot;&gt;
+  &lt;p class=&quot;Media-body&quot;&gt;...&lt;/p&gt;
+&lt;/div&gt;
+</code></pre><p>CSS代码如下。</p>
+<pre><code>.Media {
+     display: flex;
+      align-items: flex-start;
+}
+
+.Media-figure {
+      margin-right: 1em;
+}
+
+.Media-body {
+      flex: 1;
+}
+</code></pre><h2 id="五、固定的底栏"><a href="#五、固定的底栏" class="headerlink" title="五、固定的底栏"></a>五、固定的底栏</h2><p>有时，页面内容太少，无法占满一屏的高度，底栏就会抬高到页面的中间。这时可以采用Flex布局，让底栏总是出现在页面的底部。<br><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071326.png" alt="Alt text"><br>HTML代码如下。</p>
+<pre><code>&lt;body class=&quot;Site&quot;&gt;
+  &lt;header&gt;...&lt;/header&gt;
+  &lt;main class=&quot;Site-content&quot;&gt;...&lt;/main&gt;
+  &lt;footer&gt;...&lt;/footer&gt;
+&lt;/body&gt;
+</code></pre><p>CSS代码如下。</p>
+<pre><code>.Site {
+      display: flex;
+      min-height: 100vh;
+      flex-direction: column;
+}
+
+.Site-content {
+      flex: 1;
+}
+</code></pre><h2 id="六，流式布局"><a href="#六，流式布局" class="headerlink" title="六，流式布局"></a>六，流式布局</h2><p>每行的项目数固定，会自动分行。<br><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071330.png" alt="Alt text"><br>CSS的写法。</p>
+<pre><code>.parent {
+      width: 200px;
+      height: 150px;
+      background-color: black;
+      display: flex;
+      flex-flow: row wrap;
+      align-content: flex-start;
+}
+
+.child {
+      box-sizing: border-box;
+      background-color: white;
+      flex: 0 0 25%;
+      height: 50px;
+      border: 1px solid red;
+}
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/11/01/Flex布局教程：实例篇【转】/" data-id="ciwu5dwfj0001oe0y936epoiz" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html/">html</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Flex布局教程：语法篇【转】" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/10/29/Flex布局教程：语法篇【转】/" class="article-date">
+  <time datetime="2016-10-29T07:19:20.000Z" itemprop="datePublished">2016-10-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/29/Flex布局教程：语法篇【转】/">Flex布局教程：语法篇【转】</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>本篇博客转至 阮一峰–Flex 布局教程：语法篇</p>
+<h1 id="网页布局（layout）是CSS的一个重点应用。"><a href="#网页布局（layout）是CSS的一个重点应用。" class="headerlink" title="网页布局（layout）是CSS的一个重点应用。"></a>网页布局（layout）是CSS的一个重点应用。</h1><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071001.gif" alt="Alt text"></p>
+<p>布局的传统解决方案，基于盒状模型，依赖 display属性 + position属性 + float属性。它对于那些特殊布局非常不方便，比如，垂直居中就不容易实现。<br><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071002.png" alt="Alt text"><br>2009年，W3C提出了一种新的方案—-Flex布局，可以简便、完整、响应式地实现各种页面布局。目前，它已经得到了所有浏览器的支持，这意味着，现在就能很安全地使用这项功能。<br><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071003.jpg" alt="Alt text"></p>
+<h2 id="一、Flex布局是什么？"><a href="#一、Flex布局是什么？" class="headerlink" title="一、Flex布局是什么？"></a>一、Flex布局是什么？</h2><p>Flex是Flexible Box的缩写，意为”弹性布局”，用来为盒状模型提供最大的灵活性。<br>任何一个容器都可以指定为Flex布局。</p>
+<pre><code>.box{
+    display: flex;
+}
+</code></pre><p>行内元素也可以使用Flex布局。</p>
+<pre><code>.box{
+    display: inline-flex;
+}
+</code></pre><p>Webkit内核的浏览器，必须加上 “-webkit” 前缀。</p>
+<pre><code>.box{
+    display: -webkit-flex; /* Safari */
+    display: flex;
+}
+</code></pre><p>注意，设为Flex布局以后，子元素的float、clear和vertical-align属性将失效。</p>
+<h2 id="二、基本概念"><a href="#二、基本概念" class="headerlink" title="二、基本概念"></a>二、基本概念</h2><p>采用Flex布局的元素，称为Flex容器（flex container），简称”容器”。它的所有子元素自动成为容器成员，称为Flex项目（flex item），简称”项目”。<br><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071004.png" alt="Alt text"><br>容器默认存在两根轴：水平的主轴（main axis）和垂直的交叉轴（cross axis）。主轴的开始位置（与边框的交叉点）叫做main start，结束位置叫做main end；交叉轴的开始位置叫做cross start，结束位置叫做cross end。<br>项目默认沿主轴排列。单个项目占据的主轴空间叫做main size，占据的交叉轴空间叫做cross size。</p>
+<h2 id="三、容器的属性"><a href="#三、容器的属性" class="headerlink" title="三、容器的属性"></a>三、容器的属性</h2><p>以下6个属性设置在容器上。</p>
+<p>flex-direction</p>
+<p>flex-wrap</p>
+<p>flex-flow</p>
+<p>justify-content</p>
+<p>align-items</p>
+<p>align-content</p>
+<h3 id="3-1-flex-direction属性"><a href="#3-1-flex-direction属性" class="headerlink" title="3.1 flex-direction属性"></a>3.1 flex-direction属性</h3><p>flex-direction属性决定主轴的方向（即项目的排列方向）。</p>
+<pre><code>.box {
+    flex-direction: row | row-reverse | column | column-reverse;
+}
+</code></pre><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071005.png" alt="Alt text"><br>它可能有4个值。</p>
+<p>row（默认值）：主轴为水平方向，起点在左端。</p>
+<p>row-reverse：主轴为水平方向，起点在右端。</p>
+<p>column：主轴为垂直方向，起点在上沿。</p>
+<p>column-reverse：主轴为垂直方向，起点在下沿。</p>
+<h3 id="3-2-flex-wrap属性"><a href="#3-2-flex-wrap属性" class="headerlink" title="3.2 flex-wrap属性"></a>3.2 flex-wrap属性</h3><p>默认情况下，项目都排在一条线（又称”轴线”）上。flex-wrap属性定义，如果一条轴线排不下，如何换行。<br><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071006.png" alt="Alt text"></p>
+<pre><code>.box{
+    flex-wrap: nowrap | wrap | wrap-reverse;
+}
+</code></pre><p>它可能取三个值。</p>
+<p>（1）nowrap（默认）：不换行。<br><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071007.png" alt="Alt text"><br>（2）wrap：换行，第一行在上方。</p>
+<p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071008.jpg" alt="Alt text"><br>（3）wrap-reverse：换行，第一行在下方。<br><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071009.jpg" alt="Alt text"></p>
+<h3 id="3-3-flex-flow"><a href="#3-3-flex-flow" class="headerlink" title="3.3 flex-flow"></a>3.3 flex-flow</h3><p>flex-flow属性是flex-direction属性和flex-wrap属性的简写形式，默认值为row nowrap。</p>
+<pre><code>.box {
+    flex-flow: &lt;flex-direction&gt; || &lt;flex-wrap&gt;;
+}
+</code></pre><h3 id="3-4-justify-content属性"><a href="#3-4-justify-content属性" class="headerlink" title="3.4 justify-content属性"></a>3.4 justify-content属性</h3><p>justify-content属性定义了项目在主轴上的对齐方式。</p>
+<pre><code>.box {
+    justify-content: flex-start | flex-end | center | space-between | space-around;
+}
+</code></pre><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071010.png" alt="Alt text"><br>它可能取5个值，具体对齐方式与轴的方向有关。下面假设主轴为从左到右。</p>
+<p>flex-start（默认值）：左对齐</p>
+<p>flex-end：右对齐</p>
+<p>center： 居中</p>
+<p>space-between：两端对齐，项目之间的间隔都相等。</p>
+<p>space-around：每个项目两侧的间隔相等。所以，项目之间的间隔比项目与边框的间隔大一倍。</p>
+<h3 id="3-5-align-items属性"><a href="#3-5-align-items属性" class="headerlink" title="3.5 align-items属性"></a>3.5 align-items属性</h3><p>align-items属性定义项目在交叉轴上如何对齐。</p>
+<pre><code>.box {
+    align-items: flex-start | flex-end | center | baseline | stretch;
+}
+</code></pre><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071011.png" alt="Alt text"><br>它可能取5个值。具体的对齐方式与交叉轴的方向有关，下面假设交叉轴从上到下。</p>
+<p>flex-start：交叉轴的起点对齐。</p>
+<p>flex-end：交叉轴的终点对齐。</p>
+<p>center：交叉轴的中点对齐。</p>
+<p>baseline: 项目的第一行文字的基线对齐。</p>
+<p>stretch（默认值）：如果项目未设置高度或设为auto，将占满整个容器的高度。</p>
+<h3 id="3-6-align-content属性"><a href="#3-6-align-content属性" class="headerlink" title="3.6 align-content属性"></a>3.6 align-content属性</h3><p>align-content属性定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用。</p>
+<pre><code>.box {
+    align-content: flex-start | flex-end | center | space-between | space-around | stretch;
+}
+</code></pre><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071012.png" alt="Alt text"><br>该属性可能取6个值。</p>
+<p>flex-start：与交叉轴的起点对齐。</p>
+<p>flex-end：与交叉轴的终点对齐。</p>
+<p>center：与交叉轴的中点对齐。</p>
+<p>space-between：与交叉轴两端对齐，轴线之间的间隔平均分布。</p>
+<p>space-around：每根轴线两侧的间隔都相等。所以，轴线之间的间隔比轴线与边框的间隔大一倍。<br>stretch（默认值）：轴线占满整个交叉轴。</p>
+<h2 id="四、项目的属性"><a href="#四、项目的属性" class="headerlink" title="四、项目的属性"></a>四、项目的属性</h2><p>以下6个属性设置在项目上。</p>
+<p>order</p>
+<p>flex-grow</p>
+<p>flex-shrink</p>
+<p>flex-basis</p>
+<p>flex</p>
+<p>align-self</p>
+<h3 id="4-1-order属性"><a href="#4-1-order属性" class="headerlink" title="4.1 order属性"></a>4.1 order属性</h3><p>order属性定义项目的排列顺序。数值越小，排列越靠前，默认为0。</p>
+<pre><code>.item {
+    order: &lt;integer&gt;;
+}
+</code></pre><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071013.png" alt="Alt text"></p>
+<h3 id="4-2-flex-grow属性"><a href="#4-2-flex-grow属性" class="headerlink" title="4.2 flex-grow属性"></a>4.2 flex-grow属性</h3><p>flex-grow属性定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大。</p>
+<pre><code>.item {
+    flex-grow: &lt;number&gt;; /* default 0 *;
+}
+</code></pre><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071014.png" alt="Alt text"><br>如果所有项目的flex-grow属性都为1，则它们将等分剩余空间（如果有的话）。如果一个项目的flex-grow属性为2，其他项目都为1，则前者占据的剩余空间将比其他项多一倍。</p>
+<h3 id="4-3-flex-shrink属性"><a href="#4-3-flex-shrink属性" class="headerlink" title="4.3 flex-shrink属性"></a>4.3 flex-shrink属性</h3><p>flex-shrink属性定义了项目的缩小比例，默认为1，即如果空间不足，该项目将缩小。</p>
+<pre><code>.item {
+    flex-shrink: &lt;number&gt;; /* default 1 */
+}
+</code></pre><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071015.jpg" alt="Alt text"><br>如果所有项目的flex-shrink属性都为1，当空间不足时，都将等比例缩小。如果一个项目的flex-shrink属性为0，其他项目都为1，则空间不足时，前者不缩小。<br>负值对该属性无效。</p>
+<h3 id="4-4-flex-basis属性"><a href="#4-4-flex-basis属性" class="headerlink" title="4.4 flex-basis属性"></a>4.4 flex-basis属性</h3><p>flex-basis属性定义了在分配多余空间之前，项目占据的主轴空间（main size）。浏览器根据这个属性，计算主轴是否有多余空间。它的默认值为auto，即项目的本来大小。</p>
+<pre><code>.item {
+    flex-basis: &lt;length&gt; | auto; /* default auto */
+}
+</code></pre><p>它可以设为跟width或height属性一样的值（比如350px），则项目将占据固定空间。</p>
+<h3 id="4-5-flex属性"><a href="#4-5-flex属性" class="headerlink" title="4.5 flex属性"></a>4.5 flex属性</h3><p>flex属性是flex-grow, flex-shrink 和 flex-basis的简写，默认值为0 1 auto。后两个属性可选。</p>
+<pre><code>.item {
+    flex: none | [ &lt;&apos;flex-grow&apos;&gt; &lt;&apos;flex-shrink&apos;&gt;? || &lt;&apos;flex-basis&apos;&gt; ]
+}
+</code></pre><p>该属性有两个快捷值：auto (1 1 auto) 和 none (0 0 auto)。<br>建议优先使用这个属性，而不是单独写三个分离的属性，因为浏览器会推算相关值。</p>
+<h3 id="4-6-align-self属性"><a href="#4-6-align-self属性" class="headerlink" title="4.6 align-self属性"></a>4.6 align-self属性</h3><p>align-self属性允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性。默认值为auto，表示继承父元素的align-items属性，如果没有父元素，则等同于stretch。</p>
+<pre><code>.item {
+    align-self: auto | flex-start | flex-end | center | baseline | stretch;
+}
+</code></pre><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071016.png" alt="Alt text"><br>该属性可能取6个值，除了auto，其他都与align-items属性完全一致。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/10/29/Flex布局教程：语法篇【转】/" data-id="ciwu5dwgr0014oe0ysj9tpyqk" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html/">html</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-关于node-js的误会【转】" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/10/25/关于node-js的误会【转】/" class="article-date">
+  <time datetime="2016-10-25T13:22:52.000Z" itemprop="datePublished">2016-10-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/25/关于node-js的误会【转】/">关于node.js的误会【转】</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>关于单线程一个由来已久的误会</p>
+<p>在上篇博客中提到我们使用node.js写的JavaScript代码是单线程运行的，让很多同学很疑惑，单线程怎么实现异步操作，单线程谁去响应事件。。。在html5 Web Workers中我也有提到过客户端的JavaScript也是单线程运行的，大家明显没有这么大反应，还是普遍能接受的。可单线程的客户端JavaScript也能响应DOM事件，还有大家都很熟悉的ajax操作，回调函数也是异步的，既然客户端JavaScript是单线程执行的，回调函数是谁调用的呢？答案很简单，JavaScript的宿主环境——浏览器，也就是说虽然JavaScript是单线程执行的，但浏览器是多线程的，负责调度管理JavaScript代码，让它们在恰当的时机执行。</p>
+<p>所以我们所说的node.js单线程，是指node.js并没有给我们创建一个线程的能力，所有我们自己写的代码都是单线程执行的，在同一时间内，只能执行我们写的一句代码。但宿主环境node.js并不是单线程的，它会维护一个执行队列，循环检测，调度JavaScript线程来执行。因此单线程执行和并发操作并不冲突。</p>
+<p>阻塞与线程什么叫阻塞（block）？<br>线程在执行中如果遇到I/O操作（磁盘读写、网络通信等）通常需要耗费较长的时间，这时候操作系统会剥夺线程对CPU的控制权，使其暂停，并把资源让给其它的工作线程，这种线程调度方式成为阻塞。当I/O操作完毕的时候操作系统将这个线程的阻塞状态解除，恢复其对CPU的控制权，令其继续执行，这种I/O模式就是同步I/O或成为阻塞I/O。</p>
+<p>响应的异步I/O或非阻塞I/O则针对所有的I/O操作采取不阻塞的策略，当线程遇到I/O操作时不会以阻塞的方式等待I/O操作结束，而只是将I/O请求发送给操作系统，继续执行后续语句。当操作系统完成I/O操作时以事件的形式通知执行I/O操作的线程，线程会在特定时间处理这个事件。为了处理异步I/O必须有事件循环，不断检查有没有未处理的事件，依次予以处理。</p>
+<p>在阻塞模式下，一个线程只能处理一个任务，要想提高吞吐量必须通过多线程。而在非阻塞模式下一个线程永远在执行计算操作，这个线程所使用的CPU核心利用率永远是100%，I/O以事件的方式通知。在阻塞模式下多线程往往能够提高系统吞吐量，因为一个线程阻塞时还有其他线程在工作，多线程何以让CPU资源不被阻塞的线程浪费。而在非阻塞模式下，线程不会被I/O阻塞，永远在利用CPU。异步I/O减少了多线程中创建线程、分配内存、列入调度、切换线程、内存换页、CPU缓存等方面的开销。</p>
+<p>事件循环机制<br>上面提到了几次事件循环机制，那么这个听起来貌似很高端的东东究竟是什么呢？所谓事件循环是指node.js会把所有的异步操作使用事件机制解决，有个线程在不断地循环检测事件队列。node.js中所有的逻辑都是事件的回调函数，所以node.js始终在事件循环中，程序入口就是事件循环第一个事件的回调函数。事件的回调函数中可能会发出I/O请求或直接发射（ emit）事件，执行完毕后返回事件循环。事件循环会检查事件队列中有没有未处理的事件，直到程序结束。node.js的事件循环对开发者不可见，由libev库实现，libev不断检查是否有活动的、可供检测的事件监听器，直到检查不到时才退出事件循环，程序结束。<br><img src="http://images.cnitblog.com/blog/349217/201312/15164932-d9522c09f6094aa2b89455889a3f0e3b.png" alt="Alt text"></p>
+<h3 id="node-js是什么？和JavaScript有什么关系？"><a href="#node-js是什么？和JavaScript有什么关系？" class="headerlink" title="node.js是什么？和JavaScript有什么关系？"></a>node.js是什么？和JavaScript有什么关系？</h3><h3 id="关于node-js究竟是什么，大家的问题在于"><a href="#关于node-js究竟是什么，大家的问题在于" class="headerlink" title="关于node.js究竟是什么，大家的问题在于"></a>关于node.js究竟是什么，大家的问题在于</h3><h3 id="node-js是不是一门语言？"><a href="#node-js是不是一门语言？" class="headerlink" title="node.js是不是一门语言？"></a>node.js是不是一门语言？</h3><h3 id="node-js是不是一个JavaScript库函数？"><a href="#node-js是不是一个JavaScript库函数？" class="headerlink" title="node.js是不是一个JavaScript库函数？"></a>node.js是不是一个JavaScript库函数？</h3><h3 id="node-js是不是一个JavaScript框架？"><a href="#node-js是不是一个JavaScript框架？" class="headerlink" title="node.js是不是一个JavaScript框架？"></a>node.js是不是一个JavaScript框架？</h3><p>很遗憾，这三个问题的答案都是NO，看看官方对自己的描述</p>
+<p>Node.js is a platform built on Chrome’s JavaScript runtime for easily building fast, scalable network applications. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient, perfect for data-intensive real-time applications that run across distributed devices.</p>
+<p>官方很明确地说node.js是一个platform，也就是一个做xxx的平台。node.js是一个可以在服务器端运行JavaScript的平台，其实这句话华也不准确，按照《JavaScript权威指南》《JavaScript高级程序设计》等书中的定义，JavaScript是由两部分组成</p>
+<p>core JavaScript<br>client JavaScript（DOM、BOM）<br>而只有core JavaScript可以在node.js上运行，所以node.js借用了JavaScript的语法，但并不能用来处理浏览器对象（BOM）及文档对象（DOM），所以node.js并不是设计为在服务器端运行解析html文档的（当然有module可以做此事），所以“在服务器端运行的JavaScript”在一定程度上误导了初学者。</p>
+<p>同时node.js并不仅仅运行core JavaScript，node.js中还有文件系统、模块包、操作系统API、网络通信、二进制类型处理等core JavaScript不具备的功能。</p>
+<p>node.js是在执行JavaScript语句吗<br>从字面意思上是的，因为我们在使用node.js开发的时候写的确实是JavaScript语句，而且node.js利用Google的V8 Javascript 引擎来解析JavaScript语句，但系统真正调用执行的代码是用C++写的，我们做的只是用JavaScript语句来调用这些底层API，所以不用担心其执行效率过低问题</p>
+<p>异步I/O与事件驱动<br>毫不夸张的说node.js最大的特定就是采用异步I/O和事件驱动架构，对于高并发解决方案传统架构师多线程模型，为每个业务逻辑童工一个线程，通过系统线程切换来来弥补同步I/O调用的时间开销。node.js使用的是单线程模型，对所有I/O都采用异步式的请求方式，避免频繁的上下文切换，在node.js执行的时候维护着一个事件队列，程序在执行时进入事件循环等待下一个事件到来，每个异步I/O请求完成后都会被推送到事件队列中的等待执行。</p>
+<p>对于一个简单的数据库访问操作，传统方式是这样实现的</p>
+<pre><code>res = db.query(&apos;SELECT * from some_table&apos;);
+res.output();
+</code></pre><p>代码执行到第一行的时候线程会阻塞，等待query返回结果，然后继续处理。由于数据库查询、磁盘读写、网络通信等原因阻塞时间会非常大（相对于CPU始终频率）。对于高并发的访问，一方面线程长期阻塞等待，另一方面为了应付新情求而不断添加新线程，会浪费大量系统资源，同时线程的增加也会也会占用大量的CPU时间来处理内存上下文切换。看看node.js怎么处理</p>
+<pre><code> db.query(&apos;SELECT * from some_table&apos;, function(res) { 
+       res.output();
+});
+</code></pre><p>在代码中熟悉Javascript的同学一眼就可以看明白query的第二个参数是一个回调函数，进程执行到db.query的时候不会等待结果返回，而是直接继续执行下面的语句，直到进入事件循环。当数据库执行结果返回的时候会将事件发送到事件队列，等到线程进入事件循环后才会调用之前的回调函数。</p>
+<p>node.js的异步机制是基于事件的，所有的I/O、网络通信、数据库查询都以非阻塞的方式执行，返回结果由事件循环来处理。node.js在同一时刻只会处理一个事件，完成后立即进入事件循环检查后面事件。这样CPU和内存在同一时间集中处理一件事，同时尽量让耗时的I/O等操作并行执行。</p>
+<p>node.js架构<br>node.js用异步式I/O和事件驱动代替多线程提升性能，除了使用高效的V8作为JavaScript引擎外还使用了高效的libev和libeio库支持事件驱动和异步I/O。</p>
+<p><img src="http://images.cnitblog.com/blog/349217/201312/15160642-f5975482ad8641dab0712d26b7118401.png" alt="Alt text"></p>
+<p>node.js作者在libeio和libev的基础上抽象出了libuv层，对于POSIX(Portable Operating System Interface 是一套操作系统API规范，遵循的有Unix、Linux、Mac OS X等)操作系统libuv通过封装libev和libio来利用epoll或kqueue。而在Windows下libuv使用了IOCP（Input/Output Completion Port,输入输出完􏰛端）机制 在不同平台下实现高性能。</p>
+<p>了解了这个就不要再以为node.js是利用JavaScript来操作系统了</p>
+<h3 id="为什么要使用node-js"><a href="#为什么要使用node-js" class="headerlink" title="为什么要使用node.js"></a>为什么要使用node.js</h3><p>其实这个问题可以归结为node.js有什么特长，除了语法上让熟悉JavaScript的人很舒服。相对于Javascript为客户端而生，node.js为网络而生，一切都以http为主，其内建HTTP服务器支持，使用node.js可以轻易地搭建一个网站和服务器组合，而不用想使用PHP还需要额外的Apache服务器，通过特有模块或CGI调用才能将PHP脚本结果返回给用户。</p>
+<p>node.js还可以部署到非网络应用环境下，因为其可以调用C/C++代码，充分利用现有函数库，在性能上有很大优越性。</p>
+<p>在这些场景下使用node.js是非常合适的</p>
+<h3 id="1-web-socket服务器"><a href="#1-web-socket服务器" class="headerlink" title="1.web socket服务器"></a>1.web socket服务器</h3><h3 id="2-TCP-UDP套接字应用程序"><a href="#2-TCP-UDP套接字应用程序" class="headerlink" title="2.TCP/UDP套接字应用程序"></a>2.TCP/UDP套接字应用程序</h3><h3 id="3-复杂逻辑的web应用"><a href="#3-复杂逻辑的web应用" class="headerlink" title="3.复杂逻辑的web应用"></a>3.复杂逻辑的web应用</h3><h3 id="4-命令行工具"><a href="#4-命令行工具" class="headerlink" title="4.命令行工具"></a>4.命令行工具</h3><h3 id="5-客户端Javascript编译器"><a href="#5-客户端Javascript编译器" class="headerlink" title="5.客户端Javascript编译器"></a>5.客户端Javascript编译器</h3><p>参考及最后<br>博客中基本理论知识都来源于《Node.js开发指南》，甚至很多篇幅都是直接使用原话，没有抄袭据为己有的意思，只是作者说的太明白了，希望对初入node.js的朋友有帮助，当然如果感兴趣可以直接购买原书。</p>
+<p>希望唠唠叨叨这么多，能够对对之前博客持有疑问的博友有所帮助，最后在唠叨一句，单线程执行是指我们写的JavaScript语句在同一时刻只能执行一句，而不是node.js是单线程，其实我们的异步I/O及事件循环都是另外线程在做。</p>
+<p>当然对于一些CPU密集的操作在node.js里面也有process.nextTick()这样的解决方案或者直接使用C++处理，研究明白了和大家分享，也有人不满意node.js的单线程写了自己的module来让node.js多线程，感兴趣的同学可以看看node-threads-a-gogo</p>
+<p>由于刚刚接触node.js，文中谬误颇多，希望多家多多批评指教</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/10/25/关于node-js的误会【转】/" data-id="ciwu5dwgb000moe0ygyrfy3sp" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node-js/">node.js</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-node-js入门【转】" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/10/19/node-js入门【转】/" class="article-date">
+  <time datetime="2016-10-19T13:17:09.000Z" itemprop="datePublished">2016-10-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/19/node-js入门【转】/">node.js入门【转】</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>由于跑到另一个城市，手头没电脑，dom framework不能如期发布，趁此学习一些新东西。这时期最迫切的需要是寻求一个超轻量的后端来架起我的框架，于是触爪伸向传说中的Server-Side Javascrpt。后端JS最出名无疑是Ryan Dahl的node.js，另一个是aptana IDE提供商搞出的jaxer。</p>
+<p>首先下载node.js，然后解压到E盘，改名为node，然后开始菜单输入cmd，用cd命令切换到nodejs的解压目录：</p>
+<p><img src="http://images.cnblogs.com/cnblogs_com/rubylouvre/253006/o_node1.jpg" alt="Alt text"></p>
+<p>第一个例子：hello world。</p>
+<p>在node目录下建立hello.js文件，然后在里面输入：</p>
+<pre><code>//var sys = require(&quot;sys&quot;);
+var sys = require(&quot;util&quot;)
+sys.puts(&quot;Hello world&quot;);
+</code></pre><p>然后我们在命名台中输入命令node hello.js，就能看到命名台输出结果Hello world。</p>
+<p>第二个例子：hello world2。</p>
+<p>好了，这次我们试从游览器中输出hello world。在node目录下建立http.js，然后输入：</p>
+<pre><code>//var sys = require(&quot;sys&quot;);
+var sys = require(&quot;util&quot;)
+var http = require(&quot;http&quot;);
+http.createServer(function(request, response) {
+ //   response.sendHeader(200, {&quot;Content-Type&quot;: &quot;text/html&quot;});
+response.writeHeader(200, {&quot;Content-Type&quot;: &quot;text/html&quot;});
+response.write(&quot;Hello World!&quot;);
+ //   response.close();
+response.end();
+}).listen(8080);
+sys.puts(&quot;Server running at http://localhost:8080/&quot;);
+</code></pre><p>然后我们在命名台中输入命令node http.js，在浏览器输入<a href="http://localhost:8080/" target="_blank" rel="external">http://localhost:8080/</a><br><img src="http://images.cnblogs.com/cnblogs_com/rubylouvre/253006/o_node2.jpg" alt="Alt text"></p>
+<p><img src="http://images.cnblogs.com/cnblogs_com/rubylouvre/253006/o_node3.jpg" alt="Alt text"><br>第三个例子：hello world2。</p>
+<p>node.js提供一个Buffer类用于转换不同编码的字符串。目前支持三种类型：’ascii’，’utf8’与’binary’。</p>
+<pre><code>var Buffer = require(&apos;buffer&apos;).Buffer,
+buf = new Buffer(256),
+len = buf.write(&apos;\u00bd + \u00bc = \u00be&apos;, 0);
+console.log(len + &quot; bytes: &quot; + buf.toString(&apos;utf8&apos;, 0, len));
+第四个例子：hello world3。
+//synopsis.js
+//synopsis 摘要, 梗概，大纲
+var http = require(&apos;http&apos;);
+
+http.createServer(function (request, response) {
+  response.writeHead(200, {&apos;Content-Type&apos;: &apos;text/plain&apos;});
+  response.end(&apos;Hello World\n&apos;);
+}).listen(8124);
+
+console.log(&apos;Server running at http://127.0.0.1:8124/&apos;);
+</code></pre><p>前台地址栏：<a href="http://localhost:8124/" target="_blank" rel="external">http://localhost:8124/</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/10/19/node-js入门【转】/" data-id="ciwu5dwg2000boe0y1qeb5wiz" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node-js/">node.js</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  <nav id="page-nav">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">__('next') &raquo;</a>
+  </nav>
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ajax/">Ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/canvas/">canvas</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/http/">http</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/https/">https</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/">js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node-js/">node.js</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Ajax/" style="font-size: 10px;">Ajax</a> <a href="/tags/canvas/" style="font-size: 12.5px;">canvas</a> <a href="/tags/css/" style="font-size: 20px;">css</a> <a href="/tags/html/" style="font-size: 17.5px;">html</a> <a href="/tags/http/" style="font-size: 10px;">http</a> <a href="/tags/https/" style="font-size: 10px;">https</a> <a href="/tags/js/" style="font-size: 20px;">js</a> <a href="/tags/node-js/" style="font-size: 15px;">node.js</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/12/15/事件流/">事件流</a>
+          </li>
+        
+          <li>
+            <a href="/2016/12/02/关于http与https/">关于http与https</a>
+          </li>
+        
+          <li>
+            <a href="/2016/11/21/简单的三栏布局/">简单的三栏布局</a>
+          </li>
+        
+          <li>
+            <a href="/2016/11/19/浅谈html-css与js/">浅谈html,css与js</a>
+          </li>
+        
+          <li>
+            <a href="/2016/11/13/Javascript定义类（class）的三种方法【转】/">Javascript定义类（class）的三种方法【转】</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 zmytooo<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
