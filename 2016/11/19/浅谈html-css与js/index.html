@@ -1,0 +1,320 @@
+
+ <!DOCTYPE HTML>
+<html >
+<head>
+  <meta charset="UTF-8">
+  
+    <title>浅谈html,css与js | tooo的前端路</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+    
+    <meta name="author" content="zmytooo">
+    
+    <meta name="description" content="接触前端已经大概有10个月了，最近总结了一下已经了解的知识。到底什么是html,什么是css，什么是js又让我仔细回想了很久。这里，我个人对这些概念性的东西做了个总结（欢迎各位大神指教）
+HTML1.1 什么是html？HTML（Hypertext Markup Language）即超文本标记语言，">
+    
+    
+    
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/pacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/pacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+  <body>
+    <header>
+      <div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.svg" alt="tooo的前端路" title="tooo的前端路"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="tooo的前端路">tooo的前端路</a></h1>
+				<h2 class="blog-motto">之路漫漫</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+					<li>
+					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="text" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
+						<input type="hidden" name="q" value="site:yoursite.com">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2016/11/19/浅谈html-css与js/" title="浅谈html,css与js" itemprop="url">浅谈html,css与js</a>
+  </h1>
+  <p class="article-author">By
+    
+      <a href="http://yoursite.com" title="zmytooo">zmytooo</a>
+    </p>
+  <p class="article-time">
+    <time datetime="2016-11-19T10:27:35.000Z" itemprop="datePublished">2016-11-19</time>
+    Updated:<time datetime="2016-12-17T14:37:03.000Z" itemprop="dateModified">2016-12-17</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">Contents</strong>
+		<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#HTML"><span class="toc-number">1.</span> <span class="toc-text">HTML</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-什么是html？"><span class="toc-number">1.1.</span> <span class="toc-text">1.1 什么是html？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#HTML（Hypertext-Markup-Language）即超文本标记语言，是用于描述网页文档的一种标记语言。"><span class="toc-number">1.1.1.</span> <span class="toc-text">HTML（Hypertext Markup Language）即超文本标记语言，是用于描述网页文档的一种标记语言。</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-什么是html5？"><span class="toc-number">1.2.</span> <span class="toc-text">1.2 什么是html5？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#HTML5-是对-HTML-标准的第五次修订。其主要的目标是将互联网语义化，以便更好地被人类和机器阅读，并同时提供更好地支持各种媒体的嵌入。新的语法特征被引进以支持这一点-如video、audio和canvas-标记。"><span class="toc-number">1.2.1.</span> <span class="toc-text">HTML5 是对 HTML 标准的第五次修订。其主要的目标是将互联网语义化，以便更好地被人类和机器阅读，并同时提供更好地支持各种媒体的嵌入。新的语法特征被引进以支持这一点,如video、audio和canvas 标记。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#·-新的解析规则增强了灵活性"><span class="toc-number">1.2.2.</span> <span class="toc-text">· 新的解析规则增强了灵活性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#·-新属性"><span class="toc-number">1.2.3.</span> <span class="toc-text">· 新属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#·-淘汰过时的或冗余的属性"><span class="toc-number">1.2.4.</span> <span class="toc-text">· 淘汰过时的或冗余的属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#·-一个HTML5文档到另一个文档间的拖放功能"><span class="toc-number">1.2.5.</span> <span class="toc-text">· 一个HTML5文档到另一个文档间的拖放功能</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#CSS"><span class="toc-number">2.</span> <span class="toc-text">CSS</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1什么是css？"><span class="toc-number">2.1.</span> <span class="toc-text">1.1什么是css？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#css（Cascading-Style-Sheets）即层叠样式表，是一种用来表现HTML（标准通用标记语言的一个应用）或XML（标准通用标记语言的一个子集）等文件样式的计算机语言"><span class="toc-number">2.1.1.</span> <span class="toc-text">css（Cascading Style Sheets）即层叠样式表，是一种用来表现HTML（标准通用标记语言的一个应用）或XML（标准通用标记语言的一个子集）等文件样式的计算机语言</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-什么是css3？"><span class="toc-number">2.2.</span> <span class="toc-text">1.2 什么是css3？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#css3是css目前的最新版本，是能够真正做到网页表现与内容分离的一种样式设计语言。"><span class="toc-number">2.2.1.</span> <span class="toc-text">css3是css目前的最新版本，是能够真正做到网页表现与内容分离的一种样式设计语言。</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#什么是javascript"><span class="toc-number">3.</span> <span class="toc-text">什么是javascript</span></a></li></ol>
+		</div>
+		
+		<p>接触前端已经大概有10个月了，最近总结了一下已经了解的知识。到底什么是html,什么是css，什么是js又让我仔细回想了很久。这里，我个人对这些概念性的东西做了个总结（欢迎各位大神指教）</p>
+<h1 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h1><h2 id="1-1-什么是html？"><a href="#1-1-什么是html？" class="headerlink" title="1.1 什么是html？"></a>1.1 什么是html？</h2><h3 id="HTML（Hypertext-Markup-Language）即超文本标记语言，是用于描述网页文档的一种标记语言。"><a href="#HTML（Hypertext-Markup-Language）即超文本标记语言，是用于描述网页文档的一种标记语言。" class="headerlink" title="HTML（Hypertext Markup Language）即超文本标记语言，是用于描述网页文档的一种标记语言。"></a>HTML（Hypertext Markup Language）即超文本标记语言，是用于描述网页文档的一种标记语言。</h3><h2 id="1-2-什么是html5？"><a href="#1-2-什么是html5？" class="headerlink" title="1.2 什么是html5？"></a>1.2 什么是html5？</h2><h3 id="HTML5-是对-HTML-标准的第五次修订。其主要的目标是将互联网语义化，以便更好地被人类和机器阅读，并同时提供更好地支持各种媒体的嵌入。新的语法特征被引进以支持这一点-如video、audio和canvas-标记。"><a href="#HTML5-是对-HTML-标准的第五次修订。其主要的目标是将互联网语义化，以便更好地被人类和机器阅读，并同时提供更好地支持各种媒体的嵌入。新的语法特征被引进以支持这一点-如video、audio和canvas-标记。" class="headerlink" title="HTML5 是对 HTML 标准的第五次修订。其主要的目标是将互联网语义化，以便更好地被人类和机器阅读，并同时提供更好地支持各种媒体的嵌入。新的语法特征被引进以支持这一点,如video、audio和canvas 标记。"></a>HTML5 是对 HTML 标准的第五次修订。其主要的目标是将互联网语义化，以便更好地被人类和机器阅读，并同时提供更好地支持各种媒体的嵌入。新的语法特征被引进以支持这一点,如video、audio和canvas 标记。</h3><p>HTML5还引进了新的功能,可以真正改变用户与文档的交互方式,包括:</p>
+<h3 id="·-新的解析规则增强了灵活性"><a href="#·-新的解析规则增强了灵活性" class="headerlink" title="· 新的解析规则增强了灵活性"></a>· 新的解析规则增强了灵活性</h3><h3 id="·-新属性"><a href="#·-新属性" class="headerlink" title="· 新属性"></a>· 新属性</h3><h3 id="·-淘汰过时的或冗余的属性"><a href="#·-淘汰过时的或冗余的属性" class="headerlink" title="· 淘汰过时的或冗余的属性"></a>· 淘汰过时的或冗余的属性</h3><h3 id="·-一个HTML5文档到另一个文档间的拖放功能"><a href="#·-一个HTML5文档到另一个文档间的拖放功能" class="headerlink" title="· 一个HTML5文档到另一个文档间的拖放功能"></a>· 一个HTML5文档到另一个文档间的拖放功能</h3><p>这里新的HTML标签对我们的代码也有很大的帮助。一个典型的WEB页面包含头部,脚部,导航,中心区域,侧边栏。现在如果我们想在在更早的HTML区域中呈现这些内容,我们可能要使用DIV标签。但是html5定义的新标签会使区域创建元素名称使他们更加清晰,也使得你的HTML更加可读。<br>比如，我个人的代码风格是头部最外面使用header标签，尾部使用footer，导航区域使用nav标签。中心内容使用aside和section包裹</p>
+<h1 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h1><h2 id="1-1什么是css？"><a href="#1-1什么是css？" class="headerlink" title="1.1什么是css？"></a>1.1什么是css？</h2><h3 id="css（Cascading-Style-Sheets）即层叠样式表，是一种用来表现HTML（标准通用标记语言的一个应用）或XML（标准通用标记语言的一个子集）等文件样式的计算机语言"><a href="#css（Cascading-Style-Sheets）即层叠样式表，是一种用来表现HTML（标准通用标记语言的一个应用）或XML（标准通用标记语言的一个子集）等文件样式的计算机语言" class="headerlink" title="css（Cascading Style Sheets）即层叠样式表，是一种用来表现HTML（标准通用标记语言的一个应用）或XML（标准通用标记语言的一个子集）等文件样式的计算机语言"></a>css（Cascading Style Sheets）即层叠样式表，是一种用来表现HTML（标准通用标记语言的一个应用）或XML（标准通用标记语言的一个子集）等文件样式的计算机语言</h3><h2 id="1-2-什么是css3？"><a href="#1-2-什么是css3？" class="headerlink" title="1.2 什么是css3？"></a>1.2 什么是css3？</h2><h3 id="css3是css目前的最新版本，是能够真正做到网页表现与内容分离的一种样式设计语言。"><a href="#css3是css目前的最新版本，是能够真正做到网页表现与内容分离的一种样式设计语言。" class="headerlink" title="css3是css目前的最新版本，是能够真正做到网页表现与内容分离的一种样式设计语言。"></a>css3是css目前的最新版本，是能够真正做到网页表现与内容分离的一种样式设计语言。</h3><h1 id="什么是javascript"><a href="#什么是javascript" class="headerlink" title="什么是javascript"></a>什么是javascript</h1><p>JavaScript一种直译式脚本语言，是一种动态类型、弱类型、基于原型的语言，内置支持类型。它的解释器被称为JavaScript引擎，为浏览器的一部分，广泛用于客户端的脚本语言，最早是在HTML（标准通用标记语言下的一个应用）网页上使用，用来给HTML网页增加动态功能。</p>
+<p>对于这些基础的知识还有很多内容，我们下次再聊~~~</p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/js/">js</a><a href="/tags/html/">html</a><a href="/tags/css/">css</a>
+  </div>
+
+
+
+
+<div class="article-share" id="share">
+
+  <div data-url="http://yoursite.com/2016/11/19/浅谈html-css与js/" data-title="浅谈html,css与js | tooo的前端路" data-tsina="null" class="share clearfix">
+  </div>
+
+</div>
+</footer>   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2016/11/21/简单的三栏布局/" title="简单的三栏布局">
+  <strong>PREVIOUS:</strong><br/>
+  <span>
+  简单的三栏布局</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/2016/11/13/Javascript定义类（class）的三种方法【转】/"  title="Javascript定义类（class）的三种方法【转】">
+ <strong>NEXT:</strong><br/> 
+ <span>Javascript定义类（class）的三种方法【转】
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">Contents</strong>
+  <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#HTML"><span class="toc-number">1.</span> <span class="toc-text">HTML</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-什么是html？"><span class="toc-number">1.1.</span> <span class="toc-text">1.1 什么是html？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#HTML（Hypertext-Markup-Language）即超文本标记语言，是用于描述网页文档的一种标记语言。"><span class="toc-number">1.1.1.</span> <span class="toc-text">HTML（Hypertext Markup Language）即超文本标记语言，是用于描述网页文档的一种标记语言。</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-什么是html5？"><span class="toc-number">1.2.</span> <span class="toc-text">1.2 什么是html5？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#HTML5-是对-HTML-标准的第五次修订。其主要的目标是将互联网语义化，以便更好地被人类和机器阅读，并同时提供更好地支持各种媒体的嵌入。新的语法特征被引进以支持这一点-如video、audio和canvas-标记。"><span class="toc-number">1.2.1.</span> <span class="toc-text">HTML5 是对 HTML 标准的第五次修订。其主要的目标是将互联网语义化，以便更好地被人类和机器阅读，并同时提供更好地支持各种媒体的嵌入。新的语法特征被引进以支持这一点,如video、audio和canvas 标记。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#·-新的解析规则增强了灵活性"><span class="toc-number">1.2.2.</span> <span class="toc-text">· 新的解析规则增强了灵活性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#·-新属性"><span class="toc-number">1.2.3.</span> <span class="toc-text">· 新属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#·-淘汰过时的或冗余的属性"><span class="toc-number">1.2.4.</span> <span class="toc-text">· 淘汰过时的或冗余的属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#·-一个HTML5文档到另一个文档间的拖放功能"><span class="toc-number">1.2.5.</span> <span class="toc-text">· 一个HTML5文档到另一个文档间的拖放功能</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#CSS"><span class="toc-number">2.</span> <span class="toc-text">CSS</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1什么是css？"><span class="toc-number">2.1.</span> <span class="toc-text">1.1什么是css？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#css（Cascading-Style-Sheets）即层叠样式表，是一种用来表现HTML（标准通用标记语言的一个应用）或XML（标准通用标记语言的一个子集）等文件样式的计算机语言"><span class="toc-number">2.1.1.</span> <span class="toc-text">css（Cascading Style Sheets）即层叠样式表，是一种用来表现HTML（标准通用标记语言的一个应用）或XML（标准通用标记语言的一个子集）等文件样式的计算机语言</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-什么是css3？"><span class="toc-number">2.2.</span> <span class="toc-text">1.2 什么是css3？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#css3是css目前的最新版本，是能够真正做到网页表现与内容分离的一种样式设计语言。"><span class="toc-number">2.2.1.</span> <span class="toc-text">css3是css目前的最新版本，是能够真正做到网页表现与内容分离的一种样式设计语言。</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#什么是javascript"><span class="toc-number">3.</span> <span class="toc-text">什么是javascript</span></a></li></ol>
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<aside class="clearfix">
+
+  
+
+  
+<div class="tagslist">
+	<p class="asidetitle">Tags</p>
+		<ul class="clearfix">
+		
+			<li><a href="/tags/Ajax/" title="Ajax">Ajax<sup>1</sup></a></li>
+		
+			<li><a href="/tags/canvas/" title="canvas">canvas<sup>2</sup></a></li>
+		
+			<li><a href="/tags/css/" title="css">css<sup>11</sup></a></li>
+		
+			<li><a href="/tags/html/" title="html">html<sup>6</sup></a></li>
+		
+			<li><a href="/tags/http/" title="http">http<sup>1</sup></a></li>
+		
+			<li><a href="/tags/https/" title="https">https<sup>1</sup></a></li>
+		
+			<li><a href="/tags/js/" title="js">js<sup>11</sup></a></li>
+		
+			<li><a href="/tags/node-js/" title="node.js">node.js<sup>3</sup></a></li>
+		
+		</ul>
+</div>
+
+
+  <div class="rsspart">
+	<a href="null" target="_blank" title="rss">RSS</a>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<div class="social-font clearfix">
+		
+		
+		
+		
+		
+	</div>
+		<p class="copyright">Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/A-limon/pacman" target="_blank" title="Pacman">Pacman</a> © 2016 
+		
+		<a href="http://yoursite.com" target="_blank" title="zmytooo">zmytooo</a>
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+    c.click(function(){
+      ta.css('display', 'block').addClass('fadeIn');
+    });
+    o.click(function(){
+      ta.css('display', 'none');
+    });
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,320-$(this).scrollTop()));
+    });
+  };
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
+
+
+
+
+
+
+  </body>
+</html>

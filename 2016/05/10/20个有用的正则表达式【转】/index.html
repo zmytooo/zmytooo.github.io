@@ -1,0 +1,365 @@
+
+ <!DOCTYPE HTML>
+<html >
+<head>
+  <meta charset="UTF-8">
+  
+    <title>20个有用的正则表达式【转】 | tooo的前端路</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+    
+    <meta name="author" content="zmytooo">
+    
+    <meta name="description" content="知道这20个正则表达式，能让你少写1,000行代码正则表达式，一个十分古老而又强大的文本处理工具，仅仅用一段非常简短的表达式语句，便能够快速实现一个非常复杂的业务逻辑。熟练地掌握正则表达式的话，能够使你的开发效率得到极大的提升。
+正则表达式经常被用于字段或任意字符串的校验，如下面这段校验基本日期格式">
+    
+    
+    
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/pacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/pacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+  <body>
+    <header>
+      <div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.svg" alt="tooo的前端路" title="tooo的前端路"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="tooo的前端路">tooo的前端路</a></h1>
+				<h2 class="blog-motto">之路漫漫</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+					<li>
+					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="text" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
+						<input type="hidden" name="q" value="site:yoursite.com">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2016/05/10/20个有用的正则表达式【转】/" title="20个有用的正则表达式【转】" itemprop="url">20个有用的正则表达式【转】</a>
+  </h1>
+  <p class="article-author">By
+    
+      <a href="http://yoursite.com" title="zmytooo">zmytooo</a>
+    </p>
+  <p class="article-time">
+    <time datetime="2016-05-10T12:06:04.000Z" itemprop="datePublished">2016-05-10</time>
+    Updated:<time datetime="2016-12-11T07:44:26.000Z" itemprop="dateModified">2016-12-11</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">Contents</strong>
+		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#知道这20个正则表达式，能让你少写1-000行代码"><span class="toc-number">1.</span> <span class="toc-text">知道这20个正则表达式，能让你少写1,000行代码</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-校验密码强度"><span class="toc-number">1.1.</span> <span class="toc-text">1 . 校验密码强度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-校验中文"><span class="toc-number">1.2.</span> <span class="toc-text">2. 校验中文</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-由数字、26个英文字母或下划线组成的字符串"><span class="toc-number">1.3.</span> <span class="toc-text">3. 由数字、26个英文字母或下划线组成的字符串</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-校验E-Mail-地址"><span class="toc-number">1.4.</span> <span class="toc-text">4. 校验E-Mail 地址</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-校验身份证号码"><span class="toc-number">1.5.</span> <span class="toc-text">5. 校验身份证号码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-校验日期"><span class="toc-number">1.6.</span> <span class="toc-text">6. 校验日期</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-校验金额"><span class="toc-number">1.7.</span> <span class="toc-text">7. 校验金额</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-校验手机号"><span class="toc-number">1.8.</span> <span class="toc-text">8. 校验手机号</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-判断IE的版本"><span class="toc-number">1.9.</span> <span class="toc-text">9. 判断IE的版本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-校验IP-v4地址"><span class="toc-number">1.10.</span> <span class="toc-text">10. 校验IP-v4地址</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-校验IP-v6地址"><span class="toc-number">1.11.</span> <span class="toc-text">11. 校验IP-v6地址</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-检查URL的前缀"><span class="toc-number">1.12.</span> <span class="toc-text">12. 检查URL的前缀</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13-提取URL链接"><span class="toc-number">1.13.</span> <span class="toc-text">13. 提取URL链接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#14-文件路径及扩展名校验"><span class="toc-number">1.14.</span> <span class="toc-text">14. 文件路径及扩展名校验</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#15-提取Color-Hex-Codes"><span class="toc-number">1.15.</span> <span class="toc-text">15. 提取Color Hex Codes</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#16-提取网页图片"><span class="toc-number">1.16.</span> <span class="toc-text">16. 提取网页图片</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#17-提取页面超链接"><span class="toc-number">1.17.</span> <span class="toc-text">17. 提取页面超链接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#18-查找CSS属性"><span class="toc-number">1.18.</span> <span class="toc-text">18. 查找CSS属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#19-抽取注释"><span class="toc-number">1.19.</span> <span class="toc-text">19. 抽取注释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#20-匹配HTML标签"><span class="toc-number">1.20.</span> <span class="toc-text">20. 匹配HTML标签</span></a></li></ol></li></ol>
+		</div>
+		
+		<h2 id="知道这20个正则表达式，能让你少写1-000行代码"><a href="#知道这20个正则表达式，能让你少写1-000行代码" class="headerlink" title="知道这20个正则表达式，能让你少写1,000行代码"></a>知道这20个正则表达式，能让你少写1,000行代码</h2><p>正则表达式，一个十分古老而又强大的文本处理工具，仅仅用一段非常简短的表达式语句，便能够快速实现一个非常复杂的业务逻辑。熟练地掌握正则表达式的话，能够使你的开发效率得到极大的提升。</p>
+<p>正则表达式经常被用于字段或任意字符串的校验，如下面这段校验基本日期格式的JavaScript代码：</p>
+<pre><code>var reg = /^(\\d{1,4})(-|\\/)(\\d{1,2})\\2(\\d{1,2})$/; 
+var r = fieldValue.match(reg);             
+if(r==null)alert(&apos;Date format error!&apos;);
+</code></pre><p>下面是技匠整理的，在前端开发中经常使用到的20个正则表达式。</p>
+<h3 id="1-校验密码强度"><a href="#1-校验密码强度" class="headerlink" title="1 . 校验密码强度"></a>1 . 校验密码强度</h3><p>密码的强度必须是包含大小写字母和数字的组合，不能使用特殊字符，长度在8-10之间。</p>
+<pre><code>^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{8,10}$    
+</code></pre><h3 id="2-校验中文"><a href="#2-校验中文" class="headerlink" title="2. 校验中文"></a>2. 校验中文</h3><p>字符串仅能是中文。</p>
+<pre><code>^[\\u4e00-\\u9fa5]{0,}$
+</code></pre><h3 id="3-由数字、26个英文字母或下划线组成的字符串"><a href="#3-由数字、26个英文字母或下划线组成的字符串" class="headerlink" title="3. 由数字、26个英文字母或下划线组成的字符串"></a>3. 由数字、26个英文字母或下划线组成的字符串</h3><pre><code>^\\w+$
+</code></pre><h3 id="4-校验E-Mail-地址"><a href="#4-校验E-Mail-地址" class="headerlink" title="4. 校验E-Mail 地址"></a>4. 校验E-Mail 地址</h3><pre><code>[\\w!#$%&amp;&apos;*+/=?^_`{|}~-]+(?:\\.[\\w!#$%&amp;&apos;*+/=?^_`{|}~-]+)*@(?:[\\w](?:[\\w-]*[\\w])?\\.)+[\\w](?:[\\w-]*[\\w])?
+</code></pre><h3 id="5-校验身份证号码"><a href="#5-校验身份证号码" class="headerlink" title="5. 校验身份证号码"></a>5. 校验身份证号码</h3><p>下面是身份证号码的正则校验。15 或 18位。</p>
+<p>15位：</p>
+<pre><code>^[1-9]\\d{7}((0\\d)|(1[0-2]))(([0|1|2]\\d)|3[0-1])\\d{3}$
+</code></pre><p>18位：</p>
+<pre><code>^[1-9]\\d{5}[1-9]\\d{3}((0\\d)|(1[0-2]))(([0|1|2]\\d)|3[0-1])\\d{3}([0-9]|X)$
+</code></pre><h3 id="6-校验日期"><a href="#6-校验日期" class="headerlink" title="6. 校验日期"></a>6. 校验日期</h3><p>“yyyy-mm-dd“ 格式的日期校验，已考虑平闰年。</p>
+<pre><code>^(?:(?!0000)[0-9]{4}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-8])|(?:0[13-9]|1[0-2])-(?:29|30)|(?:0[13578]|1[02])-31)|(?:[0-9]{2}(?:0[48]|[2468][048]|[13579][26])|(?:0[48]|[2468][048]|[13579][26])00)-02-29)$
+</code></pre><h3 id="7-校验金额"><a href="#7-校验金额" class="headerlink" title="7. 校验金额"></a>7. 校验金额</h3><p>金额校验，精确到2位小数。</p>
+<pre><code>^[0-9]+(.[0-9]{2})?$
+</code></pre><h3 id="8-校验手机号"><a href="#8-校验手机号" class="headerlink" title="8. 校验手机号"></a>8. 校验手机号</h3><p>下面是国内 13、15、18开头的手机号正则表达式。（可根据目前国内收集号扩展前两位开头号码）</p>
+<pre><code>^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\\d{8}$
+</code></pre><h3 id="9-判断IE的版本"><a href="#9-判断IE的版本" class="headerlink" title="9. 判断IE的版本"></a>9. 判断IE的版本</h3><p>IE目前还没被完全取代，很多页面还是需要做版本兼容，下面是IE版本检查的表达式。</p>
+<pre><code>^.*MSIE [5-8](?:\\.[0-9]+)?(?!.*Trident\\/[5-9]\\.0).*$
+</code></pre><h3 id="10-校验IP-v4地址"><a href="#10-校验IP-v4地址" class="headerlink" title="10. 校验IP-v4地址"></a>10. 校验IP-v4地址</h3><p>IP4 正则语句。</p>
+<pre><code>\\b(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\b
+</code></pre><h3 id="11-校验IP-v6地址"><a href="#11-校验IP-v6地址" class="headerlink" title="11. 校验IP-v6地址"></a>11. 校验IP-v6地址</h3><p>IP6 正则语句。</p>
+<pre><code>(([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,7}:|([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}|([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}|([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|:((:[0-9a-fA-F]{1,4}){1,7}|:)|fe80:(:[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}|::(ffff(:0{1,4}){0,1}:){0,1}((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])|([0-9a-fA-F]{1,4}:){1,4}:((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9]))
+</code></pre><h3 id="12-检查URL的前缀"><a href="#12-检查URL的前缀" class="headerlink" title="12. 检查URL的前缀"></a>12. 检查URL的前缀</h3><p>应用开发中很多时候需要区分请求是HTTPS还是HTTP，通过下面的表达式可以取出一个url的前缀然后再逻辑判断。</p>
+<pre><code>if (!s.match(/^[a-zA-Z]+:\\/\\//))
+{
+    s = &apos;http://&apos; + s;
+}
+</code></pre><h3 id="13-提取URL链接"><a href="#13-提取URL链接" class="headerlink" title="13. 提取URL链接"></a>13. 提取URL链接</h3><p>下面的这个表达式可以筛选出一段文本中的URL。</p>
+<pre><code>^(f|ht){1}(tp|tps):\\/\\/([\\w-]+\\.)+[\\w-]+(\\/[\\w- ./?%&amp;=]*)?
+</code></pre><h3 id="14-文件路径及扩展名校验"><a href="#14-文件路径及扩展名校验" class="headerlink" title="14. 文件路径及扩展名校验"></a>14. 文件路径及扩展名校验</h3><p>验证windows下文件路径和扩展名（下面的例子中为.txt文件）</p>
+<pre><code>^([a-zA-Z]\\:|\\\\)\\\\([^\\\\]+\\\\)*[^\\/:*?&quot;&lt;&gt;|]+\\.txt(l)?$
+</code></pre><h3 id="15-提取Color-Hex-Codes"><a href="#15-提取Color-Hex-Codes" class="headerlink" title="15. 提取Color Hex Codes"></a>15. 提取Color Hex Codes</h3><p>有时需要抽取网页中的颜色代码，可以使用下面的表达式。</p>
+<pre><code>^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$
+</code></pre><h3 id="16-提取网页图片"><a href="#16-提取网页图片" class="headerlink" title="16. 提取网页图片"></a>16. 提取网页图片</h3><p>假若你想提取网页中所有图片信息，可以利用下面的表达式。</p>
+<pre><code>\\&lt; *[img][^\\\\&gt;]*[src] *= *[\\&quot;\\&apos;]{0,1}([^\\&quot;\\&apos;\\ &gt;]*)
+</code></pre><h3 id="17-提取页面超链接"><a href="#17-提取页面超链接" class="headerlink" title="17. 提取页面超链接"></a>17. 提取页面超链接</h3><p>提取html中的超链接。</p>
+<pre><code>(&lt;a\\s*(?!.*\\brel=)[^&gt;]*)(href=&quot;https?:\\/\\/)((?!(?:(?:www\\.)?&apos;.implode(&apos;|(?:www\\.)?&apos;, $follow_list).&apos;))[^&quot;]+)&quot;((?!.*\\brel=)[^&gt;]*)(?:[^&gt;]*)&gt;
+</code></pre><h3 id="18-查找CSS属性"><a href="#18-查找CSS属性" class="headerlink" title="18. 查找CSS属性"></a>18. 查找CSS属性</h3><p>通过下面的表达式，可以搜索到相匹配的CSS属性。</p>
+<pre><code>^\\s*[a-zA-Z\\-]+\\s*[:]{1}\\s[a-zA-Z0-9\\s.#]+[;]{1}
+</code></pre><h3 id="19-抽取注释"><a href="#19-抽取注释" class="headerlink" title="19. 抽取注释"></a>19. 抽取注释</h3><p>如果你需要移除HMTL中的注释，可以使用如下的表达式。</p>
+<pre><code>&lt;!--(.*?)--&gt;
+</code></pre><h3 id="20-匹配HTML标签"><a href="#20-匹配HTML标签" class="headerlink" title="20. 匹配HTML标签"></a>20. 匹配HTML标签</h3><p>通过下面的表达式可以匹配出HTML中的标签属性。</p>
+<pre><code>&lt;\\/?\\w+((\\s+\\w+(\\s*=\\s*(?:&quot;.*?&quot;|&apos;.*?&apos;|[\\^&apos;&quot;&gt;\\s]+))?)+\\s*|\\s*)\\/?&gt;
+</code></pre>  
+	</div>
+		<footer class="article-footer clearfix">
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/js/">js</a>
+  </div>
+
+
+
+
+<div class="article-share" id="share">
+
+  <div data-url="http://yoursite.com/2016/05/10/20个有用的正则表达式【转】/" data-title="20个有用的正则表达式【转】 | tooo的前端路" data-tsina="null" class="share clearfix">
+  </div>
+
+</div>
+</footer>   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2016/05/13/简单的循环滚动图/" title="简单的循环滚动图">
+  <strong>PREVIOUS:</strong><br/>
+  <span>
+  简单的循环滚动图</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/2016/04/17/数组重排序方法/"  title="数组重排序方法">
+ <strong>NEXT:</strong><br/> 
+ <span>数组重排序方法
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">Contents</strong>
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#知道这20个正则表达式，能让你少写1-000行代码"><span class="toc-number">1.</span> <span class="toc-text">知道这20个正则表达式，能让你少写1,000行代码</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-校验密码强度"><span class="toc-number">1.1.</span> <span class="toc-text">1 . 校验密码强度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-校验中文"><span class="toc-number">1.2.</span> <span class="toc-text">2. 校验中文</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-由数字、26个英文字母或下划线组成的字符串"><span class="toc-number">1.3.</span> <span class="toc-text">3. 由数字、26个英文字母或下划线组成的字符串</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-校验E-Mail-地址"><span class="toc-number">1.4.</span> <span class="toc-text">4. 校验E-Mail 地址</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-校验身份证号码"><span class="toc-number">1.5.</span> <span class="toc-text">5. 校验身份证号码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-校验日期"><span class="toc-number">1.6.</span> <span class="toc-text">6. 校验日期</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-校验金额"><span class="toc-number">1.7.</span> <span class="toc-text">7. 校验金额</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-校验手机号"><span class="toc-number">1.8.</span> <span class="toc-text">8. 校验手机号</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-判断IE的版本"><span class="toc-number">1.9.</span> <span class="toc-text">9. 判断IE的版本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-校验IP-v4地址"><span class="toc-number">1.10.</span> <span class="toc-text">10. 校验IP-v4地址</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-校验IP-v6地址"><span class="toc-number">1.11.</span> <span class="toc-text">11. 校验IP-v6地址</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-检查URL的前缀"><span class="toc-number">1.12.</span> <span class="toc-text">12. 检查URL的前缀</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13-提取URL链接"><span class="toc-number">1.13.</span> <span class="toc-text">13. 提取URL链接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#14-文件路径及扩展名校验"><span class="toc-number">1.14.</span> <span class="toc-text">14. 文件路径及扩展名校验</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#15-提取Color-Hex-Codes"><span class="toc-number">1.15.</span> <span class="toc-text">15. 提取Color Hex Codes</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#16-提取网页图片"><span class="toc-number">1.16.</span> <span class="toc-text">16. 提取网页图片</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#17-提取页面超链接"><span class="toc-number">1.17.</span> <span class="toc-text">17. 提取页面超链接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#18-查找CSS属性"><span class="toc-number">1.18.</span> <span class="toc-text">18. 查找CSS属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#19-抽取注释"><span class="toc-number">1.19.</span> <span class="toc-text">19. 抽取注释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#20-匹配HTML标签"><span class="toc-number">1.20.</span> <span class="toc-text">20. 匹配HTML标签</span></a></li></ol></li></ol>
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<aside class="clearfix">
+
+  
+
+  
+<div class="tagslist">
+	<p class="asidetitle">Tags</p>
+		<ul class="clearfix">
+		
+			<li><a href="/tags/Ajax/" title="Ajax">Ajax<sup>1</sup></a></li>
+		
+			<li><a href="/tags/canvas/" title="canvas">canvas<sup>2</sup></a></li>
+		
+			<li><a href="/tags/css/" title="css">css<sup>11</sup></a></li>
+		
+			<li><a href="/tags/html/" title="html">html<sup>6</sup></a></li>
+		
+			<li><a href="/tags/http/" title="http">http<sup>1</sup></a></li>
+		
+			<li><a href="/tags/https/" title="https">https<sup>1</sup></a></li>
+		
+			<li><a href="/tags/js/" title="js">js<sup>11</sup></a></li>
+		
+			<li><a href="/tags/node-js/" title="node.js">node.js<sup>3</sup></a></li>
+		
+		</ul>
+</div>
+
+
+  <div class="rsspart">
+	<a href="null" target="_blank" title="rss">RSS</a>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<div class="social-font clearfix">
+		
+		
+		
+		
+		
+	</div>
+		<p class="copyright">Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/A-limon/pacman" target="_blank" title="Pacman">Pacman</a> © 2016 
+		
+		<a href="http://yoursite.com" target="_blank" title="zmytooo">zmytooo</a>
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+    c.click(function(){
+      ta.css('display', 'block').addClass('fadeIn');
+    });
+    o.click(function(){
+      ta.css('display', 'none');
+    });
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,320-$(this).scrollTop()));
+    });
+  };
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
+
+
+
+
+
+
+  </body>
+</html>
