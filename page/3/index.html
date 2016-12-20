@@ -54,7 +54,7 @@
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Zoeken"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -64,6 +64,126 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-简单的循环滚动图" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/13/简单的循环滚动图/" class="article-date">
+  <time datetime="2016-05-13T11:15:52.000Z" itemprop="datePublished">2016-05-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/13/简单的循环滚动图/">简单的循环滚动图</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="简单的javascript和dom操作实现图片循环滚动效果（前端小菜鸟，仅仅实现了无缝滚动）"><a href="#简单的javascript和dom操作实现图片循环滚动效果（前端小菜鸟，仅仅实现了无缝滚动）" class="headerlink" title="简单的javascript和dom操作实现图片循环滚动效果（前端小菜鸟，仅仅实现了无缝滚动）"></a>简单的javascript和dom操作实现图片循环滚动效果（前端小菜鸟，仅仅实现了无缝滚动）</h3><p>这种实例在网页中其实还挺常见的，一般一些商城或者一些广告会再用这种方式。我下面就实现了比较简洁的循环滚动。</p>
+<p>下面是HTML和css部分：</p>
+<p>做了个最简单的初始化，放了四张图片，占满全屏。</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;title&gt;&lt;/title&gt;
+&lt;style&gt;
+    *{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    body{
+        min-width: 100%;
+    }
+    .box{
+        width: 100%;
+        height: 300px;
+        margin: 100px auto;
+        position: relative;
+        overflow: hidden;
+    }
+    .container{
+        width: 200%;
+        height: 300px;
+        position: absolute;
+        top: 0px;left: 0px;
+    }
+    .container ul{
+        width: 50%;
+        height: 100%;
+        float: left;
+    }
+    .container ul li{
+        width: 25%;
+        height: 100%;
+        float: left;
+    }
+    .container ul li img{
+        width: 100%;
+        height: 100%;
+    }
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div class=&quot;box&quot;&gt;
+    &lt;div class=&quot;container&quot;&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;http://img5.imgtn.bdimg.com/it/u=883287710,2743511361&amp;fm=21&amp;gp=0.jpg&quot;/&gt;&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;http://img0.imgtn.bdimg.com/it/u=598942806,3399198024&amp;fm=23&amp;gp=0.jpg&quot;/&gt;&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;http://img5.imgtn.bdimg.com/it/u=1936294320,3731982465&amp;fm=23&amp;gp=0.jpg&quot;/&gt;&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;http://img5.imgtn.bdimg.com/it/u=660725131,2744797792&amp;fm=23&amp;gp=0.jpg&quot;/&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>下面是js部分：</p>
+<p>js部分的逻辑和简单，就是通过dom操作创建一个一样的ul,然后让包着ul的盒子滚动起来，ul和ul接替着出现。这样就实现了循环滚动。</p>
+<pre><code>&lt;script&gt;
+var oCan=document.querySelector(&quot;.container&quot;);
+var oUl=document.querySelector(&quot;.container ul&quot;);
+var newUl=oUl.cloneNode(true);
+oCan.appendChild(newUl);
+var timer=null;var num=0;
+function run(){
+    num--;
+    if(Math.abs(num)==oCan.offsetWidth/2){
+        num=0;
+    }
+    oCan.style.left=num+&quot;px&quot;;
+}
+timer=setInterval(run,10);
+oCan.onmouseover=function(){
+    clearInterval(timer);
+}
+oCan.onmouseout=function(){
+    timer=setInterval(run,10);    
+}
+&lt;/script&gt;
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/05/13/简单的循环滚动图/" data-id="ciwxk13vs001b6x0yr1t6on19" class="article-share-link">Delen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-20个有用的正则表达式【转】" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -141,7 +261,7 @@ if(r==null)alert(&apos;Date format error!&apos;);
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/10/20个有用的正则表达式【转】/" data-id="ciwu5dwfe0000oe0yswldphpr" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/10/20个有用的正则表达式【转】/" data-id="ciwxk13u400006x0yyj34ynxj" class="article-share-link">Delen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
@@ -215,7 +335,7 @@ if(r==null)alert(&apos;Date format error!&apos;);
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/04/17/数组重排序方法/" data-id="ciwu5dwgk000xoe0ydudjg37g" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/04/17/数组重排序方法/" data-id="ciwxk13va000u6x0yu6g5m0u5" class="article-share-link">Delen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
@@ -391,7 +511,7 @@ div {
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/04/02/css布局入门【转】/" data-id="ciwu5dwfo0004oe0yb74s8p8w" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/04/02/css布局入门【转】/" data-id="ciwxk13ui00056x0y841l3d8g" class="article-share-link">Delen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html/">html</a></li></ul>
@@ -463,7 +583,7 @@ div {
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/26/css清除浮动/" data-id="ciwu5dwfr0005oe0yx7k6h6oq" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/03/26/css清除浮动/" data-id="ciwxk13ul00086x0y2wxrup4i" class="article-share-link">Delen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li></ul>
@@ -597,7 +717,7 @@ span{line-height:40px;} /*可以在浏览器中取消一下，观察一下位置
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/12/行高与对齐问题【转】/" data-id="ciwu5dwh9001goe0y1832he2x" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/03/12/行高与对齐问题【转】/" data-id="ciwxk13vt001d6x0y9m3kx3f8" class="article-share-link">Delen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li></ul>
@@ -669,7 +789,7 @@ span{line-height:40px;} /*可以在浏览器中取消一下，观察一下位置
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/02/简单三角实现/" data-id="ciwu5dwgt0016oe0y7m0s3eqk" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/03/02/简单三角实现/" data-id="ciwxk13vj00146x0yhk64t2qg" class="article-share-link">Delen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li></ul>
@@ -695,7 +815,7 @@ span{line-height:40px;} /*可以在浏览器中取消一下，观察一下位置
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
+    <h3 class="widget-title">Labels</h3>
     <div class="widget">
       <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ajax/">Ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/canvas/">canvas</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/http/">http</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/https/">https</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/">js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node-js/">node.js</a></li></ul>
     </div>
@@ -707,14 +827,14 @@ span{line-height:40px;} /*可以在浏览器中取消一下，观察一下位置
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Ajax/" style="font-size: 10px;">Ajax</a> <a href="/tags/canvas/" style="font-size: 12.5px;">canvas</a> <a href="/tags/css/" style="font-size: 20px;">css</a> <a href="/tags/html/" style="font-size: 17.5px;">html</a> <a href="/tags/http/" style="font-size: 10px;">http</a> <a href="/tags/https/" style="font-size: 10px;">https</a> <a href="/tags/js/" style="font-size: 20px;">js</a> <a href="/tags/node-js/" style="font-size: 15px;">node.js</a>
+      <a href="/tags/Ajax/" style="font-size: 10px;">Ajax</a> <a href="/tags/canvas/" style="font-size: 12px;">canvas</a> <a href="/tags/css/" style="font-size: 18px;">css</a> <a href="/tags/html/" style="font-size: 16px;">html</a> <a href="/tags/http/" style="font-size: 10px;">http</a> <a href="/tags/https/" style="font-size: 10px;">https</a> <a href="/tags/js/" style="font-size: 20px;">js</a> <a href="/tags/node-js/" style="font-size: 14px;">node.js</a>
     </div>
   </div>
 
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
+    <h3 class="widget-title">Archieven</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a></li></ul>
     </div>
@@ -724,9 +844,13 @@ span{line-height:40px;} /*可以在浏览器中取消一下，观察一下位置
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">Recente berichten</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2016/12/20/事件委托/">事件委托</a>
+          </li>
         
           <li>
             <a href="/2016/12/15/事件流/">事件流</a>
@@ -742,10 +866,6 @@ span{line-height:40px;} /*可以在浏览器中取消一下，观察一下位置
         
           <li>
             <a href="/2016/11/19/浅谈html-css与js/">浅谈html,css与js</a>
-          </li>
-        
-          <li>
-            <a href="/2016/11/13/Javascript定义类（class）的三种方法【转】/">Javascript定义类（class）的三种方法【转】</a>
           </li>
         
       </ul>

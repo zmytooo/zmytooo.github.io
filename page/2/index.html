@@ -54,7 +54,7 @@
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Zoeken"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -64,6 +64,85 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-node-js入门【转】" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/10/19/node-js入门【转】/" class="article-date">
+  <time datetime="2016-10-19T13:17:09.000Z" itemprop="datePublished">2016-10-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/19/node-js入门【转】/">node.js入门【转】</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>由于跑到另一个城市，手头没电脑，dom framework不能如期发布，趁此学习一些新东西。这时期最迫切的需要是寻求一个超轻量的后端来架起我的框架，于是触爪伸向传说中的Server-Side Javascrpt。后端JS最出名无疑是Ryan Dahl的node.js，另一个是aptana IDE提供商搞出的jaxer。</p>
+<p>首先下载node.js，然后解压到E盘，改名为node，然后开始菜单输入cmd，用cd命令切换到nodejs的解压目录：</p>
+<p><img src="http://images.cnblogs.com/cnblogs_com/rubylouvre/253006/o_node1.jpg" alt="Alt text"></p>
+<p>第一个例子：hello world。</p>
+<p>在node目录下建立hello.js文件，然后在里面输入：</p>
+<pre><code>//var sys = require(&quot;sys&quot;);
+var sys = require(&quot;util&quot;)
+sys.puts(&quot;Hello world&quot;);
+</code></pre><p>然后我们在命名台中输入命令node hello.js，就能看到命名台输出结果Hello world。</p>
+<p>第二个例子：hello world2。</p>
+<p>好了，这次我们试从游览器中输出hello world。在node目录下建立http.js，然后输入：</p>
+<pre><code>//var sys = require(&quot;sys&quot;);
+var sys = require(&quot;util&quot;)
+var http = require(&quot;http&quot;);
+http.createServer(function(request, response) {
+ //   response.sendHeader(200, {&quot;Content-Type&quot;: &quot;text/html&quot;});
+response.writeHeader(200, {&quot;Content-Type&quot;: &quot;text/html&quot;});
+response.write(&quot;Hello World!&quot;);
+ //   response.close();
+response.end();
+}).listen(8080);
+sys.puts(&quot;Server running at http://localhost:8080/&quot;);
+</code></pre><p>然后我们在命名台中输入命令node http.js，在浏览器输入<a href="http://localhost:8080/" target="_blank" rel="external">http://localhost:8080/</a><br><img src="http://images.cnblogs.com/cnblogs_com/rubylouvre/253006/o_node2.jpg" alt="Alt text"></p>
+<p><img src="http://images.cnblogs.com/cnblogs_com/rubylouvre/253006/o_node3.jpg" alt="Alt text"><br>第三个例子：hello world2。</p>
+<p>node.js提供一个Buffer类用于转换不同编码的字符串。目前支持三种类型：’ascii’，’utf8’与’binary’。</p>
+<pre><code>var Buffer = require(&apos;buffer&apos;).Buffer,
+buf = new Buffer(256),
+len = buf.write(&apos;\u00bd + \u00bc = \u00be&apos;, 0);
+console.log(len + &quot; bytes: &quot; + buf.toString(&apos;utf8&apos;, 0, len));
+第四个例子：hello world3。
+//synopsis.js
+//synopsis 摘要, 梗概，大纲
+var http = require(&apos;http&apos;);
+
+http.createServer(function (request, response) {
+  response.writeHead(200, {&apos;Content-Type&apos;: &apos;text/plain&apos;});
+  response.end(&apos;Hello World\n&apos;);
+}).listen(8124);
+
+console.log(&apos;Server running at http://127.0.0.1:8124/&apos;);
+</code></pre><p>前台地址栏：<a href="http://localhost:8124/" target="_blank" rel="external">http://localhost:8124/</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/10/19/node-js入门【转】/" data-id="ciwxk13v0000m6x0yexzws4sx" class="article-share-link">Delen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node-js/">node.js</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-socket-io中的emit和on方法" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -106,7 +185,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/10/12/socket-io中的emit和on方法/" data-id="ciwu5dwg3000doe0y1szx42e1" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/10/12/socket-io中的emit和on方法/" data-id="ciwxk13uo000a6x0yk493llfy" class="article-share-link">Delen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node-js/">node.js</a></li></ul>
@@ -417,7 +496,7 @@ setInterval(drawClock,1000);
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/08/25/html5和canvas分别实现时钟/" data-id="ciwu5dwfu0008oe0y12teux4m" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/08/25/html5和canvas分别实现时钟/" data-id="ciwxk13uw000i6x0yvo4ujvv3" class="article-share-link">Delen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/canvas/">canvas</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html/">html</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
@@ -556,7 +635,7 @@ function random(m,n){
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/08/14/用canvas实现100个小球的运动/" data-id="ciwu5dwgp0012oe0yviad7yac" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/08/14/用canvas实现100个小球的运动/" data-id="ciwxk13vc000w6x0yxlgyc3t9" class="article-share-link">Delen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/canvas/">canvas</a></li></ul>
@@ -716,7 +795,7 @@ show.onmousemove=function(event){
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/07/19/放大镜效果/" data-id="ciwu5dwgj000uoe0yhirm6soi" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/07/19/放大镜效果/" data-id="ciwxk13vk00166x0ys2kh6w3r" class="article-share-link">Delen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
@@ -784,7 +863,7 @@ text-align:center;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/07/15/用css实现图片在div内的垂直居中/" data-id="ciwu5dwgy0019oe0yc1b066g6" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/07/15/用css实现图片在div内的垂直居中/" data-id="ciwxk13vx001i6x0yl63xlnnq" class="article-share-link">Delen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li></ul>
@@ -849,7 +928,7 @@ var result = compare(5,10);
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/07/11/javascript闭包问题【转】/" data-id="ciwu5dwfy0009oe0yqhk21wtg" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/07/11/javascript闭包问题【转】/" data-id="ciwxk13uy000l6x0y8g1rwx9j" class="article-share-link">Delen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
@@ -1135,7 +1214,7 @@ var result = compare(5,10);
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/07/10/图片懒加载/" data-id="ciwu5dwgd000ooe0ymvpknyol" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/07/10/图片懒加载/" data-id="ciwxk13vg00116x0y6nab1l15" class="article-share-link">Delen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
@@ -1370,7 +1449,7 @@ var result = compare(5,10);
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/06/19/封装一个函数实现不同种类的幻灯/" data-id="ciwu5dwgi000soe0ynvrv1zl2" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/06/19/封装一个函数实现不同种类的幻灯/" data-id="ciwxk13vf000z6x0ye1plcnt0" class="article-share-link">Delen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
@@ -1525,127 +1604,7 @@ var newArr = arr.slice.apply( a, [ 0 ] );
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/06/10/函数的四种调用方式【转】/" data-id="ciwu5dwgg000poe0yu0lccezz" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-简单的循环滚动图" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/05/13/简单的循环滚动图/" class="article-date">
-  <time datetime="2016-05-13T11:15:52.000Z" itemprop="datePublished">2016-05-13</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/13/简单的循环滚动图/">简单的循环滚动图</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="简单的javascript和dom操作实现图片循环滚动效果（前端小菜鸟，仅仅实现了无缝滚动）"><a href="#简单的javascript和dom操作实现图片循环滚动效果（前端小菜鸟，仅仅实现了无缝滚动）" class="headerlink" title="简单的javascript和dom操作实现图片循环滚动效果（前端小菜鸟，仅仅实现了无缝滚动）"></a>简单的javascript和dom操作实现图片循环滚动效果（前端小菜鸟，仅仅实现了无缝滚动）</h3><p>这种实例在网页中其实还挺常见的，一般一些商城或者一些广告会再用这种方式。我下面就实现了比较简洁的循环滚动。</p>
-<p>下面是HTML和css部分：</p>
-<p>做了个最简单的初始化，放了四张图片，占满全屏。</p>
-<pre><code>&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-&lt;meta charset=&quot;UTF-8&quot;&gt;
-&lt;title&gt;&lt;/title&gt;
-&lt;style&gt;
-    *{
-        margin: 0;
-        padding: 0;
-        list-style: none;
-    }
-    body{
-        min-width: 100%;
-    }
-    .box{
-        width: 100%;
-        height: 300px;
-        margin: 100px auto;
-        position: relative;
-        overflow: hidden;
-    }
-    .container{
-        width: 200%;
-        height: 300px;
-        position: absolute;
-        top: 0px;left: 0px;
-    }
-    .container ul{
-        width: 50%;
-        height: 100%;
-        float: left;
-    }
-    .container ul li{
-        width: 25%;
-        height: 100%;
-        float: left;
-    }
-    .container ul li img{
-        width: 100%;
-        height: 100%;
-    }
-&lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-&lt;div class=&quot;box&quot;&gt;
-    &lt;div class=&quot;container&quot;&gt;
-        &lt;ul&gt;
-            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;http://img5.imgtn.bdimg.com/it/u=883287710,2743511361&amp;fm=21&amp;gp=0.jpg&quot;/&gt;&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;http://img0.imgtn.bdimg.com/it/u=598942806,3399198024&amp;fm=23&amp;gp=0.jpg&quot;/&gt;&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;http://img5.imgtn.bdimg.com/it/u=1936294320,3731982465&amp;fm=23&amp;gp=0.jpg&quot;/&gt;&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;http://img5.imgtn.bdimg.com/it/u=660725131,2744797792&amp;fm=23&amp;gp=0.jpg&quot;/&gt;&lt;/a&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-    &lt;/div&gt;
-&lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre><p>下面是js部分：</p>
-<p>js部分的逻辑和简单，就是通过dom操作创建一个一样的ul,然后让包着ul的盒子滚动起来，ul和ul接替着出现。这样就实现了循环滚动。</p>
-<pre><code>&lt;script&gt;
-var oCan=document.querySelector(&quot;.container&quot;);
-var oUl=document.querySelector(&quot;.container ul&quot;);
-var newUl=oUl.cloneNode(true);
-oCan.appendChild(newUl);
-var timer=null;var num=0;
-function run(){
-    num--;
-    if(Math.abs(num)==oCan.offsetWidth/2){
-        num=0;
-    }
-    oCan.style.left=num+&quot;px&quot;;
-}
-timer=setInterval(run,10);
-oCan.onmouseover=function(){
-    clearInterval(timer);
-}
-oCan.onmouseout=function(){
-    timer=setInterval(run,10);    
-}
-&lt;/script&gt;
-</code></pre>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/13/简单的循环滚动图/" data-id="ciwu5dwh6001eoe0yxj3rbpah" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/06/10/函数的四种调用方式【转】/" data-id="ciwxk13v1000p6x0yktf00lro" class="article-share-link">Delen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
@@ -1671,7 +1630,7 @@ oCan.onmouseout=function(){
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
+    <h3 class="widget-title">Labels</h3>
     <div class="widget">
       <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ajax/">Ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/canvas/">canvas</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/http/">http</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/https/">https</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/">js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node-js/">node.js</a></li></ul>
     </div>
@@ -1683,14 +1642,14 @@ oCan.onmouseout=function(){
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Ajax/" style="font-size: 10px;">Ajax</a> <a href="/tags/canvas/" style="font-size: 12.5px;">canvas</a> <a href="/tags/css/" style="font-size: 20px;">css</a> <a href="/tags/html/" style="font-size: 17.5px;">html</a> <a href="/tags/http/" style="font-size: 10px;">http</a> <a href="/tags/https/" style="font-size: 10px;">https</a> <a href="/tags/js/" style="font-size: 20px;">js</a> <a href="/tags/node-js/" style="font-size: 15px;">node.js</a>
+      <a href="/tags/Ajax/" style="font-size: 10px;">Ajax</a> <a href="/tags/canvas/" style="font-size: 12px;">canvas</a> <a href="/tags/css/" style="font-size: 18px;">css</a> <a href="/tags/html/" style="font-size: 16px;">html</a> <a href="/tags/http/" style="font-size: 10px;">http</a> <a href="/tags/https/" style="font-size: 10px;">https</a> <a href="/tags/js/" style="font-size: 20px;">js</a> <a href="/tags/node-js/" style="font-size: 14px;">node.js</a>
     </div>
   </div>
 
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
+    <h3 class="widget-title">Archieven</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a></li></ul>
     </div>
@@ -1700,9 +1659,13 @@ oCan.onmouseout=function(){
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">Recente berichten</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2016/12/20/事件委托/">事件委托</a>
+          </li>
         
           <li>
             <a href="/2016/12/15/事件流/">事件流</a>
@@ -1718,10 +1681,6 @@ oCan.onmouseout=function(){
         
           <li>
             <a href="/2016/11/19/浅谈html-css与js/">浅谈html,css与js</a>
-          </li>
-        
-          <li>
-            <a href="/2016/11/13/Javascript定义类（class）的三种方法【转】/">Javascript定义类（class）的三种方法【转】</a>
           </li>
         
       </ul>
