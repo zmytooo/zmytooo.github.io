@@ -65,10 +65,10 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-事件委托" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-事件流" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/12/20/事件委托/" class="article-date">
-  <time datetime="2016-12-20T12:12:05.000Z" itemprop="datePublished">2016-12-20</time>
+    <a href="/2016/12/15/事件流/" class="article-date">
+  <time datetime="2016-12-15T14:15:59.000Z" itemprop="datePublished">2016-12-15</time>
 </a>
     
   </div>
@@ -79,7 +79,80 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/12/20/事件委托/">事件委托</a>
+      <a class="article-title" href="/2016/12/15/事件流/">事件流</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="事件流描述的是从页面中接收事件的顺序"><a href="#事件流描述的是从页面中接收事件的顺序" class="headerlink" title="事件流描述的是从页面中接收事件的顺序"></a>事件流描述的是从页面中接收事件的顺序</h2><h3 id="IE浏览器采用事件冒泡流"><a href="#IE浏览器采用事件冒泡流" class="headerlink" title="IE浏览器采用事件冒泡流"></a>IE浏览器采用事件冒泡流</h3><p>即事件开始时由最具体的元素（文档中嵌套层次最深的那个节点）接收，然后逐级向上传播到较为不具体的节点（文档）。</p>
+<h3 id="标准浏览器采用事件捕获流"><a href="#标准浏览器采用事件捕获流" class="headerlink" title="标准浏览器采用事件捕获流"></a>标准浏览器采用事件捕获流</h3><p>事件捕获的思想是不太具体的节点应该更早的接收到事件，而最具体的节点应该在最后接收到节点。事件捕获的用意在于事件到达预定目标之前捕获它。</p>
+<h3 id="DOM事件流"><a href="#DOM事件流" class="headerlink" title="DOM事件流"></a>DOM事件流</h3><p>“DOM2级事件流”规定的事件流包括三个阶段：事件捕获阶段、处于目标阶段和冒泡阶段。首先发生的是事件捕获，为截获事件提供了机会。然后是实际的目标接收到事件。最后一个阶段是冒泡阶段，可以在这个阶段对事件作出响应。以简单的HTML页面为例，单击<div>元素会按照下图顺序触发事件<br><img src="http://images.cnblogs.com/cnblogs_com/blackwood/416364/o_eventpic.jpg" alt="Alt text"></div></p>
+<p>在DOM事件流中，实际的目标（<div>元素）在捕获阶段不会接收到事件。这意味着在捕获阶段，事件从document到<html>再到<body>后就停止了。下一个阶段是“处于目标”阶段，于是事件在<div>上发生，并在事件处理中被看成冒泡阶段的一部分。然后冒泡阶段发生，事件又传播回文档。</div></body></html></div></p>
+<p>多数支持DOM事件流的浏览器都实现了一种特定行为；即使“DOM2级事件”规范明确要求捕获阶段不会涉及事件的目标，但Safari、Chrome、Firefox和Opera9.5及更高版本都会在捕获阶段触发事件对象上的事件。结果，就是有两个机会在目标对象上面操作事件。</p>
+<p>Opera、Firefox、Chrome和Safari都支持DOM事件流；IE不支持DOM事件流。</p>
+<h3 id="addEventLister给出了第三个参数同时支持冒泡与捕获。"><a href="#addEventLister给出了第三个参数同时支持冒泡与捕获。" class="headerlink" title="addEventLister给出了第三个参数同时支持冒泡与捕获。"></a>addEventLister给出了第三个参数同时支持冒泡与捕获。</h3><h3 id="常用的事件主要有"><a href="#常用的事件主要有" class="headerlink" title="常用的事件主要有:"></a>常用的事件主要有:</h3><p>(1)单击事件:onclick。</p>
+<p>用户单击鼠标按键时产生的事件，同时。onclick指定的事件处理程序或代码将被调用执行.</p>
+<p>(2)改变事件:onchange。</p>
+<p>当text或textarea元素内的字符值改变或select表格选项状态改变时发生该事件。</p>
+<p>(3)选中事件:onselect。</p>
+<p>当text或textarea对象中的文字被选中时会引发该事件。如:</p>
+<pre><code>&lt;ipnut type=&quot;text&quot; value=&quot;默认信息” onselect=alert(”您选中T文本框中的文字”)&gt;
+</code></pre><p>(4)获得焦点事件:onfocus。</p>
+<p>用户单击text或textarea以及select对象，即光标落在文本框或选择框时会产生该事件。如:</p>
+<pre><code>&lt;select name= &quot;zhengjian&quot; onfocus=alert(”我成为焦点”)&gt;
+</code></pre><p>(5)失去焦点事件:onblur。</p>
+<p>失去焦点事件正好与获得焦点事件相对，当text或textarea以及select对象不再拥有焦点而退出后台时，引发该事件。</p>
+<p>(6)载人文件事件:onload。</p>
+<p>当页面文件载人时产生该事件。onload的一个作用就是在首次载人一个页面文件时检测cookie的值，并用一个变量为其赋值，使它可以被源代码使用，本事件是window的事件，但是在HTML中指定事件处理程序时，一般把它写在<body>标记中。如:</body></p>
+<pre><code>&lt;body onload=alert(”正在加载页面，请等待一”)&gt;
+</code></pre><p>(7)卸载文件事件:onunload。</p>
+<p>与载人文件事件。nload正好相反，当Web页面退出时引发的事件，并可更新。ookie的状态。如:</p>
+<pre><code>&lt;body onunload=confirm(”你确定要离开本页?”)&gt;
+</code></pre><p>(8)鼠标镇盖事件:onmouseover。</p>
+<p>onmouseover是当鼠标位于元素上方时所引发的事件。如:</p>
+<pre><code>&lt;input type= &quot;boutton&quot; value=”按钮”onmouseover= &quot;window. status=‘请您注意下面的状态栏·;return true&quot;&gt;
+</code></pre><p>(9)鼠标离开事件:onmouseout。</p>
+<p>onmouseout是当鼠标离开元素时引发的事件。如果和鼠标覆盖事件同时使用，可以创建动态按钮的效果。</p>
+<p>(10)一般事件。</p>
+<p>   ondbclick:鼠标双击事件。</p>
+<p>   onkeypress:当键盘上的某个键被按下并且释放时触发的事件，要求页面内必须有激活的对象。</p>
+<p>   onkeydown:当键盘上某个键被按下时触发的事件，要求页面内必须有激活的对象。</p>
+<p>   onkeyup:当键盘上某个键被放开时触发的事件，要求页面内必须有激活的对象。</p>
+<p>(11)页面相关事件。</p>
+<p>   onabort:图片在下载时被用户中断时触发的事件。</p>
+<p>   onbeforeunload:当前页面的内容将要被改变时触发的事件。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/12/15/事件流/" data-id="ciwxk13us000d6x0yxthxwgsg" class="article-share-link">Delen</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-事件委托" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/12/12/事件委托/" class="article-date">
+  <time datetime="2016-12-12T12:12:05.000Z" itemprop="datePublished">2016-12-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/12/12/事件委托/">事件委托</a>
     </h1>
   
 
@@ -292,84 +365,11 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/12/20/事件委托/" data-id="ciwxk13ur000c6x0ylfr4eor1" class="article-share-link">Delen</a>
+      <a data-url="http://yoursite.com/2016/12/12/事件委托/" data-id="ciwxk13ur000c6x0ylfr4eor1" class="article-share-link">Delen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
 
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-事件流" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/12/15/事件流/" class="article-date">
-  <time datetime="2016-12-15T14:15:59.000Z" itemprop="datePublished">2016-12-15</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/12/15/事件流/">事件流</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="事件流描述的是从页面中接收事件的顺序"><a href="#事件流描述的是从页面中接收事件的顺序" class="headerlink" title="事件流描述的是从页面中接收事件的顺序"></a>事件流描述的是从页面中接收事件的顺序</h2><h3 id="IE浏览器采用事件冒泡流"><a href="#IE浏览器采用事件冒泡流" class="headerlink" title="IE浏览器采用事件冒泡流"></a>IE浏览器采用事件冒泡流</h3><p>即事件开始时由最具体的元素（文档中嵌套层次最深的那个节点）接收，然后逐级向上传播到较为不具体的节点（文档）。</p>
-<h3 id="标准浏览器采用事件捕获流"><a href="#标准浏览器采用事件捕获流" class="headerlink" title="标准浏览器采用事件捕获流"></a>标准浏览器采用事件捕获流</h3><p>事件捕获的思想是不太具体的节点应该更早的接收到事件，而最具体的节点应该在最后接收到节点。事件捕获的用意在于事件到达预定目标之前捕获它。</p>
-<h3 id="DOM事件流"><a href="#DOM事件流" class="headerlink" title="DOM事件流"></a>DOM事件流</h3><p>“DOM2级事件流”规定的事件流包括三个阶段：事件捕获阶段、处于目标阶段和冒泡阶段。首先发生的是事件捕获，为截获事件提供了机会。然后是实际的目标接收到事件。最后一个阶段是冒泡阶段，可以在这个阶段对事件作出响应。以简单的HTML页面为例，单击<div>元素会按照下图顺序触发事件<br><img src="http://images.cnblogs.com/cnblogs_com/blackwood/416364/o_eventpic.jpg" alt="Alt text"></div></p>
-<p>在DOM事件流中，实际的目标（<div>元素）在捕获阶段不会接收到事件。这意味着在捕获阶段，事件从document到<html>再到<body>后就停止了。下一个阶段是“处于目标”阶段，于是事件在<div>上发生，并在事件处理中被看成冒泡阶段的一部分。然后冒泡阶段发生，事件又传播回文档。</div></body></html></div></p>
-<p>多数支持DOM事件流的浏览器都实现了一种特定行为；即使“DOM2级事件”规范明确要求捕获阶段不会涉及事件的目标，但Safari、Chrome、Firefox和Opera9.5及更高版本都会在捕获阶段触发事件对象上的事件。结果，就是有两个机会在目标对象上面操作事件。</p>
-<p>Opera、Firefox、Chrome和Safari都支持DOM事件流；IE不支持DOM事件流。</p>
-<h3 id="addEventLister给出了第三个参数同时支持冒泡与捕获。"><a href="#addEventLister给出了第三个参数同时支持冒泡与捕获。" class="headerlink" title="addEventLister给出了第三个参数同时支持冒泡与捕获。"></a>addEventLister给出了第三个参数同时支持冒泡与捕获。</h3><h3 id="常用的事件主要有"><a href="#常用的事件主要有" class="headerlink" title="常用的事件主要有:"></a>常用的事件主要有:</h3><p>(1)单击事件:onclick。</p>
-<p>用户单击鼠标按键时产生的事件，同时。onclick指定的事件处理程序或代码将被调用执行.</p>
-<p>(2)改变事件:onchange。</p>
-<p>当text或textarea元素内的字符值改变或select表格选项状态改变时发生该事件。</p>
-<p>(3)选中事件:onselect。</p>
-<p>当text或textarea对象中的文字被选中时会引发该事件。如:</p>
-<pre><code>&lt;ipnut type=&quot;text&quot; value=&quot;默认信息” onselect=alert(”您选中T文本框中的文字”)&gt;
-</code></pre><p>(4)获得焦点事件:onfocus。</p>
-<p>用户单击text或textarea以及select对象，即光标落在文本框或选择框时会产生该事件。如:</p>
-<pre><code>&lt;select name= &quot;zhengjian&quot; onfocus=alert(”我成为焦点”)&gt;
-</code></pre><p>(5)失去焦点事件:onblur。</p>
-<p>失去焦点事件正好与获得焦点事件相对，当text或textarea以及select对象不再拥有焦点而退出后台时，引发该事件。</p>
-<p>(6)载人文件事件:onload。</p>
-<p>当页面文件载人时产生该事件。onload的一个作用就是在首次载人一个页面文件时检测cookie的值，并用一个变量为其赋值，使它可以被源代码使用，本事件是window的事件，但是在HTML中指定事件处理程序时，一般把它写在<body>标记中。如:</body></p>
-<pre><code>&lt;body onload=alert(”正在加载页面，请等待一”)&gt;
-</code></pre><p>(7)卸载文件事件:onunload。</p>
-<p>与载人文件事件。nload正好相反，当Web页面退出时引发的事件，并可更新。ookie的状态。如:</p>
-<pre><code>&lt;body onunload=confirm(”你确定要离开本页?”)&gt;
-</code></pre><p>(8)鼠标镇盖事件:onmouseover。</p>
-<p>onmouseover是当鼠标位于元素上方时所引发的事件。如:</p>
-<pre><code>&lt;input type= &quot;boutton&quot; value=”按钮”onmouseover= &quot;window. status=‘请您注意下面的状态栏·;return true&quot;&gt;
-</code></pre><p>(9)鼠标离开事件:onmouseout。</p>
-<p>onmouseout是当鼠标离开元素时引发的事件。如果和鼠标覆盖事件同时使用，可以创建动态按钮的效果。</p>
-<p>(10)一般事件。</p>
-<p>   ondbclick:鼠标双击事件。</p>
-<p>   onkeypress:当键盘上的某个键被按下并且释放时触发的事件，要求页面内必须有激活的对象。</p>
-<p>   onkeydown:当键盘上某个键被按下时触发的事件，要求页面内必须有激活的对象。</p>
-<p>   onkeyup:当键盘上某个键被放开时触发的事件，要求页面内必须有激活的对象。</p>
-<p>(11)页面相关事件。</p>
-<p>   onabort:图片在下载时被用户中断时触发的事件。</p>
-<p>   onbeforeunload:当前页面的内容将要被改变时触发的事件。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/12/15/事件流/" data-id="ciwxk13us000d6x0yxthxwgsg" class="article-share-link">Delen</a>
-      
-      
     </footer>
   </div>
   
@@ -1520,11 +1520,11 @@ res.output();
       <ul>
         
           <li>
-            <a href="/2016/12/20/事件委托/">事件委托</a>
+            <a href="/2016/12/15/事件流/">事件流</a>
           </li>
         
           <li>
-            <a href="/2016/12/15/事件流/">事件流</a>
+            <a href="/2016/12/12/事件委托/">事件委托</a>
           </li>
         
           <li>
